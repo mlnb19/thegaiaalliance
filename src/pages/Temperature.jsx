@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Box, Container, Text, Grid, GridItem, Flex, Center, SimpleGrid, Modal, ModalOverlay, ModalContent, ModalCloseButton } from '@chakra-ui/react';
-import Navbar from '../components/Navbar';
+import Navbar from './Navbar';
 import { Liquid } from '@ant-design/plots';
 import { FaTemperatureHigh, FaTemperatureLow } from "react-icons/fa";
 import { WiDaySunny, WiThermometer } from "react-icons/wi";
