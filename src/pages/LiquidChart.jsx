@@ -67,6 +67,10 @@ const LiquidChart = () => {
     <div style={{ maxWidth: '800px', margin: '0 auto', padding: '20px' }}>
       <h2 style={{ color: 'white', textAlign: 'center' }}>Havsnivåförändringar</h2>
       <Liquid {...config} />
+      <div style={{ textAlign: 'center', marginTop: '20px', color: 'white' }}>
+        <p style={{ fontSize: '1.2em' }}>År: {currentData?.Time.split('-')[0]}</p>
+        <p style={{ fontSize: '1.2em' }}>Havsnivå: {currentData?.GMSL.toFixed(1)} mm</p>
+      </div>
       <input
         type="range"
         min="0"
