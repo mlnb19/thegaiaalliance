@@ -50,21 +50,33 @@ const LiquidChart = () => {
   const totalChange = currentData.GMSL - seaLevelData[0].GMSL;
 
   return (
-    <Box>
-    <Box 
-      maxWidth="400px" 
-      height="400px"
-      marginTop="50%"
-      Left="50%"
-      padding="20px"
-      backgroundImage="url('/images/OceanAnime.svg')"
-      backgroundSize="cover"
-      backgroundPosition="center"
-      borderRadius="lg"
-      boxShadow="xl"
-    >
-    </Box>
-      <VStack spacing={4}>
+    <Box position="relative">
+      <Box
+        position="absolute"
+        top="0"
+        left="0"
+        right="0"
+        bottom="0"
+        zIndex="0"
+        overflow="hidden"
+      >
+        <Box
+          as="img"
+          src="/images/OceanAnime.svg"
+          position="absolute"
+          width="150%"
+          height="150%"
+          top="50%"
+          left="50%"
+          transform="translate(-50%, -50%)"
+          draggable="true"
+          onDragStart={(e) => {
+            e.dataTransfer.setData("text/plain", "");
+          }}
+          style={{ cursor: 'move' }}
+        />
+      </Box>
+      <VStack spacing={4} position="relative" zIndex="1">
         <Text fontSize="2xl" color="white" textAlign="center" fontWeight="bold">
           Havsnivåförändringar
         </Text>
