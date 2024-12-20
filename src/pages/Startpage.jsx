@@ -14,16 +14,14 @@ function Startpage() {
     <Box w="100vw" h="100vh" bg="#0d0d0d" display="flex" alignItems="center" justifyContent="center" position="relative" overflow="hidden">
       <Box
         pos="absolute"
-        top="25%"
-        left="75%"
-        transform="translate(-50%, -50%)"
-        w="80%"
-        h="80%"
-        bgGradient="linear(to-bl, blue.600, green.500, blue.700)"
+        top="0"
+        right="0"
+        w="50%"
+        h="50%"
+        bgGradient="linear(to-bl, blue.600, cyan.500, blue.700)"
         filter="blur(100px)"
         opacity="0.5"
         borderRadius="full"
-        zIndex={0}
       />
       <Container maxW="container.xl" position="relative" zIndex={1}>
         <Grid templateColumns="repeat(12, 1fr)" gap={6} h="600px" >
@@ -65,7 +63,7 @@ function Startpage() {
               <Box bg="#111" borderRadius="xl" p={6} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
                 <Flex align="center" gap={3}>
                   <Box as="span" color="yellow.400"><GiNotebook /></Box>
-                  <Text fontSize="2xl" fontWeight="bold" bgGradient='linear(to-l, #7928CA, #FF0080)'
+                  <Text fontSize="2xl" fontWeight="bold" bgGradient='linear(to-l, #1E3F66, #91BAD6 )'
                     bgClip='text'>
                     Spel: Memory
                   </Text>
@@ -76,7 +74,7 @@ function Startpage() {
               <Box 
                 borderRadius="xl" 
                 p={6}
-                bgGradient="linear(to-r, #FF0080, #7928CA)"
+                bgGradient="linear(to-r, #73A5C6, #1E3F66)"
                 boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)"
               >
                 <Text color="white" fontSize="2xl" fontWeight="bold">
@@ -88,7 +86,7 @@ function Startpage() {
               <Box bg="#111" borderRadius="xl" p={6} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
                 <Flex align="center" gap={3}>
                   <Box as="span" color="yellow.400" fontSize="xl"><GiBrain /></Box>
-                  <Text bgGradient='linear(to-l, #7928CA, #FF0080)'
+                  <Text bgGradient='linear(to-l, #1E3F66, #91BAD6)'
                     bgClip='text' fontSize="2xl" fontWeight="bold">
                     Spel: Quiz
                   </Text>
