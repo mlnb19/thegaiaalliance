@@ -29,7 +29,7 @@ function Startpage() {
               right: '-1px',
               bottom: '-1px',
               left: '-1px',
-              background: 'linear-gradient(45deg, white, gray)',
+              background: 'linear-gradient(180deg, rgba(255,255,255,0.07) 0%, rgba(217,217,217,0) 100%)',
               borderRadius: 'xl',
               zIndex: -1,
             }}
@@ -63,7 +63,7 @@ function Startpage() {
                 right: '-1px',
                 bottom: '-1px',
                 left: '-1px',
-                background: 'linear-gradient(45deg, white, gray)',
+                background: 'linear-gradient(180deg, rgba(255,255,255,0.07) 0%, rgba(217,217,217,0) 100%)',
                 borderRadius: 'xl',
                 zIndex: -1,
               }}
@@ -88,7 +88,7 @@ function Startpage() {
                 right: '-1px',
                 bottom: '-1px',
                 left: '-1px',
-                background: 'linear-gradient(45deg, white, gray)',
+                background: 'linear-gradient(180deg, rgba(255,255,255,0.07) 0%, rgba(217,217,217,0) 100%)',
                 borderRadius: 'xl',
                 zIndex: -1,
               }}
@@ -118,7 +118,7 @@ function Startpage() {
                 right: '-1px',
                 bottom: '-1px',
                 left: '-1px',
-                background: 'linear-gradient(45deg, white, gray)',
+                background: 'linear-gradient(180deg, rgba(255,255,255,0.07) 0%, rgba(217,217,217,0) 100%)',
                 borderRadius: 'xl',
                 zIndex: -1,
               }}
@@ -149,7 +149,7 @@ function Startpage() {
                     right: '-1px',
                     bottom: '-1px',
                     left: '-1px',
-                    background: 'linear-gradient(45deg, white, gray)',
+                    background: 'linear-gradient(180deg, rgba(255,255,255,0.07) 0%, rgba(217,217,217,0) 100%)',
                     borderRadius: 'xl',
                     zIndex: -1,
                   }}
@@ -173,7 +173,7 @@ function Startpage() {
                     right: '-1px',
                     bottom: '-1px',
                     left: '-1px',
-                    background: 'linear-gradient(45deg, white, gray)',
+                    background: 'linear-gradient(180deg, rgba(255,255,255,0.07) 0%, rgba(217,217,217,0) 100%)',
                     borderRadius: 'xl',
                     zIndex: -1,
                   }}
@@ -200,7 +200,7 @@ function Startpage() {
                   right: '-1px',
                   bottom: '-1px',
                   left: '-1px',
-                  background: 'linear-gradient(45deg, white, gray)',
+                  background: 'linear-gradient(180deg, rgba(255,255,255,0.07) 0%, rgba(217,217,217,0) 100%)',
                   borderRadius: 'xl',
                   zIndex: -1,
                 }}
