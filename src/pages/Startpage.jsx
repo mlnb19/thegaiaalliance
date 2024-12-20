@@ -74,7 +74,7 @@ function Startpage() {
               <Box 
                 borderRadius="xl" 
                 p={6}
-                bgGradient="linear(to-r, #73A5C6, #1E3F66)"
+                bgGradient="linear(to-r,#73A5C6, #1E3F66)"
                 boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)"
               >
                 <Text color="white" fontSize="2xl" fontWeight="bold">
@@ -129,10 +129,10 @@ function Startpage() {
                 transition="transform 0.2s"
                 _hover={{ transform: 'scale(1.02)' }}
               >
-                <Text color="white" fontSize="2xl" fontWeight="bold" data-sea-level-text>
-                  Sea levels har ökat med 80% mellan 2003-2013
+                <Text color="white" fontSize="2xl" fontWeight="bold">
+                  Havsnivån har ökat med 30% de senaste 10 åren
                 </Text>
-                <Text color="gray.500">Statistik om sea levels and so on</Text>
+                <Text color="gray.500" mt="4">Klicka för att lära dig mer om detta</Text>
                 <SimpleGrid columns={5} gap={2} mt={6}>
                   {[...Array(30)].map((_, i) => (
                     <Box key={i} w="100%" h="8px" bg={i % 2 ? '#222' : 'white'} borderRadius="full" />

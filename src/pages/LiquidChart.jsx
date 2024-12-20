@@ -47,21 +47,6 @@ const LiquidChart = () => {
   };
 
   const totalChange = currentData.GMSL - seaLevelData[0].GMSL;
-  const calculatePercentageChange = () => {
-    const previousDecadeIndex = Math.max(0, currentIndex - 1);
-    const previousData = seaLevelData[previousDecadeIndex];
-    const percentChange = ((currentData.GMSL - previousData.GMSL) / Math.abs(previousData.GMSL)) * 100;
-    return Math.abs(percentChange).toFixed(1);
-  };
-
-  // Update parent component's text content
-  useEffect(() => {
-    const percentage = calculatePercentageChange();
-    const year = currentData.Time.split('-')[0];
-    const prevYear = seaLevelData[Math.max(0, currentIndex - 1)].Time.split('-')[0];
-    const textContent = `Sea levels har ökat med ${percentage}% mellan ${prevYear}-${year}`;
-    document.querySelector('[data-sea-level-text]').textContent = textContent;
-  }, [currentIndex]);
 
   return (
     <Box
@@ -80,7 +65,7 @@ const LiquidChart = () => {
         gap={4}
         maxWidth="1000px"
         width="100%"
-        maxHeight="700px"
+        maxHeight="500px"
       >
         {/* Left Section */}
         <Box>
@@ -93,12 +78,12 @@ const LiquidChart = () => {
             >
               Havsnivåförändringar
             </Text>
-            <Box width="100%" maxWidth="400px">
+            <Box width="100%" maxWidth="300px">
               <Liquid {...config} />
             </Box>
             <Box
               width="100%"
-              padding="20px"
+              paddingTop="10px"
               background="rgba(0, 0, 0, 0.7)"
               borderRadius="md"
             >
