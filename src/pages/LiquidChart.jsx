@@ -24,14 +24,16 @@ const LiquidChart = () => {
   // Hämta aktuell datapunkt
   const currentData = seaLevelData[currentIndex];
 
-  // Normalisering för Liquid-diagrammet
+  // Normalisering för Liquid-diagrammet med justerat intervall
   const minGMSL = Math.min(...seaLevelData.map((d) => d.GMSL));
   const maxGMSL = Math.max(...seaLevelData.map((d) => d.GMSL));
-  const normalizedPercent = (currentData?.GMSL - minGMSL) / (maxGMSL - minGMSL);
+  const adjustedMin = minGMSL + (maxGMSL - minGMSL) * 0.05; // 5% from bottom
+  const adjustedMax = maxGMSL - (maxGMSL - minGMSL) * 0.05; // 5% from top
+  const normalizedPercent = Math.min(0.9, Math.max(0.1, (currentData?.GMSL - adjustedMin) / (adjustedMax - adjustedMin)));
 
   // Konfiguration för Liquid-diagrammet
   const config = {
-    percent: normalizedPercent, // Vätskans nivå baserat på data
+    percent: normalizedPercent,
     shape: 'circle',
     outline: {
       border: 4,
