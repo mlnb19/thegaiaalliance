@@ -5,14 +5,14 @@ import { Box, Container, Text, Grid, GridItem, Flex, Image, Button } from '@chak
 function Startpage() {
   return (
     <Box minH="100vh" bg="black" p={8}>
-      <Container maxW="container.xl">
+      <Container maxW="container.xl" h="calc(100vh - 4rem)">
         <Grid
           templateColumns="1fr 1fr 1fr"
           gap={6}
-          py={8}
+          h="100%"
         >
           {/* Left Column - Full Height */}
-          <GridItem rowSpan={3} bg="#111" borderRadius="xl" p={6}>
+          <GridItem rowSpan={3} bg="#111" borderRadius="xl" p={6} h="100%">
             <Text color="#ff6b6b" mb={2}>Insert some statistic</Text>
             <Text color="white" fontSize="2xl" fontWeight="bold" mb={3}>
               Insert major feature name
