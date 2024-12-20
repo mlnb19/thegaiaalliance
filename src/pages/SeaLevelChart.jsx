@@ -1,7 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { Area } from '@ant-design/plots';
-import { Box, Text, Tooltip } from '@chakra-ui/react';
+import { Box, Text, Tooltip, Icon } from '@chakra-ui/react';
+import { InfoOutlineIcon } from '@chakra-ui/icons';
 import { Slider } from 'antd';
 
 const SeaLevelChart = () => {
@@ -65,6 +66,7 @@ const SeaLevelChart = () => {
       <Box mb={4} display="flex" alignItems="center">
         <Text color="white" fontSize="xl" fontWeight="bold">Havsnivåns Förändring</Text>
         <Tooltip label="Grafen visar förändringen i den globala havsnivån över tid. Mätningarna är i millimeter (mm) relativt en referensnivå." bg="#1E3F66">
+          <InfoOutlineIcon color="gray.400" ml={2} />
         </Tooltip>
       </Box>
       <Box height="400px" mb={6}>
