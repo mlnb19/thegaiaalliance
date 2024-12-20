@@ -4,18 +4,18 @@ import { GiBrain, GiNotebook } from "react-icons/gi";
 
 function Startpage() {
   return (
-    <Box minH="100vh" bg="black" p={8} display="flex" alignItems="center">
-      <Container maxW="container.xl" h="auto">
-        <Grid templateColumns="repeat(3, 1fr)" gap={6} minH="80vh" alignItems="stretch">
+    <Box minH="100vh" bg="black" display="flex" flexDirection="column" py={8}>
+      <Container maxW="container.xl" h="100%">
+        <Grid templateColumns="repeat(3, 1fr)" gap={6} h="100%">
           {/* Left Column */}
-          <GridItem>
+          <GridItem display="flex" flexDirection="column" justifyContent="space-between">
             <Box
-              p="0.2%" // Padding for border effect
-              bgGradient="linear(to-r, blue, green)" // Gradient for the border
+              p="0.2%"
+              bgGradient="linear(to-r, blue, green)"
               borderRadius="xl"
               overflow="hidden"
             >
-              <Box bg="#111" borderRadius="inherit" p={6} h="100%">
+              <Box bg="#111" borderRadius="inherit" p={6}>
                 <Text color="#ff6b6b" mb={2}>Här är lite statistik</Text>
                 <Text color="white" fontSize="2xl" fontWeight="bold" mb={3}>
                   Nåt om glaciär eller havsnivån
@@ -31,53 +31,53 @@ function Startpage() {
           </GridItem>
 
           {/* Middle Column */}
-          <GridItem display="flex" flexDirection="column" gap={6}>
+          <GridItem display="flex" flexDirection="column" justifyContent="space-between" gap={6}>
             <Box
-              p="0.2%" // Padding for border effect
-              bgGradient="linear(to-r, blue, green)" // Gradient for the border
+              p="0.2%"
+              bgGradient="linear(to-r, blue, green)"
               borderRadius="xl"
               overflow="hidden"
             >
-              <Box bg="#111" borderRadius="inherit" p={6} h="100%">
+              <Box bg="#111" borderRadius="inherit" p={6}>
                 <Text color="white" fontSize="2xl" fontWeight="bold">
                   Trusted by 500+ users
                 </Text>
               </Box>
             </Box>
             <Box
-              p="0.2%" // Padding for border effect
-              bgGradient="linear(to-r, blue, green)" // Gradient for the border
+              p="0.2%"
+              bgGradient="linear(to-r, blue, green)"
               borderRadius="xl"
               overflow="hidden"
             >
-              <Box bg="#111" borderRadius="inherit" p={6} h="100%">
+              <Box bg="#111" borderRadius="inherit" p={6}>
                 <Text color="white" fontSize="xl">Feature name</Text>
               </Box>
             </Box>
             <Box
-              p="0.2%" // Padding for border effect
-              bgGradient="linear(to-r, blue, green)" // Gradient for the border
+              p="0.2%"
+              bgGradient="linear(to-r, blue, green)"
               borderRadius="xl"
               overflow="hidden"
             >
-              <Box bg="#111" borderRadius="inherit" p={6} h="100%">
+              <Box bg="#111" borderRadius="inherit" p={6}>
                 <Text color="white" fontSize="xl">New Feature Box</Text>
               </Box>
             </Box>
           </GridItem>
 
           {/* Right Column */}
-          <GridItem>
-            <Flex direction="column" gap={6} h="100%">
-              <Flex gap={6} flex="1">
+          <GridItem display="flex" flexDirection="column" justifyContent="space-between">
+            <Flex direction="column" gap={6} flex={1}>
+              <Flex gap={6}>
                 <Box
-                  p="0.2%" // Padding for border effect
-                  bgGradient="linear(to-r, blue, green)" // Gradient for the border
+                  p="0.2%"
+                  bgGradient="linear(to-r, blue, green)"
                   borderRadius="xl"
                   overflow="hidden"
                   flex="1"
                 >
-                  <Box bg="#111" borderRadius="inherit" p={6} h="100%">
+                  <Box bg="#111" borderRadius="inherit" p={6}>
                     <Box as="span" color="white" fontSize="2xl" mb={2}>
                       <GiBrain />
                     </Box>
@@ -87,13 +87,13 @@ function Startpage() {
                   </Box>
                 </Box>
                 <Box
-                  p="0.2%" // Padding for border effect
-                  bgGradient="linear(to-r, blue, green)" // Gradient for the border
+                  p="0.2%"
+                  bgGradient="linear(to-r, blue, green)"
                   borderRadius="xl"
                   overflow="hidden"
                   flex="1"
                 >
-                  <Box bg="#111" borderRadius="inherit" p={6} h="100%">
+                  <Box bg="#111" borderRadius="inherit" p={6}>
                     <Box as="span" color="white" fontSize="2xl" mb={2}>
                       <GiNotebook />
                     </Box>
@@ -101,15 +101,15 @@ function Startpage() {
                       Quiz
                     </Center>
                   </Box>
-                </Box>              
+                </Box>
               </Flex>
               <Box
-                p="0.2%" // Padding for border effect
-                bgGradient="linear(to-r, blue, green)" // Gradient for the border
+                p="0.2%"
+                bgGradient="linear(to-r, blue, green)"
                 borderRadius="xl"
                 overflow="hidden"
               >
-                <Box bg="#111" borderRadius="inherit" p={6} h="100%">
+                <Box bg="#111" borderRadius="inherit" p={6}>
                   <Text color="white" fontSize="xl">New Box</Text>
                 </Box>
               </Box>
@@ -122,3 +122,4 @@ function Startpage() {
 }
 
 export default Startpage;
+
