@@ -1,16 +1,18 @@
 
 import React from 'react';
-import { Box, Container, Text, Grid, GridItem, Flex, Center, Image, Avatar, SimpleGrid } from '@chakra-ui/react';
+import { Box, Container, Text, Grid, GridItem, Flex, Center, Image, Avatar, SimpleGrid, BoxShadow } from '@chakra-ui/react';
 import { GiBrain, GiNotebook } from "react-icons/gi";
+import { FaRegUserCircle } from "react-icons/fa";
+
 
 function Startpage() {
   return (
-    <Box minH="100vh" bg="black" display="flex" alignItems="center">
+    <Box minH="100vh" bg="black" display="flex" alignItems="center" justifyContent="center" >
       <Container maxW="container.xl">
-        <Grid templateColumns="repeat(12, 1fr)" gap={6} h="700px">
+        <Grid templateColumns="repeat(12, 1fr)" gap={6} h="600px" >
           {/* Left Column - Major Feature */}
-          <GridItem colSpan={4}>
-            <Box bg="#111" borderRadius="xl" p={8} h="100%">
+          <GridItem colSpan={5} >
+            <Box bg="#111" borderRadius="xl" p={8} h="100%" boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
               <Text color="#ff6b6b" fontSize="sm">Insert some statistic</Text>
               <Text color="white" fontSize="4xl" fontWeight="bold" mt={2} mb={4}>
                 Insert major feature name
@@ -25,10 +27,14 @@ function Startpage() {
           </GridItem>
 
           {/* Middle Column */}
-          <GridItem colSpan={5}>
+          <GridItem colSpan={4}>
             <Flex direction="column" gap={6} h="100%">
               {/* Trusted by Users */}
-              <Box bg="#111" borderRadius="xl" p={8}>
+
+
+              {/* Bottom Feature */}
+
+                            <Box bg="#111" borderRadius="xl" p={8} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
                 <Text color="white" fontSize="4xl" fontWeight="bold" mb={4}>
                   Trusted by 500+ users
                 </Text>
@@ -39,24 +45,35 @@ function Startpage() {
                   <Avatar size="md" src="/images/profile.png" />
                 </Flex>
               </Box>
-
+              <Box bg="#111" borderRadius="xl" p={6} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
+                <Flex align="center" gap={3}>
+                  <Box as="span" color="yellow.400"><GiNotebook /></Box>
+                  <Text fontSize="2xl" fontWeight="bold" bgGradient='linear(to-l, #7928CA, #FF0080)'
+                    bgClip='text'>
+                    Spel: Memory
+                  </Text>
+                </Flex>
+              </Box>
+              
               {/* Feature Name with Gradient */}
               <Box 
                 borderRadius="xl" 
                 p={6}
                 bgGradient="linear(to-r, #FF0080, #7928CA)"
+                boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)"
               >
                 <Text color="white" fontSize="2xl" fontWeight="bold">
-                  ☀️ Feature name
+                  ☀️ Spel: Nånting
                 </Text>
               </Box>
 
               {/* Bottom Feature */}
-              <Box bg="#111" borderRadius="xl" p={6}>
+              <Box bg="#111" borderRadius="xl" p={6} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
                 <Flex align="center" gap={3}>
-                  <Box as="span" color="gray.400">⭕</Box>
-                  <Text color="gray.400">
-                    Lorem ipsum two-line feature descriptor here
+                  <Box as="span" color="yellow.400" fontSize="xl"><GiBrain /></Box>
+                  <Text bgGradient='linear(to-l, #7928CA, #FF0080)'
+                    bgClip='text' fontSize="2xl" fontWeight="bold">
+                    Spel: Quiz
                   </Text>
                 </Flex>
               </Box>
@@ -68,21 +85,21 @@ function Startpage() {
             <Flex direction="column" gap={6} h="100%">
               {/* Top Features */}
               <SimpleGrid columns={2} gap={6}>
-                <Box bg="#111" borderRadius="xl" p={6}>
-                  <Box as="span" color="white" fontSize="2xl" mb={4}>
-                    📅
-                  </Box>
-                  <Text color="gray.400" fontSize="sm" mt={4}>
-                    Up to three line feature description
-                  </Text>
+                <Box bg="#111" borderRadius="xl" p={6} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
+                  <Center as="span" color="white" fontSize="2xl" mb={4}>
+                    <FaRegUserCircle />
+                  </Center>
+                  <Center color="gray.400" fontSize="l" mt={4} fontFamily={'monospace'}>
+                    PROFIL
+                  </Center>
                 </Box>
-                <Box bg="#111" borderRadius="xl" p={6}>
-                  <Box as="span" color="white" fontSize="2xl" mb={4}>
+                <Box bg="#111" borderRadius="xl" p={6} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
+                  <Center as="span" color="white" fontSize="2xl" mb={4}>
                     🔄
-                  </Box>
-                  <Text color="gray.400" fontSize="sm" mt={4}>
-                    Up to three line feature description
-                  </Text>
+                  </Center>
+                  <Center color="gray.400" fontSize="l" mt={4} fontFamily={'monospace'}>
+                    LOGGA UT
+                  </Center>
                 </Box>
               </SimpleGrid>
 
