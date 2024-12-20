@@ -75,7 +75,7 @@ function Co2() {
                   <Center flexDirection="column">
                     <Box as="span" color="orange.300" fontSize="2xl" mb={4}>
                       <GiFactory size={24}/>
-                    </Center>
+                    </Box>
                     <Text color="gray.400" fontSize="sm">NIVÅER</Text>
                   </Center>
                 </Box>
@@ -83,7 +83,7 @@ function Co2() {
                   <Center flexDirection="column">
                     <Box as="span" color="orange.300" fontSize="2xl" mb={4}>
                       <FaIndustry size={24}/>
-                    </Center>
+                    </Box>
                     <Text color="gray.400" fontSize="sm">TREND</Text>
                   </Center>
                 </Box>
