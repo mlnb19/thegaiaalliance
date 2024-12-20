@@ -50,9 +50,12 @@ const LiquidChart = () => {
   const totalChange = currentData.GMSL - seaLevelData[0].GMSL;
 
   return (
+    <Box>
     <Box 
-      maxWidth="800px" 
-      margin="0 auto" 
+      maxWidth="400px" 
+      height="400px"
+      marginTop="50%"
+      Left="50%"
       padding="20px"
       backgroundImage="url('/images/OceanAnime.svg')"
       backgroundSize="cover"
@@ -60,6 +63,7 @@ const LiquidChart = () => {
       borderRadius="lg"
       boxShadow="xl"
     >
+    </Box>
       <VStack spacing={4}>
         <Text fontSize="2xl" color="white" textAlign="center" fontWeight="bold">
           Havsnivåförändringar
