@@ -1,117 +1,102 @@
+
 import React from 'react';
-import { Box, Container, Text, Grid, GridItem, Flex, Center, Image } from '@chakra-ui/react';
+import { Box, Container, Text, Grid, GridItem, Flex, Center, Image, Avatar, SimpleGrid } from '@chakra-ui/react';
 import { GiBrain, GiNotebook } from "react-icons/gi";
 
 function Startpage() {
   return (
-    <Box minH="100vh" bg="black" display="flex" flexDirection="column" py={8}>
-      <Container maxW="container.xl" h="100%">
-        <Grid templateColumns="repeat(3, 1fr)" gap="25px" h="700px" p={6}>
-          {/* Left Column */}
-          <GridItem display="flex" flexDirection="column" justifyContent="space-between">
-            <Box
-              p="0.2%"
-              bgGradient="linear(to-r, blue, green)"
-              borderRadius="xl"
-              overflow="hidden"
-            >
-              <Box bg="#111" borderRadius="inherit" p={6}>
-                <Text color="#ff6b6b" mb={2}>Här är lite statistik</Text>
-                <Text color="white" fontSize="2xl" fontWeight="bold" mb={3}>
-                  Nåt om glaciär eller havsnivån
-                </Text>
-                <Text color="gray.400" mb={4}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </Text>
-                <Box borderRadius="xl" overflow="hidden" mt="auto">
-                  <Image src="/images/profile.png" alt="Feature preview" />
-                </Box>
+    <Box minH="100vh" bg="black" display="flex" alignItems="center">
+      <Container maxW="container.xl">
+        <Grid templateColumns="repeat(12, 1fr)" gap={6} h="700px">
+          {/* Left Column - Major Feature */}
+          <GridItem colSpan={4}>
+            <Box bg="#111" borderRadius="xl" p={8} h="100%">
+              <Text color="#ff6b6b" fontSize="sm">Insert some statistic</Text>
+              <Text color="white" fontSize="4xl" fontWeight="bold" mt={2} mb={4}>
+                Insert major feature name
+              </Text>
+              <Text color="gray.500" mb={8}>
+                Insert some statistic or metric name
+              </Text>
+              <Box borderRadius="xl" overflow="hidden" mt="auto">
+                <Image src="/images/profile.png" alt="Feature preview" w="100%" />
               </Box>
             </Box>
           </GridItem>
 
           {/* Middle Column */}
-          <GridItem display="flex" flexDirection="column" gap="25px">
-            <Box
-              p="0.2%"
-              bgGradient="linear(to-r, blue, green)"
-              borderRadius="xl"
-              overflow="hidden"
-            >
-              <Box bg="#111" borderRadius="inherit" p={6}>
-                <Text color="white" fontSize="2xl" fontWeight="bold">
+          <GridItem colSpan={5}>
+            <Flex direction="column" gap={6} h="100%">
+              {/* Trusted by Users */}
+              <Box bg="#111" borderRadius="xl" p={8}>
+                <Text color="white" fontSize="4xl" fontWeight="bold" mb={4}>
                   Trusted by 500+ users
                 </Text>
+                <Text color="gray.500">Don't take our word for it...</Text>
+                <Flex gap={2} mt={4}>
+                  <Avatar size="md" src="/images/profile.png" />
+                  <Avatar size="md" src="/images/profile.png" />
+                  <Avatar size="md" src="/images/profile.png" />
+                </Flex>
               </Box>
-            </Box>
-            <Box
-              p="0.2%"
-              bgGradient="linear(to-r, blue, green)"
-              borderRadius="xl"
-              overflow="hidden"
-            >
-              <Box bg="#111" borderRadius="inherit" p={6}>
-                <Text color="white" fontSize="xl">Feature name</Text>
+
+              {/* Feature Name with Gradient */}
+              <Box 
+                borderRadius="xl" 
+                p={6}
+                bgGradient="linear(to-r, #FF0080, #7928CA)"
+              >
+                <Text color="white" fontSize="2xl" fontWeight="bold">
+                  ☀️ Feature name
+                </Text>
               </Box>
-            </Box>
-            <Box
-              p="0.2%"
-              bgGradient="linear(to-r, blue, green)"
-              borderRadius="xl"
-              overflow="hidden"
-            >
-              <Box bg="#111" borderRadius="inherit" p={6}>
-                <Text color="white" fontSize="xl">New Feature Box</Text>
+
+              {/* Bottom Feature */}
+              <Box bg="#111" borderRadius="xl" p={6}>
+                <Flex align="center" gap={3}>
+                  <Box as="span" color="gray.400">⭕</Box>
+                  <Text color="gray.400">
+                    Lorem ipsum two-line feature descriptor here
+                  </Text>
+                </Flex>
               </Box>
-            </Box>
+            </Flex>
           </GridItem>
 
           {/* Right Column */}
-          <GridItem display="flex" flexDirection="column" justifyContent="space-between">
-            <Flex direction="column" gap="25px" h="100%">
-              <Flex gap="25px" flex="2">
-                <Box
-                  p="0.2%"
-                  bgGradient="linear(to-r, blue, green)"
-                  borderRadius="xl"
-                  overflow="hidden"
-                  flex="1"
-                >
-                  <Box bg="#111" borderRadius="inherit" p={6}>
-                    <Box as="span" color="white" fontSize="2xl" mb={2}>
-                      <GiBrain />
-                    </Box>
-                    <Center color="white" mb="auto" fontSize="xl">
-                      Memory
-                    </Center>
+          <GridItem colSpan={3}>
+            <Flex direction="column" gap={6} h="100%">
+              {/* Top Features */}
+              <SimpleGrid columns={2} gap={6}>
+                <Box bg="#111" borderRadius="xl" p={6}>
+                  <Box as="span" color="white" fontSize="2xl" mb={4}>
+                    📅
                   </Box>
+                  <Text color="gray.400" fontSize="sm" mt={4}>
+                    Up to three line feature description
+                  </Text>
                 </Box>
-                <Box
-                  p="0.2%"
-                  bgGradient="linear(to-r, blue, green)"
-                  borderRadius="xl"
-                  overflow="hidden"
-                  flex="1"
-                >
-                  <Box bg="#111" borderRadius="inherit" p={6}>
-                    <Box as="span" color="white" fontSize="2xl" mb={2}>
-                      <GiNotebook />
-                    </Box>
-                    <Center color="white" mb="auto" fontSize="xl">
-                      Quiz
-                    </Center>
+                <Box bg="#111" borderRadius="xl" p={6}>
+                  <Box as="span" color="white" fontSize="2xl" mb={4}>
+                    🔄
                   </Box>
+                  <Text color="gray.400" fontSize="sm" mt={4}>
+                    Up to three line feature description
+                  </Text>
                 </Box>
-              </Flex>
-              <Box
-                p="0.2%"
-                bgGradient="linear(to-r, blue, green)"
-                borderRadius="xl"
-                overflow="hidden"
-              >
-                <Box bg="#111" borderRadius="inherit" p={6}>
-                  <Text color="white" fontSize="xl">New Box</Text>
-                </Box>
+              </SimpleGrid>
+
+              {/* Percentage Display */}
+              <Box bg="#111" borderRadius="xl" p={8} flex={1}>
+                <Text color="white" fontSize="6xl" fontWeight="bold">
+                  00%
+                </Text>
+                <Text color="gray.500">Higher lorem ipsum rate</Text>
+                <SimpleGrid columns={5} gap={2} mt={6}>
+                  {[...Array(30)].map((_, i) => (
+                    <Box key={i} w="100%" h="8px" bg={i % 2 ? '#222' : 'white'} borderRadius="full" />
+                  ))}
+                </SimpleGrid>
               </Box>
             </Flex>
           </GridItem>
@@ -122,4 +107,3 @@ function Startpage() {
 }
 
 export default Startpage;
-
