@@ -7,7 +7,7 @@ const LiquidChart = () => {
 
   useEffect(() => {
     // Ladda JSON-data (kontrollera att filen är korrekt länkad)
-    fetch('/data/SeaLevel.json')
+    fetch('/data/SeaLevel%20.json')
       .then((response) => response.json())
       .then((data) => {
         // Filtrera data för var tionde år
