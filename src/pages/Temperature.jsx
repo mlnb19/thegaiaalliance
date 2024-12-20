@@ -47,7 +47,7 @@ function Temperature() {
                   </Text>
                 </Flex>
               </Box>
-              
+
               <Box bg="#111" borderRadius="xl" p={6} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
                 <Flex align="center" gap={3}>
                   <Box as="span" color="red.300"><WiDaySunny size={24}/></Box>
@@ -74,7 +74,7 @@ function Temperature() {
                 <Box bg="#111" borderRadius="xl" p={6} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
                   <Center flexDirection="column">
                     <Box as="span" color="red.300" fontSize="2xl" mb={4}>
-                      <WiThermometer size={24}/>
+                      <WiThermometer size={24} />
                     </Box>
                     <Text color="gray.400" fontSize="sm">ÖKNING</Text>
                   </Center>
@@ -82,13 +82,12 @@ function Temperature() {
                 <Box bg="#111" borderRadius="xl" p={6} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
                   <Center flexDirection="column">
                     <Box as="span" color="red.300" fontSize="2xl" mb={4}>
-                      <FaTemperatureHigh size={24}/>
+                      <WiThermometer size={24} />
                     </Box>
                     <Text color="gray.400" fontSize="sm">PROGNOS</Text>
-                  </Box>
-                </Center>
+                  </Center>
+                </Box>
               </SimpleGrid>
-
               <Box 
                 bg="#111" 
                 borderRadius="xl" 

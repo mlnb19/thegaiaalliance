@@ -3,7 +3,7 @@ import { Box, Container, Text, Grid, GridItem, Flex, Center, Image, Avatar, Simp
 import Navbar from '../components/Navbar';
 import { Liquid } from '@ant-design/plots';
 import { FaIcicles, FaMountain } from "react-icons/fa";
-import { GiIceberg, GiSnowflake } from "react-icons/gi";
+import { GiIceberg } from "react-icons/gi";
 import GlacierChart from './GlacierChart';
 
 function Glaciers() {
@@ -47,7 +47,7 @@ function Glaciers() {
                   </Text>
                 </Flex>
               </Box>
-              
+
               <Box bg="#111" borderRadius="xl" p={6} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
                 <Flex align="center" gap={3}>
                   <Box as="span" color="cyan.200"><FaMountain size={24}/></Box>
@@ -74,7 +74,7 @@ function Glaciers() {
                 <Box bg="#111" borderRadius="xl" p={6} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
                   <Center flexDirection="column">
                     <Box as="span" color="cyan.200" fontSize="2xl" mb={4}>
-                      <GiSnowflake size={24}/>
+                      <GiIceberg size={24}/>
                     </Box>
                     <Text color="gray.400" fontSize="sm">STATUS</Text>
                   </Center>
