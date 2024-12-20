@@ -18,7 +18,8 @@ const SeaLevelChart = () => {
             year: item.Time.split('-')[0],
             value: Math.abs(item.GMSL),
             category: 'Sea Level'
-          }));
+          }))
+          .sort((a, b) => a.value - b.value);
         setSeaLevelData(formattedData);
       });
   }, []);
