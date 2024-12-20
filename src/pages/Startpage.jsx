@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Box, Container, Text, Grid, GridItem, Flex, Center, Image, Avatar, SimpleGrid, Modal, ModalOverlay, ModalContent, ModalCloseButton } from '@chakra-ui/react';
+import { Liquid } from '@ant-design/plots';
 import { GiBrain, GiNotebook } from "react-icons/gi";
 import { FaRegUserCircle } from "react-icons/fa";
 import { AiOutlineLogout } from "react-icons/ai";
@@ -133,11 +134,21 @@ function Startpage() {
                   Havsnivån har ökat med 30% de senaste 10 åren
                 </Text>
                 <Text color="gray.500" mt="4">Klicka för att lära dig mer om detta</Text>
-                <SimpleGrid columns={5} gap={2} mt={6}>
-                  {[...Array(30)].map((_, i) => (
-                    <Box key={i} w="100%" h="8px" bg={i % 2 ? '#222' : 'white'} borderRadius="full" />
-                  ))}
-                </SimpleGrid>
+                <Box height="120px" mt={6}>
+                  <Liquid 
+                    percent={0.3}
+                    outline={{
+                      border: 2,
+                      distance: 4,
+                    }}
+                    wave={{
+                      length: 128,
+                    }}
+                    style={{
+                      height: '100%',
+                    }}
+                  />
+                </Box>
               </Box>
 
               <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} size="4xl" isCentered>
