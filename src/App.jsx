@@ -13,10 +13,14 @@ function App() {
     <ChakraProvider>
       <Router>
         <Routes>
+          <Route path="/" element={<Welcome />} />
           <Route path="/sealevels" element={<SeaLevels />} />
           <Route path="/temperature" element={<Temperature />} />
           <Route path="/co2" element={<Co2 />} />
           <Route path="/glaciers" element={<Glaciers />} />
+          <Route path="/profile" element={<Welcome />} />
+          <Route path="/notifications" element={<Welcome />} />
+          <Route path="/settings" element={<Welcome />} />
         </Routes>
       </Router>
     </ChakraProvider>
