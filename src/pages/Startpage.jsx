@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Box, Container, Text, Grid, GridItem, Flex, Center, Image, Avatar, SimpleGrid, Modal, ModalOverlay, ModalContent, ModalCloseButton } from '@chakra-ui/react';
+import Navbar from '../components/Navbar';
 import { Liquid } from '@ant-design/plots';
 import { GiBrain, GiNotebook } from "react-icons/gi";
 import { FaRegUserCircle } from "react-icons/fa";
@@ -13,6 +14,7 @@ function Startpage() {
 
   return (
     <Box w="100vw" h="100vh" bg="#0d0d0d" display="flex" alignItems="center" justifyContent="center" position="relative" overflow="hidden">
+      <Navbar />
       <Box
         pos="absolute"
         top="0"
