@@ -10,6 +10,7 @@ function Startpage() {
           templateColumns="1fr 1fr 1fr"
           gap={6}
           h="100%"
+          templateRows="1fr"
         >
           {/* Left Column - Full Height */}
           <GridItem rowSpan={3} bg="#111" borderRadius="xl" p={6} h="100%">
@@ -51,8 +52,8 @@ function Startpage() {
           </GridItem>
 
           {/* Right Column */}
-          <GridItem>
-            <Grid templateRows="auto 1fr" gap={6}>
+          <GridItem h="100%">
+            <Grid templateRows="auto 1fr" gap={6} h="100%">
               {/* Two small boxes in a row */}
               <Flex gap={6}>
                 <Box bg="#111" borderRadius="xl" p={6} flex={1}>
