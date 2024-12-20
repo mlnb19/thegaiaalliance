@@ -24,7 +24,7 @@ const Navbar = () => {
           variant="ghost"
           color="white"
           _hover={{ bg: 'whiteAlpha.200' }}
-          onClick={() => navigate('/profile')}
+          onClick={() => navigate('/pages/glaciers')}
         />
         <IconButton
           icon={<FaBell />}
@@ -32,7 +32,7 @@ const Navbar = () => {
           variant="ghost"
           color="white"
           _hover={{ bg: 'whiteAlpha.200' }}
-          onClick={() => navigate('/notifications')}
+          onClick={() => navigate('/pages/co2')}
         />
         <IconButton
           icon={<FaCog />}
@@ -40,7 +40,7 @@ const Navbar = () => {
           variant="ghost"
           color="white"
           _hover={{ bg: 'whiteAlpha.200' }}
-          onClick={() => navigate('/settings')}
+          onClick={() => navigate('/pages/temperature')}
         />
       </Flex>
     </Box>

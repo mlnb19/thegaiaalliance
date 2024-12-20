@@ -56,9 +56,10 @@ function Welcome() {
 
         <Flex justify="flex-end" gap={8}>
           <Stack direction="row" spacing={8}>
-            <Link href="#profil" color="white" fontFamily="monospace" fontSize="20px" _hover={{ color: 'gray.300' }}>PROFIL</Link>
-            <Link href="#faq" color="white" fontFamily="monospace" fontSize="20px" _hover={{ color: 'gray.300' }}>FAQ</Link>
-            <Link href="#kontakt" color="white" fontFamily="monospace" fontSize="20px" _hover={{ color: 'gray.300' }}>KONTAKT</Link>
+            <Link href="/sealevels" color="white" fontFamily="monospace" fontSize="20px" _hover={{ color: 'gray.300' }}>HAVSNIVÅER</Link>
+            <Link href="/glaciers" color="white" fontFamily="monospace" fontSize="20px" _hover={{ color: 'gray.300' }}>GLACIÄRER</Link>
+            <Link href="/co2" color="white" fontFamily="monospace" fontSize="20px" _hover={{ color: 'gray.300' }}>CO2</Link>
+            <Link href="#faq" color="white" fontFamily="monospace" fontSize="20px" _hover={{ color: 'gray.300' }}>TEMPERATUR</Link>
           </Stack>
         </Flex>
 
