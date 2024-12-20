@@ -1,0 +1,20 @@
+[plugin:vite:import-analysis] Failed to resolve import "react-gradient-border" from "src/pages/Startpage.jsx". Does the file exist?
+/home/runner/React-Javascript/src/pages/Startpage.jsx:4:27
+18 |  import { Box, Container, Text, Grid, GridItem, Flex, Image, Button, Center } from "@chakra-ui/react";
+19 |  import { GiBrain, GiNotebook } from "react-icons/gi";
+20 |  import GradientBorder from "react-gradient-border";
+   |                              ^
+21 |  function Startpage() {
+22 |    return /* @__PURE__ */ jsxDEV(Box, { minH: "100vh", bg: "black", p: 8, children: /* @__PURE__ */ jsxDEV(Container, { maxW: "container.xl", h: "calc(100vh - 5rem)", my: 2, children: /* @__PURE__ */ jsxDEV(Grid, { templateColumns: "repeat(3, 1fr)", gap: 6, h: "100%", alignItems: "stretch", children: [
+    at formatError (file:///home/runner/React-Javascript/node_modules/vite/dist/node/chunks/dep-T98iZFpD.js:61701:46)
+    at TransformContext.error (file:///home/runner/React-Javascript/node_modules/vite/dist/node/chunks/dep-T98iZFpD.js:61695:19)
+    at normalizeUrl (file:///home/runner/React-Javascript/node_modules/vite/dist/node/chunks/dep-T98iZFpD.js:59988:33)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///home/runner/React-Javascript/node_modules/vite/dist/node/chunks/dep-T98iZFpD.js:60138:47
+    at async Promise.all (index 6)
+    at async TransformContext.transform (file:///home/runner/React-Javascript/node_modules/vite/dist/node/chunks/dep-T98iZFpD.js:60059:13)
+    at async Object.transform (file:///home/runner/React-Javascript/node_modules/vite/dist/node/chunks/dep-T98iZFpD.js:61996:30)
+    at async loadAndTransform (file:///home/runner/React-Javascript/node_modules/vite/dist/node/chunks/dep-T98iZFpD.js:47780:29)
+    at async viteTransformMiddleware (file:///home/runner/React-Javascript/node_modules/vite/dist/node/chunks/dep-T98iZFpD.js:57379:32
+Click outside, press Esc key, or fix the code to dismiss.
+You can also disable this overlay by setting server.hmr.overlay to false in vite.config.js.

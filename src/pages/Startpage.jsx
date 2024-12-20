@@ -3,6 +3,8 @@ import React from 'react';
 import { Box, Container, Text, Grid, GridItem, Flex, Center, Image, Avatar, SimpleGrid } from '@chakra-ui/react';
 import { GiBrain, GiNotebook } from "react-icons/gi";
 import { FaRegUserCircle } from "react-icons/fa";
+import { AiOutlineLogout } from "react-icons/ai";
+
 
 
 function Startpage() {
@@ -108,7 +110,7 @@ function Startpage() {
                 </Box>
                 <Box bg="#111" borderRadius="xl" p={6} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
                   <Center as="span" color="white" fontSize="2xl" mb={4}>
-                    🔄
+                    <AiOutlineLogout />
                   </Center>
                   <Center color="gray.400" fontSize="l" mt={4} fontFamily={'monospace'}>
                     LOGGA UT

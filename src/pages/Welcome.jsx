@@ -56,30 +56,30 @@ function Welcome() {
 
         <Flex justify="flex-end" gap={8}>
           <Stack direction="row" spacing={8}>
-            <Link href="#profil" color="white" fontFamily="monospace" fontSize="20px" _hover={{ color: 'gray.300' }}>Profil</Link>
+            <Link href="#profil" color="white" fontFamily="monospace" fontSize="20px" _hover={{ color: 'gray.300' }}>PROFIL</Link>
             <Link href="#faq" color="white" fontFamily="monospace" fontSize="20px" _hover={{ color: 'gray.300' }}>FAQ</Link>
             <Link href="#kontakt" color="white" fontFamily="monospace" fontSize="20px" _hover={{ color: 'gray.300' }}>KONTAKT</Link>
           </Stack>
         </Flex>
 
         <Box position="absolute" bottom="40px" left="50%" transform="translateX(-50%)" textAlign="center">
-          <Box
-            as={motion.div}
-            animation="bounce"
+          <motion.div
             animate={{
-              y: [0, 8]
+              y: [0, -8, 0] // Pilen rör sig upp och ner
             }}
             transition={{
-              duration: 1.5,
-              repeat: Infinity,
-              repeatType: "reverse",
-              ease: "easeInOut"
+              duration: 1.5, // Tidslängd för en cykel
+              repeat: Infinity, // Upprepa för alltid
+              repeatType: "loop", // Loop utan stopp
+              ease: "easeInOut" // Mjuk rörelse
             }}
-            color="white"
-            fontSize="40px"
+            style={{
+              color: "white",
+              fontSize: "40px",
+            }}
           >
             ↓
-          </Box>
+          </motion.div>
         </Box>
       </Container>
     </Box>
