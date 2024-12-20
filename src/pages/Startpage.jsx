@@ -1,6 +1,5 @@
-
-import React from 'react';
-import { Box, Container, Text, Grid, GridItem, Flex, Center, Image, Avatar, SimpleGrid } from '@chakra-ui/react';
+import React, { useState } from 'react';
+import { Box, Container, Text, Grid, GridItem, Flex, Center, Image, Avatar, SimpleGrid, Modal, ModalOverlay, ModalContent, ModalCloseButton } from '@chakra-ui/react';
 import { GiBrain, GiNotebook } from "react-icons/gi";
 import { FaRegUserCircle } from "react-icons/fa";
 import { AiOutlineLogout } from "react-icons/ai";
@@ -8,6 +7,8 @@ import { AiOutlineLogout } from "react-icons/ai";
 
 
 function Startpage() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <Box w="100vw" h="100vh" bg="#0d0d0d" display="flex" alignItems="center" justifyContent="center" position="relative" overflow="hidden">
       <Box
@@ -119,17 +120,35 @@ function Startpage() {
               </SimpleGrid>
 
               {/* Percentage Display */}
-      <Box bg="#111" borderRadius="xl" p={8} flex={1}>
-        <Text color="white" fontSize="2xl" fontWeight="bold">
-          Sea levels har ökat med 30% de senaste 10 åren
-        </Text>
-        <Text color="gray.500">Statistik om sea levels and so on</Text>
-        <SimpleGrid columns={5} gap={2} mt={6}>
-          {[...Array(30)].map((_, i) => (
-            <Box key={i} w="100%" h="8px" bg={i % 2 ? '#222' : 'white'} borderRadius="full" />
+              <Box 
+                bg="#111" 
+                borderRadius="xl" 
+                p={8} 
+                flex={1} 
+                cursor="pointer"
+                onClick={() => setIsModalOpen(true)}
+                transition="transform 0.2s"
+                _hover={{ transform: 'scale(1.02)' }}
+              >
+                <Text color="white" fontSize="2xl" fontWeight="bold">
+                  Sea levels har ökat med 30% de senaste 10 åren
+                </Text>
+                <Text color="gray.500">Statistik om sea levels and so on</Text>
+                <SimpleGrid columns={5} gap={2} mt={6}>
+                  {[...Array(30)].map((_, i) => (
+                    <Box key={i} w="100%" h="8px" bg={i % 2 ? '#222' : 'white'} borderRadius="full" />
                   ))}
                 </SimpleGrid>
               </Box>
+
+              <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} size="xl">
+                <ModalOverlay backdropFilter="blur(10px)" />
+                <ModalContent bg="transparent" boxShadow="none" maxW="1000px">
+                  <ModalCloseButton color="white" />
+                  {/* Replace with your actual LiquidChart component */}
+                  <div>LiquidChart Placeholder</div>
+                </ModalContent>
+              </Modal>
             </Flex>
           </GridItem>
         </Grid>
