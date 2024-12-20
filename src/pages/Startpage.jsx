@@ -7,11 +7,11 @@ import { FaRegUserCircle } from "react-icons/fa";
 
 function Startpage() {
   return (
-    <Box minH="100vh" bg="#0d0d0d" display="flex" alignItems="center" justifyContent="center" position="relative">
+    <Box w="100vw" h="100vh" bg="#0d0d0d" display="flex" alignItems="center" justifyContent="center" position="relative" overflow="hidden">
       <Box
         pos="absolute"
-        top="50%"
-        left="50%"
+        top="25%"
+        left="75%"
         transform="translate(-50%, -50%)"
         w="80%"
         h="80%"
