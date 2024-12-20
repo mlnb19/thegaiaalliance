@@ -7,6 +7,7 @@ import LiquidChart from './pages/LiquidChart';
 function App() {
   return (
 <>
+  <Startpage />
 <LiquidChart />
 </>
   );

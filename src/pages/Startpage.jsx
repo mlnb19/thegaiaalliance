@@ -119,14 +119,14 @@ function Startpage() {
               </SimpleGrid>
 
               {/* Percentage Display */}
-              <Box bg="#111" borderRadius="xl" p={8} flex={1}>
-                <Text color="white" fontSize="6xl" fontWeight="bold">
-                  00%
-                </Text>
-                <Text color="gray.500">Higher lorem ipsum rate</Text>
-                <SimpleGrid columns={5} gap={2} mt={6}>
-                  {[...Array(30)].map((_, i) => (
-                    <Box key={i} w="100%" h="8px" bg={i % 2 ? '#222' : 'white'} borderRadius="full" />
+      <Box bg="#111" borderRadius="xl" p={8} flex={1}>
+        <Text color="white" fontSize="2xl" fontWeight="bold">
+          Sea levels har ökat med 30% de senaste 10 åren
+        </Text>
+        <Text color="gray.500">Statistik om sea levels and so on</Text>
+        <SimpleGrid columns={5} gap={2} mt={6}>
+          {[...Array(30)].map((_, i) => (
+            <Box key={i} w="100%" h="8px" bg={i % 2 ? '#222' : 'white'} borderRadius="full" />
                   ))}
                 </SimpleGrid>
               </Box>
