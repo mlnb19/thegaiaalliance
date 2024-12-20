@@ -31,7 +31,7 @@ function Welcome() {
             width="70px"
             height="70px"
             position="relative"
-            borderRadius="63% 37% 54% 46% / 55% 48% 52% 45%"
+            clipPath="polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)"
             overflow="hidden"
             border="2px"
             borderColor="black"
