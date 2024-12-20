@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Liquid } from '@ant-design/plots';
-import { Box, Text } from '@chakra-ui/react';
+import { Box, Text, VStack, Stat, StatLabel, StatNumber, StatHelpText } from '@chakra-ui/react';
 
 const LiquidChart = () => {
   const [seaLevelData, setSeaLevelData] = useState([]);
@@ -28,37 +28,81 @@ const LiquidChart = () => {
 
   const config = {
     percent: normalizedPercent,
-    style: {
-      outlineBorder: 4,
-      outlineDistance: 8,
-      waveLength: 128,
+    outline: {
+      border: 4,
+      distance: 8,
+    },
+    wave: {
+      length: 128,
     },
     statistic: {
       title: {
         formatter: () => currentData?.Time.split('-')[0],
-        style: { color: '#fff', fontSize: '20px' }
+        style: { color: '#fff', fontSize: '24px' }
       },
       content: {
         formatter: () => `${currentData?.GMSL.toFixed(1)} mm`,
-        style: { color: '#fff', fontSize: '16px' }
+        style: { color: '#fff', fontSize: '20px' }
       }
     }
   };
 
+  const totalChange = currentData.GMSL - seaLevelData[0].GMSL;
+
   return (
-    <Box maxWidth="800px" margin="0 auto" padding="20px">
-      <Text fontSize="2xl" color="white" textAlign="center" mb={4}>
-        Havsnivåförändringar
-      </Text>
-      <Liquid {...config} />
-      <input
-        type="range"
-        min={0}
-        max={seaLevelData.length - 1}
-        value={currentIndex}
-        onChange={(e) => setCurrentIndex(parseInt(e.target.value))}
-        style={{ width: '100%', marginTop: '20px' }}
-      />
+    <Box 
+      maxWidth="800px" 
+      margin="0 auto" 
+      padding="20px"
+      backgroundImage="url('/images/OceanAnime.svg')"
+      backgroundSize="cover"
+      backgroundPosition="center"
+      borderRadius="lg"
+      boxShadow="xl"
+    >
+      <VStack spacing={4}>
+        <Text fontSize="2xl" color="white" textAlign="center" fontWeight="bold">
+          Havsnivåförändringar
+        </Text>
+        
+        <Box width="100%" maxWidth="400px">
+          <Liquid {...config} />
+        </Box>
+
+        <VStack 
+          spacing={3} 
+          bg="rgba(0, 0, 0, 0.7)" 
+          p={4} 
+          borderRadius="md" 
+          width="100%"
+          color="white"
+        >
+          <Stat>
+            <StatLabel>År</StatLabel>
+            <StatNumber>{currentData.Time.split('-')[0]}</StatNumber>
+          </Stat>
+          
+          <Stat>
+            <StatLabel>Global havsnivå (GMSL)</StatLabel>
+            <StatNumber>{currentData.GMSL.toFixed(1)} mm</StatNumber>
+            <StatHelpText>±{currentData['GMSL uncertainty'].toFixed(1)} mm osäkerhet</StatHelpText>
+          </Stat>
+
+          <Stat>
+            <StatLabel>Total förändring sedan 1880</StatLabel>
+            <StatNumber>{totalChange.toFixed(1)} mm</StatNumber>
+          </Stat>
+        </VStack>
+
+        <input
+          type="range"
+          min={0}
+          max={seaLevelData.length - 1}
+          value={currentIndex}
+          onChange={(e) => setCurrentIndex(parseInt(e.target.value))}
+          style={{ width: '100%', marginTop: '20px' }}
+        />
+      </VStack>
     </Box>
   );
 };
