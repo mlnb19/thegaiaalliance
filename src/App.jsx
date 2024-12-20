@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Box, Container, Heading, Flex, Link, Circle, Stack } from '@chakra-ui/react';
 

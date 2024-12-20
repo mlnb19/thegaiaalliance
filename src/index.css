@@ -1,4 +1,9 @@
 
+<old_str>
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+</old_str>
+<new_str>
+/* Add any global styles here if needed */
+</new_str>

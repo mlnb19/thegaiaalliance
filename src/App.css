@@ -1,2 +1,15 @@
 
-/* Your custom styles here */
+<old_str>
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-black;
+  }
+}
+</old_str>
+<new_str>
+/* Add any custom CSS here if needed */
+</new_str>
