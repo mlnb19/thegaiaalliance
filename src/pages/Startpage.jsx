@@ -4,7 +4,7 @@ import { Liquid } from '@ant-design/plots';
 import { GiBrain, GiNotebook } from "react-icons/gi";
 import { FaRegUserCircle } from "react-icons/fa";
 import { AiOutlineLogout } from "react-icons/ai";
-import LiquidChart from './LiquidChart';
+import SeaLevelChart from './SeaLevelChart';
 
 
 
@@ -119,59 +119,59 @@ function Startpage() {
                 </Box>
               </SimpleGrid>
 
-              {/* Percentage Display */}
-              <Box 
-                bg="#111" 
-                borderRadius="xl" 
-                p={8} 
-                flex={1} 
-                cursor="pointer"
-                onClick={() => setIsModalOpen(true)}
-                transition="transform 0.2s"
-                _hover={{ transform: 'scale(1.02)' }}
-              >
-                <Text color="white" fontSize="2xl" fontWeight="bold">
-                  Havsnivån har ökat med 30% de senaste 10 åren
-                </Text>
-                <Text color="gray.500" mt="4">Klicka för att lära dig mer om detta</Text>
-                <Box height="120px" mt={6}>
-                  <Liquid 
-                    percent={0.3}
-                    outline={{
-                      border: 2,
-                      distance: 4,
-                    }}
-                    wave={{
-                      length: 128,
-                    }}
-                    statistic={false}
-                    style={{
-                      height: '100%',
-                    }}
-                  />
-                </Box>
-              </Box>
+    {/* Percentage Display */}
+    <Box 
+      bg="#111" 
+      borderRadius="xl" 
+      p={8} 
+      flex={1} 
+      cursor="pointer"
+      onClick={() => setIsModalOpen(true)}
+      transition="transform 0.2s"
+      _hover={{ transform: 'scale(1.02)' }}
+    >
+      <Text color="white" fontSize="2xl" fontWeight="bold">
+        Havsnivån har ökat med 30% de senaste 10 åren
+      </Text>
+      <Text color="gray.500" mt="4">Klicka för att lära dig mer om detta</Text>
+      <Box height="120px" mt={6}>
+        <Liquid 
+          percent={0.3}
+          outline={{
+            border: 2,
+            distance: 4,
+          }}
+          wave={{
+            length: 128,
+          }}
+          statistic={false}
+          style={{
+            height: '100%',
+          }}
+        />
+      </Box>
+    </Box>
 
-              <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} size="4xl" isCentered>
-                <ModalOverlay backdropFilter="blur(10px)" />
-                <ModalContent 
-                  bg="black" 
-                  boxShadow="0px 0px 20px rgba(0, 0, 0, 0.5)"
-                  maxW="80vw"
-                  maxH="80vh"
-                  borderRadius="xl"
-                  overflow="hidden"
-                >
-                  <ModalCloseButton color="white" zIndex="10" />
-                  <Box w="100%" h="100%" p={6}>
-                    <LiquidChart />
-                  </Box>
-                </ModalContent>
-              </Modal>
-            </Flex>
-          </GridItem>
-        </Grid>
-      </Container>
+    <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} size="4xl" isCentered>
+      <ModalOverlay backdropFilter="blur(10px)" />
+      <ModalContent 
+        bg="black" 
+        boxShadow="0px 0px 20px rgba(0, 0, 0, 0.5)"
+        maxW="80vw"
+        maxH="100vh"
+        borderRadius="xl"
+        overflow="hidden"
+      >
+        <ModalCloseButton color="white" zIndex="10" />
+        <Box w="100%" h="100%" p={6}>
+          <SeaLevelChart />
+        </Box>
+      </ModalContent>
+    </Modal>
+    </Flex>
+    </GridItem>
+    </Grid>
+    </Container>
     </Box>
   );
 }

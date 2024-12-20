@@ -2,7 +2,7 @@ import React from 'react';
 import Welcome from './pages/Welcome';
 import Startpage from './pages/Startpage';
 import GlacierChart from './pages/GlacierChart';
-import LiquidChart from './pages/LiquidChart';
+import SeaLevelChart from './pages/SeaLevelChart';
 
 function App() {
   return (
