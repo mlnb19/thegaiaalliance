@@ -142,12 +142,20 @@ function Startpage() {
                 </SimpleGrid>
               </Box>
 
-              <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} size="xl">
+              <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} size="full">
                 <ModalOverlay backdropFilter="blur(10px)" />
-                <ModalContent bg="black" boxShadow="none" maxW="1000px" borderRadius="20px">
-                  <ModalCloseButton color="white" />
-                  {/* Replace with your actual LiquidChart component */}
-                  <div><LiquidChart /></div>
+                <ModalContent 
+                  bg="black" 
+                  boxShadow="none" 
+                  maxW="100vw" 
+                  h="100vh" 
+                  m="0"
+                  borderRadius="0"
+                >
+                  <ModalCloseButton color="white" zIndex="10" />
+                  <Box w="100%" h="100%" overflow="hidden">
+                    <LiquidChart />
+                  </Box>
                 </ModalContent>
               </Modal>
             </Flex>

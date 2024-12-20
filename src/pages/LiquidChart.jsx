@@ -52,20 +52,18 @@ const LiquidChart = () => {
     <Box
       position="relative"
       bg="#000"
-      padding="20px"
-      maxHeight="100vh"
-      overflow="hidden"
+      h="100vh"
+      w="100vw"
       display="flex"
       justifyContent="center"
       alignItems="center"
-      borderRadius="xl"
     >
       <Grid
         templateColumns={{ base: '1fr', md: '1fr 1fr' }}
         gap={4}
-        maxWidth="1000px"
-        width="100%"
-        maxHeight="500px"
+        w="100%"
+        h="100%"
+        p={6}
       >
         {/* Left Section */}
         <Box>
