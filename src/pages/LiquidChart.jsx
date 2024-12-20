@@ -1,79 +1,19 @@
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Liquid } from '@ant-design/plots';
 
 const LiquidChart = () => {
-  const [seaLevelData, setSeaLevelData] = useState([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    fetch('/data/SeaLevel%20.json')
-      .then((response) => response.json())
-      .then((data) => {
-        const filteredData = data.filter((item) => {
-          const year = parseInt(item.Time.split('-')[0]);
-          return year % 10 === 0;
-        });
-        setSeaLevelData(filteredData);
-      });
-  }, []);
-
-  if (seaLevelData.length === 0) return <div style={{ color: 'white' }}>Loading...</div>;
-
-  const currentData = seaLevelData[currentIndex];
-  const minGMSL = Math.min(...seaLevelData.map((d) => d.GMSL));
-  const maxGMSL = Math.max(...seaLevelData.map((d) => d.GMSL));
-  const normalizedPercent = (currentData?.GMSL - minGMSL) / (maxGMSL - minGMSL);
-
   const config = {
-    percent: normalizedPercent,
-    shape: 'pin',
-    outline: {
-      border: 4,
-      distance: 8,
-    },
-    wave: {
-      length: 128,
-    },
-    theme: {
-      styleSheet: {
-        backgroundColor: '#1a1a1a',
-      }
-    },
-    statistic: {
-      title: {
-        formatter: () => currentData?.Time.split('-')[0],
-        style: {
-          color: '#fff',
-          fontSize: '20px',
-        },
-      },
-      content: {
-        style: {
-          color: '#fff',
-          fontSize: '16px',
-        },
-        formatter: () => `${currentData?.GMSL.toFixed(1)} mm`,
-      },
+    percent: 0.3,
+    style: {
+      backgroundFill: 'pink',
     },
   };
 
   return (
-    <div style={{ maxWidth: '800px', margin: '0 auto', padding: '20px', background: '#1a1a1a' }}>
+    <div style={{ maxWidth: '800px', margin: '0 auto', padding: '20px' }}>
       <h2 style={{ color: 'white', textAlign: 'center' }}>Havsnivåförändringar</h2>
       <Liquid {...config} />
-      <div style={{ textAlign: 'center', marginTop: '20px', color: 'white' }}>
-        <p style={{ fontSize: '1.2em' }}>År: {currentData?.Time.split('-')[0]}</p>
-        <p style={{ fontSize: '1.2em' }}>Havsnivå: {currentData?.GMSL.toFixed(1)} mm</p>
-      </div>
-      <input
-        type="range"
-        min="0"
-        max={seaLevelData.length - 1}
-        value={currentIndex}
-        onChange={(e) => setCurrentIndex(parseInt(e.target.value))}
-        style={{ width: '100%', marginTop: '20px' }}
-      />
     </div>
   );
 };
