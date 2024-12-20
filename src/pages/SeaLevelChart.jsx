@@ -23,13 +23,13 @@ const SeaLevelChart = () => {
       });
   }, []);
 
-  const filteredData = seaLevelData.slice(
+  const filteredData = seaLevelData.length ? seaLevelData.slice(
     Math.floor(seaLevelData.length * (yearRange[0] / 100)),
-    Math.floor(seaLevelData.length * (yearRange[1] / 100))
-  );
+    Math.ceil(seaLevelData.length * (yearRange[1] / 100))
+  ) : [];
 
   const config = {
-    data: filteredData,
+    data: filteredData.length ? filteredData : seaLevelData,
     xField: 'year',
     yField: 'GMSL',
     colorField: 'year',
