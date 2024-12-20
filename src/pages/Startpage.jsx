@@ -6,7 +6,7 @@ function Startpage() {
   return (
     <Box minH="100vh" bg="black" display="flex" flexDirection="column" py={8}>
       <Container maxW="container.xl" h="100%">
-        <Grid templateColumns="repeat(3, 1fr)" gap={6} h="100%">
+        <Grid templateColumns="repeat(3, 1fr)" gap="25px" h="700px" p={6}>
           {/* Left Column */}
           <GridItem display="flex" flexDirection="column" justifyContent="space-between">
             <Box
@@ -31,7 +31,7 @@ function Startpage() {
           </GridItem>
 
           {/* Middle Column */}
-          <GridItem display="flex" flexDirection="column" justifyContent="space-between" gap={6}>
+          <GridItem display="flex" flexDirection="column" gap="25px">
             <Box
               p="0.2%"
               bgGradient="linear(to-r, blue, green)"
@@ -68,8 +68,8 @@ function Startpage() {
 
           {/* Right Column */}
           <GridItem display="flex" flexDirection="column" justifyContent="space-between">
-            <Flex direction="column" gap={6} flex={1}>
-              <Flex gap={6}>
+            <Flex direction="column" gap="25px" h="100%">
+              <Flex gap="25px" flex="2">
                 <Box
                   p="0.2%"
                   bgGradient="linear(to-r, blue, green)"
