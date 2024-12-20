@@ -47,6 +47,21 @@ const LiquidChart = () => {
   };
 
   const totalChange = currentData.GMSL - seaLevelData[0].GMSL;
+  const calculatePercentageChange = () => {
+    const previousDecadeIndex = Math.max(0, currentIndex - 1);
+    const previousData = seaLevelData[previousDecadeIndex];
+    const percentChange = ((currentData.GMSL - previousData.GMSL) / Math.abs(previousData.GMSL)) * 100;
+    return Math.abs(percentChange).toFixed(1);
+  };
+
+  // Update parent component's text content
+  useEffect(() => {
+    const percentage = calculatePercentageChange();
+    const year = currentData.Time.split('-')[0];
+    const prevYear = seaLevelData[Math.max(0, currentIndex - 1)].Time.split('-')[0];
+    const textContent = `Sea levels har ökat med ${percentage}% mellan ${prevYear}-${year}`;
+    document.querySelector('[data-sea-level-text]').textContent = textContent;
+  }, [currentIndex]);
 
   return (
     <Box

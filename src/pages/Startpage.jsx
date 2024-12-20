@@ -129,7 +129,7 @@ function Startpage() {
                 transition="transform 0.2s"
                 _hover={{ transform: 'scale(1.02)' }}
               >
-                <Text color="white" fontSize="2xl" fontWeight="bold">
+                <Text color="white" fontSize="2xl" fontWeight="bold" data-sea-level-text>
                   Sea levels har ökat med 80% mellan 2003-2013
                 </Text>
                 <Text color="gray.500">Statistik om sea levels and so on</Text>
