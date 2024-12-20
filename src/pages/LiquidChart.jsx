@@ -111,14 +111,31 @@ const LiquidChart = () => {
           </Stat>
         </VStack>
 
-        <input
-          type="range"
-          min={0}
-          max={seaLevelData.length - 1}
-          value={currentIndex}
-          onChange={(e) => setCurrentIndex(parseInt(e.target.value))}
-          style={{ width: '100%', marginTop: '20px' }}
-        />
+        <Box 
+          width="100%" 
+          padding="20px" 
+          background="rgba(0, 0, 0, 0.7)"
+          borderRadius="md"
+          marginTop="20px"
+        >
+          <input
+            type="range"
+            min={0}
+            max={seaLevelData.length - 1}
+            value={currentIndex}
+            onChange={(e) => setCurrentIndex(parseInt(e.target.value))}
+            style={{ 
+              width: '100%',
+              height: '20px',
+              borderRadius: '10px',
+              background: 'linear-gradient(to right, #2b6cb0, #4299e1)',
+              cursor: 'pointer'
+            }}
+          />
+          <Text color="white" textAlign="center" marginTop="10px">
+            Drag to change year: {currentData.Time.split('-')[0]}
+          </Text>
+        </Box>
       </VStack>
     </Box>
   );
