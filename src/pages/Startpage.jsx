@@ -3,6 +3,7 @@ import { Box, Container, Text, Grid, GridItem, Flex, Center, Image, Avatar, Simp
 import { GiBrain, GiNotebook } from "react-icons/gi";
 import { FaRegUserCircle } from "react-icons/fa";
 import { AiOutlineLogout } from "react-icons/ai";
+import LiquidChart from './LiquidChart';
 
 
 
@@ -143,10 +144,10 @@ function Startpage() {
 
               <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} size="xl">
                 <ModalOverlay backdropFilter="blur(10px)" />
-                <ModalContent bg="transparent" boxShadow="none" maxW="1000px">
+                <ModalContent bg="black" boxShadow="none" maxW="1000px" borderRadius="20px">
                   <ModalCloseButton color="white" />
                   {/* Replace with your actual LiquidChart component */}
-                  <div>LiquidChart Placeholder</div>
+                  <div><LiquidChart /></div>
                 </ModalContent>
               </Modal>
             </Flex>
