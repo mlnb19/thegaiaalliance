@@ -157,7 +157,7 @@ function Startpage() {
       <ModalContent 
         bg="black" 
         boxShadow="0px 0px 20px rgba(0, 0, 0, 0.5)"
-        maxW="80vw"
+        maxW="100vw"
         maxH="100vh"
         borderRadius="xl"
         overflow="hidden"
