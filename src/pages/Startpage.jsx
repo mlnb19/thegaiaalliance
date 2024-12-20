@@ -142,18 +142,18 @@ function Startpage() {
                 </SimpleGrid>
               </Box>
 
-              <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} size="full">
+              <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} size="4xl" isCentered>
                 <ModalOverlay backdropFilter="blur(10px)" />
                 <ModalContent 
                   bg="black" 
-                  boxShadow="none" 
-                  maxW="100vw" 
-                  h="100vh" 
-                  m="0"
-                  borderRadius="0"
+                  boxShadow="0px 0px 20px rgba(0, 0, 0, 0.5)"
+                  maxW="80vw"
+                  maxH="80vh"
+                  borderRadius="xl"
+                  overflow="hidden"
                 >
                   <ModalCloseButton color="white" zIndex="10" />
-                  <Box w="100%" h="100%" overflow="hidden">
+                  <Box w="100%" h="100%" p={6}>
                     <LiquidChart />
                   </Box>
                 </ModalContent>
