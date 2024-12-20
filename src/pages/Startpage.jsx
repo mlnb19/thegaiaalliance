@@ -5,7 +5,7 @@ import { Box, Container, Text, Grid, GridItem, Flex, Image, Button } from '@chak
 function Startpage() {
   return (
     <Box minH="100vh" bg="black" p={8}>
-      <Container maxW="container.xl" h="calc(100vh - 4rem)">
+      <Container maxW="container.xl" h="calc(100vh - 16rem)" my={8}>
         <Grid
           templateColumns="1fr 1fr 1fr"
           gap={6}
