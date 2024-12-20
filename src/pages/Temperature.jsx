@@ -13,7 +13,7 @@ const SettingsPage = () => {
         right="0"
         w="50%"
         h="50%"
-        bgGradient="linear(to-bl, red.500, pink.400, red.600)"
+        bgGradient="linear(to-bl, red.500, green.400, red.600)"
         filter="blur(100px)"
         opacity="0.5"
         borderRadius="full"
