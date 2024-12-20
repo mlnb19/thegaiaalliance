@@ -50,7 +50,7 @@ const LiquidChart = () => {
   const totalChange = currentData.GMSL - seaLevelData[0].GMSL;
 
   return (
-    <Box position="relative">
+    <Box position="relative bg-[#000]">
       <Box
         position="absolute"
         top="0"
