@@ -24,9 +24,10 @@ function Welcome() {
             border="2px"
             borderColor="black"
             overflow="hidden"
-          >
-            <Image src="/images/profile.png" alt="Profile" objectFit="cover"/>
-          </Circle>
+            backgroundImage="/images/profile.png"
+            backgroundSize="cover"
+            backgroundPosition="center"
+          />
           <Circle
             size="48px"
             border="2px"
