@@ -12,11 +12,13 @@ const SeaLevelChart = () => {
     fetch('/data/SeaLevel.json')
       .then((response) => response.json())
       .then((data) => {
-        const formattedData = data.map((item) => ({
-          year: item.Time.split('-')[0],
-          GMSL: item.GMSL,
-          uncertainty: item['GMSL uncertainty'],
-        }));
+        const formattedData = data
+          .map((item) => ({
+            year: item.Time.split('-')[0],
+            GMSL: item.GMSL,
+            uncertainty: item['GMSL uncertainty'],
+          }))
+          .filter(item => parseInt(item.year) % 10 === 0);
         setSeaLevelData(formattedData);
       });
   }, []);
