@@ -2,8 +2,11 @@
 import React from 'react';
 import { Box, Flex, IconButton } from '@chakra-ui/react';
 import { FaHome, FaUser, FaBell, FaCog } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
   return (
     <Box position="fixed" top="0" right="0" p={4} zIndex={10}>
       <Flex gap={2}>
@@ -13,6 +16,7 @@ const Navbar = () => {
           variant="ghost"
           color="white"
           _hover={{ bg: 'whiteAlpha.200' }}
+          onClick={() => navigate('/')}
         />
         <IconButton
           icon={<FaUser />}
@@ -20,6 +24,7 @@ const Navbar = () => {
           variant="ghost"
           color="white"
           _hover={{ bg: 'whiteAlpha.200' }}
+          onClick={() => navigate('/profile')}
         />
         <IconButton
           icon={<FaBell />}
@@ -27,6 +32,7 @@ const Navbar = () => {
           variant="ghost"
           color="white"
           _hover={{ bg: 'whiteAlpha.200' }}
+          onClick={() => navigate('/notifications')}
         />
         <IconButton
           icon={<FaCog />}
@@ -34,6 +40,7 @@ const Navbar = () => {
           variant="ghost"
           color="white"
           _hover={{ bg: 'whiteAlpha.200' }}
+          onClick={() => navigate('/settings')}
         />
       </Flex>
     </Box>
