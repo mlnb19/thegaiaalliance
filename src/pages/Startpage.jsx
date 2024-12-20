@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Box, Container, Text, Grid, GridItem, Flex, Image, Button, Center } from '@chakra-ui/react';
 import { GiBrain, GiNotebook } from "react-icons/gi";
@@ -72,14 +71,13 @@ function Startpage() {
           {/* Right Column */}
           <GridItem>
             <Flex gap={6} h="100%">
-              <Box position="relative" borderRadius="xl" p="1px" flex={1} _before={{
+              <Box position="relative" borderRadius="xl" p="2px" flex={1} bgGradient="linear(to-b, whiteAlpha.200, transparent)" borderRadius="xl" _before={{
                 content: '""',
                 position: 'absolute',
                 top: 0,
                 right: 0,
                 bottom: 0,
                 left: 0,
-                background: 'linear-gradient(180deg, rgba(255,255,255,0.07) 0%, rgba(217,217,217,0) 100%)',
                 borderRadius: 'xl',
                 zIndex: -1,
               }}>
@@ -92,14 +90,13 @@ function Startpage() {
                   </Center>
                 </Box>
               </Box>
-              <Box position="relative" borderRadius="xl" p="1px" flex={1} _before={{
+              <Box position="relative" borderRadius="xl" p="2px" flex={1} bgGradient="linear(to-b, whiteAlpha.200, transparent)" borderRadius="xl" _before={{
                 content: '""',
                 position: 'absolute',
                 top: 0,
                 right: 0,
                 bottom: 0,
                 left: 0,
-                background: 'linear-gradient(180deg, rgba(255,255,255,0.07) 0%, rgba(217,217,217,0) 100%)',
                 borderRadius: 'xl',
                 zIndex: -1,
               }}>
