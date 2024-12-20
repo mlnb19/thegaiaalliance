@@ -1,6 +1,6 @@
 
-import { Rose } from '@ant-design/plots';
 import React, { useState, useEffect } from 'react';
+import { Area } from '@ant-design/plots';
 import { Box, Text } from '@chakra-ui/react';
 import { Slider } from 'antd';
 
@@ -12,14 +12,10 @@ const SeaLevelChart = () => {
     fetch('/data/SeaLevel.json')
       .then(response => response.json())
       .then(data => {
-        const formattedData = data
-          .filter(item => parseInt(item.Time.split('-')[0]) % 10 === 0)
-          .map(item => ({
-            year: item.Time.split('-')[0],
-            value: Math.abs(item.GMSL),
-            category: 'Sea Level'
-          }))
-          .sort((a, b) => a.value - b.value);
+        const formattedData = data.map(item => ({
+          date: new Date(item.Time),
+          value: Math.abs(item.GMSL)
+        }));
         setSeaLevelData(formattedData);
       });
   }, []);
@@ -31,21 +27,19 @@ const SeaLevelChart = () => {
 
   const config = {
     data: filteredData,
-    xField: 'year',
+    xField: 'date',
     yField: 'value',
-    colorField: 'year',
-    radius: 0.9,
-    theme: {
-      defaultColor: '#73A5C6',
+    smooth: true,
+    areaStyle: () => {
+      return {
+        fill: 'l(270) 0:#ffffff 0.5:#73A5C6 1:#1E3F66',
+      };
     },
-    color: ['#73A5C6', '#1E3F66'],
-    tooltip: {
-      formatter: (datum) => {
-        return { name: 'Sea Level Change', value: `${datum.value.toFixed(1)} mm` };
+    line: {
+      style: {
+        stroke: '#1E3F66',
       },
     },
-    legend: false,
-    interactions: [{ type: 'element-active' }],
   };
 
   return (
@@ -56,12 +50,10 @@ const SeaLevelChart = () => {
           range
           defaultValue={[0, 100]}
           onChange={setYearRange}
-          style={{ 
-            width: '100%',
-          }}
+          style={{ width: '100%' }}
         />
       </Box>
-      <Rose {...config} />
+      <Area {...config} />
     </Box>
   );
 };
