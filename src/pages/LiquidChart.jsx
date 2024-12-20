@@ -28,7 +28,7 @@ const LiquidChart = () => {
   const config = {
     percent: normalizedPercent,
     style: {
-      backgroundFill: 'pink',
+      backgroundFill: "url('/images/ocean.svg')",
     },
     statistic: {
       title: {
