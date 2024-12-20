@@ -4,9 +4,9 @@ import { GiBrain, GiNotebook } from "react-icons/gi";
 
 function Startpage() {
   return (
-    <Box minH="100vh" bg="black" p={8}>
-      <Container maxW="container.xl" h="calc(100vh - 5rem)" my={2}>
-        <Grid templateColumns="repeat(3, 1fr)" gap={6} h="100%" alignItems="stretch">
+    <Box minH="100vh" bg="black" p={8} display="flex" alignItems="center">
+      <Container maxW="container.xl" h="auto">
+        <Grid templateColumns="repeat(3, 1fr)" gap={6} minH="80vh" alignItems="stretch">
           {/* Left Column */}
           <GridItem>
             <Box
