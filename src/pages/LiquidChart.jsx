@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Liquid } from '@ant-design/plots';
 
@@ -6,11 +7,9 @@ const LiquidChart = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    // Ladda JSON-data (kontrollera att filen är korrekt länkad)
     fetch('/data/SeaLevel%20.json')
       .then((response) => response.json())
       .then((data) => {
-        // Filtrera data för var tionde år
         const filteredData = data.filter((item) => {
           const year = parseInt(item.Time.split('-')[0]);
           return year % 10 === 0;
@@ -21,20 +20,14 @@ const LiquidChart = () => {
 
   if (seaLevelData.length === 0) return <div style={{ color: 'white' }}>Loading...</div>;
 
-  // Hämta aktuell datapunkt
   const currentData = seaLevelData[currentIndex];
-
-  // Normalisering för Liquid-diagrammet med justerat intervall
   const minGMSL = Math.min(...seaLevelData.map((d) => d.GMSL));
   const maxGMSL = Math.max(...seaLevelData.map((d) => d.GMSL));
-  const adjustedMin = minGMSL + (maxGMSL - minGMSL) * 0.05; // 5% from bottom
-  const adjustedMax = maxGMSL - (maxGMSL - minGMSL) * 0.05; // 5% from top
-  const normalizedPercent = Math.min(0.9, Math.max(0.1, (currentData?.GMSL - adjustedMin) / (adjustedMax - adjustedMin)));
+  const normalizedPercent = (currentData?.GMSL - minGMSL) / (maxGMSL - minGMSL);
 
-  // Konfiguration för Liquid-diagrammet
   const config = {
     percent: normalizedPercent,
-    shape: 'circle',
+    shape: 'pin',
     outline: {
       border: 4,
       distance: 8,
@@ -42,29 +35,31 @@ const LiquidChart = () => {
     wave: {
       length: 128,
     },
-    style: {
-      backgroundImage: 'url(/images/logo.svg)', // Lägger till bakgrundsbild
-      backgroundSize: 'cover',
-      backgroundRepeat: 'no-repeat',
-      borderRadius: '10px',
+    theme: {
+      styleSheet: {
+        backgroundColor: '#1a1a1a',
+      }
     },
     statistic: {
       title: {
-        formatter: () => `År ${currentData?.Time.split('-')[0]}`,
-        style: { color: 'white', fontSize: '20px' },
+        formatter: () => currentData?.Time.split('-')[0],
+        style: {
+          color: '#fff',
+          fontSize: '20px',
+        },
       },
       content: {
-        formatter: () => `${currentData?.GMSL.toFixed(1)} mm`, // Visa i millimeter
-        style: { color: 'white', fontSize: '16px' },
+        style: {
+          color: '#fff',
+          fontSize: '16px',
+        },
+        formatter: () => `${currentData?.GMSL.toFixed(1)} mm`,
       },
-    },
-    theme: {
-      color: '#3b82f6', // Grundfärg för vätskan
     },
   };
 
   return (
-    <div style={{ maxWidth: '800px', margin: '0 auto', padding: '20px' }}>
+    <div style={{ maxWidth: '800px', margin: '0 auto', padding: '20px', background: '#1a1a1a' }}>
       <h2 style={{ color: 'white', textAlign: 'center' }}>Havsnivåförändringar</h2>
       <Liquid {...config} />
       <div style={{ textAlign: 'center', marginTop: '20px', color: 'white' }}>
