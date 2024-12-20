@@ -51,6 +51,12 @@ const LiquidChart = () => {
   return (
     <div style={{ maxWidth: '800px', margin: '0 auto', padding: '20px' }}>
       <h2 style={{ color: 'white', textAlign: 'center' }}>Havsnivåförändringar</h2>
+      <div style={{ color: 'white', textAlign: 'center', marginBottom: '20px' }}>
+        <p>År: {currentData?.Time.split('-')[0]}</p>
+        <p>Global havsnivå (GMSL): {currentData?.GMSL.toFixed(1)} mm</p>
+        <p>Osäkerhetsmarginal: ±{currentData?.['GMSL uncertainty'].toFixed(1)} mm</p>
+        <p>Totalt förändring sedan 1880: {(currentData?.GMSL - seaLevelData[0]?.GMSL).toFixed(1)} mm</p>
+      </div>
       <Liquid {...config} />
       <div style={{ textAlign: 'center', marginTop: '20px' }}>
         <input
