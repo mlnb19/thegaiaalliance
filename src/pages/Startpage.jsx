@@ -144,6 +144,7 @@ function Startpage() {
                     wave={{
                       length: 128,
                     }}
+                    statistic={false}
                     style={{
                       height: '100%',
                     }}

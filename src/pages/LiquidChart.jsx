@@ -34,16 +34,7 @@ const LiquidChart = () => {
     wave: {
       length: 128,
     },
-    statistic: {
-      title: {
-        formatter: () => currentData?.Time.split('-')[0],
-        style: { color: '#fff', fontSize: '24px' },
-      },
-      content: {
-        formatter: () => `${currentData?.GMSL.toFixed(1)} mm`,
-        style: { color: '#fff', fontSize: '20px' },
-      },
-    },
+    statistic: false
   };
 
   const totalChange = currentData.GMSL - seaLevelData[0].GMSL;
