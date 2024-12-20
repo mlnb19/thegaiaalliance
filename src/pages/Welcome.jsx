@@ -67,13 +67,13 @@ function Welcome() {
             as={motion.div}
             animation="bounce"
             animate={{
-              y: [0, 8, 0],
+              y: [0, 8]
             }}
             transition={{
-              duration: 3,
+              duration: 1.5,
               repeat: Infinity,
-              ease: "easeInOut",
-              times: [0, 0.5, 1]
+              repeatType: "reverse",
+              ease: "easeInOut"
             }}
             color="white"
             fontSize="40px"
