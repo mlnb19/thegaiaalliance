@@ -1,33 +1,44 @@
+
 import { Rose } from '@ant-design/plots';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const SeaLevelChart = () => {
+  const [seaLevelData, setSeaLevelData] = useState([]);
+
+  useEffect(() => {
+    fetch('/data/SeaLevel.json')
+      .then(response => response.json())
+      .then(data => {
+        const formattedData = data
+          .filter(item => parseInt(item.Time.split('-')[0]) % 10 === 0)
+          .map(item => ({
+            year: item.Time.split('-')[0],
+            value: Math.abs(item.GMSL),
+            category: 'Sea Level'
+          }));
+        setSeaLevelData(formattedData);
+      });
+  }, []);
+
   const config = {
-    width: 720,
-    height: 720,
-    autoFit: false,
-    radius: 0.85,
-    data: {
-      type: 'fetch',
-      value: 'public/data/SeaLevel.json',
-    },
+    data: seaLevelData,
     xField: 'year',
-    yField: 'people',
+    yField: 'value',
     colorField: 'year',
-    transform: [{ type: 'groupX', y: 'sum' }],
-    scale: { y: { type: 'sqrt' }, x: { padding: 0 } },
-    axis: false,
-    legend: { color: { length: 400, layout: { justifyContent: 'center' } } },
-    labels: [
-      {
-        text: 'people',
-        position: 'outside',
-        formatter: '~s',
-        transform: [{ type: 'overlapDodgeY' }],
+    radius: 0.9,
+    theme: {
+      defaultColor: '#73A5C6',
+    },
+    color: ['#73A5C6', '#1E3F66'],
+    tooltip: {
+      formatter: (datum) => {
+        return { name: 'Sea Level Change', value: `${datum.value.toFixed(1)} mm` };
       },
-    ],
-    tooltip: { items: [{ channel: 'y', valueFormatter: '~s' }] },
+    },
+    legend: false,
+    interactions: [{ type: 'element-active' }],
   };
+
   return <Rose {...config} />;
 };
 
