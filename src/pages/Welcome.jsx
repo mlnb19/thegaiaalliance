@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 const Welcome = () => {
   return (
-    <Box bg="#0d0d0d" minH="100vh" position="relative">
+    <Box bg="#0d0d0d" minH="100vh" position="relative" w="100vw" overflow="hidden" m="0" p="0">
       <Box
         pos="absolute"
         top="0"
