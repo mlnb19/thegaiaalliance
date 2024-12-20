@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, Text, Grid, GridItem, Flex, Image, Button, Center } from '@chakra-ui/react';
+import { Box, Container, Text, Grid, GridItem, Flex, Center, Image } from '@chakra-ui/react';
 import { GiBrain, GiNotebook } from "react-icons/gi";
 
 function Startpage() {
@@ -9,17 +9,13 @@ function Startpage() {
         <Grid templateColumns="repeat(3, 1fr)" gap={6} h="100%" alignItems="stretch">
           {/* Left Column */}
           <GridItem>
-            <Box position="relative" borderRadius="xl" p="2px" bgGradient="linear(to-b, whiteAlpha.200, transparent)" borderRadius="xl" _before={{
-              content: '""',
-              position: 'absolute',
-              top: 0,
-              right: 0,
-              bottom: 0,
-              left: 0,
-              borderRadius: 'xl',
-              zIndex: -1,
-            }}>
-              <Box bg="#111" borderRadius="xl" p={6}>
+            <Box
+              p="0.2%" // Padding for border effect
+              bgGradient="linear(to-r, blue, green)" // Gradient for the border
+              borderRadius="xl"
+              overflow="hidden"
+            >
+              <Box bg="#111" borderRadius="inherit" p={6} h="100%">
                 <Text color="#ff6b6b" mb={2}>Här är lite statistik</Text>
                 <Text color="white" fontSize="2xl" fontWeight="bold" mb={3}>
                   Nåt om glaciär eller havsnivån
@@ -36,77 +32,85 @@ function Startpage() {
 
           {/* Middle Column */}
           <GridItem display="flex" flexDirection="column" gap={6}>
-            <Box position="relative" borderRadius="xl" p="2px" flex={1} bgGradient="linear(to-b, whiteAlpha.200, transparent)" borderRadius="xl" _before={{
-              content: '""',
-              position: 'absolute',
-              top: 0,
-              right: 0,
-              bottom: 0,
-              left: 0,
-              borderRadius: 'xl',
-              zIndex: -1,
-            }}>
-              <Box bg="#111" borderRadius="xl" p={6} h="100%">
+            <Box
+              p="0.2%" // Padding for border effect
+              bgGradient="linear(to-r, blue, green)" // Gradient for the border
+              borderRadius="xl"
+              overflow="hidden"
+            >
+              <Box bg="#111" borderRadius="inherit" p={6} h="100%">
                 <Text color="white" fontSize="2xl" fontWeight="bold">
                   Trusted by 500+ users
                 </Text>
               </Box>
             </Box>
-            <Box position="relative" borderRadius="xl" p="2px" flex={1} bgGradient="linear(to-b, whiteAlpha.200, transparent)" borderRadius="xl" _before={{
-              content: '""',
-              position: 'absolute',
-              top: 0,
-              right: 0,
-              bottom: 0,
-              left: 0,
-              borderRadius: 'xl',
-              zIndex: -1,
-            }}>
-              <Box bg="#111" borderRadius="xl" p={6} h="100%">
+            <Box
+              p="0.2%" // Padding for border effect
+              bgGradient="linear(to-r, blue, green)" // Gradient for the border
+              borderRadius="xl"
+              overflow="hidden"
+            >
+              <Box bg="#111" borderRadius="inherit" p={6} h="100%">
                 <Text color="white" fontSize="xl">Feature name</Text>
+              </Box>
+            </Box>
+            <Box
+              p="0.2%" // Padding for border effect
+              bgGradient="linear(to-r, blue, green)" // Gradient for the border
+              borderRadius="xl"
+              overflow="hidden"
+            >
+              <Box bg="#111" borderRadius="inherit" p={6} h="100%">
+                <Text color="white" fontSize="xl">New Feature Box</Text>
               </Box>
             </Box>
           </GridItem>
 
           {/* Right Column */}
           <GridItem>
-            <Flex gap={6} h="100%">
-              <Box position="relative" borderRadius="xl" p="2px" flex={1} bgGradient="linear(to-b, whiteAlpha.200, transparent)" borderRadius="xl" _before={{
-                content: '""',
-                position: 'absolute',
-                top: 0,
-                right: 0,
-                bottom: 0,
-                left: 0,
-                borderRadius: 'xl',
-                zIndex: -1,
-              }}>
-                <Box bg="#111" borderRadius="xl" p={6} h="100%">
-                  <Box as="span" color="white" fontSize="2xl" mb={2}>
-                    <GiBrain />
+            <Flex direction="column" gap={6} h="100%">
+              <Flex gap={6} flex="1">
+                <Box
+                  p="0.2%" // Padding for border effect
+                  bgGradient="linear(to-r, blue, green)" // Gradient for the border
+                  borderRadius="xl"
+                  overflow="hidden"
+                  flex="1"
+                >
+                  <Box bg="#111" borderRadius="inherit" p={6} h="100%">
+                    <Box as="span" color="white" fontSize="2xl" mb={2}>
+                      <GiBrain />
+                    </Box>
+                    <Center color="white" mb="auto" fontSize="xl">
+                      Memory
+                    </Center>
                   </Box>
-                  <Center color="white" mb="auto" fontSize="xl">
-                    Memory
-                  </Center>
                 </Box>
-              </Box>
-              <Box position="relative" borderRadius="xl" p="2px" flex={1} bgGradient="linear(to-b, whiteAlpha.200, transparent)" borderRadius="xl" _before={{
-                content: '""',
-                position: 'absolute',
-                top: 0,
-                right: 0,
-                bottom: 0,
-                left: 0,
-                borderRadius: 'xl',
-                zIndex: -1,
-              }}>
-                <Box bg="#111" borderRadius="xl" p={6} h="100%">
-                  <Box as="span" color="white" fontSize="2xl" mb={2}>
-                    <GiNotebook />
+                <Box
+                  p="0.2%" // Padding for border effect
+                  bgGradient="linear(to-r, blue, green)" // Gradient for the border
+                  borderRadius="xl"
+                  overflow="hidden"
+                  flex="1"
+                >
+                  <Box bg="#111" borderRadius="inherit" p={6} h="100%">
+                    <Box as="span" color="white" fontSize="2xl" mb={2}>
+                      <GiNotebook />
+                    </Box>
+                    <Center color="white" mb="auto" fontSize="xl">
+                      Quiz
+                    </Center>
                   </Box>
-                  <Center color="white" mb="auto" fontSize="xl">
-                    Quiz
-                  </Center>
+                </Box>              
+              </Flex>
+              <Box
+                p="0.2%" // Padding for border effect
+                bgGradient="linear(to-r, blue, green)" // Gradient for the border
+                borderRadius="xl"
+                overflow="hidden"
+              >
+                <Box bg="#111" borderRadius="inherit" p={6} h="100%">
+                  <Text color="white" fontSize="xl">New Box</Text>
                 </Box>
               </Box>
             </Flex>
