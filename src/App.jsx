@@ -1,36 +1,52 @@
 
-import './App.css'
+import React from 'react';
+import { Box, Container, Heading, Flex, Link, Circle, Stack } from '@chakra-ui/react';
 
 function App() {
   return (
-    <main className="min-h-screen bg-black relative overflow-hidden">
-      {/* Gradient blob */}
-      <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-pink-600 via-red-500 to-purple-700 blur-3xl opacity-50 rounded-full"></div>
+    <Box minH="100vh" bg="black" pos="relative" overflow="hidden">
+      <Box
+        pos="absolute"
+        top="0"
+        right="0"
+        w="50%"
+        h="50%"
+        bgGradient="linear(to-bl, pink.600, red.500, purple.700)"
+        filter="blur(100px)"
+        opacity="0.5"
+        borderRadius="full"
+      />
       
-      <div className="container mx-auto px-4 py-8 relative">
-        {/* Profile images */}
-        <div className="flex -space-x-2 mb-6">
+      <Container maxW="container.xl" px={4} py={8} pos="relative">
+        <Flex mb={6} gap="-8px">
           {[1, 2, 3].map((i) => (
-            <div key={i} className="w-12 h-12 rounded-full border-2 border-black overflow-hidden bg-gray-300">
-              <div className="w-full h-full bg-gray-400"></div>
-            </div>
+            <Circle
+              key={i}
+              size="48px"
+              border="2px"
+              borderColor="black"
+              overflow="hidden"
+              bg="gray.300"
+            >
+              <Box w="full" h="full" bg="gray.400" />
+            </Circle>
           ))}
-        </div>
+        </Flex>
 
-        {/* Title */}
-        <h1 className="text-white text-5xl font-bold mb-8">
+        <Heading color="white" fontSize="5xl" fontWeight="bold" mb={8}>
           VÄLKOMMEN,<br />ALICE
-        </h1>
+        </Heading>
 
-        {/* Navigation */}
-        <nav className="flex justify-end gap-8 text-white">
-          <a href="#profil" className="hover:text-gray-300">Profil</a>
-          <a href="#faq" className="hover:text-gray-300">FAQ</a>
-          <a href="#kontakt" className="hover:text-gray-300">KONTAKT</a>
-        </nav>
-      </div>
-    </main>
-  )
+        <Flex justify="flex-end" gap={8}>
+          <Stack direction="row" spacing={8}>
+            <Link href="#profil" color="white" _hover={{ color: 'gray.300' }}>Profil</Link>
+            <Link href="#faq" color="white" _hover={{ color: 'gray.300' }}>FAQ</Link>
+            <Link href="#kontakt" color="white" _hover={{ color: 'gray.300' }}>KONTAKT</Link>
+          </Stack>
+        </Flex>
+      </Container>
+    </Box>
+  );
 }
 
-export default Appp
+export default App;
