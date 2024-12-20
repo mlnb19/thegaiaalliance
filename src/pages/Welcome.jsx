@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Container, Heading, Flex, Link, Circle, Stack, Image } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
 
 function Welcome() {
   return (
@@ -11,7 +12,7 @@ function Welcome() {
         right="0"
         w="50%"
         h="50%"
-        bgGradient="linear(to-bl, pink.600, red.500, purple.700)"
+        bgGradient="linear(to-bl, blue.600, green.500, blue.700)"
         filter="blur(100px)"
         opacity="0.5"
         borderRadius="full"
@@ -20,7 +21,7 @@ function Welcome() {
       <Container maxW="container.xl" px={4} py={8} pos="relative">
         <Flex mb={6} gap="-8px">
                     <Circle
-            size="75px"
+            size="100px"
             border="2px"
             borderColor="black"
             overflow="hidden"
@@ -28,13 +29,15 @@ function Welcome() {
             <Image src="/images/logo.svg" alt="Logo" objectFit="contain"/>
           </Circle>
           <Box
-            width="70px"
-            height="70px"
+            width="110px"
+            height="75px"
             position="relative"
             clipPath="polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)"
             overflow="hidden"
             border="2px"
             borderColor="black"
+            marginLeft= "-35px"
+            marginTop ="25px"
           >
             <Image 
               src="/images/profile.png" 
@@ -47,17 +50,36 @@ function Welcome() {
 
         </Flex>
 
-        <Heading color="white" fontSize="5xl" fontWeight="bold" mb={8}>
+        <Heading color="white" fontSize="9xl" fontWeight="bold" mb={8} fontFamily="bungee" marginTop="75px">
           VÄLKOMMEN,<br />ALICE
         </Heading>
 
         <Flex justify="flex-end" gap={8}>
           <Stack direction="row" spacing={8}>
-            <Link href="#profil" color="white" _hover={{ color: 'gray.300' }}>Profil</Link>
-            <Link href="#faq" color="white" _hover={{ color: 'gray.300' }}>FAQ</Link>
-            <Link href="#kontakt" color="white" _hover={{ color: 'gray.300' }}>KONTAKT</Link>
+            <Link href="#profil" color="white" fontFamily="monospace" fontSize="20px" _hover={{ color: 'gray.300' }}>Profil</Link>
+            <Link href="#faq" color="white" fontFamily="monospace" fontSize="20px" _hover={{ color: 'gray.300' }}>FAQ</Link>
+            <Link href="#kontakt" color="white" fontFamily="monospace" fontSize="20px" _hover={{ color: 'gray.300' }}>KONTAKT</Link>
           </Stack>
         </Flex>
+
+        <Box position="absolute" bottom="40px" left="50%" transform="translateX(-50%)" textAlign="center">
+          <Box
+            as={motion.div}
+            animation="bounce"
+            animate={{
+              y: [0, 10, 0],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            color="white"
+            fontSize="40px"
+          >
+            ↓
+          </Box>
+        </Box>
       </Container>
     </Box>
     </Box>
