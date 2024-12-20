@@ -83,10 +83,10 @@ function Temperature() {
                   <Center flexDirection="column">
                     <Box as="span" color="red.300" fontSize="2xl" mb={4}>
                       <FaTemperatureHigh size={24}/>
-                    </Center>
+                    </Box>
                     <Text color="gray.400" fontSize="sm">PROGNOS</Text>
-                  </Center>
-                </Box>
+                  </Box>
+                </Center>
               </SimpleGrid>
 
               <Box 
