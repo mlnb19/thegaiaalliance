@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Box, Container, Text, Grid, GridItem, Flex, Center, Image, Avatar, SimpleGrid, Modal, ModalOverlay, ModalContent, ModalCloseButton } from '@chakra-ui/react';
 import Navbar from '../components/Navbar';
@@ -76,7 +75,7 @@ function Glaciers() {
                   <Center flexDirection="column">
                     <Box as="span" color="cyan.200" fontSize="2xl" mb={4}>
                       <GiSnowflake size={24}/>
-                    </Center>
+                    </Box>
                     <Text color="gray.400" fontSize="sm">STATUS</Text>
                   </Center>
                 </Box>
@@ -84,7 +83,7 @@ function Glaciers() {
                   <Center flexDirection="column">
                     <Box as="span" color="cyan.200" fontSize="2xl" mb={4}>
                       <GiIceberg size={24}/>
-                    </Center>
+                    </Box>
                     <Text color="gray.400" fontSize="sm">DATA</Text>
                   </Center>
                 </Box>
