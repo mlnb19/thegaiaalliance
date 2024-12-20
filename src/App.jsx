@@ -2,20 +2,22 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ChakraProvider } from '@chakra-ui/react';
-import Sealevels from './pages/Sealevels';
-import ProfilePage from './pages/ProfilePage';
-import NotificationsPage from './pages/NotificationsPage';
-import SettingsPage from './pages/SettingsPage';
+import SeaLevels from './pages/SeaLevels';
+import Temperature from './pages/Temperature';
+import Co2 from './pages/Co2';
+import Glaciers from './pages/Glaciers';
+import Welcome from './pages/Welcome';
 
 function App() {
   return (
     <ChakraProvider>
       <Router>
         <Routes>
-          <Route path="/" element={<Sealevels />} />
-          <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/notifications" element={<NotificationsPage />} />
-          <Route path="/settings" element={<SettingsPage />} />
+          <Route path="/" element={<Welcome />} />
+          <Route path="/sealevels" element={<SeaLevels />} />
+          <Route path="/temperature" element={<Temperature />} />
+          <Route path="/co2" element={<Co2 />} />
+          <Route path="/glaciers" element={<Glaciers />} />
         </Routes>
       </Router>
     </ChakraProvider>
