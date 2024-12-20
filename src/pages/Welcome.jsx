@@ -1,55 +1,23 @@
+
 import React from 'react';
-import { Box, Container, Heading, Flex, Link, Circle, Stack, Image } from '@chakra-ui/react';
+import { Box, Container, Heading, Stack, Link, Flex } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
-function Welcome() {
+const Welcome = () => {
   return (
-    <Box minH="100vh" bg="black" pos="relative" overflow="hidden" p="50px">
-  <Box border="1px solid" borderColor="gray" borderRadius="50px" w="100%" h="85vh" pos="relative">
+    <Box bg="#0d0d0d" minH="100vh" position="relative">
       <Box
         pos="absolute"
         top="0"
         right="0"
         w="50%"
         h="50%"
-        bgGradient="linear(to-bl, blue.600, green.500, blue.700)"
+        bgGradient="linear(to-bl, blue.600, cyan.500, blue.700)"
         filter="blur(100px)"
         opacity="0.5"
         borderRadius="full"
       />
-
-      <Container maxW="container.xl" px={4} py={8} pos="relative">
-        <Flex mb={6} gap="-8px">
-                    <Circle
-            size="100px"
-            border="2px"
-            borderColor="black"
-            overflow="hidden"
-          >
-            <Image src="/images/logo.svg" alt="Logo" objectFit="contain"/>
-          </Circle>
-          <Box
-            width="110px"
-            height="75px"
-            position="relative"
-            clipPath="polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)"
-            overflow="hidden"
-            border="2px"
-            borderColor="black"
-            marginLeft= "-35px"
-            marginTop ="25px"
-          >
-            <Image 
-              src="/images/profile.png" 
-              alt="Profile"
-              objectFit="cover"
-              width="100%"
-              height="100%"
-            />
-          </Box>
-
-        </Flex>
-
+      <Container maxW="container.xl" position="relative" zIndex={1}>
         <Heading color="white" fontSize="9xl" fontWeight="bold" mb={8} fontFamily="bungee" marginTop="75px">
           VÄLKOMMEN,<br />ALICE
         </Heading>
@@ -59,20 +27,20 @@ function Welcome() {
             <Link href="/sealevels" color="white" fontFamily="monospace" fontSize="20px" _hover={{ color: 'gray.300' }}>HAVSNIVÅER</Link>
             <Link href="/glaciers" color="white" fontFamily="monospace" fontSize="20px" _hover={{ color: 'gray.300' }}>GLACIÄRER</Link>
             <Link href="/co2" color="white" fontFamily="monospace" fontSize="20px" _hover={{ color: 'gray.300' }}>CO2</Link>
-            <Link href="#faq" color="white" fontFamily="monospace" fontSize="20px" _hover={{ color: 'gray.300' }}>TEMPERATUR</Link>
+            <Link href="/temperature" color="white" fontFamily="monospace" fontSize="20px" _hover={{ color: 'gray.300' }}>TEMPERATUR</Link>
           </Stack>
         </Flex>
 
         <Box position="absolute" bottom="40px" left="50%" transform="translateX(-50%)" textAlign="center">
           <motion.div
             animate={{
-              y: [0, -8, 0] // Pilen rör sig upp och ner
+              y: [0, -8, 0]
             }}
             transition={{
-              duration: 1.5, // Tidslängd för en cykel
-              repeat: Infinity, // Upprepa för alltid
-              repeatType: "loop", // Loop utan stopp
-              ease: "easeInOut" // Mjuk rörelse
+              duration: 1.5,
+              repeat: Infinity,
+              repeatType: "loop",
+              ease: "easeInOut"
             }}
             style={{
               color: "white",
@@ -84,8 +52,7 @@ function Welcome() {
         </Box>
       </Container>
     </Box>
-    </Box>
-  )
+  );
 };
 
 export default Welcome;

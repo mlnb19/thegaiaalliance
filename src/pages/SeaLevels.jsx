@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Box, Container, Text, Grid, GridItem, Flex, Center, Image, Avatar, SimpleGrid, Modal, ModalOverlay, ModalContent, ModalCloseButton } from '@chakra-ui/react';
-import Navbar from '../components/Navbar';
+import Navbar from './Navbar';
 import { Liquid } from '@ant-design/plots';
 import { GiBrain, GiNotebook } from "react-icons/gi";
 import { FaRegUserCircle } from "react-icons/fa";
