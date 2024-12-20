@@ -1,10 +1,10 @@
 import React from 'react';
-import { Box, Container, Heading, Flex, Link, Circle, Stack } from '@chakra-ui/react';
+import { Box, Container, Heading, Flex, Link, Circle, Stack, Image } from '@chakra-ui/react';
 
 function Welcome() {
   return (
-    <Box minH="100vh" bg="black" pos="relative" overflow="hidden" p="20px">
-  <Box border="1px solid" borderColor="white" w="100%" h="100%" pos="relative">
+    <Box minH="100vh" bg="black" pos="relative" overflow="hidden" p="50px">
+  <Box border="1px solid" borderColor="gray" borderRadius="50px" w="100%" h="85vh" pos="relative">
       <Box
         pos="absolute"
         top="0"
@@ -19,18 +19,22 @@ function Welcome() {
 
       <Container maxW="container.xl" px={4} py={8} pos="relative">
         <Flex mb={6} gap="-8px">
-          {[1, 2, 3].map((i) => (
-            <Circle
-              key={i}
-              size="48px"
-              border="2px"
-              borderColor="black"
-              overflow="hidden"
-              bg="gray.300"
-            >
-              <Box w="full" h="full" bg="gray.400" />
-            </Circle>
-          ))}
+          <Circle
+            size="48px"
+            border="2px"
+            borderColor="black"
+            overflow="hidden"
+          >
+            <Image src="/images/profile.png" alt="Profile" objectFit="cover"/>
+          </Circle>
+          <Circle
+            size="48px"
+            border="2px"
+            borderColor="black"
+            overflow="hidden"
+          >
+            <Image src="/images/logo.svg" alt="Logo" objectFit="contain"/>
+          </Circle>
         </Flex>
 
         <Heading color="white" fontSize="5xl" fontWeight="bold" mb={8}>
