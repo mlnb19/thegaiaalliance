@@ -130,7 +130,7 @@ function Startpage() {
                 _hover={{ transform: 'scale(1.02)' }}
               >
                 <Text color="white" fontSize="2xl" fontWeight="bold">
-                  Sea levels har ökat med 30% de senaste 10 åren
+                  Sea levels har ökat med 80% mellan 2003-2013
                 </Text>
                 <Text color="gray.500">Statistik om sea levels and so on</Text>
                 <SimpleGrid columns={5} gap={2} mt={6}>
