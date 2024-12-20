@@ -19,23 +19,32 @@ function Welcome() {
 
       <Container maxW="container.xl" px={4} py={8} pos="relative">
         <Flex mb={6} gap="-8px">
-          <Circle
-            size="48px"
-            border="2px"
-            borderColor="black"
-            overflow="hidden"
-            backgroundImage="/images/profile.png"
-            backgroundSize="cover"
-            backgroundPosition="center"
-          />
-          <Circle
-            size="48px"
+                    <Circle
+            size="75px"
             border="2px"
             borderColor="black"
             overflow="hidden"
           >
             <Image src="/images/logo.svg" alt="Logo" objectFit="contain"/>
           </Circle>
+          <Box
+            width="70px"
+            height="70px"
+            position="relative"
+            borderRadius="63% 37% 54% 46% / 55% 48% 52% 45%"
+            overflow="hidden"
+            border="2px"
+            borderColor="black"
+          >
+            <Image 
+              src="/images/profile.png" 
+              alt="Profile"
+              objectFit="cover"
+              width="100%"
+              height="100%"
+            />
+          </Box>
+
         </Flex>
 
         <Heading color="white" fontSize="5xl" fontWeight="bold" mb={8}>
