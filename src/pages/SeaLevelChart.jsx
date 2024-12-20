@@ -1,7 +1,8 @@
 
 import { Rose } from '@ant-design/plots';
 import React, { useState, useEffect } from 'react';
-import { Box, Slider, Text } from '@chakra-ui/react';
+import { Box, Text } from '@chakra-ui/react';
+import { Slider } from 'antd';
 
 const SeaLevelChart = () => {
   const [seaLevelData, setSeaLevelData] = useState([]);
@@ -51,15 +52,13 @@ const SeaLevelChart = () => {
       <Box mb={4}>
         <Text color="white" mb={2}>Filter Years</Text>
         <Slider
-          aria-label="year-range"
+          range
           defaultValue={[0, 100]}
-          min={0}
-          max={100}
-          step={1}
           onChange={setYearRange}
-          colorScheme="blue"
-        >
-        </Slider>
+          style={{ 
+            width: '100%',
+          }}
+        />
       </Box>
       <Rose {...config} />
     </Box>
