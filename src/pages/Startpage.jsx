@@ -1,14 +1,27 @@
 
 import React from 'react';
-import { Box, Container, Text, Grid, GridItem, Flex, Center, Image, Avatar, SimpleGrid, BoxShadow } from '@chakra-ui/react';
+import { Box, Container, Text, Grid, GridItem, Flex, Center, Image, Avatar, SimpleGrid } from '@chakra-ui/react';
 import { GiBrain, GiNotebook } from "react-icons/gi";
 import { FaRegUserCircle } from "react-icons/fa";
 
 
 function Startpage() {
   return (
-    <Box minH="100vh" bg="black" display="flex" alignItems="center" justifyContent="center" >
-      <Container maxW="container.xl">
+    <Box minH="100vh" bg="#0d0d0d" display="flex" alignItems="center" justifyContent="center" position="relative">
+      <Box
+        pos="absolute"
+        top="50%"
+        left="50%"
+        transform="translate(-50%, -50%)"
+        w="80%"
+        h="80%"
+        bgGradient="linear(to-bl, blue.600, green.500, blue.700)"
+        filter="blur(100px)"
+        opacity="0.5"
+        borderRadius="full"
+        zIndex={0}
+      />
+      <Container maxW="container.xl" position="relative" zIndex={1}>
         <Grid templateColumns="repeat(12, 1fr)" gap={6} h="600px" >
           {/* Left Column - Major Feature */}
           <GridItem colSpan={5} >
@@ -34,7 +47,7 @@ function Startpage() {
 
               {/* Bottom Feature */}
 
-                            <Box bg="#111" borderRadius="xl" p={8} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
+                            <Box bg="#0d0d0d" borderRadius="xl" p={8} boxShadow="0px 2px 7px rgba(61, 61, 61)" border="0.5px">
                 <Text color="white" fontSize="4xl" fontWeight="bold" mb={4}>
                   Trusted by 500+ users
                 </Text>
