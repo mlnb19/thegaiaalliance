@@ -10,20 +10,25 @@ const SeaLevelChart = () => {
   const [yearRange, setYearRange] = useState([0, 100]);
 
   useEffect(() => {
-    fetch('/data/SeaLevel.json')
-      .then(response => response.json())
-      .then(data => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('/data/SeaLevel.json');
+        const data = await response.json();
         const formattedData = data
           .filter(item => {
             const year = parseInt(item.Time.split('-')[0]);
-            return year % 10 === 0; // Only keep years divisible by 10
+            return year % 10 === 0;
           })
           .map(item => ({
-            date: new Date(item.Time),
+            date: item.Time,
             value: Math.abs(item.GMSL)
           }));
         setSeaLevelData(formattedData);
-      });
+      } catch (error) {
+        console.error('Error loading data:', error);
+      }
+    };
+    fetchData();
   }, []);
 
   const filteredData = seaLevelData.slice(
@@ -36,14 +41,13 @@ const SeaLevelChart = () => {
     xField: 'date',
     yField: 'value',
     smooth: true,
-    areaStyle: () => ({
+    areaStyle: {
       fill: 'l(270) 0:#ffffff 0.5:#73A5C6 1:#1E3F66',
-    }),
+    },
     line: {
       style: { stroke: '#1E3F66' }
     },
     xAxis: {
-      tickCount: 10,
       label: {
         style: { fill: '#fff' }
       }
@@ -55,9 +59,10 @@ const SeaLevelChart = () => {
     },
     tooltip: {
       title: 'Havsnivå',
-      formatter: (datum) => {
-        return { name: 'Förändring', value: `${datum.value.toFixed(1)} mm` };
-      }
+      formatter: (datum) => ({
+        name: 'Förändring',
+        value: `${datum.value.toFixed(1)} mm`
+      })
     }
   };
 
@@ -70,7 +75,7 @@ const SeaLevelChart = () => {
         </Tooltip>
       </Box>
       <Box height="400px" mb={6}>
-        <Area {...config} />
+        {filteredData.length > 0 && <Area {...config} />}
       </Box>
       <Box mb={4}>
         <Text color="white" mb={2}>Filtrera År</Text>
@@ -78,12 +83,11 @@ const SeaLevelChart = () => {
           range
           defaultValue={[0, 100]}
           onChange={setYearRange}
-          style={{ width: '100%' }}
           tooltip={{
             formatter: (value) => {
               if (seaLevelData.length) {
-                const year = new Date(seaLevelData[Math.floor(seaLevelData.length * (value / 100))].date).getFullYear();
-                return `${year}`;
+                const index = Math.floor(seaLevelData.length * (value / 100));
+                return seaLevelData[index]?.date.split('-')[0] || value;
               }
               return value;
             }
