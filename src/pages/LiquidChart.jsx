@@ -8,7 +8,7 @@ const LiquidChart = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    fetch('/data/SeaLevel .json')
+    fetch('./data/SeaLevel .json')
       .then(response => response.json())
       .then(data => {
         // Filter data for every 10 years
