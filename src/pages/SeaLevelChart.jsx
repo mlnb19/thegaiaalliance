@@ -49,12 +49,22 @@ const SeaLevelChart = () => {
     },
     xAxis: {
       label: {
-        style: { fill: '#fff' }
+        style: { fill: '#fff' },
+        formatter: (text) => text.split('-')[0]
+      },
+      title: {
+        text: 'År',
+        style: { fill: '#fff', fontSize: 14 }
       }
     },
     yAxis: {
       label: {
-        style: { fill: '#fff' }
+        style: { fill: '#fff' },
+        formatter: (value) => `${value} mm`
+      },
+      title: {
+        text: 'Havsnivå (mm)',
+        style: { fill: '#fff', fontSize: 14 }
       }
     },
     tooltip: {
