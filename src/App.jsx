@@ -9,7 +9,6 @@ import Co2 from './pages/Co2';
 import Glaciers from './pages/Glaciers';
 import Welcome from './pages/Welcome';
 import Profile from './pages/Profile';
-
 import Logout from './pages/Logout';
 
 function App() {
@@ -21,7 +20,7 @@ function App() {
         <Faq isOpen={isFaqOpen} onClose={() => setIsFaqOpen(false)} />
         <Routes>
           <Route path="/" element={<Welcome setIsFaqOpen={setIsFaqOpen} />} />
-          <Route path="/sealevels" element={<SeaLevels />} />
+          <Route path="/sealevels" element={<SeaLevels setIsFaqOpen={setIsFaqOpen} />} />
           <Route path="/temperature" element={<Temperature />} />
           <Route path="/co2" element={<Co2 />} />
           <Route path="/glaciers" element={<Glaciers />} />

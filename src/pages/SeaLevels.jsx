@@ -13,7 +13,7 @@ import PopupModal from './PopupModal';
 
 
 
-function Startpage() {
+function Startpage({ setIsFaqOpen }) {
   const [isTipsModalOpen, setIsTipsModalOpen] = useState(false);
   const [isChartModalOpen, setIsChartModalOpen] = useState(false);
   const [isMemoryModalOpen, setIsMemoryModalOpen] = useState(false);
