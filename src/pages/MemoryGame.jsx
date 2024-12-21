@@ -59,7 +59,7 @@ function MemoryGame() {
     <VStack spacing={4} p={4}>
       <Text fontSize="2xl" color="white" mb={4}>Memory Spel</Text>
       <Text color="gray.300" mb={2}>Antal drag: {moves}</Text>
-      <SimpleGrid columns={4} spacing={4} maxW="400px">
+      <SimpleGrid columns={4} spacing={4} maxW="500px">
         {gameCards.map((card, index) => (
           <Box
             key={index}
@@ -73,6 +73,7 @@ function MemoryGame() {
             alignItems="center"
             justifyContent="center"
             fontSize="2xl"
+            width={100}
             transform={flipped.includes(index) ? "rotateY(180deg)" : ""}
           >
             {(flipped.includes(index) || solved.includes(index)) ? card.content : "❓"}
