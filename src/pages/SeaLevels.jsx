@@ -114,8 +114,12 @@ function Startpage() {
             borderRadius="xl"
             p={8} 
             boxShadow="0px 2px 7px rgba(61, 61, 61)" 
-            border="0.5px">
-          
+            border="0.5px"
+            cursor="pointer"
+            onClick={() => setIsChartModalOpen(true)}
+            transition="transform 0.2s"
+            _hover={{ transform: 'scale(1.02)' }}
+          >
             <Text 
               color="white"
               fontSize="4xl"
@@ -125,15 +129,25 @@ function Startpage() {
             </Text>
             
             <Text 
-              color="gray.500">
+              color="gray.500"
+              mb={4}>
               Statistik om havsnivån sen början av 1900-talet
             </Text>
             
-            <Flex 
-              gap={2} 
-              mt={4}>
-                <Avatar size="md" src="/images/profile.png" />
-            </Flex>
+            <Box height="120px">
+              <Liquid 
+                percent={0.3}
+                outline={{
+                  border: 2,
+                  distance: 4,
+                }}
+                wave={{
+                  length: 128,
+                }}
+                color="#73A5C6"
+                statistic={false}
+              />
+            </Box>
           </Box>
           
           <Box 
