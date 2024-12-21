@@ -28,7 +28,6 @@ const questions = [
     options: ["Översvämningar", "Torka", "Värmeböljor", "Skogsbränder"],
     correct: 0
   }
-]
 ];
 
 function QuizGame() {
