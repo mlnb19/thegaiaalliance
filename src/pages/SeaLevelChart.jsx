@@ -14,10 +14,12 @@ const SeaLevelChart = () => {
       try {
         const response = await fetch('/data/SeaLevel.json');
         const data = await response.json();
-        const formattedData = data.map(item => ({
-          year: parseInt(item.Time.split('-')[0]),
-          havsnivå: parseFloat(item.GMSL)
-        }));
+        const formattedData = data
+          .map(item => ({
+            year: parseInt(item.Time.split('-')[0]),
+            havsnivå: parseFloat(item.GMSL)
+          }))
+          .filter(item => item.year >= 1900 && (item.year % 10 === 0 || item.year === 2013));
         setSeaLevelData(formattedData);
       } catch (error) {
         console.error('Error loading data:', error);
