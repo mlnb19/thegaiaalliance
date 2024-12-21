@@ -88,6 +88,24 @@ const SeaLevelChart = () => {
             transition="height 0.8s ease-in-out"
             zIndex={2}
             borderRadius="md"
+            sx={{
+              '@keyframes wave': {
+                '0%': { transform: 'translateX(0)' },
+                '50%': { transform: 'translateX(-25%)' },
+                '100%': { transform: 'translateX(0)' }
+              },
+              '&::before': {
+                content: '""',
+                position: 'absolute',
+                top: '-15px',
+                left: 0,
+                right: 0,
+                height: '15px',
+                backgroundImage: 'linear-gradient(45deg, transparent 33.33%, rgba(0, 127, 255, 0.5) 33.33%, rgba(0, 127, 255, 0.5) 66.66%, transparent 66.66%)',
+                backgroundSize: '30px 15px',
+                animation: 'wave 3s linear infinite'
+              }
+            }}
           >
             {/* Vågor */}
             <Box
