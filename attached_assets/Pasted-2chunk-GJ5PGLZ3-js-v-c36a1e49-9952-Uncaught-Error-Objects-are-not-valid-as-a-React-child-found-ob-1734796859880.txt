@@ -1,0 +1,68 @@
+2chunk-GJ5PGLZ3.js?v=c36a1e49:9952 Uncaught Error: Objects are not valid as a React child (found: object with keys {top, right, bottom, left}). If you meant to render a collection of children, use an array instead.
+    at throwOnInvalidObjectType (chunk-GJ5PGLZ3.js?v=c36a1e49:9952:17)
+    at createChild (chunk-GJ5PGLZ3.js?v=c36a1e49:10128:15)
+    at reconcileChildrenArray (chunk-GJ5PGLZ3.js?v=c36a1e49:10300:33)
+    at reconcileChildFibers2 (chunk-GJ5PGLZ3.js?v=c36a1e49:10577:24)
+    at reconcileChildren (chunk-GJ5PGLZ3.js?v=c36a1e49:14310:37)
+    at updateHostComponent (chunk-GJ5PGLZ3.js?v=c36a1e49:14827:11)
+    at beginWork (chunk-GJ5PGLZ3.js?v=c36a1e49:15955:22)
+    at HTMLUnknownElement.callCallback2 (chunk-GJ5PGLZ3.js?v=c36a1e49:3674:22)
+    at Object.invokeGuardedCallbackDev (chunk-GJ5PGLZ3.js?v=c36a1e49:3699:24)
+    at invokeGuardedCallback (chunk-GJ5PGLZ3.js?v=c36a1e49:3733:39)Förstå det här feletAI
+hook.js:608 The above error occurred in the <div> component:
+
+    at div
+    at https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/chunk-BO2ZWQGL.js?v=c36a1e49:1389:45
+    at ChakraComponent (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/chunk-57NMDAEC.js?v=c36a1e49:8913:35)
+    at div
+    at https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/chunk-BO2ZWQGL.js?v=c36a1e49:1389:45
+    at ChakraComponent (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/chunk-57NMDAEC.js?v=c36a1e49:8913:35)
+    at https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/chunk-57NMDAEC.js?v=c36a1e49:24804:5
+    at VStack
+    at div
+    at https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/chunk-BO2ZWQGL.js?v=c36a1e49:1389:45
+    at ChakraComponent (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/chunk-57NMDAEC.js?v=c36a1e49:8913:35)
+    at Grid2 (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/chunk-57NMDAEC.js?v=c36a1e49:24535:5)
+    at SeaLevelChart (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/src/pages/SeaLevelChart.jsx:24:43)
+    at div
+    at https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/chunk-BO2ZWQGL.js?v=c36a1e49:1389:45
+    at ChakraComponent (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/chunk-57NMDAEC.js?v=c36a1e49:8913:35)
+    at section
+    at MotionComponent (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/chunk-57NMDAEC.js?v=c36a1e49:9449:40)
+    at https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/chunk-BO2ZWQGL.js?v=c36a1e49:1389:45
+    at ChakraComponent (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/chunk-57NMDAEC.js?v=c36a1e49:8913:35)
+    at https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/chunk-57NMDAEC.js?v=c36a1e49:28770:13
+    at div
+    at https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/chunk-BO2ZWQGL.js?v=c36a1e49:1389:45
+    at ChakraComponent (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/chunk-57NMDAEC.js?v=c36a1e49:8913:35)
+    at https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/chunk-57NMDAEC.js?v=c36a1e49:29136:21
+    at div
+    at FocusLockUI (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/chunk-57NMDAEC.js?v=c36a1e49:21956:48)
+    at FocusLockUICombination
+    at FocusLock2 (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/chunk-57NMDAEC.js?v=c36a1e49:23454:5)
+    at ModalFocusScope (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/chunk-57NMDAEC.js?v=c36a1e49:29638:7)
+    at https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/chunk-57NMDAEC.js?v=c36a1e49:29675:7
+    at DefaultPortal (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/chunk-57NMDAEC.js?v=c36a1e49:1390:11)
+    at Portal
+    at PresenceChild (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/chunk-57NMDAEC.js?v=c36a1e49:16250:24)
+    at AnimatePresence (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/chunk-57NMDAEC.js?v=c36a1e49:16316:26)
+    at Modal (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/chunk-57NMDAEC.js?v=c36a1e49:29094:19)
+    at div
+    at https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/chunk-BO2ZWQGL.js?v=c36a1e49:1389:45
+    at ChakraComponent (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/chunk-57NMDAEC.js?v=c36a1e49:8913:35)
+    at Flex2 (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/chunk-57NMDAEC.js?v=c36a1e49:25343:22)
+    at div
+    at https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/chunk-BO2ZWQGL.js?v=c36a1e49:1389:45
+    at ChakraComponent (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vit
+overrideMethod @ hook.js:608Förstå det här feletAI
+chunk-GJ5PGLZ3.js?v=c36a1e49:9145 Uncaught Error: Objects are not valid as a React child (found: object with keys {top, right, bottom, left}). If you meant to render a collection of children, use an array instead.
+    at throwOnInvalidObjectType (chunk-GJ5PGLZ3.js?v=c36a1e49:9952:17)
+    at createChild (chunk-GJ5PGLZ3.js?v=c36a1e49:10128:15)
+    at reconcileChildrenArray (chunk-GJ5PGLZ3.js?v=c36a1e49:10300:33)
+    at reconcileChildFibers2 (chunk-GJ5PGLZ3.js?v=c36a1e49:10577:24)
+    at reconcileChildren (chunk-GJ5PGLZ3.js?v=c36a1e49:14310:37)
+    at updateHostComponent (chunk-GJ5PGLZ3.js?v=c36a1e49:14827:11)
+    at beginWork (chunk-GJ5PGLZ3.js?v=c36a1e49:15955:22)
+    at beginWork$1 (chunk-GJ5PGLZ3.js?v=c36a1e49:19781:22)
+    at performUnitOfWork (chunk-GJ5PGLZ3.js?v=c36a1e49:19226:20)
+    at workLoopSync (chunk-GJ5PGLZ3.js?v=c36a1e49:19165:13)
