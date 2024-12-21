@@ -1,42 +1,46 @@
 
 import React from 'react';
 import { Box, Flex, IconButton } from '@chakra-ui/react';
-import { FaHome, FaUser, FaBell, FaCog } from 'react-icons/fa';
+import { FaUser, FaBell, FaCog } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+import { PiWaves } from "react-icons/pi";
+import { GiMountainCave, GiSmokeBomb } from "react-icons/gi";
+import { TbTemperatureCelsius } from "react-icons/tb";
+
 
 const Navbar = () => {
   const navigate = useNavigate();
 
   return (
-    <Box position="fixed" top="0" right="0" p={4} zIndex={10}>
+    <Box position="fixed" top="0" right="2" p={1} zIndex={10} marginTop={2} fontWeight={5} >
       <Flex gap={2}>
         <IconButton
-          icon={<FaHome />}
-          aria-label="Home"
+          icon={<PiWaves />}
+          aria-label="Sea Levels"
           variant="ghost"
           color="white"
           _hover={{ bg: 'whiteAlpha.200' }}
-          onClick={() => navigate('/')}
+          onClick={() => navigate('/sealevels')}
         />
         <IconButton
-          icon={<FaUser />}
-          aria-label="Profile"
+          icon={<GiMountainCave />}
+          aria-label="Glacier"
           variant="ghost"
           color="white"
           _hover={{ bg: 'whiteAlpha.200' }}
           onClick={() => navigate('/glaciers')}
         />
         <IconButton
-          icon={<FaBell />}
-          aria-label="Notifications"
+          icon={<GiSmokeBomb />}
+          aria-label="Co2"
           variant="ghost"
           color="white"
           _hover={{ bg: 'whiteAlpha.200' }}
           onClick={() => navigate('/co2')}
         />
         <IconButton
-          icon={<FaCog />}
-          aria-label="Settings"
+          icon={<TbTemperatureCelsius />}
+          aria-label="Temperature"
           variant="ghost"
           color="white"
           _hover={{ bg: 'whiteAlpha.200' }}

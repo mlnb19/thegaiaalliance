@@ -24,7 +24,7 @@ function Glaciers() {
         opacity="0.5"
         borderRadius="full"
       />
-      <Container maxW="container.xl" pt="80px">
+      <Container maxW="container.xl" pt="80px" position="relative" zIndex={1}>
         <HStack spacing={6} align="stretch">
           <VStack flex={1} spacing={6}>
             <Box bg="#111" borderRadius="xl" p={8} w="100%" boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
