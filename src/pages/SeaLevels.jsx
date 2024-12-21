@@ -136,9 +136,9 @@ function Startpage() {
       _hover={{ transform: 'scale(1.02)' }}
     >
       <Text color="white" fontSize="2xl" fontWeight="bold">
-        Havsnivån har ökat med 30% de senaste 10 åren
+        Nån statistik baserat på SeaLevel.json
       </Text>
-      <Text color="gray.500" mt="4">Klicka för att lära dig mer om detta</Text>
+      <Text color="gray.500" mt="4">Statistik om havsnivån sen 1880</Text>
       <Box height="120px" mt={6}>
         <Liquid 
           percent={0.3}
