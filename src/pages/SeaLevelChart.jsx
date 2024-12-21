@@ -88,7 +88,9 @@ const SeaLevelChart = () => {
             transition="height 0.8s ease-in-out"
             zIndex={2}
             borderRadius="md"
+            className="box"
             sx={{
+              '--mask': 'radial-gradient(178.89px at 50% 240px,#000 99%,#0000 101%) calc(50% - 160px) 0/320px 100%, radial-gradient(178.89px at 50% -160px,#0000 99%,#000 101%) 50% 80px/320px 100% repeat-x',
               '@keyframes wave': {
                 '0%': { transform: 'translateX(0)' },
                 '50%': { transform: 'translateX(-25%)' },
