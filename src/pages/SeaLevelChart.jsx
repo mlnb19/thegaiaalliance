@@ -1,27 +1,24 @@
+
 import React, { useState, useEffect } from 'react';
-import { Area } from '@ant-design/plots';
-import { Box, Text, Tooltip, Icon } from '@chakra-ui/react';
+import { ResponsiveStream } from '@nivo/stream';
+import { Box, Text, Tooltip } from '@chakra-ui/react';
 import { InfoOutlineIcon } from '@chakra-ui/icons';
-import { Slider } from 'antd';
 
 const SeaLevelChart = () => {
   const [seaLevelData, setSeaLevelData] = useState([]);
-  const [yearRange, setYearRange] = useState([0, 100]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch('/data/SeaLevel.json');
         const data = await response.json();
-        const formattedData = data
-          .filter((item) => {
-            const year = parseInt(item.Time.split('-')[0]);
-            return year % 10 === 0; // Filtrera för varje tionde år
-          })
-          .map((item) => ({
-            date: item.Time,
-            value: Math.abs(item.GMSL),
-          }));
+        const formattedData = data.filter(item => {
+          const year = parseInt(item.Time.split('-')[0]);
+          return year % 5 === 0; // Filter för vart 5:e år för bättre läsbarhet
+        }).map(item => ({
+          year: item.Time.split('-')[0],
+          havsnivå: Math.abs(item.GMSL)
+        }));
         setSeaLevelData(formattedData);
       } catch (error) {
         console.error('Error loading data:', error);
@@ -29,51 +26,6 @@ const SeaLevelChart = () => {
     };
     fetchData();
   }, []);
-
-  const filteredData = seaLevelData.slice(
-    Math.floor(seaLevelData.length * (yearRange[0] / 100)),
-    Math.ceil(seaLevelData.length * (yearRange[1] / 100))
-  );
-
-  const config = {
-    data: filteredData,
-    xField: 'date',
-    yField: 'value',
-    smooth: true,
-    areaStyle: {
-      fill: 'l(270) 0:#ffffff 0.5:#73A5C6 1:#1E3F66',
-    },
-    line: {
-      style: { stroke: '#1E3F66' },
-    },
-    xAxis: {
-      label: {
-        style: { fill: '#fff' },
-        formatter: (text) => text.split('-')[0],
-      },
-      title: {
-        text: 'År',
-        style: { fill: '#fff', fontSize: 14 },
-      },
-    },
-    yAxis: {
-      label: {
-        style: { fill: '#fff' },
-        formatter: (value) => `${value} mm`,
-      },
-      title: {
-        text: 'Havsnivå (mm)',
-        style: { fill: '#fff', fontSize: 14 },
-      },
-    },
-    tooltip: {
-      title: 'Havsnivå',
-      formatter: (datum) => ({
-        name: 'Förändring',
-        value: `${datum.value.toFixed(1)} mm`,
-      }),
-    },
-  };
 
   return (
     <Box>
@@ -84,45 +36,65 @@ const SeaLevelChart = () => {
             <InfoOutlineIcon color="gray.400" ml={2} />
           </Tooltip>
         </Box>
-        {seaLevelData.length > 0 && (
-          <Box>
-            <Text color="gray.400" fontSize="sm">
-              Tidsperiod: {seaLevelData[0].date.split('-')[0]} till {seaLevelData[seaLevelData.length - 1].date.split('-')[0]}
-            </Text>
-            <Text color="gray.400" fontSize="sm">
-              Total förändring: {seaLevelData[seaLevelData.length - 1].value.toFixed(1)} mm sedan {seaLevelData[0].date.split('-')[0]}
-            </Text>
-          </Box>
-        )}
       </Box>
       <Box height="400px" mb={6}>
-        {filteredData.length > 0 && <Area {...config} />}
-      </Box>
-      <Box mb={4}>
-        <Text color="white" mb={2}>Filtrera År</Text>
-        <Slider
-          range
-          defaultValue={[0, 100]}
-          onChange={setYearRange}
-          tooltip={{
-            formatter: (value) => {
-              if (seaLevelData.length) {
-                const index = Math.floor(seaLevelData.length * (value / 100));
-                const year = seaLevelData[index]?.date.split('-')[0];
-                return year || value;
+        {seaLevelData.length > 0 && (
+          <ResponsiveStream
+            data={seaLevelData}
+            keys={['havsnivå']}
+            margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
+            axisBottom={{
+              tickSize: 5,
+              tickPadding: 5,
+              tickRotation: -45,
+              legend: 'År',
+              legendOffset: 36,
+              legendPosition: 'middle',
+              format: v => v,
+            }}
+            axisLeft={{
+              tickSize: 5,
+              tickPadding: 5,
+              tickRotation: 0,
+              legend: 'Havsnivå (mm)',
+              legendOffset: -40,
+              legendPosition: 'middle'
+            }}
+            enableGridX={false}
+            enableGridY={true}
+            offsetType="none"
+            colors={{ scheme: 'blues' }}
+            fillOpacity={0.85}
+            borderColor={{ theme: 'background' }}
+            theme={{
+              textColor: '#fff',
+              fontSize: 11,
+              axis: {
+                domain: {
+                  line: {
+                    stroke: '#777777',
+                    strokeWidth: 1
+                  }
+                },
+                ticks: {
+                  line: {
+                    stroke: '#777777',
+                    strokeWidth: 1
+                  }
+                }
+              },
+              grid: {
+                line: {
+                  stroke: '#444444',
+                  strokeWidth: 1
+                }
               }
-              return value;
-            },
-          }}
-          marks={seaLevelData.reduce((acc, data, index) => {
-            acc[Math.floor((index / seaLevelData.length) * 100)] = data.date.split('-')[0];
-            return acc;
-          }, {})}
-        />
+            }}
+          />
+        )}
       </Box>
     </Box>
   );
 };
 
 export default SeaLevelChart;
-
