@@ -2,6 +2,10 @@
 import React from 'react';
 import { Box, Container, Heading, Stack, Link, Flex } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
+import { PiWaves } from "react-icons/pi";
+import { GiMountainCave, GiSmokeBomb } from "react-icons/gi";
+import { TbTemperatureCelsius } from "react-icons/tb";
+import { FaUserCircle, FaQuestionCircle } from "react-icons/fa";
 
 const Welcome = () => {
   return (
@@ -25,12 +29,12 @@ const Welcome = () => {
 
         <Flex justify="flex-end" gap={8}>
           <Stack direction="row" spacing={8}>
-            <Link href="/sealevels" color="white" fontFamily="monospace" fontSize="16px" _hover={{ color: 'gray.300' }}>HAVSNIVÅER</Link>
-            <Link href="/glaciers" color="white" fontFamily="monospace" fontSize="16px" _hover={{ color: 'gray.300' }}>GLACIÄRER</Link>
-            <Link href="/co2" color="white" fontFamily="monospace" fontSize="16px" _hover={{ color: 'gray.300' }}>CO2</Link>
-            <Link href="/temperature" color="white" fontFamily="monospace" fontSize="16px" _hover={{ color: 'gray.300' }}>TEMPERATUR</Link>
-            <Link href="/profile" color="white" fontFamily="monospace" fontSize="16px" _hover={{ color: 'gray.300' }} borderLeft="1px" borderColor="white" paddingLeft="25px" color="white" >PROFIL</Link>
-            <Link href="/faq" color="white" fontFamily="monospace" fontSize="16px" _hover={{ color: 'gray.300' }}>FAQ</Link>
+            <Link href="/sealevels" display="flex" alignItems="center" gap={2} color="white" fontFamily="monospace" fontSize="16px" fontWeight="bold" _hover={{ color: 'gray.300' }}><PiWaves size={20} />HAVSNIVÅER</Link>
+            <Link href="/glaciers" display="flex" alignItems="center" gap={2} color="white" fontFamily="monospace" fontSize="16px" fontWeight="bold" _hover={{ color: 'gray.300' }}><GiMountainCave size={20} />GLACIÄRER</Link>
+            <Link href="/co2" display="flex" alignItems="center" gap={2} color="white" fontFamily="monospace" fontSize="16px" fontWeight="bold" _hover={{ color: 'gray.300' }}><GiSmokeBomb size={20} />CO2</Link>
+            <Link href="/temperature" display="flex" alignItems="center" gap={2} color="white" fontFamily="monospace" fontSize="16px" fontWeight="bold" _hover={{ color: 'gray.300' }}><TbTemperatureCelsius size={20} />TEMPERATUR</Link>
+            <Link href="/profile" display="flex" alignItems="center" gap={2} color="white" fontFamily="monospace" fontSize="16px" fontWeight="bold" _hover={{ color: 'gray.300' }} borderLeft="1px" borderColor="white" paddingLeft="25px"><FaUserCircle size={20} />PROFIL</Link>
+            <Link href="/faq" display="flex" alignItems="center" gap={2} color="white" fontFamily="monospace" fontSize="16px" fontWeight="bold" _hover={{ color: 'gray.300' }}><FaQuestionCircle size={20} />FAQ</Link>
           </Stack>
         </Flex>
       </Container>
