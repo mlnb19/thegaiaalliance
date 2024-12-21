@@ -62,17 +62,22 @@ const SeaLevelChart = () => {
       {/* Vänster sida: Vattenanimation */}
       <Box position="relative" height="500px" flex="1" overflow="hidden" borderRadius="xl" bg="#222">
         {/* Stadsvy */}
-        <Image
-          src="/images/OceanAnime.svg"
-          alt="Havsbild"
+        <Box
           position="absolute"
           top="0"
           left="0"
           width="100%"
           height="100%"
-          objectFit="cover"
           zIndex="1"
-        />
+        >
+          <Image
+            src="/images/OceanAnime.svg"
+            alt="Havsbild"
+            width="100%"
+            height="100%"
+            objectFit="contain"
+          />
+        </Box>
         {/* Vattennivå */}
         <Box
           position="absolute"
@@ -80,9 +85,9 @@ const SeaLevelChart = () => {
           left="0"
           right="0"
           height={`${calculateHeightPercentage(currentLevel)}%`}
-          bgGradient="linear(to-b, rgba(0, 127, 255, 0.6), rgba(0, 127, 255, 1))"
+          bgGradient="linear(to-b, rgba(0, 127, 255, 0.3), rgba(0, 127, 255, 0.5))"
           transition="height 0.8s ease-in-out"
-          zIndex="2"
+          zIndex="0"
           borderRadius="md"
           _before={{
             content: '""',
