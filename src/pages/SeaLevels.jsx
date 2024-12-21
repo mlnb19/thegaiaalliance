@@ -267,33 +267,47 @@ function Startpage() {
         Havsnivåns förändring
       </Text>
       <Text color="gray.500" mt="4">Statistik om havsnivån sen 1880</Text>
-      <Box height="120px" mt={6}>
-        <Area
-          data={[
-            { year: '1980', value: 10 },
-            { year: '1990', value: 20 },
-            { year: '2000', value: 40 },
-            { year: '2010', value: 60 },
-            { year: '2020', value: 80 }
-          ]}
-          xField="year"
-          yField="value"
-          smooth={true}
-          areaStyle={{
-            fill: 'l(270) 0:#ffffff 0.5:#73A5C6 1:#1E3F66',
-          }}
-          line={{
-            style: { stroke: '#1E3F66' },
-          }}
+      <Box position="relative" height="300px" overflow="hidden" borderRadius="xl">
+        <Image
+          src="/images/quietstreet.svg"
+          alt="Stadsvy"
+          position="absolute"
+          top={0}
+          left={0}
+          width="100%"
+          height="100%"
+          zIndex={1}
         />
+        <Box
+          position="absolute"
+          bottom="0"
+          left="0"
+          right="0"
+          height="40%"
+          bgGradient="linear(to-t, rgba(0, 127, 255, 0.6), rgba(0, 127, 255, 0.2))"
+          transition="height 0.8s ease-in-out"
+          zIndex={2}
+          borderRadius="md"
+        >
+          <Box
+            position="absolute"
+            top="-20px"
+            left="0"
+            right="0"
+            height="40px"
+            background="url('/images/wave.jsx') repeat-x"
+            animation="wave 3s linear infinite"
+            zIndex={3}
+          />
+        </Box>
       </Box>
     </Box>
 
-    <Modal isOpen={isChartModalOpen} onClose={() => setIsChartModalOpen(false)} size="4xl">
+    <Modal isOpen={isChartModalOpen} onClose={() => setIsChartModalOpen(false)} size="full">
       <ModalOverlay backdropFilter="blur(10px)" />
-      <ModalContent bg="gray.900" p={6} maxW="90vw">
+      <ModalContent bg="gray.900" p={6} maxH="100vh" display="flex" alignItems="center" justifyContent="center">
         <ModalCloseButton color="white" />
-        <Box w="100%" h="600px">
+        <Box w="90%" h="90vh">
           <SeaLevelChart />
         </Box>
       </ModalContent>
