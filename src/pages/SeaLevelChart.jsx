@@ -56,18 +56,37 @@ const SeaLevelChart = () => {
         <Text color="white" fontSize="xl" fontWeight="bold">
           Havsnivå: {currentLevel > 0 ? `+${currentLevel.toFixed(1)}` : currentLevel.toFixed(1)} mm
         </Text>
-        <Box height="300px">
-          <Liquid 
-            percent={Math.abs(currentLevel) / 200}
-            outline={{
-              border: 4,
-              distance: 8,
+        <Box height="300px" position="relative">
+          <Box
+            position="absolute"
+            bottom="0"
+            left="0"
+            right="0"
+            height={`${Math.min(Math.max((currentLevel + 100) / 200 * 100, 0), 100)}%`}
+            bg="blue.400"
+            opacity="0.6"
+            transition="height 0.3s ease-in-out"
+            borderRadius="md"
+            _before={{
+              content: '""',
+              position: 'absolute',
+              top: '-10px',
+              left: 0,
+              right: 0,
+              height: '10px',
+              backgroundImage: 'linear-gradient(45deg, transparent 33.33%, rgba(0, 127, 255, 0.5) 33.33%, rgba(0, 127, 255, 0.5) 66.66%, transparent 66.66%)',
+              backgroundSize: '20px 10px',
+              animation: 'wave 2s linear infinite',
             }}
-            wave={{
-              length: 128,
-            }}
-            color="#007FFF"
           />
+          <style>
+            {`
+              @keyframes wave {
+                0% { background-position-x: 0; }
+                100% { background-position-x: 20px; }
+              }
+            `}
+          </style>
         </Box>
         <Box w="100%" >
           <Slider
