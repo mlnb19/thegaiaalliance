@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Box, Container, Text, Grid, GridItem, Flex, Center, Image, Avatar, SimpleGrid, Modal, ModalOverlay, ModalContent, ModalCloseButton, ModalHeader, ModalBody, VStack, Icon, Link } from '@chakra-ui/react';
+import MemoryGame from './MemoryGame';
 import Navbar from './Navbar';
 import { Liquid, Area } from '@ant-design/plots';
 import { GiBrain, GiNotebook } from "react-icons/gi";
@@ -13,6 +14,7 @@ import PopupModal from './PopupModal';
 function Startpage() {
   const [isTipsModalOpen, setIsTipsModalOpen] = useState(false);
   const [isChartModalOpen, setIsChartModalOpen] = useState(false);
+  const [isMemoryModalOpen, setIsMemoryModalOpen] = useState(false);
 
   return (
     <Box
@@ -168,11 +170,21 @@ function Startpage() {
                 fontSize="2xl" 
                 fontWeight="bold"
                 bgGradient='linear(to-l, #1E3F66, #91BAD6 )'
-                bgClip='text'>
+                bgClip='text'
+                cursor="pointer"
+                onClick={() => setIsMemoryModalOpen(true)}>
                   Spel: Memory
               </Text>
             </Flex>
           </Box>
+
+          <Modal isOpen={isMemoryModalOpen} onClose={() => setIsMemoryModalOpen(false)} size="xl">
+            <ModalOverlay backdropFilter="blur(10px)" />
+            <ModalContent bg="gray.900" p={4}>
+              <ModalCloseButton color="white" />
+              <MemoryGame />
+            </ModalContent>
+          </Modal>
 
       {/* Feature Name with Gradient */}
         <Box 
