@@ -1,13 +1,11 @@
 
 import React, { useState, useEffect } from 'react';
-import { ResponsiveStream } from '@nivo/stream';
-import { Box, Text, Tooltip, VStack, Image, Grid, Slider, SliderTrack, SliderFilledTrack, SliderThumb } from '@chakra-ui/react';
-import { InfoOutlineIcon } from '@chakra-ui/icons';
+import { Box, Text, Slider, SliderTrack, SliderFilledTrack, SliderThumb, Image, VStack } from '@chakra-ui/react';
 
 const SeaLevelChart = () => {
   const [seaLevelData, setSeaLevelData] = useState([]);
   const [currentLevel, setCurrentLevel] = useState(0);
-  const [selectedYear, setSelectedYear] = useState(1880);
+  const [selectedYear, setSelectedYear] = useState(1900);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,128 +35,81 @@ const SeaLevelChart = () => {
   };
 
   return (
-    <Grid templateColumns="1fr 1fr" gap={6}>
-      <VStack spacing={4} align="stretch" bg="#111" p={6} borderRadius="xl">
-        <Box display="flex" alignItems="center" mb={2}>
-          <Text color="white" fontSize="xl" fontWeight="bold">Havsnivåns Förändring</Text>
-          <Tooltip label="Grafen visar förändringen i den globala havsnivån över tid." bg="#1E3F66">
-            <InfoOutlineIcon color="blue.400" ml={2} />
-          </Tooltip>
-        </Box>
-        <Box height="400px">
-          {seaLevelData.length > 0 && (
-            <ResponsiveStream
-              data={seaLevelData}
-              keys={['havsnivå']}
-              margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
-              axisBottom={{
-                tickSize: 5,
-                tickPadding: 5,
-                tickRotation: -45,
-                format: d => d,
-                legend: 'År',
-                legendOffset: 36
-              }}
-              axisLeft={{
-                tickSize: 5,
-                tickPadding: 5,
-                tickRotation: 0,
-                legend: 'Havsnivå (mm)',
-                legendOffset: -40
-              }}
-              enableGridX={false}
-              enableGridY={true}
-              colors={['#60a5fa']}
-              fillOpacity={0.85}
-              theme={{
-                textColor: '#ffffff',
-                grid: {
-                  line: {
-                    stroke: '#334155'
-                  }
-                }
-              }}
-            />
-          )}
-        </Box>
-        <Box pt={4}>
-          <Text color="white" mb={2}>År: {selectedYear}</Text>
-          <Slider
-            min={1880}
-            max={2013}
-            step={1}
-            value={selectedYear}
-            onChange={handleYearChange}
-            colorScheme="blue"
-          >
-            <SliderTrack>
-              <SliderFilledTrack />
-            </SliderTrack>
-            <SliderThumb />
-          </Slider>
-        </Box>
-      </VStack>
-
-      <VStack spacing={4} align="stretch" bg="#111" p={6} borderRadius="xl">
-        <Text color="white" fontSize="xl" fontWeight="bold" mb={4}>
-          Klimatpåverkan {currentLevel > 0 ? `+${currentLevel.toFixed(1)}` : currentLevel.toFixed(1)} mm
-        </Text>
-        <Box position="relative" height="400px">
-          <Image
-            src="/images/quietstreet.svg"
-            alt="Stadsvy"
-            position="absolute"
-            top={0}
-            left={0}
-            width="100%"
-            height="100%"
-          />
-          <Box
-            position="absolute"
-            bottom={0}
-            left={0}
-            right={0}
-            height={`${Math.max(0, ((currentLevel + 200) * 1.5))}px`}
-            bgGradient={`linear(to-b, 
-              rgba(0, 127, 255, ${Math.min(0.6, Math.max(0.1, (currentLevel + 200) / 400))}), 
-              rgba(0, 127, 255, ${Math.min(0.8, Math.max(0.3, (currentLevel + 200) / 300))})
-            )`}
-            transition="all 0.5s ease-in-out"
-            backdropFilter="blur(2px)"
-            animation="wave 2s ease-in-out infinite"
-            _before={{
-              content: '""',
-              position: "absolute",
-              top: "-10px",
-              left: 0,
-              right: 0,
-              height: "10px",
-              background: "linear-gradient(45deg, rgba(255,255,255,0.2) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.2) 75%, transparent 75%, transparent)",
-              backgroundSize: "20px 20px",
-              animation: "waveFlow 1s linear infinite"
-            }}
-            sx={{
-              "@keyframes wave": {
-                "0%, 100%": {
-                  transform: "translateY(0)"
-                },
-                "50%": {
-                  transform: "translateY(-5px)"
-                }
+    <VStack spacing={4} align="stretch" bg="#111" p={6} borderRadius="xl" w="100%" maxW="800px" mx="auto">
+      <Text color="white" fontSize="xl" fontWeight="bold" mb={4}>
+        Havsnivå {currentLevel > 0 ? `+${currentLevel.toFixed(1)}` : currentLevel.toFixed(1)} mm
+      </Text>
+      <Box position="relative" height="500px">
+        <Image
+          src="/images/quietstreet.svg"
+          alt="Stadsvy"
+          position="absolute"
+          top={0}
+          left={0}
+          width="100%"
+          height="100%"
+        />
+        <Box
+          position="absolute"
+          bottom={0}
+          left={0}
+          right={0}
+          height={`${Math.max(0, ((currentLevel + 200) * 1.5))}px`}
+          bgGradient={`linear(to-b, 
+            rgba(0, 127, 255, ${Math.min(0.6, Math.max(0.1, (currentLevel + 200) / 400))}), 
+            rgba(0, 127, 255, ${Math.min(0.8, Math.max(0.3, (currentLevel + 200) / 300))})
+          )`}
+          transition="all 0.5s ease-in-out"
+          backdropFilter="blur(2px)"
+          animation="wave 2s ease-in-out infinite"
+          _before={{
+            content: '""',
+            position: "absolute",
+            top: "-10px",
+            left: 0,
+            right: 0,
+            height: "10px",
+            background: "linear-gradient(45deg, rgba(255,255,255,0.2) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.2) 75%, transparent 75%, transparent)",
+            backgroundSize: "20px 20px",
+            animation: "waveFlow 1s linear infinite"
+          }}
+          sx={{
+            "@keyframes wave": {
+              "0%, 100%": {
+                transform: "translateY(0)"
               },
-              "@keyframes waveFlow": {
-                "0%": {
-                  backgroundPosition: "0 0"
-                },
-                "100%": {
-                  backgroundPosition: "20px 0"
-                }
+              "50%": {
+                transform: "translateY(-5px)"
               }
-            }}
-          />
-        </Box>
-      </VStack>
-    </Grid>
+            },
+            "@keyframes waveFlow": {
+              "0%": {
+                backgroundPosition: "0 0"
+              },
+              "100%": {
+                backgroundPosition: "20px 0"
+              }
+            }
+          }}
+        />
+      </Box>
+      <Box pt={4}>
+        <Text color="white" mb={2}>År: {selectedYear}</Text>
+        <Slider
+          min={1900}
+          max={2013}
+          step={10}
+          value={selectedYear}
+          onChange={handleYearChange}
+          colorScheme="blue"
+        >
+          <SliderTrack>
+            <SliderFilledTrack />
+          </SliderTrack>
+          <SliderThumb />
+        </Slider>
+      </Box>
+    </VStack>
   );
 };
 
