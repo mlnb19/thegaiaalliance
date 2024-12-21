@@ -37,78 +37,143 @@ const Navbar = () => {
         />
         <Text color="white" ml={2} fontSize="sm" _groupHover={{ color: 'black' }}>Havsnivåer</Text>
       </Flex>
-      <IconButton
-        icon={<Box as={GiMountainCave} size={20} />}
-        aria-label="Glacier"
-        variant="ghost"
-        color="white"
-        title="Klimatdata om glaciärer"
-        _hover={{ bg: 'cyan.300', color: 'black'}}
+      <Flex 
+        align="center" 
+        w="full"
         onClick={() => {
           navigate('/glaciers');
           onClose();
         }}
-      />
-      <IconButton
-        icon={<Box as={GiSmokeBomb} size={20} />}
-        aria-label="Co2"
-        variant="ghost"
-        color="white"
-        title="Klimatdata om Co2-utsläpp"
-        _hover={{ bg: 'orange.300', color: 'black'}}
+        cursor="pointer"
+        role="group"
+        _hover={{ bg: 'cyan.300', color: 'black' }}
+        borderRadius="md"
+        p={2}
+      >
+        <IconButton
+          icon={<Box as={GiMountainCave} size={20} />}
+          aria-label="Glacier"
+          variant="ghost"
+          color="white"
+          _groupHover={{ bg: 'transparent', color: 'black' }}
+        />
+        <Text color="white" ml={2} fontSize="sm" _groupHover={{ color: 'black' }}>Glaciärer</Text>
+      </Flex>
+
+      <Flex 
+        align="center" 
+        w="full"
         onClick={() => {
           navigate('/co2');
           onClose();
         }}
-      />
-      <IconButton
-        icon={<Box as={TbTemperatureCelsius} size={20} strokeWidth={2} />}
-        aria-label="Temperature"
-        variant="ghost"
-        color="white"
-        title="Klimatdata om tempereaturförändringar"
-        _hover={{ bg: 'red.300', color: 'black'}}
+        cursor="pointer"
+        role="group"
+        _hover={{ bg: 'orange.300', color: 'black' }}
+        borderRadius="md"
+        p={2}
+      >
+        <IconButton
+          icon={<Box as={GiSmokeBomb} size={20} />}
+          aria-label="Co2"
+          variant="ghost"
+          color="white"
+          _groupHover={{ bg: 'transparent', color: 'black' }}
+        />
+        <Text color="white" ml={2} fontSize="sm" _groupHover={{ color: 'black' }}>CO2 Utsläpp</Text>
+      </Flex>
+
+      <Flex 
+        align="center" 
+        w="full"
         onClick={() => {
           navigate('/temperature');
           onClose();
         }}
-      />
-      <IconButton
-        icon={<Box as={FiUser} size={20} />}
-        aria-label="Profile"
-        variant="ghost"
-        color="white"
-        title="Gå till profil"
-        _hover={{ bg: 'green.300', color: 'black'}}
+        cursor="pointer"
+        role="group"
+        _hover={{ bg: 'red.300', color: 'black' }}
+        borderRadius="md"
+        p={2}
+      >
+        <IconButton
+          icon={<Box as={TbTemperatureCelsius} size={20} strokeWidth={2} />}
+          aria-label="Temperature"
+          variant="ghost"
+          color="white"
+          _groupHover={{ bg: 'transparent', color: 'black' }}
+        />
+        <Text color="white" ml={2} fontSize="sm" _groupHover={{ color: 'black' }}>Temperatur</Text>
+      </Flex>
+
+      <Flex 
+        align="center" 
+        w="full"
         onClick={() => {
           navigate('/profile');
           onClose();
         }}
-      />
-      <IconButton
-        icon={<Box as={BsQuestionSquare} size={20} />}
-        aria-label="FAQ"
-        variant="ghost"
-        color="white"
-        title="Frågor och kontakt"
-        _hover={{ bg: 'green.300', color: 'black'}}
+        cursor="pointer"
+        role="group"
+        _hover={{ bg: 'green.300', color: 'black' }}
+        borderRadius="md"
+        p={2}
+      >
+        <IconButton
+          icon={<Box as={FiUser} size={20} />}
+          aria-label="Profile"
+          variant="ghost"
+          color="white"
+          _groupHover={{ bg: 'transparent', color: 'black' }}
+        />
+        <Text color="white" ml={2} fontSize="sm" _groupHover={{ color: 'black' }}>Profil</Text>
+      </Flex>
+
+      <Flex 
+        align="center" 
+        w="full"
         onClick={() => {
           navigate('/faq');
           onClose();
         }}
-      />
-      <IconButton
-        icon={<Box as={RiLogoutCircleRLine} size={20} />}
-        aria-label="Logout"
-        variant="ghost"
-        color="white"
-        title="Logga ut"
-        _hover={{ bg: 'green.300', color: 'black'}}
+        cursor="pointer"
+        role="group"
+        _hover={{ bg: 'green.300', color: 'black' }}
+        borderRadius="md"
+        p={2}
+      >
+        <IconButton
+          icon={<Box as={BsQuestionSquare} size={20} />}
+          aria-label="FAQ"
+          variant="ghost"
+          color="white"
+          _groupHover={{ bg: 'transparent', color: 'black' }}
+        />
+        <Text color="white" ml={2} fontSize="sm" _groupHover={{ color: 'black' }}>Frågor</Text>
+      </Flex>
+
+      <Flex 
+        align="center" 
+        w="full"
         onClick={() => {
           navigate('/logout');
           onClose();
         }}
-      />
+        cursor="pointer"
+        role="group"
+        _hover={{ bg: 'green.300', color: 'black' }}
+        borderRadius="md"
+        p={2}
+      >
+        <IconButton
+          icon={<Box as={RiLogoutCircleRLine} size={20} />}
+          aria-label="Logout"
+          variant="ghost"
+          color="white"
+          _groupHover={{ bg: 'transparent', color: 'black' }}
+        />
+        <Text color="white" ml={2} fontSize="sm" _groupHover={{ color: 'black' }}>Logga ut</Text>
+      </Flex>
     </VStack>
   );
 
