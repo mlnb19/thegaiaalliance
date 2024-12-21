@@ -9,7 +9,7 @@ import { FiUser } from "react-icons/fi";
 import { BsQuestionSquare } from "react-icons/bs";
 import { RiLogoutCircleRLine } from "react-icons/ri";
 
-const Welcome = () => {
+const Welcome = ({ setIsFaqOpen }) => {
   return (
     <Box bg="#0d0d0d" minH="100vh" position="relative" w="100vw" overflow="hidden" m="0" p="0">
       <Box
@@ -42,7 +42,7 @@ const Welcome = () => {
             <Link href="/co2" display="flex" alignItems="center" gap={2} color="white" fontFamily="monospace" fontSize="14px" fontWeight="bold" _hover={{ color: 'orange.300' }}><Box as={GiSmokeBomb} size={14} />CO2</Link>
             <Link href="/temperature" display="flex" alignItems="center" gap={2} color="white" fontFamily="monospace" fontSize="14px" fontWeight="bold" _hover={{ color: 'red.300' }}><Box as={TbTemperatureCelsius} size={14} strokeWidth={2} />TEMPERATUR</Link>
             <Link href="/profile" display="flex" alignItems="center" gap={2} color="white" fontFamily="monospace" fontSize="14px" fontWeight="bold" _hover={{ color: 'green.300' }} borderLeft="1px" borderColor="white" paddingLeft="25px"><Box as={FiUser} size={14} />PROFIL</Link>
-            <Box as="button" onClick={() => props.setIsFaqOpen(true)} display="flex" alignItems="center" gap={2} color="white" fontFamily="monospace" fontSize="14px" fontWeight="bold" _hover={{ color: 'green.300' }}><Box as={BsQuestionSquare} size={16} />FRÅGOR OCH KONTAKT</Box>
+            <Box as="button" onClick={() => setIsFaqOpen(true)} display="flex" alignItems="center" gap={2} color="white" fontFamily="monospace" fontSize="14px" fontWeight="bold" _hover={{ color: 'green.300' }}><Box as={BsQuestionSquare} size={16} />FRÅGOR OCH KONTAKT</Box>
             <Link href="/faq" display="flex" alignItems="center" gap={2} color="white" fontFamily="monospace" fontSize="14px" fontWeight="bold" _hover={{ color: 'green.300' }}><Box as={RiLogoutCircleRLine} size={14} />LOGGA UT</Link>
           </Stack>
         </Flex>
