@@ -14,7 +14,7 @@ const SeaLevelChart = () => {
         const data = await response.json();
         const formattedData = data.filter(item => {
           const year = parseInt(item.Time.split('-')[0]);
-          return year % 5 === 0; // Filter för vart 5:e år för bättre läsbarhet
+          return year % 10 === 0; // Filter för vart 5:e år för bättre läsbarhet
         }).map(item => ({
           year: item.Time.split('-')[0],
           havsnivå: Math.abs(item.GMSL)
@@ -33,7 +33,7 @@ const SeaLevelChart = () => {
         <Box display="flex" alignItems="center" mb={2}>
           <Text color="white" fontSize="xl" fontWeight="bold">Havsnivåns Förändring</Text>
           <Tooltip label="Grafen visar förändringen i den globala havsnivån över tid. Mätningarna är i millimeter (mm) relativt en referensnivå." bg="#1E3F66">
-            <InfoOutlineIcon color="gray.400" ml={2} />
+            <InfoOutlineIcon color="blue.400" ml={2} />
           </Tooltip>
         </Box>
       </Box>
@@ -51,6 +51,7 @@ const SeaLevelChart = () => {
               legendOffset: 36,
               legendPosition: 'middle',
               format: v => v,
+              color: "blue.400"
             }}
             axisLeft={{
               tickSize: 5,
@@ -72,20 +73,20 @@ const SeaLevelChart = () => {
               axis: {
                 domain: {
                   line: {
-                    stroke: '#777777',
+                    stroke: 'blue',
                     strokeWidth: 1
                   }
                 },
                 ticks: {
                   line: {
-                    stroke: '#777777',
+                    stroke: 'blue',
                     strokeWidth: 1
                   }
                 }
               },
               grid: {
                 line: {
-                  stroke: '#444444',
+                  stroke: 'white',
                   strokeWidth: 1
                 }
               }
