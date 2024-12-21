@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Box, VStack, IconButton, useDisclosure, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerBody, Flex, Text } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
@@ -8,10 +7,12 @@ import { TbTemperatureCelsius } from "react-icons/tb";
 import { FiUser, FiMenu } from "react-icons/fi";
 import { RiLogoutCircleRLine } from "react-icons/ri";
 import { BsQuestionSquare } from "react-icons/bs";
+import Faq from './Faq';
 
 const Navbar = () => {
   const navigate = useNavigate();
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [isFaqOpen, setIsFaqOpen] = useState(false);
 
   const NavContent = () => (
     <VStack spacing={6} mt={8}>
@@ -132,10 +133,7 @@ const Navbar = () => {
       <Flex 
         align="center" 
         w="full"
-        onClick={() => {
-          navigate('/faq');
-          onClose();
-        }}
+        onClick={() => setIsFaqOpen(true)}
         cursor="pointer"
         role="group"
         _hover={{ bg: 'green.300', color: 'black' }}
@@ -239,6 +237,7 @@ const Navbar = () => {
           </DrawerBody>
         </DrawerContent>
       </Drawer>
+      <Faq isOpen={isFaqOpen} onClose={() => setIsFaqOpen(false)} />
     </>
   );
 };

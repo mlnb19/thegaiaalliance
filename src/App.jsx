@@ -8,7 +8,7 @@ import Co2 from './pages/Co2';
 import Glaciers from './pages/Glaciers';
 import Welcome from './pages/Welcome';
 import Profile from './pages/Profile';
-import Faq from './pages/Faq';
+
 import Logout from './pages/Logout';
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
           <Route path="/co2" element={<Co2 />} />
           <Route path="/glaciers" element={<Glaciers />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/faq" element={<Faq />} />
+          
           <Route path="/logout" element={<Logout />} />
         </Routes>
       </Router>
