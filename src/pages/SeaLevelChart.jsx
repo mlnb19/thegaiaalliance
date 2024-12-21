@@ -101,39 +101,6 @@ const SeaLevelChart = () => {
             transition="height 0.3s ease-in-out"
             backdropFilter="blur(2px)"
           />
-              data={seaLevelData}
-              keys={['havsnivå']}
-              margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
-              axisBottom={{
-                tickSize: 5,
-                tickPadding: 5,
-                tickRotation: -45,
-                format: d => d,
-                legend: 'År',
-                legendOffset: 36
-              }}
-              axisLeft={{
-                tickSize: 5,
-                tickPadding: 5,
-                tickRotation: 0,
-                legend: 'Havsnivå (mm)',
-                legendOffset: -40
-              }}
-              enableGridX={false}
-              enableGridY={true}
-              colors={['#60a5fa']}
-              fillOpacity={0.85}
-              curve="natural"
-              theme={{
-                textColor: '#ffffff',
-                grid: {
-                  line: {
-                    stroke: '#334155'
-                  }
-                }
-              }}
-            />
-          )}
         </Box>
       </VStack>
     </Grid>
