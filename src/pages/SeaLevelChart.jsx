@@ -65,29 +65,17 @@ const SeaLevelChart = () => {
         <Text color="white" fontSize="xl" fontWeight="bold">
           Havsnivå: {currentLevel > 0 ? `+${currentLevel.toFixed(1)}` : currentLevel.toFixed(1)} mm
         </Text>
-        <Box position="relative" height="300px" overflow="hidden" borderRadius="xl">
-          {/* Stadsvy */}
-          <Image
-            src="/images/quietstreet.svg"
-            alt="Stadsvy"
-            position="absolute"
-            top={0}
-            left={0}
-            width="100%"
-            height="100%"
-            zIndex={1}
-          />
-          {/* Vattennivå */}
-          <Box
-            position="absolute"
-            bottom="0"
-            left="0"
-            right="0"
-            height={`${calculateHeightPercentage(currentLevel)}%`}
-            bgGradient="linear(to-t, rgba(0, 127, 255, 0.2), rgba(0, 127, 255, 1))"
-            transition="height 0.8s ease-in-out"
-            zIndex={2}
-            borderRadius="md"
+        <Box height="300px">
+          <Liquid 
+            percent={Math.abs(currentLevel) / 200}
+            outline={{
+              border: 4,
+              distance: 8,
+            }}
+            wave={{
+              length: 128,
+            }}
+            color="#007FFF"
             sx={{
               '@keyframes wave': {
                 '0%': { transform: 'translateX(0)' },
