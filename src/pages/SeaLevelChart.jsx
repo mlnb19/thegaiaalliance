@@ -97,9 +97,39 @@ const SeaLevelChart = () => {
             left={0}
             right={0}
             height={`${Math.max(0, (currentLevel + 200) / 2)}px`}
-            bg="rgba(0, 127, 255, 0.3)"
+            bgGradient="linear(to-b, rgba(0, 127, 255, 0.1), rgba(0, 127, 255, 0.4))"
             transition="height 0.3s ease-in-out"
             backdropFilter="blur(2px)"
+            animation="wave 2s ease-in-out infinite"
+            _before={{
+              content: '""',
+              position: "absolute",
+              top: "-10px",
+              left: 0,
+              right: 0,
+              height: "10px",
+              background: "linear-gradient(45deg, rgba(255,255,255,0.2) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.2) 75%, transparent 75%, transparent)",
+              backgroundSize: "20px 20px",
+              animation: "waveFlow 1s linear infinite"
+            }}
+            sx={{
+              "@keyframes wave": {
+                "0%, 100%": {
+                  transform: "translateY(0)"
+                },
+                "50%": {
+                  transform: "translateY(-5px)"
+                }
+              },
+              "@keyframes waveFlow": {
+                "0%": {
+                  backgroundPosition: "0 0"
+                },
+                "100%": {
+                  backgroundPosition: "20px 0"
+                }
+              }
+            }}
           />
         </Box>
       </VStack>
