@@ -209,7 +209,7 @@ const Navbar = () => {
             { icon: GiSmokeBomb, label: "Co2", path: '/co2', color: 'orange.300' },
             { icon: TbTemperatureCelsius, label: "Temperature", path: '/temperature', color: 'red.300' },
             { icon: FiUser, label: "Profile", path: '/profile', color: 'green.300' },
-            { icon: BsQuestionSquare, label: "FAQ", path: '/faq', color: 'green.300' },
+            { icon: BsQuestionSquare, label: "FAQ", onClick: () => setIsFaqOpen(true), color: 'green.300' },
             { icon: RiLogoutCircleRLine, label: "Logout", path: '/logout', color: 'green.300' }
           ].map((item, index) => (
             <IconButton
@@ -219,7 +219,11 @@ const Navbar = () => {
               variant="ghost"
               color="white"
               onClick={() => {
-                navigate(item.path);
+                if (item.onClick) {
+                  item.onClick();
+                } else {
+                  navigate(item.path);
+                }
                 onClose();
               }}
               _hover={{ bg: item.color, color: 'black' }}
