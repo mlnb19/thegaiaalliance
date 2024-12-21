@@ -15,18 +15,28 @@ const Navbar = () => {
 
   const NavContent = () => (
     <VStack spacing={6} mt={8}>
-      <IconButton
-        icon={<Box as={PiWaves} size={20} strokeWidth={2} />}
-        aria-label="Sea Levels"
-        variant="ghost"
-        color="white"
-        title="Klimatdata om havsnivåer"
-        _hover={{ bg: 'blue.300', color: 'black'}}
+      <Flex 
+        align="center" 
+        w="full"
         onClick={() => {
           navigate('/sealevels');
           onClose();
         }}
-      />
+        cursor="pointer"
+        role="group"
+        _hover={{ bg: 'blue.300', color: 'black' }}
+        borderRadius="md"
+        p={2}
+      >
+        <IconButton
+          icon={<Box as={PiWaves} size={20} strokeWidth={2} />}
+          aria-label="Sea Levels"
+          variant="ghost"
+          color="white"
+          _groupHover={{ bg: 'transparent', color: 'black' }}
+        />
+        <Text color="white" ml={2} fontSize="sm" _groupHover={{ color: 'black' }}>Havsnivåer</Text>
+      </Flex>
       <IconButton
         icon={<Box as={GiMountainCave} size={20} />}
         aria-label="Glacier"
@@ -111,6 +121,10 @@ const Navbar = () => {
           variant="ghost"
           color="white"
           size="lg"
+          borderRadius="full"
+          border="2px"
+          borderColor="whiteAlpha.300"
+          _hover={{ borderColor: 'whiteAlpha.500' }}
         />
       </Box>
 
