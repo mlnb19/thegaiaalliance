@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Area } from '@ant-design/plots';
 import { Box, Text, Tooltip, Icon } from '@chakra-ui/react';
@@ -15,13 +14,13 @@ const SeaLevelChart = () => {
         const response = await fetch('/data/SeaLevel.json');
         const data = await response.json();
         const formattedData = data
-          .filter(item => {
+          .filter((item) => {
             const year = parseInt(item.Time.split('-')[0]);
-            return year % 10 === 0;
+            return year % 10 === 0; // Filtrera för varje tionde år
           })
-          .map(item => ({
+          .map((item) => ({
             date: item.Time,
-            value: Math.abs(item.GMSL)
+            value: Math.abs(item.GMSL),
           }));
         setSeaLevelData(formattedData);
       } catch (error) {
@@ -45,35 +44,35 @@ const SeaLevelChart = () => {
       fill: 'l(270) 0:#ffffff 0.5:#73A5C6 1:#1E3F66',
     },
     line: {
-      style: { stroke: '#1E3F66' }
+      style: { stroke: '#1E3F66' },
     },
     xAxis: {
       label: {
         style: { fill: '#fff' },
-        formatter: (text) => text.split('-')[0]
+        formatter: (text) => text.split('-')[0],
       },
       title: {
         text: 'År',
-        style: { fill: '#fff', fontSize: 14 }
-      }
+        style: { fill: '#fff', fontSize: 14 },
+      },
     },
     yAxis: {
       label: {
         style: { fill: '#fff' },
-        formatter: (value) => `${value} mm`
+        formatter: (value) => `${value} mm`,
       },
       title: {
         text: 'Havsnivå (mm)',
-        style: { fill: '#fff', fontSize: 14 }
-      }
+        style: { fill: '#fff', fontSize: 14 },
+      },
     },
     tooltip: {
       title: 'Havsnivå',
       formatter: (datum) => ({
         name: 'Förändring',
-        value: `${datum.value.toFixed(1)} mm`
-      })
-    }
+        value: `${datum.value.toFixed(1)} mm`,
+      }),
+    },
   };
 
   return (
@@ -88,10 +87,10 @@ const SeaLevelChart = () => {
         {seaLevelData.length > 0 && (
           <Box>
             <Text color="gray.400" fontSize="sm">
-              Tidsperiod: {seaLevelData[0].date} till {seaLevelData[seaLevelData.length - 1].date}
+              Tidsperiod: {seaLevelData[0].date.split('-')[0]} till {seaLevelData[seaLevelData.length - 1].date.split('-')[0]}
             </Text>
             <Text color="gray.400" fontSize="sm">
-              Total förändring: {seaLevelData[seaLevelData.length - 1].value.toFixed(1)} mm sedan {seaLevelData[0].date}
+              Total förändring: {seaLevelData[seaLevelData.length - 1].value.toFixed(1)} mm sedan {seaLevelData[0].date.split('-')[0]}
             </Text>
           </Box>
         )}
@@ -106,17 +105,19 @@ const SeaLevelChart = () => {
           defaultValue={[0, 100]}
           onChange={setYearRange}
           tooltip={{
-            open: true,
-            placement: "top",
             formatter: (value) => {
               if (seaLevelData.length) {
                 const index = Math.floor(seaLevelData.length * (value / 100));
                 const year = seaLevelData[index]?.date.split('-')[0];
-                return `${year}`;
+                return year || value;
               }
               return value;
-            }
+            },
           }}
+          marks={seaLevelData.reduce((acc, data, index) => {
+            acc[Math.floor((index / seaLevelData.length) * 100)] = data.date.split('-')[0];
+            return acc;
+          }, {})}
         />
       </Box>
     </Box>
@@ -124,3 +125,4 @@ const SeaLevelChart = () => {
 };
 
 export default SeaLevelChart;
+
