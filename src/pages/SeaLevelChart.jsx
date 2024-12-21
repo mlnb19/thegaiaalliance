@@ -81,9 +81,26 @@ const SeaLevelChart = () => {
         <Text color="white" fontSize="xl" fontWeight="bold" mb={4}>
           Klimatpåverkan {currentLevel > 0 ? `+${currentLevel.toFixed(1)}` : currentLevel.toFixed(1)} mm
         </Text>
-        <Box height="400px">
-          {seaLevelData.length > 0 && (
-            <ResponsiveStream
+        <Box position="relative" height="400px">
+          <Image
+            src="/images/quietstreet.svg"
+            alt="Stadsvy"
+            position="absolute"
+            top={0}
+            left={0}
+            width="100%"
+            height="100%"
+          />
+          <Box
+            position="absolute"
+            bottom={0}
+            left={0}
+            right={0}
+            height={`${Math.max(0, (currentLevel + 200) / 2)}px`}
+            bg="rgba(0, 127, 255, 0.3)"
+            transition="height 0.3s ease-in-out"
+            backdropFilter="blur(2px)"
+          />
               data={seaLevelData}
               keys={['havsnivå']}
               margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
