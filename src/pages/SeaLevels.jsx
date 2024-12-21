@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import QuizGame from './QuizGame';
+import RecyclingGame from './RecyclingGame';
 import { Box, Container, Text, Grid, GridItem, Flex, Center, Image, Avatar, SimpleGrid, Modal, ModalOverlay, ModalContent, ModalCloseButton, ModalHeader, ModalBody, VStack, Icon, Link } from '@chakra-ui/react';
 import MemoryGame from './MemoryGame';
 import Navbar from './Navbar';
@@ -17,6 +18,7 @@ function Startpage() {
   const [isChartModalOpen, setIsChartModalOpen] = useState(false);
   const [isMemoryModalOpen, setIsMemoryModalOpen] = useState(false);
   const [isQuizModalOpen, setIsQuizModalOpen] = useState(false);
+  const [isRecyclingModalOpen, setIsRecyclingModalOpen] = useState(false);
 
   return (
     <Box
@@ -198,9 +200,19 @@ function Startpage() {
           <Text 
             color="white" 
             fontSize="2xl" 
-            fontWeight="bold">
-              ☀️ Spel: Nånting
+            fontWeight="bold"
+            cursor="pointer"
+            onClick={() => setIsRecyclingModalOpen(true)}>
+              ♻️ Spel: Återvinning
           </Text>
+
+          <Modal isOpen={isRecyclingModalOpen} onClose={() => setIsRecyclingModalOpen(false)} size="xl">
+            <ModalOverlay backdropFilter="blur(10px)" />
+            <ModalContent bg="gray.900" p={4}>
+              <ModalCloseButton color="white" />
+              <RecyclingGame />
+            </ModalContent>
+          </Modal>
         </Box>
 
       {/* Bottom Feature */}
