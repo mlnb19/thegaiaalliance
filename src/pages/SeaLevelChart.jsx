@@ -96,10 +96,13 @@ const SeaLevelChart = () => {
           defaultValue={[0, 100]}
           onChange={setYearRange}
           tooltip={{
+            open: true,
+            placement: "top",
             formatter: (value) => {
               if (seaLevelData.length) {
                 const index = Math.floor(seaLevelData.length * (value / 100));
-                return seaLevelData[index]?.date.split('-')[0] || value;
+                const year = seaLevelData[index]?.date.split('-')[0];
+                return `${year}`;
               }
               return value;
             }
