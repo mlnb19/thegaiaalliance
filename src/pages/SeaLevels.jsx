@@ -160,15 +160,15 @@ function Startpage() {
 
     <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} size="4xl">
       <ModalOverlay backdropFilter="blur(10px)" />
-      <ModalContent bg="gray.900" p={6}>
+      <ModalContent bg="gray.900" p={6} maxW="90vw">
         <ModalCloseButton color="white" />
-        <Box w="100%" h="500px">
+        <Box w="100%" h="600px">
           <SeaLevelChart />
         </Box>
       </ModalContent>
     </Modal>
 
-    <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} size="4xl" isCentered>
+    <Modal isOpen={false} onClose={() => {}} size="4xl" isCentered>
       <ModalOverlay backdropFilter="blur(10px)" />
       <ModalContent 
         bg="black" 
