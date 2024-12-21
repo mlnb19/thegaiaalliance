@@ -24,9 +24,9 @@ function Startpage() {
       justifyContent="center"
       position="relative"
       overflow="hidden">
-        
+
       <Navbar />
-          
+
       <Box
         pos="absolute"
         top="0"
@@ -37,16 +37,16 @@ function Startpage() {
         filter="blur(100px)"
         opacity="0.5"
         borderRadius="full"/>
-          
+
       <Container
         maxW="container.xl"
         position="relative"
         zIndex={1}>
-        
+
       <Grid
         templateColumns="repeat(12, 1fr)"
         gap={6} h="600px">
-          
+
       {/* Left Column - Major Feature */}
         <GridItem colSpan={5} >
           <Box
@@ -56,13 +56,13 @@ function Startpage() {
             h="100%"
             boxShadow="3px 2px 7px rgba(61, 61, 61)"
             border="0.5px">
-              
+
             <Text
               color="#ff6b6b"
               fontSize="sm">
                 Havsnivån har ökat med 30% de senaste 10 åren
             </Text>
-            
+
             <Text
               color="white"
               fontSize="4xl"
@@ -71,7 +71,7 @@ function Startpage() {
               mb={4}>
                 Höjda Havsnivåer
             </Text>
-              
+
             <Text
               color="gray.300"
               mb={8}>
@@ -87,12 +87,12 @@ function Startpage() {
                     Klicka här för att lära dig hur!
                 </Link>
               </Text>
-            
+
               <Box
                 borderRadius="xl"
                 overflow="hidden" 
                 mt="auto">
-                
+
                 <Image
                   src="/images/Ocean.jpg"
                   alt="Feature preview"
@@ -104,7 +104,7 @@ function Startpage() {
       {/* Middle Column */}
         <GridItem
           colSpan={4}>
-            
+
           <Flex
             direction="column"
             gap={6} h="100%">
@@ -127,13 +127,13 @@ function Startpage() {
               mb={4}>
               Havsnivåns förändring
             </Text>
-            
+
             <Text 
               color="gray.500"
               mb={4}>
               Statistik om havsnivån sen början av 1900-talet
             </Text>
-            
+
             <Box height="120px">
               <Area
                 data={[
@@ -155,23 +155,23 @@ function Startpage() {
               />
             </Box>
           </Box>
-          
+
           <Box 
             bg="#111" 
             borderRadius="xl" 
             p={6} 
             boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
-            
+
             <Flex
               align="center"
               gap={3}>
-                
+
               <Box 
                 as="span" 
                 color="yellow.400">
                 <GiNotebook />
               </Box>
-                  
+
               <Text 
                 fontSize="2xl" 
                 fontWeight="bold"
@@ -188,7 +188,7 @@ function Startpage() {
           p={6}
           bgGradient="linear(to-r,#73A5C6, #1E3F66)"
           boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
-                
+
           <Text 
             color="white" 
             fontSize="2xl" 
@@ -203,18 +203,18 @@ function Startpage() {
           borderRadius="xl"
           p={6} 
           boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
-          
+
           <Flex 
             align="center"
             gap={3}>
-            
+
             <Box
               as="span"
               color="yellow.400"
               fontSize="xl">
                 <GiBrain />
             </Box>
-                  
+
             <Text 
               bgGradient='linear(to-l, #1E3F66, #91BAD6)'
               bgClip='text' 

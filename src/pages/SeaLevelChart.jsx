@@ -40,7 +40,7 @@ const SeaLevelChart = () => {
   };
 
   const calculateHeightPercentage = (level) => {
-    const referencePercentage = 15; // 15% av höjden representerar 0 mm
+    const referencePercentage = 12; // 15% av höjden representerar 0 mm
     if (level >= 0) {
       return referencePercentage + (level / 200) * (85 - referencePercentage); // Positiva nivåer ökar uppåt
     } else {
@@ -50,104 +50,96 @@ const SeaLevelChart = () => {
 
   return (
     <Flex
-      direction={{ base: 'column', md: 'row' }}
-      spacing={6}
-      bg="#111"
-      p={6}
+      direction={{ base: 'column', md: 'row' }}    
       borderRadius="xl"
-      w="100%"
-      maxW="1000px"
+      w="80%"
+      maxW="80%"
+      h="80%"
+      maxH="80%"
       mx="auto"
+      align={'center'}
     >
-      {/* Vänster sida: Vattenanimation */}
-      <Box position="relative" height="500px" flex="1" overflow="hidden" borderRadius="xl" bg="#222">
-        {/* Stadsvy */}
-        <Box
-          position="absolute"
-          top="0"
-          left="0"
-          width="100%"
-          height="100%"
-          zIndex="1"
-        >
+      {/* Vänster sektion: Graf */}
+      <VStack flex="1" spacing={6} align="stretch">
+        <Text color="white" fontSize="xl" fontWeight="bold">
+          Havsnivå: {currentLevel > 0 ? `+${currentLevel.toFixed(1)}` : currentLevel.toFixed(1)} mm
+        </Text>
+        <Box position="relative" height="300px" overflow="hidden" borderRadius="xl">
+          {/* Stadsvy */}
           <Image
-            src="/images/OceanAnime.svg"
-            alt="Havsbild"
+            src="/images/quietstreet.svg"
+            alt="Stadsvy"
+            position="absolute"
+            top={0}
+            left={0}
             width="100%"
             height="100%"
-            objectFit="contain"
+            zIndex={1}
           />
+          {/* Vattennivå */}
+          <Box
+            position="absolute"
+            bottom="0"
+            left="0"
+            right="0"
+            height={`${calculateHeightPercentage(currentLevel)}%`}
+            bgGradient="linear(to-t, rgba(0, 127, 255, 0.2), rgba(0, 127, 255, 1))"
+            transition="height 0.8s ease-in-out"
+            zIndex={2}
+            borderRadius="md"
+          >
+            {/* Vågor */}
+            <Box
+              position="absolute"
+              top="-20px"
+              left="0"
+              right="0"
+              height="40px"
+              background="url('/images/wave.jsx') repeat-x"
+              animation="wave 3s linear infinite"
+              zIndex={3}
+            />
+          </Box>
         </Box>
-        {/* Vattennivå */}
-        <Box
-          position="absolute"
-          bottom="0"
-          left="0"
-          right="0"
-          height={`${calculateHeightPercentage(currentLevel)}%`}
-          bgGradient="linear(to-b, rgba(0, 127, 255, 0.3), rgba(0, 127, 255, 0.5))"
-          transition="height 0.8s ease-in-out"
-          zIndex="0"
-          borderRadius="md"
-          _before={{
-            content: '""',
-            position: 'absolute',
-            top: '-10px',
-            left: 0,
-            right: 0,
-            height: '10px',
-            background: 'linear-gradient(45deg, rgba(255,255,255,0.2) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.2) 75%, transparent 75%, transparent)',
-            backgroundSize: '20px 20px',
-            animation: 'waveFlow 1s linear infinite',
-          }}
-          sx={{
-            '@keyframes waveFlow': {
-              '0%': { backgroundPosition: '0 0' },
-              '100%': { backgroundPosition: '20px 0' },
-            },
-          }}
-        />
-      </Box>
-
-      {/* Höger sida: Information */}
-      <VStack
-        align="flex-start"
-        spacing={4}
-        flex="1"
-        ml={{ md: 6 }}
-        mt={{ base: 6, md: 0 }}
-        p={4}
-        bg="#1a1a1a"
-        borderRadius="xl"
-      >
-        <Text color="white" fontSize="2xl" fontWeight="bold">
-          Havsnivå {currentLevel > 0 ? `+${currentLevel.toFixed(1)}` : currentLevel.toFixed(1)} mm
-        </Text>
-        <Text color="gray.400" fontSize="md">
-          Referensvärdet (0 mm) är baserat på genomsnittlig havsnivå år 1900. Positiva värden visar hur mycket havsnivån har stigit över
-          referensnivån, medan negativa värden visar hur mycket den ligger under.
-        </Text>
-        <Text color="gray.400" fontSize="md">
-          Förändringar i havsnivån påverkar kustsamhällen, ekosystem och kan orsaka översvämningar som hotar både människor och djur.
-        </Text>
+        <Box w="100%" >
+          <Text color="white" mb={2}>Välj år: {selectedYear}</Text>
+          <Slider
+            min={1900}
+            max={2013}
+            step={10}
+            value={selectedYear}
+            onChange={handleYearChange}
+            colorScheme="blue"
+          >
+            <SliderTrack>
+              <SliderFilledTrack />
+            </SliderTrack>
+            <SliderThumb />
+          </Slider>
+        </Box>
       </VStack>
 
-      {/* Slider */}
-      <Box w="100%" mt={6}>
-        <Text color="white" mb={2}>Välj år: {selectedYear}</Text>
-        <Slider
-          min={1900}
-          max={2013}
-          step={10}
-          value={selectedYear}
-          onChange={handleYearChange}
-          colorScheme="blue"
-        >
-          <SliderTrack>
-            <SliderFilledTrack />
-          </SliderTrack>
-          <SliderThumb />
-        </Slider>
+      {/* Höger sektion: Information */}
+      <Box
+        flex="1"
+        borderRadius="xl"
+        p={4}
+        ml={{ md: 6 }}
+        mt={{ base: 6, md: 0 }}
+        color="gray.300"
+      >
+        <Text fontSize="2xl" fontWeight="bold" mb={4} color="white">
+          Vad är grejen med havsnivån?
+        </Text>
+        <Text fontSize="md" mb={4}>
+          Havsnivån mäts utifrån ett referensvärde (0 mm) som fungerar som en jämförelsepunkt för att visa hur havsnivån har förändrats över tid. Om värdet är positivt betyder det att havsnivån har stigit över referensvärdet, och om det är negativt betyder det att den ligger under.
+        </Text>
+        <Text fontSize="md" mb={4}>
+          När havsnivån ändras påverkar det mycket mer än bara stränderna. Höjda havsnivåer kan leda till översvämningar i städer nära havet, skada djur och växter i naturen och visar hur klimatförändringarna påverkar vår planet.
+        </Text>
+        <Text fontSize="md" mb={4}>
+          Havsnivån berättar en viktig historia om hur vi människor påverkar jorden – och vad vi kan göra för att skydda den!
+        </Text>
       </Box>
     </Flex>
   );
