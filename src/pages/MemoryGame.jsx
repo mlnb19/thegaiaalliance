@@ -61,7 +61,7 @@ function MemoryGame() {
       <Text color="gray.300" mb={2}>Antal drag: {moves}</Text>
       <SimpleGrid columns={4} spacing={4} maxW="400px">
         {gameCards.map((card, index) => (
-          <Center
+          <Box
             key={index}
             h="80px"
             bg={flipped.includes(index) || solved.includes(index) ? "blue.500" : "gray.700"}
@@ -69,11 +69,14 @@ function MemoryGame() {
             cursor="pointer"
             onClick={() => handleClick(index)}
             transition="all 0.3s"
-            transform={flipped.includes(index) ? "rotateY(180deg)" : ""}
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
             fontSize="2xl"
+            transform={flipped.includes(index) ? "rotateY(180deg)" : ""}
           >
-            {(flipped.includes(index) || solved.includes(index)) ? card.content : ""}
-          </Center>
+            {(flipped.includes(index) || solved.includes(index)) ? card.content : "❓"}
+          </Box>
         ))}
       </SimpleGrid>
       <Button colorScheme="blue" onClick={shuffleCards} mt={4}>
