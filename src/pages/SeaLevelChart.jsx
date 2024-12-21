@@ -1,5 +1,7 @@
+
 import React, { useState, useEffect } from 'react';
 import { Box, Text, Slider, SliderTrack, SliderFilledTrack, SliderThumb, Image, VStack, Flex } from '@chakra-ui/react';
+import { Liquid } from '@ant-design/plots';
 
 const SeaLevelChart = () => {
   const [seaLevelData, setSeaLevelData] = useState([]);
@@ -19,7 +21,6 @@ const SeaLevelChart = () => {
           .filter(item => item.year >= 1900 && (item.year % 10 === 0 || item.year === 2013));
         setSeaLevelData(formattedData);
 
-        // Sätt initial nivå till referensåret 1900
         const initialDataPoint = formattedData.find(point => point.year === 1900);
         if (initialDataPoint) {
           setCurrentLevel(initialDataPoint.havsnivå);
@@ -39,15 +40,6 @@ const SeaLevelChart = () => {
     }
   };
 
-  const calculateHeightPercentage = (level) => {
-    const referencePercentage = 22; // 15% av höjden representerar 0 mm
-    if (level >= 0) {
-      return referencePercentage + (level / 200) * (85 - referencePercentage); // Positiva nivåer ökar uppåt
-    } else {
-      return referencePercentage + (level / 200) * referencePercentage; // Negativa nivåer går nedåt
-    }
-  };
-
   return (
     <Flex
       direction={{ base: 'column', md: 'row' }}    
@@ -60,7 +52,6 @@ const SeaLevelChart = () => {
       align={'center'}
       p={8}
     >
-      {/* Vänster sektion: Graf */}
       <VStack flex="1" spacing={6} align="stretch">
         <Text color="white" fontSize="xl" fontWeight="bold">
           Havsnivå: {currentLevel > 0 ? `+${currentLevel.toFixed(1)}` : currentLevel.toFixed(1)} mm
@@ -76,37 +67,7 @@ const SeaLevelChart = () => {
               length: 128,
             }}
             color="#007FFF"
-            sx={{
-              '@keyframes wave': {
-                '0%': { transform: 'translateX(0)' },
-                '50%': { transform: 'translateX(-25%)' },
-                '100%': { transform: 'translateX(0)' }
-              },
-              '&::before': {
-                content: '""',
-                position: 'absolute',
-                top: '-15px',
-                left: 0,
-                right: 0,
-                height: '15px',
-                backgroundImage: 'linear-gradient(45deg, transparent 33.33%, rgba(0, 127, 255, 0.5) 33.33%, rgba(0, 127, 255, 0.5) 66.66%, transparent 66.66%)',
-                backgroundSize: '30px 15px',
-                animation: 'wave 3s linear infinite'
-              }
-            }}
-          >
-            {/* Vågor */}
-            <Box
-              position="absolute"
-              top="-20px"
-              left="0"
-              right="0"
-              height="40px"
-              background="url('/images/wave.jsx') repeat-x"
-              animation="wave 3s linear infinite"
-              zIndex={3}
-            />
-          </Box>
+          />
         </Box>
         <Box w="100%" >
           <Slider
@@ -117,7 +78,6 @@ const SeaLevelChart = () => {
             onChange={handleYearChange}
             colorScheme="blue"
           >
-            
             <SliderTrack>
               <SliderFilledTrack />
             </SliderTrack>
@@ -128,7 +88,6 @@ const SeaLevelChart = () => {
         </Box>
       </VStack>
 
-      {/* Höger sektion: Information */}
       <Box
         flex="1"
         borderRadius="xl"
