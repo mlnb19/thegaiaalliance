@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Box, Container, Text, Grid, GridItem, Flex, Center, Image, Avatar, SimpleGrid, Modal, ModalOverlay, ModalContent, ModalCloseButton } from '@chakra-ui/react';
+import { Box, Container, Text, Grid, GridItem, Flex, Center, Image, Avatar, SimpleGrid, Modal, ModalOverlay, ModalContent, ModalCloseButton, Link } from '@chakra-ui/react';
 import Navbar from './Navbar';
 import { Liquid } from '@ant-design/plots';
 import { GiBrain, GiNotebook } from "react-icons/gi";
 import { FaRegUserCircle } from "react-icons/fa";
 import { AiOutlineLogout } from "react-icons/ai";
-import SeaLevelChart from './SeaLevelChart';
+import PopupModal from './PopupModal';
 
 
 
@@ -30,16 +30,17 @@ function Startpage() {
         <Grid templateColumns="repeat(12, 1fr)" gap={6} h="600px" >
           {/* Left Column - Major Feature */}
           <GridItem colSpan={5} >
-            <Box bg="#111" borderRadius="xl" p={8} h="100%" boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
-              <Text color="#ff6b6b" fontSize="sm">Insert some statistic</Text>
+            <Box bg="#111" borderRadius="xl" p={8} h="100%" boxShadow="3px 2px 7px rgba(61, 61, 61)"
+              border="0.5px">
+              <Text color="#ff6b6b" fontSize="sm">Havsnivån har ökat med 30% de senaste 10 åren</Text>
               <Text color="white" fontSize="4xl" fontWeight="bold" mt={2} mb={4}>
-                Insert major feature name
+                Höjda Havsnivåer
               </Text>
-              <Text color="gray.500" mb={8}>
-                Insert some statistic or metric name
+              <Text color="gray.300" mb={8}>
+                Den globala höjningen av havsnivåerna hotar miljontals människor med översvämningar, förlust av hem och ekosystem, och utgör ett allvarligt hot mot kustsamhällen och låglandsområden världen över.<br /><br />Visste du att du kan göra skillnad? <Link color='blue'>Klicka för att lära dig hur!</Link>
               </Text>
               <Box borderRadius="xl" overflow="hidden" mt="auto">
-                <Image src="/images/profile.png" alt="Feature preview" w="100%" />
+                <Image src="/images/Ocean.jpg" alt="Feature preview" w="100%" />
               </Box>
             </Box>
           </GridItem>
@@ -54,9 +55,9 @@ function Startpage() {
 
                             <Box bg="#0d0d0d" borderRadius="xl" p={8} boxShadow="0px 2px 7px rgba(61, 61, 61)" border="0.5px">
                 <Text color="white" fontSize="4xl" fontWeight="bold" mb={4}>
-                  Trusted by 500+ users
+                  Rising Sea Levels
                 </Text>
-                <Text color="gray.500">Don't take our word for it...</Text>
+                <Text color="gray.500">The global sea level rise threatens coastal communities worldwide</Text>
                 <Flex gap={2} mt={4}>
                   <Avatar size="md" src="/images/profile.png" />
                   <Avatar size="md" src="/images/profile.png" />
@@ -72,7 +73,7 @@ function Startpage() {
                   </Text>
                 </Flex>
               </Box>
-              
+
               {/* Feature Name with Gradient */}
               <Box 
                 borderRadius="xl" 
@@ -108,7 +109,7 @@ function Startpage() {
                     <FaRegUserCircle />
                   </Center>
                   <Center color="gray.400" fontSize="l" mt={4} fontFamily={'monospace'}>
-                    PROFIL
+                    LOREM IPSUM
                   </Center>
                 </Box>
                 <Box bg="#111" borderRadius="xl" p={6} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
@@ -116,13 +117,15 @@ function Startpage() {
                     <AiOutlineLogout />
                   </Center>
                   <Center color="gray.400" fontSize="l" mt={4} fontFamily={'monospace'}>
-                    LOGGA UT
+                    LOREM IPSUM
                   </Center>
                 </Box>
               </SimpleGrid>
 
     {/* Percentage Display */}
     <Box 
+      boxShadow="-1px 0px 7px rgba(61, 61, 61)"
+      border="0.5px"
       bg="#111" 
       borderRadius="xl" 
       p={8} 
@@ -166,7 +169,7 @@ function Startpage() {
       >
         <ModalCloseButton color="white" zIndex="10" />
         <Box w="100%" h="100%" p={6}>
-          <SeaLevelChart />
+          <PopupModal />
         </Box>
       </ModalContent>
     </Modal>
