@@ -40,7 +40,7 @@ const SeaLevelChart = () => {
   };
 
   const calculateHeightPercentage = (level) => {
-    const referencePercentage = 12; // 15% av höjden representerar 0 mm
+    const referencePercentage = 22; // 15% av höjden representerar 0 mm
     if (level >= 0) {
       return referencePercentage + (level / 200) * (85 - referencePercentage); // Positiva nivåer ökar uppåt
     } else {
@@ -52,12 +52,13 @@ const SeaLevelChart = () => {
     <Flex
       direction={{ base: 'column', md: 'row' }}    
       borderRadius="xl"
-      w="80%"
-      maxW="80%"
-      h="80%"
-      maxH="80%"
+      w="100%"
+      maxW="100%"
+      h="100%"
+      maxH="100%"
       mx="auto"
       align={'center'}
+      p={8}
     >
       {/* Vänster sektion: Graf */}
       <VStack flex="1" spacing={6} align="stretch">
@@ -102,7 +103,6 @@ const SeaLevelChart = () => {
           </Box>
         </Box>
         <Box w="100%" >
-          <Text color="white" mb={2}>Välj år: {selectedYear}</Text>
           <Slider
             min={1900}
             max={2013}
@@ -111,11 +111,14 @@ const SeaLevelChart = () => {
             onChange={handleYearChange}
             colorScheme="blue"
           >
+            
             <SliderTrack>
               <SliderFilledTrack />
             </SliderTrack>
             <SliderThumb />
           </Slider>
+          <Text color="white" fontSize={'12'} mt={2}>År: {selectedYear}</Text>
+          <Text color="white" mt={2} fontSize={'11'}>Dra i slidern för att se hur havsnivån ökar eller sänks beroende på år.</Text>
         </Box>
       </VStack>
 
