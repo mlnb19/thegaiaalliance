@@ -1,0 +1,53 @@
+[plugin:vite:react-babel] /home/runner/React-Javascript/src/pages/QuizGame.jsx: Unexpected token (32:0)
+  35 |   const [gameState, setGameState] = useState('intro');
+/home/runner/React-Javascript/src/pages/QuizGame.jsx:32:0
+30 |    }
+31 |  ]
+32 |  ];
+   |  ^
+33 |  
+34 |  function QuizGame() {
+    at constructor (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:356:19)
+    at JSXParserMixin.raise (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:3223:19)
+    at JSXParserMixin.unexpected (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:3253:16)
+    at JSXParserMixin.parseExprAtom (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:11257:16)
+    at JSXParserMixin.parseExprAtom (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:6932:20)
+    at JSXParserMixin.parseExprSubscripts (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:10857:23)
+    at JSXParserMixin.parseUpdate (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:10840:21)
+    at JSXParserMixin.parseMaybeUnary (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:10816:23)
+    at JSXParserMixin.parseMaybeUnaryOrPrivate (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:10654:61)
+    at JSXParserMixin.parseExprOps (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:10659:23)
+    at JSXParserMixin.parseMaybeConditional (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:10636:23)
+    at JSXParserMixin.parseMaybeAssign (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:10597:21)
+    at JSXParserMixin.parseExpressionBase (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:10551:23)
+    at /home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:10547:39
+    at JSXParserMixin.allowInAnd (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:12279:16)
+    at JSXParserMixin.parseExpression (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:10547:17)
+    at JSXParserMixin.parseStatementContent (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:12737:23)
+    at JSXParserMixin.parseStatementLike (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:12588:17)
+    at JSXParserMixin.parseModuleItem (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:12565:17)
+    at JSXParserMixin.parseBlockOrModuleBlockBody (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:13189:36)
+    at JSXParserMixin.parseBlockBody (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:13182:10)
+    at JSXParserMixin.parseProgram (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:12464:10)
+    at JSXParserMixin.parseTopLevel (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:12454:25)
+    at JSXParserMixin.parse (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:14376:10)
+    at parse (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:14417:38)
+    at parser (/home/runner/React-Javascript/node_modules/@babel/core/lib/parser/index.js:41:34)
+    at parser.next (<anonymous>)
+    at normalizeFile (/home/runner/React-Javascript/node_modules/@babel/core/lib/transformation/normalize-file.js:64:37)
+    at normalizeFile.next (<anonymous>)
+    at run (/home/runner/React-Javascript/node_modules/@babel/core/lib/transformation/index.js:21:50)
+    at run.next (<anonymous>)
+    at transform (/home/runner/React-Javascript/node_modules/@babel/core/lib/transform.js:22:33)
+    at transform.next (<anonymous>)
+    at step (/home/runner/React-Javascript/node_modules/gensync/index.js:261:32)
+    at /home/runner/React-Javascript/node_modules/gensync/index.js:273:13
+    at async.call.result.err.err (/home/runner/React-Javascript/node_modules/gensync/index.js:223:11)
+    at /home/runner/React-Javascript/node_modules/gensync/index.js:189:28
+    at /home/runner/React-Javascript/node_modules/@babel/core/lib/gensync-utils/async.js:67:7
+    at /home/runner/React-Javascript/node_modules/gensync/index.js:113:33
+    at step (/home/runner/React-Javascript/node_modules/gensync/index.js:287:14)
+    at /home/runner/React-Javascript/node_modules/gensync/index.js:273:13
+    at async.call.result.err.err (/home/runner/React-Javascript/node_modules/gensync/index.js:223:11
+Click outside, press Esc key, or fix the code to dismiss.
+You can also disable this overlay by setting server.hmr.overlay to false in vite.config.js.
