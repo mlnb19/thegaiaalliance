@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Box, VStack, IconButton, useDisclosure, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerBody } from '@chakra-ui/react';
+import { Box, VStack, IconButton, useDisclosure, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerBody, Flex, Text } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 import { PiWaves } from "react-icons/pi";
 import { GiMountainCave, GiSmokeBomb } from "react-icons/gi";
