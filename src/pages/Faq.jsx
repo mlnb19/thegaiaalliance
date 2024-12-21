@@ -61,3 +61,64 @@ function Faq({ isOpen, onClose }) {
 }
 
 export default Faq;
+import React from 'react';
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
+  VStack,
+  Text,
+  Box,
+  Icon,
+} from '@chakra-ui/react';
+import { FaLightbulb, FaBiking, FaCarrot, FaGlobeEurope, FaUsers, FaShoppingBag, FaShare, FaLeaf, FaHandPeace, FaBook } from 'react-icons/fa';
+
+function Faq({ isOpen, onClose }) {
+  return (
+    <Modal isOpen={isOpen} onClose={onClose} size="4xl">
+      <ModalOverlay backdropFilter="blur(10px)" />
+      <ModalContent bg="gray.900" p={6} maxH="80vh" overflowY="auto">
+        <ModalHeader color="cyan.200">🌍 10 Coola sätt att rädda planeten! 🌱</ModalHeader>
+        <ModalCloseButton color="white" />
+        <ModalBody>
+          <VStack spacing={4} align="stretch">
+            {[
+              { title: "1. Släck och stäng av", text: "Släck lampor när du lämnar ett rum.\nStäng av elektroniska prylar istället för att låta dem stå i standby-läge.", icon: FaLightbulb },
+              { title: "2. Välj cykeln eller gå", text: "Cykla eller gå istället för att bli skjutsad i bil – det är både bättre för miljön och hälsan.", icon: FaBiking },
+              { title: "3. Ät smart", text: "Testa en köttfri dag i veckan.\nMinska matsvinnet genom att ta bara så mycket mat du orkar äta.", icon: FaCarrot },
+              { title: "4. Ta hand om vår planet", text: "Plocka upp skräp om du ser det.\nHjälp till vid skolprojekt som handlar om miljön.", icon: FaGlobeEurope },
+              { title: "5. Var med och påverka", text: "Snacka med din skola om att spara energi eller minska plastanvändningen.", icon: FaUsers },
+              { title: "6. Tänk på vad du köper", text: "Använd din vattenflaska istället för engångsflaskor.\nHandla begagnade kläder.", icon: FaShoppingBag },
+              { title: "7. Dela med dig", text: "Prata med familj och kompisar om vad du lär dig om klimatet.", icon: FaShare },
+              { title: "8. Använd mindre plast", text: "Ta med matlåda och återanvändbara bestick.", icon: FaLeaf },
+              { title: "9. Stå upp för miljön", text: "Delta i skoldiskussioner om miljön.", icon: FaHandPeace },
+              { title: "10. Var nyfiken", text: "Läs om hur klimatförändringar påverkar världen.", icon: FaBook }
+            ].map((tip, index) => (
+              <Box 
+                key={index}
+                p={4} 
+                bg="whiteAlpha.100" 
+                borderRadius="xl" 
+                _hover={{ transform: 'scale(1.01)', bg: 'whiteAlpha.200' }}
+                transition="all 0.2s"
+              >
+                <Box display="flex" alignItems="center" gap={3}>
+                  <Icon as={tip.icon} color="cyan.200" boxSize={6} />
+                  <Text fontWeight="bold" color="white">{tip.title}</Text>
+                </Box>
+                <Text color="gray.400" mt={2} fontSize="sm" whiteSpace="pre-line">
+                  {tip.text}
+                </Text>
+              </Box>
+            ))}
+          </VStack>
+        </ModalBody>
+      </ModalContent>
+    </Modal>
+  );
+}
+
+export default Faq;

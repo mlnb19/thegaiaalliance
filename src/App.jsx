@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ChakraProvider } from '@chakra-ui/react';
 import SeaLevels from './pages/SeaLevels';
+import Faq from './pages/Faq';
 import Temperature from './pages/Temperature';
 import Co2 from './pages/Co2';
 import Glaciers from './pages/Glaciers';
