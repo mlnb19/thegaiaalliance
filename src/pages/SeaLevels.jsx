@@ -292,9 +292,13 @@ function Startpage() {
       _hover={{ transform: 'scale(1.02)' }}
     >
       <Text color="white" fontSize="2xl" fontWeight="bold">
-        Havsnivåns förändring
+        Visste du detta om havsnivån? 🌊
       </Text>
-      <Text color="gray.500" mt="4">Statistik om havsnivån sen 1880</Text>
+      <Text color="gray.500" mt="4">
+        • En höjning på bara 1 meter kan översvämma områden där 1 miljard människor bor! 😮
+        <br/>
+        • Glaciärerna smälter snabbare nu än någonsin tidigare i historien ❄️
+      </Text>
     </Box>
 
     <Modal isOpen={isChartModalOpen} onClose={() => setIsChartModalOpen(false)} size="4xl">
