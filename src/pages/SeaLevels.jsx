@@ -11,7 +11,8 @@ import PopupModal from './PopupModal';
 
 
 function Startpage() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isTipsModalOpen, setIsTipsModalOpen] = useState(false);
+  const [isChartModalOpen, setIsChartModalOpen] = useState(false);
 
   return (
     <Box w="100vw" h="100vh" bg="#0d0d0d" display="flex" alignItems="center" justifyContent="center" position="relative" overflow="hidden">
@@ -38,7 +39,7 @@ function Startpage() {
                 Höjda Havsnivåer
               </Text>
               <Text color="gray.300" mb={8}>
-                Den globala höjningen av havsnivåerna hotar miljontals människor med översvämningar, förlust av hem och ekosystem, och utgör ett allvarligt hot mot kustsamhällen och låglandsområden världen över.<br /><br />Visste du att du kan göra skillnad? <Link color='blue' onClick={() => setIsModalOpen(true)} _hover={{ textDecoration: 'underline' }}>Klicka här för att lära dig hur!</Link>
+                Den globala höjningen av havsnivåerna hotar miljontals människor med översvämningar, förlust av hem och ekosystem, och utgör ett allvarligt hot mot kustsamhällen och låglandsområden världen över.<br /><br />Visste du att du kan göra skillnad? <Link color='blue' onClick={() => setIsTipsModalOpen(true)} _hover={{ textDecoration: 'underline' }}>Klicka här för att lära dig hur!</Link>
               </Text>
               <Box borderRadius="xl" overflow="hidden" mt="auto">
                 <Image src="/images/Ocean.jpg" alt="Feature preview" w="100%" />
@@ -132,7 +133,7 @@ function Startpage() {
       p={8} 
       flex={1} 
       cursor="pointer"
-      onClick={() => setIsModalOpen(true)}
+      onClick={() => setIsChartModalOpen(true)}
       transition="transform 0.2s"
       _hover={{ transform: 'scale(1.02)' }}
     >
@@ -158,7 +159,7 @@ function Startpage() {
       </Box>
     </Box>
 
-    <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} size="4xl">
+    <Modal isOpen={isChartModalOpen} onClose={() => setIsChartModalOpen(false)} size="4xl">
       <ModalOverlay backdropFilter="blur(10px)" />
       <ModalContent bg="gray.900" p={6} maxW="90vw">
         <ModalCloseButton color="white" />
@@ -168,23 +169,7 @@ function Startpage() {
       </ModalContent>
     </Modal>
 
-    <Modal isOpen={false} onClose={() => {}} size="4xl" isCentered>
-      <ModalOverlay backdropFilter="blur(10px)" />
-      <ModalContent 
-        bg="black" 
-        boxShadow="0px 0px 20px rgba(0, 0, 0, 0.5)"
-        maxW="100vw"
-        maxH="100vh"
-        borderRadius="xl"
-        overflow="hidden"
-      >
-        <ModalCloseButton color="white" zIndex="10" />
-        <Box w="100%" h="100%" p={6}>
-          <PopupModal />
-        </Box>
-      </ModalContent>
-    </Modal>
-    <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} size="4xl">
+    <Modal isOpen={isTipsModalOpen} onClose={() => setIsTipsModalOpen(false)} size="4xl">
                   <ModalOverlay backdropFilter="blur(10px)" />
                   <ModalContent bg="gray.900" p={6} maxH="80vh" overflowY="auto">
                     <ModalHeader color="cyan.200">🌍 10 Coola sätt att rädda planeten! 🌱</ModalHeader>
