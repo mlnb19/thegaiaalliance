@@ -4,55 +4,31 @@ import { Box, Button, Text, VStack, Progress, Radio, RadioGroup } from '@chakra-
 
 const questions = [
   {
-    question: "Hur mycket har den globala havsnivån stigit sedan 1900?",
-    options: ["10 cm", "20 cm", "23 cm", "30 cm"],
+    question: "Hur mycket stiger havsnivån varje år?",
+    options: ["1.1 mm", "2.2 mm", "3.3 mm", "4.4 mm"],
     correct: 2
   },
   {
-    question: "Vad är den största orsaken till havsnivåhöjningen?",
-    options: ["Smältande glaciärer", "Regn", "Undervattensvolkaner", "Vågor"],
-    correct: 0
+    question: "Hur mycket kan havsnivån stiga till år 2100?",
+    options: ["0.5 meter", "1 meter", "1.5 meter", "2 meter"],
+    correct: 1
   },
   {
-    question: "När förväntas havsnivån stiga med ytterligare 30cm?",
-    options: ["2030", "2050", "2080", "2100"],
-    correct: 3
-  },
-  {
-    question: "Vilken är den största effekten av stigande havsnivåer?",
-    options: ["Översvämningar", "Torka", "Värmeböljor", "Skogsbränder"],
-    correct: 0
-  },
-  {
-    question: "Hur många människor bor i kustområden som hotas av stigande havsnivåer?",
+    question: "Hur många människor kan påverkas av en meters havsnivåhöjning?",
     options: ["100 miljoner", "500 miljoner", "1 miljard", "2 miljarder"],
     correct: 2
   },
   {
-    question: "Vilken är den främsta orsaken till klimatförändringar?",
-    options: ["Vulkaner", "Solaktivitet", "Växthusgaser", "Jordens lutning"],
+    question: "Hur mycket har havsnivån ökat de senaste 10 åren?",
+    options: ["10%", "20%", "30%", "40%"],
     correct: 2
   },
   {
-    question: "Hur mycket har den globala temperaturen ökat sedan 1880?",
-    options: ["0.5°C", "1.0°C", "1.5°C", "2.0°C"],
-    correct: 1
-  },
-  {
-    question: "Vilket år var det varmaste uppmätta året hittills?",
-    options: ["2016", "2018", "2020", "2023"],
-    correct: 3
-  },
-  {
-    question: "Hur mycket har glaciärerna minskat sedan 1980?",
-    options: ["20%", "30%", "40%", "50%"],
-    correct: 2
-  },
-  {
-    question: "Vad kan vi göra för att minska klimatförändringarna?",
-    options: ["Inget", "Bara regeringar kan hjälpa", "Individuella val spelar roll", "Det är för sent"],
-    correct: 2
+    question: "Vad är det största hotet från stigande havsnivåer?",
+    options: ["Översvämningar", "Torka", "Värmeböljor", "Skogsbränder"],
+    correct: 0
   }
+]
 ];
 
 function QuizGame() {
@@ -89,8 +65,8 @@ function QuizGame() {
       <VStack spacing={6} p={8} align="center">
         <Text fontSize="3xl" color="white" fontWeight="bold">Klimat Quiz</Text>
         <Text color="gray.300" textAlign="center">
-          Testa dina kunskaper om klimatförändringar och havsnivåhöjning. 
-          Quizet innehåller 10 frågor - är du redo att anta utmaningen?
+          Testa dina kunskaper om havsnivåhöjning! 
+          Alla svar finns på denna sida - kan du hitta dem?
         </Text>
         <Button colorScheme="blue" size="lg" onClick={handleStart}>
           Starta Quiz
