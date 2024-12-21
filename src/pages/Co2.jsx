@@ -23,8 +23,8 @@ function Co2() {
         opacity="0.5"
         borderRadius="full"
       />
-      <Container maxW="container.xl" pt="80px" position="relative" zIndex={1}>
-        <SimpleGrid columns={2} spacing={6}>
+      <Container maxW="container.xl" pt={{base: 4, md: "80px"}} position="relative" zIndex={1}>
+        <SimpleGrid columns={{base: 1, md: 2}} spacing={6}>
           <Box bg="#111" borderRadius="xl" p={8} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
             <Text color="#FFB4B4" fontSize="sm">CO2 Utsläpp</Text>
             <Text color="white" fontSize="4xl" fontWeight="bold" mt={2}>

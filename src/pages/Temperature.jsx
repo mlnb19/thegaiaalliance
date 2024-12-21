@@ -24,8 +24,16 @@ function Temperature() {
         borderRadius="full"
       />
       <Container maxW="container.xl" position="relative" zIndex={1}>
-        <Grid templateColumns="repeat(12, 1fr)" gap={6} h="600px">
-          <GridItem colSpan={5}>
+        <Grid 
+          templateColumns={{
+            base: "1fr",
+            md: "repeat(12, 1fr)"
+          }} 
+          gap={6} 
+          minH={{base: "auto", md: "600px"}}
+          pb={{base: 6, md: 0}}
+        >
+          <GridItem colSpan={{base: 12, md: 5}}>
             <Box bg="#111" borderRadius="xl" p={8} h="100%" boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
               <Text color="#FFD4B4" fontSize="sm">Global Uppvärmning</Text>
               <Text color="white" fontSize="4xl" fontWeight="bold" mt={2} mb={4}>

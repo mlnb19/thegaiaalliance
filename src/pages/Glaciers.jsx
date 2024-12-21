@@ -24,8 +24,12 @@ function Glaciers() {
         opacity="0.5"
         borderRadius="full"
       />
-      <Container maxW="container.xl" pt="80px" position="relative" zIndex={1}>
-        <HStack spacing={6} align="stretch">
+      <Container maxW="container.xl" pt={{base: 4, md: "80px"}} position="relative" zIndex={1}>
+        <Flex 
+          direction={{base: "column", md: "row"}} 
+          gap={6} 
+          align="stretch"
+        >
           <VStack flex={1} spacing={6}>
             <Box bg="#111" borderRadius="xl" p={8} w="100%" boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
               <Text color="#B4E4FF" fontSize="sm">Glaciär Statistik</Text>
@@ -99,7 +103,7 @@ function Glaciers() {
               <Text color="gray.500" mt={4}>Status: Allvarlig</Text>
             </Box>
           </VStack>
-        </HStack>
+        </Flex>
       </Container>
 
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} size="4xl" isCentered>
