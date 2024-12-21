@@ -265,7 +265,7 @@ function Startpage() {
                     <FaRegUserCircle />
                   </Center>
                   <Center color="gray.400" fontSize="l" mt={4} fontFamily={'monospace'}>
-                    LOREM IPSUM
+                    Visste du att havsnivån stiger med 3,3 mm per år?
                   </Center>
                 </Box>
                 <Box bg="#111" borderRadius="xl" p={6} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
@@ -273,7 +273,7 @@ function Startpage() {
                     <AiOutlineLogout />
                   </Center>
                   <Center color="gray.400" fontSize="l" mt={4} fontFamily={'monospace'}>
-                    LOREM IPSUM
+                    År 2100 kan havsnivån vara 1 meter högre
                   </Center>
                 </Box>
               </SimpleGrid>
