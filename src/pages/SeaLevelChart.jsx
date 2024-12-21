@@ -96,9 +96,12 @@ const SeaLevelChart = () => {
             bottom={0}
             left={0}
             right={0}
-            height={`${Math.max(0, (currentLevel + 200) / 2)}px`}
-            bgGradient="linear(to-b, rgba(0, 127, 255, 0.1), rgba(0, 127, 255, 0.4))"
-            transition="height 0.3s ease-in-out"
+            height={`${Math.max(0, ((currentLevel + 200) * 1.5))}px`}
+            bgGradient={`linear(to-b, 
+              rgba(0, 127, 255, ${Math.min(0.6, Math.max(0.1, (currentLevel + 200) / 400))}), 
+              rgba(0, 127, 255, ${Math.min(0.8, Math.max(0.3, (currentLevel + 200) / 300))})
+            )`}
+            transition="all 0.5s ease-in-out"
             backdropFilter="blur(2px)"
             animation="wave 2s ease-in-out infinite"
             _before={{
