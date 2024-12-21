@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Box, Container, Text, Grid, GridItem, Flex, Center, Image, Avatar, SimpleGrid, Modal, ModalOverlay, ModalContent, ModalCloseButton, Link } from '@chakra-ui/react';
+import { Box, Container, Text, Grid, GridItem, Flex, Center, Image, Avatar, SimpleGrid, Modal, ModalOverlay, ModalContent, ModalCloseButton, ModalHeader, ModalBody, VStack, Icon } from '@chakra-ui/react';
 import Navbar from './Navbar';
 import { Liquid } from '@ant-design/plots';
 import { GiBrain, GiNotebook } from "react-icons/gi";
-import { FaRegUserCircle } from "react-icons/fa";
-import { AiOutlineLogout } from "react-icons/ai";
+import { FaRegUserCircle, FaLightbulb, FaBiking, FaCarrot, FaGlobeEurope, FaUsers, FaShoppingBag, FaShare, FaLeaf, FaHandPeace, FaBook } from "react-icons/fa";
+import { AiOutlineLogout } from 'react-icons/ai';
 import PopupModal from './PopupModal';
 
 
@@ -37,7 +37,7 @@ function Startpage() {
                 Höjda Havsnivåer
               </Text>
               <Text color="gray.300" mb={8}>
-                Den globala höjningen av havsnivåerna hotar miljontals människor med översvämningar, förlust av hem och ekosystem, och utgör ett allvarligt hot mot kustsamhällen och låglandsområden världen över.<br /><br />Visste du att du kan göra skillnad? <Link color='blue'>Klicka för att lära dig hur!</Link>
+                Den globala höjningen av havsnivåerna hotar miljontals människor med översvämningar, förlust av hem och ekosystem, och utgör ett allvarligt hot mot kustsamhällen och låglandsområden världen över.<br /><br />Visste du att du kan göra skillnad? <Link color='blue' onClick={() => setIsModalOpen(true)} _hover={{ textDecoration: 'underline' }}>Klicka här för att lära dig hur!</Link>
               </Text>
               <Box borderRadius="xl" overflow="hidden" mt="auto">
                 <Image src="/images/Ocean.jpg" alt="Feature preview" w="100%" />
@@ -173,10 +173,50 @@ function Startpage() {
         </Box>
       </ModalContent>
     </Modal>
-    </Flex>
-    </GridItem>
-    </Grid>
-    </Container>
+    <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} size="4xl">
+                  <ModalOverlay backdropFilter="blur(10px)" />
+                  <ModalContent bg="gray.900" p={6}>
+                    <ModalHeader color="cyan.200">🌍 10 Coola sätt att rädda planeten! 🌱</ModalHeader>
+                    <ModalCloseButton color="white" />
+                    <ModalBody>
+                      <VStack spacing={4} align="stretch">
+                        {[
+                          { title: "1. Släck och stäng av", text: "Släck lampor när du lämnar ett rum.\nStäng av elektroniska prylar istället för att låta dem stå i standby-läge.", icon: FaLightbulb },
+                          { title: "2. Välj cykeln eller gå", text: "Cykla eller gå istället för att bli skjutsad i bil – det är både bättre för miljön och hälsan.", icon: FaBiking },
+                          { title: "3. Ät smart", text: "Testa en köttfri dag i veckan – att äta mer grönsaker och mindre kött är bra för miljön.\nMinska matsvinnet genom att ta bara så mycket mat du orkar äta.", icon: FaCarrot },
+                          { title: "4. Ta hand om vår planet", text: "Plocka upp skräp om du ser det på vägen hem eller i skolan.\nHjälp till vid skolprojekt som handlar om miljön.", icon: FaGlobeEurope },
+                          { title: "5. Var med och påverka", text: "Snacka med din skola om att spara energi eller minska plastanvändningen.", icon: FaUsers },
+                          { title: "6. Tänk på vad du köper", text: "Använd din vattenflaska istället för att köpa engångsflaskor.\nHandla begagnade kläder eller byta kläder med kompisar.", icon: FaShoppingBag },
+                          { title: "7. Dela med dig av kunskap", text: "Prata med familj och kompisar om vad du lär dig om klimatet i skolan.\nGör ett TikTok eller inlägg om miljön.", icon: FaShare },
+                          { title: "8. Använd mindre plast", text: "Ta med matlåda och återanvändbara bestick istället för engångsplast.\nSäg nej till sugrör och plastpåsar när det går.", icon: FaLeaf },
+                          { title: "9. Stå upp för miljön", text: "Delta i skoldiskussioner och föreslå idéer för att göra skolan mer miljövänlig.", icon: FaHandPeace },
+                          { title: "10. Var nyfiken och lär dig mer", text: "Läs om hur klimatförändringar påverkar havsnivåerna och andra delar av världen.", icon: FaBook }
+                        ].map((tip, index) => (
+                          <Box 
+                            key={index}
+                            p={4} 
+                            bg="whiteAlpha.100" 
+                            borderRadius="xl" 
+                            _hover={{ transform: 'scale(1.01)', bg: 'whiteAlpha.200' }}
+                            transition="all 0.2s"
+                          >
+                            <Flex align="center" gap={3}>
+                              <Icon as={tip.icon} color="cyan.200" boxSize={6} />
+                              <Text fontWeight="bold" color="white">{tip.title}</Text>
+                            </Flex>
+                            <Text color="gray.400" mt={2} fontSize="sm" whiteSpace="pre-line">
+                              {tip.text}
+                            </Text>
+                          </Box>
+                        ))}
+                      </VStack>
+                    </ModalBody>
+                  </ModalContent>
+                </Modal>
+            </Flex>
+          </GridItem>
+        </Grid>
+      </Container>
     </Box>
   );
 }
