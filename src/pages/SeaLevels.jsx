@@ -175,7 +175,7 @@ function Startpage() {
     </Modal>
     <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} size="4xl">
                   <ModalOverlay backdropFilter="blur(10px)" />
-                  <ModalContent bg="gray.900" p={6}>
+                  <ModalContent bg="gray.900" p={6} maxH="80vh" overflowY="auto">
                     <ModalHeader color="cyan.200">🌍 10 Coola sätt att rädda planeten! 🌱</ModalHeader>
                     <ModalCloseButton color="white" />
                     <ModalBody>
