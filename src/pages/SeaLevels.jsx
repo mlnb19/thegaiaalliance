@@ -136,7 +136,7 @@ function Startpage() {
 
             <Box position="relative" height="112px" overflow="hidden" borderRadius="xl">
               <Image
-                src="/images/quietstreet.svg"
+                src="/images/horizon.jpg"
                 alt="Stadsvy"
                 position="absolute"
                 top={0}
@@ -145,18 +145,6 @@ function Startpage() {
                 height="100%"
                 zIndex={1}
               />
-              <Box
-                position="absolute"
-                bottom="0"
-                left="0"
-                right="0"
-                height="25%"
-                bgGradient="linear(to-t, rgba(0, 127, 255, 0.6), rgba(0, 127, 255, 0.2))"
-                transition="height 0.8s ease-in-out"
-                zIndex={2}
-                borderRadius="md"
-              >
-              </Box>
             </Box>
           </Box>
 

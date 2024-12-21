@@ -40,24 +40,35 @@ const SeaLevelChart = () => {
   };
 
   const calculateHeightPercentage = (level) => {
-    const referencePercentage = 22; // 15% av höjden representerar 0 mm
+    const referencePercentage = 18; // 27% representerar 0 mm
+    const maxLevel = 200; // Maximal havsnivå
+    const minLevel = -400; // Minimal havsnivå
+
     if (level >= 0) {
-      return referencePercentage + (level / 200) * (85 - referencePercentage); // Positiva nivåer ökar uppåt
+      // Positiva nivåer ökar från referensnivån uppåt
+      return Math.min(
+        referencePercentage + (level / maxLevel) * (85 - referencePercentage),
+        100
+      );
     } else {
-      return referencePercentage + (level / 200) * referencePercentage; // Negativa nivåer går nedåt
+      // Negativa nivåer sjunker från referensnivån nedåt
+      return Math.max(
+        referencePercentage - (Math.abs(level) / Math.abs(minLevel)) * referencePercentage,
+        0
+      );
     }
   };
 
   return (
     <Flex
-      direction={{ base: 'column', md: 'row' }}    
+      direction={{ base: 'column', md: 'row' }}
       borderRadius="xl"
       w="100%"
       maxW="100%"
       h="100%"
       maxH="100%"
       mx="auto"
-      align={'center'}
+      align="center"
       p={8}
     >
       {/* Vänster sektion: Graf */}
@@ -68,7 +79,7 @@ const SeaLevelChart = () => {
         <Box position="relative" height="300px" overflow="hidden" borderRadius="xl">
           {/* Stadsvy */}
           <Image
-            src="/images/quietstreet.svg"
+            src="/images/horizon.jpg"
             alt="Stadsvy"
             position="absolute"
             top={0}
@@ -84,45 +95,24 @@ const SeaLevelChart = () => {
             left="0"
             right="0"
             height={`${calculateHeightPercentage(currentLevel)}%`}
-            bgGradient="linear(to-t, rgba(0, 127, 255, 0.2), rgba(0, 127, 255, 1))"          
-            transition="height 0.8s ease-in-out"
+            bgGradient="linear(to-t, rgba(0, 127, 255, 0.6), rgba(0, 127, 255, 1))"
             zIndex={2}
             borderRadius="md"
-            className="box"
             sx={{
-              '--mask': 'radial-gradient(178.89px at 50% 240px,#000 99%,#0000 101%) calc(50% - 160px) 0/320px 100%, radial-gradient(178.89px at 50% -160px,#0000 99%,#000 101%) 50% 80px/320px 100% repeat-x',
-              '@keyframes wave': {
+              '--mask':
+                'radial-gradient(6.71px at 50% 9px,#000 99%,#0000 101%) calc(50% - 6px) 0/12px 100%, radial-gradient(22.36px at 50% -20px,#0000 99%,#000 101%) 50% 10px/20px 100% repeat-x',
+              WebkitMask: 'var(--mask)',
+              mask: 'var(--mask)',
+              animation: 'waveAnimation 0s infinite linear',
+              backgroundSize: '200% 100%',
+              '@keyframes waveAnimation': {
                 '0%': { transform: 'translateX(0)' },
-                '50%': { transform: 'translateX(-25%)' },
-                '100%': { transform: 'translateX(0)' }
+                '100%': { transform: 'translateX(-50%)' },
               },
-              '&::before': {
-                content: '""',
-                position: 'absolute',
-                top: '-15px',
-                left: 0,
-                right: 0,
-                height: '15px',
-                backgroundImage: 'linear-gradient(45deg, transparent 33.33%, rgba(0, 127, 255, 0.5) 33.33%, rgba(0, 127, 255, 0.5) 66.66%, transparent 66.66%)',
-                backgroundSize: '30px 15px',
-                animation: 'wave 3s linear infinite'
-              }
             }}
-          >
-            {/* Vågor */}
-            <Box
-              position="absolute"
-              top="-20px"
-              left="0"
-              right="0"
-              height="40px"
-              background="url('/images/wave.jsx') repeat-x"
-              animation="wave 3s linear infinite"
-              zIndex={3}
-            />
-          </Box>
+          />
         </Box>
-        <Box w="100%" >
+        <Box w="100%">
           <Slider
             min={1900}
             max={2013}
@@ -131,14 +121,14 @@ const SeaLevelChart = () => {
             onChange={handleYearChange}
             colorScheme="blue"
           >
-            
             <SliderTrack>
               <SliderFilledTrack />
             </SliderTrack>
             <SliderThumb />
           </Slider>
-          <Text color="white" fontSize={'12'} mt={2}>År: {selectedYear}</Text>
-          <Text color="white" mt={2} fontSize={'11'}>Dra i slidern för att se hur havsnivån ökar eller sänks beroende på år.</Text>
+          <Text color="white" fontSize="sm" mt={2}>
+            År: {selectedYear}
+          </Text>
         </Box>
       </VStack>
 
@@ -159,9 +149,6 @@ const SeaLevelChart = () => {
         </Text>
         <Text fontSize="md" mb={4}>
           När havsnivån ändras påverkar det mycket mer än bara stränderna. Höjda havsnivåer kan leda till översvämningar i städer nära havet, skada djur och växter i naturen och visar hur klimatförändringarna påverkar vår planet.
-        </Text>
-        <Text fontSize="md" mb={4}>
-          Havsnivån berättar en viktig historia om hur vi människor påverkar jorden – och vad vi kan göra för att skydda den!
         </Text>
       </Box>
     </Flex>
