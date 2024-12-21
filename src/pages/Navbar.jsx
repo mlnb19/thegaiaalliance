@@ -15,7 +15,7 @@ const Navbar = () => {
     <Box position="fixed" top="0" right="2" p={1} zIndex={10} marginTop={2} fontWeight={5} >
       <Flex gap={2}>
         <IconButton
-          icon={<PiWaves />}
+          icon={<Box as={PiWaves} size={24} strokeWidth={2} />}
           aria-label="Sea Levels"
           variant="ghost"
           color="white"
@@ -23,7 +23,7 @@ const Navbar = () => {
           onClick={() => navigate('/sealevels')}
         />
         <IconButton
-          icon={<GiMountainCave />}
+          icon={<Box as={GiMountainCave} size={24} />}
           aria-label="Glacier"
           variant="ghost"
           color="white"
@@ -31,7 +31,7 @@ const Navbar = () => {
           onClick={() => navigate('/glaciers')}
         />
         <IconButton
-          icon={<GiSmokeBomb />}
+          icon={<Box as={GiSmokeBomb} size={24} />}
           aria-label="Co2"
           variant="ghost"
           color="white"
@@ -39,7 +39,7 @@ const Navbar = () => {
           onClick={() => navigate('/co2')}
         />
         <IconButton
-          icon={<TbTemperatureCelsius />}
+          icon={<Box as={TbTemperatureCelsius} size={24} strokeWidth={2} />}
           aria-label="Temperature"
           variant="ghost"
           color="white"
@@ -47,7 +47,7 @@ const Navbar = () => {
           onClick={() => navigate('/temperature')}
         />
         <IconButton
-          icon={<FaUserCircle />}
+          icon={<Box as={FaUserCircle} size={24} />}
           aria-label="Profile"
           variant="ghost"
           color="white"
@@ -55,7 +55,7 @@ const Navbar = () => {
           onClick={() => navigate('/profile')}
         />
         <IconButton
-          icon={<FaQuestionCircle />}
+          icon={<Box as={FaQuestionCircle} size={24} />}
           aria-label="FAQ"
           variant="ghost"
           color="white"
@@ -63,7 +63,7 @@ const Navbar = () => {
           onClick={() => navigate('/faq')}
         />
         <IconButton
-          icon={<FaSignOutAlt />}
+          icon={<Box as={FaSignOutAlt} size={24} />}
           aria-label="Logout"
           variant="ghost"
           color="white"
