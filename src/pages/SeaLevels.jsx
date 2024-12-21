@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import QuizGame from './QuizGame';
 import { Box, Container, Text, Grid, GridItem, Flex, Center, Image, Avatar, SimpleGrid, Modal, ModalOverlay, ModalContent, ModalCloseButton, ModalHeader, ModalBody, VStack, Icon, Link } from '@chakra-ui/react';
 import MemoryGame from './MemoryGame';
 import Navbar from './Navbar';
@@ -15,6 +16,7 @@ function Startpage() {
   const [isTipsModalOpen, setIsTipsModalOpen] = useState(false);
   const [isChartModalOpen, setIsChartModalOpen] = useState(false);
   const [isMemoryModalOpen, setIsMemoryModalOpen] = useState(false);
+  const [isQuizModalOpen, setIsQuizModalOpen] = useState(false);
 
   return (
     <Box
@@ -223,9 +225,19 @@ function Startpage() {
               bgGradient='linear(to-l, #1E3F66, #91BAD6)'
               bgClip='text' 
               fontSize="2xl"
-              fontWeight="bold">
+              fontWeight="bold"
+              cursor="pointer"
+              onClick={() => setIsQuizModalOpen(true)}>
                 Spel: Quiz
             </Text>
+
+            <Modal isOpen={isQuizModalOpen} onClose={() => setIsQuizModalOpen(false)} size="xl">
+              <ModalOverlay backdropFilter="blur(10px)" />
+              <ModalContent bg="gray.900" p={4}>
+                <ModalCloseButton color="white" />
+                <QuizGame />
+              </ModalContent>
+            </Modal>
           </Flex>
         </Box>
         </Flex>
