@@ -63,8 +63,8 @@ const SeaLevelChart = () => {
       <Box position="relative" height="500px" flex="1" overflow="hidden" borderRadius="xl" bg="#222">
         {/* Stadsvy */}
         <Image
-          src="/images/ocean.svg"
-          alt="Stadsvy"
+          src="/images/OceanAnime.svg"
+          alt="Havsbild"
           position="absolute"
           top="0"
           left="0"
