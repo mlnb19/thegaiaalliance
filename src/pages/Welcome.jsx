@@ -29,12 +29,12 @@ const Welcome = () => {
 
         <Flex justify="flex-end" gap={8}>
           <Stack direction="row" spacing={8}>
-            <Link href="/sealevels" display="flex" alignItems="center" gap={2} color="white" fontFamily="monospace" fontSize="16px" fontWeight="bold" _hover={{ color: 'gray.300' }}><PiWaves size={20} />HAVSNIVÅER</Link>
-            <Link href="/glaciers" display="flex" alignItems="center" gap={2} color="white" fontFamily="monospace" fontSize="16px" fontWeight="bold" _hover={{ color: 'gray.300' }}><GiMountainCave size={20} />GLACIÄRER</Link>
-            <Link href="/co2" display="flex" alignItems="center" gap={2} color="white" fontFamily="monospace" fontSize="16px" fontWeight="bold" _hover={{ color: 'gray.300' }}><GiSmokeBomb size={20} />CO2</Link>
-            <Link href="/temperature" display="flex" alignItems="center" gap={2} color="white" fontFamily="monospace" fontSize="16px" fontWeight="bold" _hover={{ color: 'gray.300' }}><TbTemperatureCelsius size={20} />TEMPERATUR</Link>
-            <Link href="/profile" display="flex" alignItems="center" gap={2} color="white" fontFamily="monospace" fontSize="16px" fontWeight="bold" _hover={{ color: 'gray.300' }} borderLeft="1px" borderColor="white" paddingLeft="25px"><FaUserCircle size={20} />PROFIL</Link>
-            <Link href="/faq" display="flex" alignItems="center" gap={2} color="white" fontFamily="monospace" fontSize="16px" fontWeight="bold" _hover={{ color: 'gray.300' }}><FaQuestionCircle size={20} />FAQ</Link>
+            <Link href="/sealevels" display="flex" alignItems="center" gap={2} color="white" fontFamily="monospace" fontSize="16px" fontWeight="bold" _hover={{ color: 'gray.300' }}><Box as={PiWaves} size={24} strokeWidth={2} />HAVSNIVÅER</Link>
+            <Link href="/glaciers" display="flex" alignItems="center" gap={2} color="white" fontFamily="monospace" fontSize="16px" fontWeight="bold" _hover={{ color: 'gray.300' }}><Box as={GiMountainCave} size={24} />GLACIÄRER</Link>
+            <Link href="/co2" display="flex" alignItems="center" gap={2} color="white" fontFamily="monospace" fontSize="16px" fontWeight="bold" _hover={{ color: 'gray.300' }}><Box as={GiSmokeBomb} size={24} />CO2</Link>
+            <Link href="/temperature" display="flex" alignItems="center" gap={2} color="white" fontFamily="monospace" fontSize="16px" fontWeight="bold" _hover={{ color: 'gray.300' }}><Box as={TbTemperatureCelsius} size={24} strokeWidth={2} />TEMPERATUR</Link>
+            <Link href="/profile" display="flex" alignItems="center" gap={2} color="white" fontFamily="monospace" fontSize="16px" fontWeight="bold" _hover={{ color: 'gray.300' }} borderLeft="1px" borderColor="white" paddingLeft="25px"><Box as={FaUserCircle} size={24} />PROFIL</Link>
+            <Link href="/faq" display="flex" alignItems="center" gap={2} color="white" fontFamily="monospace" fontSize="16px" fontWeight="bold" _hover={{ color: 'gray.300' }}><Box as={FaQuestionCircle} size={24} />FAQ</Link>
           </Stack>
         </Flex>
       </Container>
