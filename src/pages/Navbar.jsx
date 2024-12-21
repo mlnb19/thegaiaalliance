@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Box, Flex, IconButton } from '@chakra-ui/react';
-import { FaUser, FaBell, FaCog } from 'react-icons/fa';
+import { FaBell, FaCog, FaUserCircle, FaQuestionCircle, FaSignOutAlt } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { PiWaves } from "react-icons/pi";
 import { GiMountainCave, GiSmokeBomb } from "react-icons/gi";
@@ -45,6 +45,30 @@ const Navbar = () => {
           color="white"
           _hover={{ bg: 'whiteAlpha.200' }}
           onClick={() => navigate('/temperature')}
+        />
+        <IconButton
+          icon={<FaUserCircle />}
+          aria-label="Profile"
+          variant="ghost"
+          color="white"
+          _hover={{ bg: 'whiteAlpha.200' }}
+          onClick={() => navigate('/profile')}
+        />
+        <IconButton
+          icon={<FaQuestionCircle />}
+          aria-label="FAQ"
+          variant="ghost"
+          color="white"
+          _hover={{ bg: 'whiteAlpha.200' }}
+          onClick={() => navigate('/faq')}
+        />
+        <IconButton
+          icon={<FaSignOutAlt />}
+          aria-label="Logout"
+          variant="ghost"
+          color="white"
+          _hover={{ bg: 'whiteAlpha.200' }}
+          onClick={() => navigate('/logout')}
         />
       </Flex>
     </Box>
