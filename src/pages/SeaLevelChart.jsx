@@ -68,29 +68,38 @@ const SeaLevelChart = () => {
             fillOpacity={0.85}
             borderColor={{ theme: 'background' }}
             theme={{
-              textColor: '#fff',
-              fontSize: 11,
+              textColor: '#ffffff',
+              fontSize: 12,
               axis: {
                 domain: {
                   line: {
-                    stroke: 'blue',
+                    stroke: '#ffffff',
                     strokeWidth: 1
+                  }
+                },
+                legend: {
+                  text: {
+                    fill: '#ffffff'
                   }
                 },
                 ticks: {
                   line: {
-                    stroke: 'blue',
+                    stroke: '#ffffff',
                     strokeWidth: 1
+                  },
+                  text: {
+                    fill: '#ffffff'
                   }
                 }
               },
               grid: {
                 line: {
-                  stroke: 'white',
+                  stroke: '#334155',
                   strokeWidth: 1
                 }
               }
             }}
+            colors={['#60a5fa', '#3b82f6', '#2563eb']}
           />
         )}
       </Box>
