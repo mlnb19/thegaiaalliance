@@ -1,0 +1,22 @@
+https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/chunk-7KTBP25T.js?v=a3a4daaf:9840:5)
+    at DefaultPropsProvider (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/@mui_material_styles.js?v=a3a4daaf:2986:3)
+    at RtlProvider (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/@mui_material_styles.js?v=a3a4daaf:2966:3)
+    at ThemeProvider (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/@mui_material_styles.js?v=a3a4daaf:2922:5)
+    at ThemeProvider2 (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/@mui_material_styles.js?v=a3a4daaf:3038:5)
+    at ThemeProviderNoVars (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/@mui_material_styles.js?v=a3a4daaf:6477:10)
+    at ThemeProvider3 (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/@mui_material_styles.js?v=a3a4daaf:6559:3)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+overrideMethod @ hook.js:608Förstå det här feletAI
+node_modules/.vite/d…js?v=a3a4daaf:19441 Uncaught ReferenceError: Link is not defined
+    at Startpage (src/pages/SeaLevels.jsx:91:38)
+    at renderWithHooks (node_modules/.vite/deps/chunk-GJ5PGLZ3.js?v=a3a4daaf:11568:26)
+    at mountIndeterminateComponent (node_modules/.vite/deps/chunk-GJ5PGLZ3.js?v=a3a4daaf:14946:21)
+    at beginWork (node_modules/.vite/deps/chunk-GJ5PGLZ3.js?v=a3a4daaf:15934:22)
+    at beginWork$1 (node_modules/.vite/deps/chunk-GJ5PGLZ3.js?v=a3a4daaf:19781:22)
+    at performUnitOfWork (node_modules/.vite/deps/chunk-GJ5PGLZ3.js?v=a3a4daaf:19226:20)
+    at workLoopSync (node_modules/.vite/deps/chunk-GJ5PGLZ3.js?v=a3a4daaf:19165:13)
+    at renderRootSync (node_modules/.vite/deps/chunk-GJ5PGLZ3.js?v=a3a4daaf:19144:15)
+    at recoverFromConcurrentError (node_modules/.vite/deps/chunk-GJ5PGLZ3.js?v=a3a4daaf:18764:28)
+    at performConcurrentWorkOnRoot (node_modules/.vite/deps/chunk-GJ5PGLZ3.js?v=a3a4daaf:18712:30)
