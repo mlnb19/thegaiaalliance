@@ -173,7 +173,7 @@ function Startpage() {
               <Text 
                 fontSize="2xl" 
                 fontWeight="bold"
-                bgGradient='linear(to-l, #1E3F66, #91BAD6 )'
+                bgGradient='linear(to-l, blue, #91BAD6 )'
                 bgClip='text'
                 cursor="pointer"
                 onClick={() => setIsMemoryModalOpen(true)}>
@@ -194,7 +194,7 @@ function Startpage() {
         <Box 
           borderRadius="xl" 
           p={6}
-          bgGradient="linear(to-r,#73A5C6, #1E3F66)"
+          bgGradient="linear(to-l, blue, #91BAD6)"
           boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
 
           <Text 
@@ -234,7 +234,7 @@ function Startpage() {
             </Box>
 
             <Text 
-              bgGradient='linear(to-l, #1E3F66, #91BAD6)'
+              bgGradient='linear(to-l, blue, #91BAD6)'
               bgClip='text' 
               fontSize="2xl"
               fontWeight="bold"
