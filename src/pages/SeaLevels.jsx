@@ -135,17 +135,23 @@ function Startpage() {
             </Text>
             
             <Box height="120px">
-              <Liquid 
-                percent={0.3}
-                outline={{
-                  border: 2,
-                  distance: 4,
+              <Area
+                data={[
+                  { year: '1980', value: 10 },
+                  { year: '1990', value: 20 },
+                  { year: '2000', value: 40 },
+                  { year: '2010', value: 60 },
+                  { year: '2020', value: 80 }
+                ]}
+                xField="year"
+                yField="value"
+                smooth={true}
+                areaStyle={{
+                  fill: 'l(270) 0:#ffffff 0.5:#73A5C6 1:#1E3F66',
                 }}
-                wave={{
-                  length: 128,
+                line={{
+                  style: { stroke: '#1E3F66' },
                 }}
-                color="#73A5C6"
-                statistic={false}
               />
             </Box>
           </Box>
@@ -262,18 +268,22 @@ function Startpage() {
       </Text>
       <Text color="gray.500" mt="4">Statistik om havsnivån sen 1880</Text>
       <Box height="120px" mt={6}>
-        <Liquid 
-          percent={0.3}
-          outline={{
-            border: 2,
-            distance: 4,
+        <Area
+          data={[
+            { year: '1980', value: 10 },
+            { year: '1990', value: 20 },
+            { year: '2000', value: 40 },
+            { year: '2010', value: 60 },
+            { year: '2020', value: 80 }
+          ]}
+          xField="year"
+          yField="value"
+          smooth={true}
+          areaStyle={{
+            fill: 'l(270) 0:#ffffff 0.5:#73A5C6 1:#1E3F66',
           }}
-          wave={{
-            length: 128,
-          }}
-          statistic={false}
-          style={{
-            height: '100%',
+          line={{
+            style: { stroke: '#1E3F66' },
           }}
         />
       </Box>
