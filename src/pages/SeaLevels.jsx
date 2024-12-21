@@ -136,7 +136,7 @@ function Startpage() {
       _hover={{ transform: 'scale(1.02)' }}
     >
       <Text color="white" fontSize="2xl" fontWeight="bold">
-        Nån statistik baserat på SeaLevel.json
+        Havsnivåns förändring
       </Text>
       <Text color="gray.500" mt="4">Statistik om havsnivån sen 1880</Text>
       <Box height="120px" mt={6}>
@@ -156,6 +156,16 @@ function Startpage() {
         />
       </Box>
     </Box>
+
+    <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} size="4xl">
+      <ModalOverlay backdropFilter="blur(10px)" />
+      <ModalContent bg="gray.900" p={6}>
+        <ModalCloseButton color="white" />
+        <Box w="100%" h="500px">
+          <SeaLevelChart />
+        </Box>
+      </ModalContent>
+    </Modal>
 
     <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} size="4xl" isCentered>
       <ModalOverlay backdropFilter="blur(10px)" />
