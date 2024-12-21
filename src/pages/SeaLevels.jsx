@@ -122,7 +122,7 @@ function Startpage() {
           >
             <Text 
               color="white"
-              fontSize="4xl"
+              fontSize="3xl"
               fontWeight="bold"
               mb={4}>
               Havsnivåns förändring
@@ -131,28 +131,32 @@ function Startpage() {
             <Text 
               color="gray.500"
               mb={4}>
-              Statistik om havsnivån sen början av 1900-talet
+              Se hur havet har förändrats sen 1900-talet
             </Text>
 
-            <Box height="120px">
-              <Area
-                data={[
-                  { year: '1980', value: 10 },
-                  { year: '1990', value: 20 },
-                  { year: '2000', value: 40 },
-                  { year: '2010', value: 60 },
-                  { year: '2020', value: 80 }
-                ]}
-                xField="year"
-                yField="value"
-                smooth={true}
-                areaStyle={{
-                  fill: 'l(270) 0:#ffffff 0.5:#73A5C6 1:#1E3F66',
-                }}
-                line={{
-                  style: { stroke: '#1E3F66' },
-                }}
+            <Box position="relative" height="112px" overflow="hidden" borderRadius="xl">
+              <Image
+                src="/images/quietstreet.svg"
+                alt="Stadsvy"
+                position="absolute"
+                top={0}
+                left={0}
+                width="100%"
+                height="100%"
+                zIndex={1}
               />
+              <Box
+                position="absolute"
+                bottom="0"
+                left="0"
+                right="0"
+                height="25%"
+                bgGradient="linear(to-t, rgba(0, 127, 255, 0.6), rgba(0, 127, 255, 0.2))"
+                transition="height 0.8s ease-in-out"
+                zIndex={2}
+                borderRadius="md"
+              >
+              </Box>
             </Box>
           </Box>
 
@@ -267,40 +271,6 @@ function Startpage() {
         Havsnivåns förändring
       </Text>
       <Text color="gray.500" mt="4">Statistik om havsnivån sen 1880</Text>
-      <Box position="relative" height="300px" overflow="hidden" borderRadius="xl">
-        <Image
-          src="/images/quietstreet.svg"
-          alt="Stadsvy"
-          position="absolute"
-          top={0}
-          left={0}
-          width="100%"
-          height="100%"
-          zIndex={1}
-        />
-        <Box
-          position="absolute"
-          bottom="0"
-          left="0"
-          right="0"
-          height="40%"
-          bgGradient="linear(to-t, rgba(0, 127, 255, 0.6), rgba(0, 127, 255, 0.2))"
-          transition="height 0.8s ease-in-out"
-          zIndex={2}
-          borderRadius="md"
-        >
-          <Box
-            position="absolute"
-            top="-20px"
-            left="0"
-            right="0"
-            height="40px"
-            background="url('/images/wave.jsx') repeat-x"
-            animation="wave 3s linear infinite"
-            zIndex={3}
-          />
-        </Box>
-      </Box>
     </Box>
 
     <Modal isOpen={isChartModalOpen} onClose={() => setIsChartModalOpen(false)} size="full">
