@@ -1,12 +1,13 @@
 
 import React, { useState, useEffect } from 'react';
 import { ResponsiveStream } from '@nivo/stream';
-import { Box, Text, Tooltip, VStack, Image, Grid } from '@chakra-ui/react';
+import { Box, Text, Tooltip, VStack, Image, Grid, Slider, SliderTrack, SliderFilledTrack, SliderThumb } from '@chakra-ui/react';
 import { InfoOutlineIcon } from '@chakra-ui/icons';
 
 const SeaLevelChart = () => {
   const [seaLevelData, setSeaLevelData] = useState([]);
   const [currentLevel, setCurrentLevel] = useState(0);
+  const [selectedYear, setSelectedYear] = useState(1880);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -14,7 +15,7 @@ const SeaLevelChart = () => {
         const response = await fetch('/data/SeaLevel.json');
         const data = await response.json();
         const formattedData = data.map(item => ({
-          year: item.Time.split('-')[0],
+          year: parseInt(item.Time.split('-')[0]),
           havsnivå: parseFloat(item.GMSL)
         }));
         setSeaLevelData(formattedData);
@@ -25,8 +26,12 @@ const SeaLevelChart = () => {
     fetchData();
   }, []);
 
-  const handleYearHover = (point) => {
-    setCurrentLevel(point.havsnivå);
+  const handleYearChange = (value) => {
+    setSelectedYear(value);
+    const dataPoint = seaLevelData.find(point => point.year === value);
+    if (dataPoint) {
+      setCurrentLevel(dataPoint.havsnivå);
+    }
   };
 
   return (
@@ -63,7 +68,6 @@ const SeaLevelChart = () => {
               enableGridY={true}
               colors={['#60a5fa']}
               fillOpacity={0.85}
-              onMouseMove={(point) => handleYearHover(point)}
               theme={{
                 textColor: '#ffffff',
                 grid: {
@@ -74,6 +78,22 @@ const SeaLevelChart = () => {
               }}
             />
           )}
+        </Box>
+        <Box pt={4}>
+          <Text color="white" mb={2}>År: {selectedYear}</Text>
+          <Slider
+            min={1880}
+            max={2013}
+            step={1}
+            value={selectedYear}
+            onChange={handleYearChange}
+            colorScheme="blue"
+          >
+            <SliderTrack>
+              <SliderFilledTrack />
+            </SliderTrack>
+            <SliderThumb />
+          </Slider>
         </Box>
       </VStack>
 
