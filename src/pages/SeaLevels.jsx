@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Box, Container, Text, Grid, GridItem, Flex, Center, Image, Avatar, SimpleGrid, Modal, ModalOverlay, ModalContent, ModalCloseButton, ModalHeader, ModalBody, VStack, Icon, Link } from '@chakra-ui/react';
 import Navbar from './Navbar';
-import { Liquid } from '@ant-design/plots';
+import { Liquid, Area } from '@ant-design/plots';
 import { GiBrain, GiNotebook } from "react-icons/gi";
 import SeaLevelChart from './SeaLevelChart';
 import { FaRegUserCircle, FaLightbulb, FaBiking, FaCarrot, FaGlobeEurope, FaUsers, FaShoppingBag, FaShare, FaLeaf, FaHandPeace, FaBook } from "react-icons/fa";
