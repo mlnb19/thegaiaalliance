@@ -81,29 +81,42 @@ const SeaLevelChart = () => {
         <Text color="white" fontSize="xl" fontWeight="bold" mb={4}>
           Klimatpåverkan {currentLevel > 0 ? `+${currentLevel.toFixed(1)}` : currentLevel.toFixed(1)} mm
         </Text>
-        <Box 
-          position="relative" 
-          height="400px"
-          overflow="hidden"
-          borderRadius="xl"
-        >
-          <Image
-            src="/images/quietstreet.svg"
-            alt="Landskapsbild"
-            style={{
-              transform: `translateY(${Math.min(0, -currentLevel/2)}px)`,
-              transition: 'transform 0.3s ease-in-out'
-            }}
-          />
-          <Box
-            position="absolute"
-            bottom={0}
-            left={0}
-            right={0}
-            height={`${Math.max(0, currentLevel/2)}px`}
-            bg="rgba(0, 127, 255, 0.3)"
-            transition="height 0.3s ease-in-out"
-          />
+        <Box height="400px">
+          {seaLevelData.length > 0 && (
+            <ResponsiveStream
+              data={seaLevelData}
+              keys={['havsnivå']}
+              margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
+              axisBottom={{
+                tickSize: 5,
+                tickPadding: 5,
+                tickRotation: -45,
+                format: d => d,
+                legend: 'År',
+                legendOffset: 36
+              }}
+              axisLeft={{
+                tickSize: 5,
+                tickPadding: 5,
+                tickRotation: 0,
+                legend: 'Havsnivå (mm)',
+                legendOffset: -40
+              }}
+              enableGridX={false}
+              enableGridY={true}
+              colors={['#60a5fa']}
+              fillOpacity={0.85}
+              curve="natural"
+              theme={{
+                textColor: '#ffffff',
+                grid: {
+                  line: {
+                    stroke: '#334155'
+                  }
+                }
+              }}
+            />
+          )}
         </Box>
       </VStack>
     </Grid>
