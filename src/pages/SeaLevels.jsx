@@ -273,11 +273,11 @@ function Startpage() {
       <Text color="gray.500" mt="4">Statistik om havsnivån sen 1880</Text>
     </Box>
 
-    <Modal isOpen={isChartModalOpen} onClose={() => setIsChartModalOpen(false)} size="full">
+    <Modal isOpen={isChartModalOpen} onClose={() => setIsChartModalOpen(false)} size="xl">
       <ModalOverlay backdropFilter="blur(10px)" />
-      <ModalContent bg="gray.900" p={6} maxH="100vh" display="flex" alignItems="center" justifyContent="center">
+      <ModalContent bg="gray.900" p={4} maxH="80vh" display="flex" alignItems="center" justifyContent="center">
         <ModalCloseButton color="white" />
-        <Box w="90%" h="90vh">
+        <Box w="100%" h="600px">
           <SeaLevelChart />
         </Box>
       </ModalContent>
