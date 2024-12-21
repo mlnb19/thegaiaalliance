@@ -285,11 +285,7 @@ function Startpage() {
       bg="#111" 
       borderRadius="xl" 
       p={8} 
-      flex={1} 
-      cursor="pointer"
-      onClick={() => setIsChartModalOpen(true)}
-      transition="transform 0.2s"
-      _hover={{ transform: 'scale(1.02)' }}
+      flex={1}
     >
       <Text color="white" fontSize="2xl" fontWeight="bold">
         Visste du detta om havsnivån? 🌊
