@@ -204,7 +204,30 @@ const Navbar = () => {
         backdropFilter="blur(10px)" 
         zIndex={10}
       >
-        <NavContent />
+        <VStack spacing={6} mt={8}>
+          {[
+            { icon: PiWaves, label: "Sea Levels", path: '/sealevels', color: 'blue.300' },
+            { icon: GiMountainCave, label: "Glacier", path: '/glaciers', color: 'cyan.300' },
+            { icon: GiSmokeBomb, label: "Co2", path: '/co2', color: 'orange.300' },
+            { icon: TbTemperatureCelsius, label: "Temperature", path: '/temperature', color: 'red.300' },
+            { icon: FiUser, label: "Profile", path: '/profile', color: 'green.300' },
+            { icon: BsQuestionSquare, label: "FAQ", path: '/faq', color: 'green.300' },
+            { icon: RiLogoutCircleRLine, label: "Logout", path: '/logout', color: 'green.300' }
+          ].map((item, index) => (
+            <IconButton
+              key={index}
+              icon={<Box as={item.icon} size={20} strokeWidth={item.icon === TbTemperatureCelsius ? 2 : 1} />}
+              aria-label={item.label}
+              variant="ghost"
+              color="white"
+              onClick={() => {
+                navigate(item.path);
+                onClose();
+              }}
+              _hover={{ bg: item.color, color: 'black' }}
+            />
+          ))}
+        </VStack>
       </Box>
 
       <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
