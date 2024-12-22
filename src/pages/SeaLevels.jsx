@@ -20,6 +20,7 @@ function Startpage({ setIsFaqOpen }) {
   const [isMemoryModalOpen, setIsMemoryModalOpen] = useState(false);
   const [isQuizModalOpen, setIsQuizModalOpen] = useState(false);
   const [isRecyclingModalOpen, setIsRecyclingModalOpen] = useState(false);
+  const [isChattOpen, setIsChattOpen] = useState(false);
 
   return (
     <Box
@@ -269,14 +270,30 @@ function Startpage({ setIsFaqOpen }) {
                     Diskussions-<br/>frågor
                   </Center>
                 </Box>
-                <Box 
-                  bg="#111" 
-                  borderRadius="xl" 
+                <Box
+                  bg="#111"
+                  borderRadius="xl"
+                  p={6}
                   boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)"
-                  h="300px"
+                  cursor="pointer"
+                  onClick={() => setIsChattOpen(true)}
+                  _hover={{ bg: "#1a1a1a" }}
                 >
-                  <ChatBot />
+                  <Center as="span" color="white" fontSize="2xl" mb={4}>
+                    🤖
+                  </Center>
+                  <Center color="gray.400" fontSize="l" mt={4} fontFamily={'monospace'}>
+                    Chatta med EcoEdith
+                  </Center>
                 </Box>
+
+                <Modal isOpen={isChattOpen} onClose={() => setIsChattOpen(false)} size="lg">
+                  <ModalOverlay backdropFilter="blur(10px)" />
+                  <ModalContent bg="gray.900" h="600px">
+                    <ModalCloseButton color="white" />
+                    <ChatBot />
+                  </ModalContent>
+                </Modal>
               </SimpleGrid>
 
     {/* Percentage Display */}
