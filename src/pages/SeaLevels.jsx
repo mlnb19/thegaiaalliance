@@ -21,6 +21,7 @@ function Startpage({ setIsFaqOpen }) {
   const [isQuizModalOpen, setIsQuizModalOpen] = useState(false);
   const [isRecyclingModalOpen, setIsRecyclingModalOpen] = useState(false);
   const [isChattOpen, setIsChattOpen] = useState(false);
+  const [isDiscussionOpen, setIsDiscussionOpen] = useState(false);
 
   return (
     <Box
@@ -262,7 +263,15 @@ function Startpage({ setIsFaqOpen }) {
             <Flex direction="column" gap={6} h="100%">
               {/* Top Features */}
               <SimpleGrid columns={2} gap={6}>
-                <Box bg="#111" borderRadius="xl" p={6} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
+                <Box 
+                  bg="#111" 
+                  borderRadius="xl" 
+                  p={6} 
+                  boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)"
+                  cursor="pointer"
+                  onClick={() => setIsDiscussionOpen(true)}
+                  _hover={{ bg: "#1a1a1a" }}
+                >
                   <Center as="span" color="white" fontSize="2xl" mb={4}>
                     🌊
                   </Center>
@@ -270,6 +279,55 @@ function Startpage({ setIsFaqOpen }) {
                     Diskussions-<br/>frågor
                   </Center>
                 </Box>
+
+                <Modal isOpen={isDiscussionOpen} onClose={() => setIsDiscussionOpen(false)} size="xl">
+                  <ModalOverlay backdropFilter="blur(10px)" />
+                  <ModalContent bg="gray.900" p={6}>
+                    <ModalHeader color="cyan.200">🌊 Diskussionsfrågor om Havsnivåer</ModalHeader>
+                    <ModalCloseButton color="white" />
+                    <ModalBody>
+                      <VStack spacing={4} align="stretch">
+                        {[
+                          {
+                            question: "Hur tror du att höjda havsnivåer kan påverka människor som bor nära kusten?",
+                            followUp: "Tänk på hur det skulle kännas att behöva flytta från sitt hem på grund av översvämningar."
+                          },
+                          {
+                            question: "Vilka djur och växter tror du påverkas mest av höjda havsnivåer?",
+                            followUp: "Fundera på hur korallrev och havssköldpaddor påverkas."
+                          },
+                          {
+                            question: "Vad kan vi göra i vår vardag för att minska vår påverkan på klimatet och havsnivåerna?",
+                            followUp: "Diskutera både små och stora förändringar vi kan göra."
+                          },
+                          {
+                            question: "Hur tror du att våra städer kommer att se ut i framtiden om havsnivån fortsätter att stiga?",
+                            followUp: "Tänk på hur vi kan anpassa våra städer för att möta denna utmaning."
+                          },
+                          {
+                            question: "Varför är det viktigt att vi bryr oss om havsnivåhöjningen?",
+                            followUp: "Diskutera hur detta påverkar inte bara människor utan hela ekosystem."
+                          }
+                        ].map((item, index) => (
+                          <Box 
+                            key={index}
+                            p={4} 
+                            bg="whiteAlpha.100" 
+                            borderRadius="xl"
+                            _hover={{ bg: 'whiteAlpha.200' }}
+                          >
+                            <Text color="white" fontSize="lg" fontWeight="bold" mb={2}>
+                              {index + 1}. {item.question}
+                            </Text>
+                            <Text color="gray.400" fontSize="md">
+                              {item.followUp}
+                            </Text>
+                          </Box>
+                        ))}
+                      </VStack>
+                    </ModalBody>
+                  </ModalContent>
+                </Modal>
                 <Box
                   bg="#111"
                   borderRadius="xl"
