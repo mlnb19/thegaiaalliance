@@ -32,10 +32,14 @@ const ChatBot = () => {
 
   const handleSend = async () => {
     if (!input.trim()) return;
+    if (isLoading) return;
 
     try {
       setIsLoading(true);
       setMessages(prev => [...prev, { text: input, isBot: false }]);
+      
+      // Add delay between requests
+      await new Promise(resolve => setTimeout(resolve, 1000));
       
       const response = await openai.chat.completions.create({
         model: "gpt-3.5-turbo",
@@ -55,9 +59,13 @@ const ChatBot = () => {
       setMessages(prev => [...prev, { text: botResponse, isBot: true }]);
     } catch (error) {
       console.error('Error:', error);
+      const errorMessage = error.message.includes('quota') 
+        ? "För många förfrågningar just nu. Vänta lite och försök igen."
+        : "Kunde inte få svar från EcoEdith just nu";
+      
       toast({
         title: "Ett fel uppstod",
-        description: "Kunde inte få svar från EcoEdith just nu",
+        description: errorMessage,
         status: "error",
         duration: 5000,
         isClosable: true,
