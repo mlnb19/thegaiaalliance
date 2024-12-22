@@ -10,6 +10,7 @@ import SeaLevelChart from './SeaLevelChart';
 import { FaRegUserCircle, FaLightbulb, FaBiking, FaCarrot, FaGlobeEurope, FaUsers, FaShoppingBag, FaShare, FaLeaf, FaHandPeace, FaBook } from "react-icons/fa";
 import { AiOutlineLogout } from 'react-icons/ai';
 import PopupModal from './PopupModal';
+import ChatBot from './ChatBot';
 
 
 
@@ -268,13 +269,13 @@ function Startpage({ setIsFaqOpen }) {
                     Diskussions-<br/>frågor
                   </Center>
                 </Box>
-                <Box bg="#111" borderRadius="xl" p={6} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
-                  <Center as="span" color="white" fontSize="2xl" mb={4}>
-                    🌊
-                  </Center>
-                  <Center color="gray.400" fontSize="l" mt={4} fontFamily={'monospace'}>
-                    Chatt
-                  </Center>
+                <Box 
+                  bg="#111" 
+                  borderRadius="xl" 
+                  boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)"
+                  h="300px"
+                >
+                  <ChatBot />
                 </Box>
               </SimpleGrid>
 
