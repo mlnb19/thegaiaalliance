@@ -9,6 +9,8 @@ import GlacierChart from './GlacierChart';
 
 function Glaciers() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isChattOpen, setIsChattOpen] = useState(false);
+  const [isDiscussionOpen, setIsDiscussionOpen] = useState(false);
 
   return (
     <Box w="100vw" h="100vh" bg="#0d0d0d" position="relative" overflow="hidden">
@@ -102,9 +104,95 @@ function Glaciers() {
               </Flex>
               <Text color="gray.500" mt={4}>Status: Allvarlig</Text>
             </Box>
+          <SimpleGrid columns={2} spacing={6} mt={6}>
+              <Box
+                bg="#111"
+                borderRadius="xl"
+                p={6}
+                cursor="pointer"
+                onClick={() => setIsChattOpen(true)}
+                _hover={{ bg: "#1a1a1a" }}
+              >
+                <Center as="span" color="white" fontSize="2xl" mb={4}>
+                  🤖
+                </Center>
+                <Center color="gray.400" fontSize="l" mt={4} fontFamily={'monospace'}>
+                  Chatta med EcoEdith
+                </Center>
+              </Box>
+
+              <Box
+                bg="#111"
+                borderRadius="xl"
+                p={6}
+                cursor="pointer"
+                onClick={() => setIsDiscussionOpen(true)}
+                _hover={{ bg: "#1a1a1a" }}
+              >
+                <Center as="span" color="white" fontSize="2xl" mb={4}>
+                  💭
+                </Center>
+                <Center color="gray.400" fontSize="l" mt={4} fontFamily={'monospace'}>
+                  Diskussionsfrågor
+                </Center>
+              </Box>
+            </SimpleGrid>
           </VStack>
         </Flex>
       </Container>
+
+      <Modal isOpen={isChattOpen} onClose={() => setIsChattOpen(false)} size="lg">
+        <ModalOverlay backdropFilter="blur(10px)" />
+        <ModalContent bg="gray.900" h="600px">
+          <ModalCloseButton color="white" />
+          <ChatBot />
+        </ModalContent>
+      </Modal>
+
+      <Modal isOpen={isDiscussionOpen} onClose={() => setIsDiscussionOpen(false)} size="xl">
+        <ModalOverlay backdropFilter="blur(10px)" />
+        <ModalContent bg="gray.900" p={6}>
+          <ModalHeader color="cyan.200">❄️ Diskussionsfrågor om Glaciärer</ModalHeader>
+          <ModalCloseButton color="white" />
+          <ModalBody>
+            <VStack spacing={4} align="stretch">
+              {[
+                {
+                  question: "Varför är glaciärer viktiga för vår planet?",
+                  followUp: "Tänk på hur de påverkar havsnivåer och klimatet."
+                },
+                {
+                  question: "Vad händer med djurlivet när glaciärer smälter?",
+                  followUp: "Fundera på isbjörnar och andra arktiska djur."
+                },
+                {
+                  question: "Hur påverkar smältande glaciärer människor som bor i närheten?",
+                  followUp: "Tänk på dricksvatten och översvämningsrisker."
+                },
+                {
+                  question: "Vad kan vi göra för att bromsa glaciärsmältningen?",
+                  followUp: "Diskutera både små och stora åtgärder."
+                }
+              ].map((item, index) => (
+                <Box 
+                  key={index}
+                  p={4} 
+                  bg="whiteAlpha.100" 
+                  borderRadius="xl"
+                  _hover={{ bg: 'whiteAlpha.200' }}
+                >
+                  <Text color="white" fontSize="lg" fontWeight="bold" mb={2}>
+                    {index + 1}. {item.question}
+                  </Text>
+                  <Text color="gray.400" fontSize="md">
+                    {item.followUp}
+                  </Text>
+                </Box>
+              ))}
+            </VStack>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
 
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} size="4xl" isCentered>
         <ModalOverlay backdropFilter="blur(10px)" />
