@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
-import { Box, Container, Text, VStack, HStack, Flex, Modal, ModalOverlay, ModalContent, ModalCloseButton } from '@chakra-ui/react';
+import { Box, Container, Text, VStack, HStack, Flex, Modal, ModalOverlay, ModalContent, ModalCloseButton, ModalHeader, ModalBody, Center, SimpleGrid } from '@chakra-ui/react';
+import ChatBot from './ChatBot';
 import Navbar from './Navbar';
 import { Liquid } from '@ant-design/plots';
 import { FaIcicles, FaMountain } from "react-icons/fa";
