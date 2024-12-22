@@ -12,10 +12,15 @@ import {
 import { FiSend } from 'react-icons/fi';
 import OpenAI from 'openai';
 
+const API_KEY = import.meta.env.VITE_OPENAI_API_KEY;
 const openai = new OpenAI({
-  apiKey: import.meta.env.VITE_OPENAI_API_KEY || '',
+  apiKey: API_KEY,
   dangerouslyAllowBrowser: true
 });
+
+if (!API_KEY) {
+  console.error('API key is missing');
+}
 
 const ChatBot = () => {
   const [messages, setMessages] = useState([
