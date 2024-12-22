@@ -262,18 +262,18 @@ function Startpage({ setIsFaqOpen }) {
               <SimpleGrid columns={2} gap={6}>
                 <Box bg="#111" borderRadius="xl" p={6} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
                   <Center as="span" color="white" fontSize="2xl" mb={4}>
-                    <FaRegUserCircle />
+                    🌊
                   </Center>
                   <Center color="gray.400" fontSize="l" mt={4} fontFamily={'monospace'}>
-                    Visste du att havsnivån stiger med 3,3 mm per år?
+                    Diskussions-<br/>frågor
                   </Center>
                 </Box>
                 <Box bg="#111" borderRadius="xl" p={6} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
                   <Center as="span" color="white" fontSize="2xl" mb={4}>
-                    <AiOutlineLogout />
+                    🌊
                   </Center>
                   <Center color="gray.400" fontSize="l" mt={4} fontFamily={'monospace'}>
-                    År 2100 kan havsnivån vara 1 meter högre
+                    Chatt
                   </Center>
                 </Box>
               </SimpleGrid>
@@ -294,6 +294,10 @@ function Startpage({ setIsFaqOpen }) {
         • En höjning på bara 1 meter kan översvämma områden där 1 miljard människor bor! 😮
         <br/>
         • Glaciärerna smälter snabbare nu än någonsin tidigare i historien ❄️
+        <br/>
+        • Visste du att havsnivån stiger med 3,3 mm per år?
+        <br/>
+        • År 2100 kan havsnivån vara 1 meter högre
       </Text>
     </Box>
 

@@ -25,7 +25,7 @@ function Faq({ isOpen, onClose }) {
     <Modal isOpen={isOpen} onClose={onClose} size="4xl">
       <ModalOverlay backdropFilter="blur(10px)" />
       <ModalContent bg="gray.900" p={6} maxH="80vh" overflowY="auto">
-        <ModalHeader color="cyan.200">🌍 10 Coola sätt att rädda planeten! 🌱</ModalHeader>
+        <ModalHeader color="cyan.200">🌍 FAQ och kontaktinformation 🌱</ModalHeader>
         <ModalCloseButton color="white" />
         <ModalBody>
           <Accordion allowToggle mb={8}>
@@ -65,8 +65,13 @@ function Faq({ isOpen, onClose }) {
               </AccordionPanel>
             </AccordionItem>
           </Accordion>
-
-          <VStack spacing={4} align="stretch">
+          <VStack mt={8} spacing={4} align="start">
+            <Text color="white" fontSize="xl" fontWeight="bold">Kontakta Oss</Text>
+            <Text color="gray.400">Email: klimat@exempel.se</Text>
+            <Text color="gray.400">Telefon: 08-123 45 67</Text>
+            <Text color="gray.400">Adress: Klimatgatan 1, 123 45 Stockholm</Text>
+          </VStack>
+          <VStack spacing={4} mt={8} align="stretch">
             {[
               { title: "1. Släck och stäng av", text: "Släck lampor när du lämnar ett rum.\nStäng av elektroniska prylar istället för att låta dem stå i standby-läge.", icon: FaLightbulb },
               { title: "2. Välj cykeln eller gå", text: "Cykla eller gå istället för att bli skjutsad i bil – det är både bättre för miljön och hälsan.", icon: FaBiking },
@@ -96,13 +101,6 @@ function Faq({ isOpen, onClose }) {
                 </Text>
               </Box>
             ))}
-          </VStack>
-
-          <VStack mt={8} spacing={4} align="start">
-            <Text color="white" fontSize="xl" fontWeight="bold">Kontakta Oss</Text>
-            <Text color="gray.400">Email: klimat@exempel.se</Text>
-            <Text color="gray.400">Telefon: 08-123 45 67</Text>
-            <Text color="gray.400">Adress: Klimatgatan 1, 123 45 Stockholm</Text>
           </VStack>
         </ModalBody>
       </ModalContent>
