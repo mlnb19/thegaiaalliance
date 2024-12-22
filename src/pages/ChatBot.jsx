@@ -25,15 +25,38 @@ const ChatBot = () => {
     setMessages(prev => [...prev, { text: input, isBot: false }]);
 
     // Simulate bot response (här kan du senare integrera en riktig AI-tjänst)
-    const botResponses = {
-      "hur mycket stiger havsnivån?": "Havsnivån stiger med ungefär 3,3 mm per år. Till år 2100 kan den ha stigit med upp till 1 meter!",
-      "vad är växthuseffekten?": "Växthuseffekten är när gaser i atmosfären fångar värme från solen, ungefär som ett växthus. Detta är naturligt, men människans aktiviteter ökar effekten.",
-      "hur påverkar det djuren?": "När havsnivån stiger påverkas många djur. Korallrev kan dö, sköldpaddors stränder försvinner, och många kustnära djur förlorar sina hem.",
+    const findResponse = (input) => {
+      const lowercaseInput = input.toLowerCase();
+      
+      if (lowercaseInput.includes('havsnivå') || lowercaseInput.includes('havet')) {
+        return "Havsnivån stiger med ungefär 3,3 mm per år. Till år 2100 kan den ha stigit med upp till 1 meter! Detta beror främst på den globala uppvärmningen som smälter glaciärer och värmer upp haven.";
+      }
+      
+      if (lowercaseInput.includes('växthuseffekt')) {
+        return "Växthuseffekten är när gaser i atmosfären fångar värme från solen, ungefär som ett växthus. Detta är naturligt, men människans aktiviteter ökar effekten genom utsläpp av växthusgaser som koldioxid.";
+      }
+      
+      if (lowercaseInput.includes('djur') || lowercaseInput.includes('arter')) {
+        return "Klimatförändringarna påverkar djur på många sätt: Isbjörnar förlorar sina jaktmarker när isen smälter, korallrev dör av varmare hav, och många arter måste flytta när deras livsmiljöer förändras.";
+      }
+      
+      if (lowercaseInput.includes('glaciär')) {
+        return "Glaciärerna smälter snabbare nu än någonsin tidigare i historien. Detta bidrar till höjda havsnivåer och påverkar både djurliv och människor som är beroende av glaciärvatten.";
+      }
+      
+      if (lowercaseInput.includes('temperatur') || lowercaseInput.includes('varmare')) {
+        return "Den globala medeltemperaturen har ökat med cirka 1,1°C sedan förindustriell tid. Om vi inte minskar våra utsläpp kan temperaturen stiga med upp till 4°C till år 2100.";
+      }
+      
+      if (lowercaseInput.includes('hjälpa') || lowercaseInput.includes('kan jag göra')) {
+        return "Det finns många sätt att hjälpa! Du kan till exempel: spara energi genom att släcka lampor, äta mer vegetariskt, cykla eller gå istället för att åka bil, och prata med andra om klimatförändringarna.";
+      }
+      
+      return "Jag förstår inte riktigt den frågan. Du kan fråga om havsnivåer, glaciärer, temperatur, växthuseffekten, hur det påverkar djur eller vad du kan göra för att hjälpa.";
     };
 
     setTimeout(() => {
-      const response = botResponses[input.toLowerCase()] || 
-        "Jag förstår inte riktigt den frågan. Kan du omformulera den? Du kan fråga om havsnivåer, klimatförändringar eller hur det påverkar djur och natur.";
+      const response = findResponse(input);
       setMessages(prev => [...prev, { text: response, isBot: true }]);
     }, 1000);
 
