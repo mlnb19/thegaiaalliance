@@ -115,6 +115,7 @@ const ChatBot = () => {
             placeholder="Ställ en fråga..."
             bg="whiteAlpha.100"
             border="none"
+            color="white"
             _focus={{ 
               border: "1px solid",
               borderColor: "blue.400"
