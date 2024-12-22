@@ -9,7 +9,6 @@ import {
   Flex,
   useColorModeValue,
   IconButton,
-  ScrollBox,
 } from '@chakra-ui/react';
 import { FiSend } from 'react-icons/fi';
 
