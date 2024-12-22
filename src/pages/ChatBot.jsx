@@ -37,10 +37,10 @@ const ChatBot = () => {
     try {
       setIsLoading(true);
       setMessages(prev => [...prev, { text: input, isBot: false }]);
-      
+
       // Add delay between requests
       await new Promise(resolve => setTimeout(resolve, 1000));
-      
+
       const response = await openai.chat.completions.create({
         model: "gpt-3.5-turbo",
         messages: [
@@ -62,7 +62,7 @@ const ChatBot = () => {
       const errorMessage = error.message.includes('quota') 
         ? "För många förfrågningar just nu. Vänta lite och försök igen."
         : "Kunde inte få svar från EcoEdith just nu";
-      
+
       toast({
         title: "Ett fel uppstod",
         description: errorMessage,
