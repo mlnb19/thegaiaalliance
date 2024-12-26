@@ -1,13 +1,29 @@
 
 import React, { useState } from 'react';
-import { Box, Container, Text, SimpleGrid, Flex, Center, Modal, ModalOverlay, ModalContent, ModalCloseButton } from '@chakra-ui/react';
+import { Box, Container, Text, SimpleGrid, Flex, Center, Modal, ModalOverlay, ModalContent, ModalCloseButton, ModalHeader, ModalBody, Progress, Button, VStack, Stat, StatLabel, StatNumber, StatHelpText } from '@chakra-ui/react';
 import Navbar from './Navbar';
 import { Liquid } from '@ant-design/plots';
-import { FaIndustry, FaCar } from "react-icons/fa";
-import { GiForestCamp, GiFactory } from "react-icons/gi";
+import { FaIndustry, FaCar, FaLeaf, FaRecycle } from "react-icons/fa";
+import { GiForestCamp, GiFactory, GiWindmill, GiSolarPower } from "react-icons/gi";
 
 function Co2() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showTips, setShowTips] = useState(false);
+  const [personalScore, setPersonalScore] = useState(65);
+
+  const tips = [
+    "Använd kollektivtrafik istället för bil när det är möjligt",
+    "Plantera träd i din trädgård eller delta i lokala planteringsprojekt",
+    "Minska energiförbrukningen genom att stänga av apparater",
+    "Välj miljövänliga transportmedel som cykel eller elfordon"
+  ];
+
+  const sectorData = [
+    { name: "Transport", percentage: 29, icon: FaCar, color: "orange.400" },
+    { name: "Industri", percentage: 23, icon: FaIndustry, color: "red.400" },
+    { name: "Energi", percentage: 32, icon: GiWindmill, color: "yellow.400" },
+    { name: "Skogsbruk", percentage: 16, icon: GiForestCamp, color: "green.400" }
+  ];
 
   return (
     <Box w="100vw" h="100vh" bg="#0d0d0d" position="relative" overflow="hidden">
@@ -31,22 +47,16 @@ function Co2() {
               Koldioxid Nivåer
             </Text>
             <SimpleGrid columns={2} spacing={4} mt={8}>
-              <Flex align="center" bg="#1a1a1a" p={4} borderRadius="lg">
-                <Box as="span" color="orange.300" mr={3}><FaIndustry size={24}/></Box>
-                <Text color="white">Industriella Utsläpp</Text>
-              </Flex>
-              <Flex align="center" bg="#1a1a1a" p={4} borderRadius="lg">
-                <Box as="span" color="orange.300" mr={3}><FaCar size={24}/></Box>
-                <Text color="white">Transport</Text>
-              </Flex>
-              <Flex align="center" bg="#1a1a1a" p={4} borderRadius="lg">
-                <Box as="span" color="orange.300" mr={3}><GiForestCamp size={24}/></Box>
-                <Text color="white">Skogsavverkning</Text>
-              </Flex>
-              <Flex align="center" bg="#1a1a1a" p={4} borderRadius="lg">
-                <Box as="span" color="orange.300" mr={3}><GiFactory size={24}/></Box>
-                <Text color="white">Fabriker</Text>
-              </Flex>
+              {sectorData.map((sector, index) => (
+                <Box key={index} bg="#1a1a1a" p={4} borderRadius="lg">
+                  <Flex align="center" mb={2}>
+                    <Box as={sector.icon} color={sector.color} fontSize="24px" mr={3}/>
+                    <Text color="white">{sector.name}</Text>
+                  </Flex>
+                  <Progress value={sector.percentage} colorScheme="orange" borderRadius="full"/>
+                  <Text color="gray.400" fontSize="sm" mt={1}>{sector.percentage}%</Text>
+                </Box>
+              ))}
             </SimpleGrid>
           </Box>
           
@@ -79,7 +89,64 @@ function Co2() {
             </Center>
           </Box>
         </SimpleGrid>
+
+        <SimpleGrid columns={{base: 1, md: 2}} spacing={6} mt={6}>
+          <Box 
+            bg="#111" 
+            borderRadius="xl" 
+            p={8} 
+            boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)"
+            onClick={() => setShowTips(true)}
+            cursor="pointer"
+            _hover={{ bg: "#161616" }}
+          >
+            <Flex align="center" mb={4}>
+              <Box as={FaLeaf} color="green.400" fontSize="24px" mr={3}/>
+              <Text color="white" fontSize="xl">Minska ditt CO2-avtryck</Text>
+            </Flex>
+            <Text color="gray.400">Klicka här för tips om hur du kan hjälpa miljön</Text>
+          </Box>
+
+          <Box bg="#111" borderRadius="xl" p={8} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
+            <Flex align="center" mb={4}>
+              <Box as={FaRecycle} color="green.400" fontSize="24px" mr={3}/>
+              <Text color="white" fontSize="xl">Ditt Miljöengagemang</Text>
+            </Flex>
+            <Stat mt={4}>
+              <StatLabel color="gray.400">Din Miljöpoäng</StatLabel>
+              <StatNumber color="white" fontSize="3xl">{personalScore}/100</StatNumber>
+              <StatHelpText color="green.400">
+                +5 poäng denna månad
+              </StatHelpText>
+            </Stat>
+            <Progress value={personalScore} colorScheme="green" size="lg" borderRadius="full" mt={4}/>
+          </Box>
+        </SimpleGrid>
       </Container>
+
+      <Modal isOpen={showTips} onClose={() => setShowTips(false)} size="xl">
+        <ModalOverlay backdropFilter="blur(10px)"/>
+        <ModalContent bg="gray.900" p={6}>
+          <ModalHeader color="green.400">Tips för att minska CO2-utsläpp</ModalHeader>
+          <ModalCloseButton color="white"/>
+          <ModalBody>
+            <VStack spacing={4} align="stretch">
+              {tips.map((tip, index) => (
+                <Flex 
+                  key={index}
+                  bg="#1a1a1a"
+                  p={4}
+                  borderRadius="xl"
+                  align="center"
+                >
+                  <Box as={FaLeaf} color="green.400" fontSize="20px" mr={3}/>
+                  <Text color="white">{tip}</Text>
+                </Flex>
+              ))}
+            </VStack>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
     </Box>
   );
 }
