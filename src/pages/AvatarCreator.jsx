@@ -1,50 +1,66 @@
 
-import React, { useState } from 'react';
-import { Box, VStack, HStack, Button, Text } from '@chakra-ui/react';
-
-const features = {
-  hair: ['👱', '👨', '👩', '👴', '👵'],
-  eyes: ['👀', '😊', '😉', '😎', '🙄'],
-  nose: ['👃', '👃🏻', '👃🏼', '👃🏽', '👃🏾'],
-  mouth: ['👄', '😀', '😊', '😐', '🙂'],
-  skinColor: ['🟡', '🟤', '⚪', '🔴', '🟣']
-};
+import React, { useState, useEffect } from 'react';
+import { Box, VStack, HStack, Button, Text, Image } from '@chakra-ui/react';
+import { createAvatar } from '@dicebear/core';
+import { avataaars } from '@dicebear/avataaars';
 
 function AvatarCreator({ onSave }) {
-  const [selected, setSelected] = useState({
-    hair: features.hair[0],
-    eyes: features.eyes[0],
-    nose: features.nose[0],
-    mouth: features.mouth[0],
-    skinColor: features.skinColor[0]
+  const [options, setOptions] = useState({
+    hair: ['short', 'long', 'mohawk', 'hat'],
+    hairColor: ['auburn', 'black', 'blonde', 'brown', 'red'],
+    skinColor: ['light', 'dark', 'brown', 'yellow', 'pale'],
+    accessories: ['none', 'roundGlasses', 'sunglasses'],
+    facialHair: ['none', 'beardMedium', 'beardLight']
   });
+
+  const [selected, setSelected] = useState({
+    hair: 'short',
+    hairColor: 'brown',
+    skinColor: 'light',
+    accessories: 'none',
+    facialHair: 'none'
+  });
+
+  const [avatarSvg, setAvatarSvg] = useState('');
+
+  useEffect(() => {
+    const avatar = createAvatar(avataaars, {
+      hair: selected.hair,
+      hairColor: selected.hairColor,
+      skinColor: selected.skinColor,
+      accessories: selected.accessories,
+      facialHair: selected.facialHair
+    });
+    
+    setAvatarSvg(avatar.toDataUriSync());
+  }, [selected]);
 
   return (
     <VStack spacing={4} p={4}>
-      <Box fontSize="6xl" p={4} bg="gray.800" borderRadius="xl">
-        {selected.hair}{selected.eyes}{selected.nose}{selected.mouth}
+      <Box w="200px" h="200px" borderRadius="xl" overflow="hidden">
+        <Image src={avatarSvg} w="100%" h="100%" />
       </Box>
       
-      {Object.entries(features).map(([feature, options]) => (
+      {Object.entries(options).map(([feature, choices]) => (
         <Box key={feature} w="100%">
           <Text color="gray.300" mb={2} textTransform="capitalize">{feature}</Text>
-          <HStack spacing={2}>
-            {options.map((option, idx) => (
+          <HStack spacing={2} flexWrap="wrap">
+            {choices.map((choice) => (
               <Button
-                key={idx}
-                onClick={() => setSelected(prev => ({ ...prev, [feature]: option }))}
-                bg={selected[feature] === option ? "blue.500" : "gray.700"}
+                key={choice}
+                onClick={() => setSelected(prev => ({ ...prev, [feature]: choice }))}
+                bg={selected[feature] === choice ? "blue.500" : "gray.700"}
                 _hover={{ bg: "blue.400" }}
-                fontSize="2xl"
+                size="sm"
               >
-                {option}
+                {choice}
               </Button>
             ))}
           </HStack>
         </Box>
       ))}
       
-      <Button colorScheme="blue" onClick={() => onSave(selected)}>
+      <Button colorScheme="blue" onClick={() => onSave(avatarSvg)} w="100%">
         Save Avatar
       </Button>
     </VStack>
