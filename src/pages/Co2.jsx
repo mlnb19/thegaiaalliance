@@ -42,8 +42,8 @@ function Co2() {
         borderRadius="full"
       />
       
-      <Container maxW="container.xl" position="relative" zIndex={1}>
-        <Grid templateColumns="repeat(12, 1fr)" gap={6} h="600px">
+      <Container maxW="container.xl" position="relative" zIndex={1} centerContent>
+        <Grid templateColumns="repeat(12, 1fr)" gap={6} h="600px" w="100%" maxW="1200px" mt={8}>
           {/* Left Column */}
           <GridItem colSpan={5}>
             <Box bg="#111" borderRadius="xl" p={8} h="100%" boxShadow="3px 2px 7px rgba(61, 61, 61)" border="0.5px">
