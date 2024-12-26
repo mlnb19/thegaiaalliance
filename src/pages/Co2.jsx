@@ -27,7 +27,7 @@ function Co2() {
   ];
 
   return (
-    <Box w="100vw" minH="100vh" bg="#0d0d0d" position="relative" overflow="hidden" pb={16}>
+    <Box w="100vw" h="100vh" bg="#0d0d0d" position="relative" overflow="hidden">
       <Navbar />
       <Box
         pos="absolute"
@@ -40,8 +40,8 @@ function Co2() {
         opacity="0.5"
         borderRadius="full"
       />
-      <Container maxW="container.xl" pt={{base: 4, md: "80px"}} position="relative" zIndex={1}>
-        <SimpleGrid columns={{base: 1, md: 2}} spacing={6}>
+      <Container maxW="container.xl" h="calc(100vh - 80px)" pt={4} position="relative" zIndex={1} overflowY="auto">
+        <SimpleGrid columns={{base: 1, md: 2}} spacing={4}>
           <Box bg="#111" borderRadius="xl" p={8} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
             <Text color="#FFB4B4" fontSize="sm">CO2 Utsläpp</Text>
             <Text color="white" fontSize="4xl" fontWeight="bold" mt={2}>
@@ -91,7 +91,7 @@ function Co2() {
           </Box>
         </SimpleGrid>
 
-        <SimpleGrid columns={{base: 1, md: 2}} spacing={6} mt={6}>
+        <SimpleGrid columns={{base: 1, md: 2}} spacing={4} mt={4}>
           <Box 
             bg="#111" 
             borderRadius="xl" 
@@ -124,7 +124,7 @@ function Co2() {
           </Box>
         </SimpleGrid>
 
-        <Box mt={8}>
+        <Box mt={4}>
           <CO2Game />
         </Box>
       </Container>
