@@ -5,8 +5,6 @@ import Navbar from './Navbar';
 import AvatarCreator from './AvatarCreator';
 
 function Profile() {
-  const [isAvatarModalOpen, setIsAvatarModalOpen] = useState(false);
-
   return (
     <Box w="100vw" h="100vh" bg="#0d0d0d" position="relative" overflow="hidden">
       <Navbar />
@@ -34,14 +32,6 @@ function Profile() {
             <Text color="gray.400" mt={4}>Medlem sedan: 2024</Text>
           </Box>
         </VStack>
-
-        <Modal isOpen={isAvatarModalOpen} onClose={() => setIsAvatarModalOpen(false)} size="xl">
-          <ModalOverlay backdropFilter="blur(10px)" />
-          <ModalContent bg="gray.900" p={4}>
-            <ModalCloseButton color="white" />
-            <AvatarCreator onSave={handleSaveAvatar} />
-          </ModalContent>
-        </Modal>
       </Container>
     </Box>
   );
