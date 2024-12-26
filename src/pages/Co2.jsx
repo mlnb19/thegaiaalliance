@@ -5,6 +5,7 @@ import Navbar from './Navbar';
 import { Liquid } from '@ant-design/plots';
 import { FaIndustry, FaCar, FaLeaf, FaRecycle } from "react-icons/fa";
 import { GiForestCamp, GiFactory, GiWindmill, GiSolarPower } from "react-icons/gi";
+import CO2Game from './CO2Game';
 
 function Co2() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -26,7 +27,7 @@ function Co2() {
   ];
 
   return (
-    <Box w="100vw" h="100vh" bg="#0d0d0d" position="relative" overflow="hidden">
+    <Box w="100vw" minH="100vh" bg="#0d0d0d" position="relative" overflow="hidden" pb={16}>
       <Navbar />
       <Box
         pos="absolute"
@@ -122,6 +123,10 @@ function Co2() {
             <Progress value={personalScore} colorScheme="green" size="lg" borderRadius="full" mt={4}/>
           </Box>
         </SimpleGrid>
+
+        <Box mt={8}>
+          <CO2Game />
+        </Box>
       </Container>
 
       <Modal isOpen={showTips} onClose={() => setShowTips(false)} size="xl">
