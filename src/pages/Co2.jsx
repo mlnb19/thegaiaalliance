@@ -10,6 +10,7 @@ import CO2Game from './CO2Game';
 function Co2() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showTips, setShowTips] = useState(false);
+  const [isGameOpen, setIsGameOpen] = useState(false);
   const [personalScore, setPersonalScore] = useState(65);
 
   const tips = [
@@ -84,8 +85,17 @@ function Co2() {
                 </Center>
               </Box>
               
-              <Box bg="#111" borderRadius="xl" p={6} flex={1}>
-                <CO2Game />
+              <Box 
+                bg="#111" 
+                borderRadius="xl" 
+                p={6} 
+                flex={1} 
+                cursor="pointer" 
+                onClick={() => setIsGameOpen(true)}
+                _hover={{ bg: "#1a1a1a" }}
+              >
+                <Text color="white" fontSize="2xl" fontWeight="bold">Spela CO2 Spelet! 🎮</Text>
+                <Text color="gray.400" mt={2}>Klicka här för att testa dina miljöval</Text>
               </Box>
             </Flex>
           </GridItem>
@@ -134,6 +144,16 @@ function Co2() {
                 </Flex>
               ))}
             </VStack>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
+
+      <Modal isOpen={isGameOpen} onClose={() => setIsGameOpen(false)} size="xl">
+        <ModalOverlay backdropFilter="blur(10px)"/>
+        <ModalContent bg="gray.900" p={6}>
+          <ModalCloseButton color="white"/>
+          <ModalBody>
+            <CO2Game />
           </ModalBody>
         </ModalContent>
       </Modal>
