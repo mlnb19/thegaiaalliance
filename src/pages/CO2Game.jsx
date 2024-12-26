@@ -1,66 +1,118 @@
 
 import React, { useState } from 'react';
-import { Box, VStack, Text, Button, Progress, SimpleGrid, Icon } from '@chakra-ui/react';
-import { FaCar, FaBus, FaBicycle, FaLeaf, FaHamburger, FaCarrot } from 'react-icons/fa';
+import { Box, VStack, Text, Button, Center, HStack, Progress } from '@chakra-ui/react';
 
-const choices = [
-  { id: 1, icon: FaCar, text: "Köra bil", impact: 30 },
-  { id: 2, icon: FaBus, text: "Åka kollektivt", impact: 10 },
-  { id: 3, icon: FaBicycle, text: "Cykla", impact: 0 },
-  { id: 4, icon: FaHamburger, text: "Äta kött", impact: 25 },
-  { id: 5, icon: FaCarrot, text: "Äta vegetariskt", impact: 5 },
-  { id: 6, icon: FaLeaf, text: "Plantera träd", impact: -15 }
+const scenarios = [
+  {
+    question: "Hur tar du dig till jobbet/skolan?",
+    choices: [
+      { text: "Bil", impact: -10 },
+      { text: "Cykel/Kollektivtrafik", impact: 10 }
+    ]
+  },
+  {
+    question: "Vad väljer du till lunch?",
+    choices: [
+      { text: "Hamburgare", impact: -10 },
+      { text: "Vegetarisk måltid", impact: 10 }
+    ]
+  },
+  {
+    question: "Hur handlar du kläder?",
+    choices: [
+      { text: "Nya kläder ofta", impact: -10 },
+      { text: "Second hand/Sällan", impact: 10 }
+    ]
+  },
+  {
+    question: "Hur hanterar du sopor?",
+    choices: [
+      { text: "Slänger allt i samma", impact: -10 },
+      { text: "Källsorterar noggrant", impact: 10 }
+    ]
+  },
+  {
+    question: "Vad gör du på semestern?",
+    choices: [
+      { text: "Flyger utomlands", impact: -10 },
+      { text: "Semester i Sverige", impact: 10 }
+    ]
+  }
 ];
 
 function CO2Game() {
-  const [co2Level, setCo2Level] = useState(50);
-  const [message, setMessage] = useState("Gör dina val och se hur de påverkar CO2-nivån!");
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [score, setScore] = useState(0);
+  const [gameComplete, setGameComplete] = useState(false);
 
   const handleChoice = (impact) => {
-    const newLevel = Math.max(0, Math.min(100, co2Level + impact));
-    setCo2Level(newLevel);
+    setScore(score + impact);
     
-    if (impact > 0) {
-      setMessage("Detta val ökade CO2-utsläppen!");
+    if (currentQuestion < scenarios.length - 1) {
+      setCurrentQuestion(currentQuestion + 1);
     } else {
-      setMessage("Bra val för miljön!");
+      setGameComplete(true);
     }
   };
 
-  return (
-    <Box bg="#1a1a1a" p={6} borderRadius="xl" w="100%">
-      <VStack spacing={6}>
-        <Text color="white" fontSize="2xl" fontWeight="bold">
-          CO2 Påverkan Spel
-        </Text>
-        <Text color="gray.300">
-          {message}
-        </Text>
-        <Box w="100%">
+  const getEnvironmentalRating = () => {
+    if (score >= 30) return "Miljöhjälte! 🌟";
+    if (score >= 10) return "Miljömedveten! 🌱";
+    if (score >= -10) return "På rätt väg! 🌿";
+    return "Kan förbättras! 🌍";
+  };
+
+  if (gameComplete) {
+    return (
+      <Box bg="#1a1a1a" p={8} borderRadius="xl" w="100%">
+        <VStack spacing={6}>
+          <Text color="white" fontSize="2xl" fontWeight="bold">
+            Ditt Miljöresultat
+          </Text>
+          <Text color="white" fontSize="xl">
+            {getEnvironmentalRating()}
+          </Text>
           <Progress 
-            value={co2Level} 
-            colorScheme={co2Level > 75 ? "red" : co2Level > 50 ? "yellow" : "green"}
+            value={(score + 50) / 100 * 100}
+            colorScheme="green"
             size="lg"
+            w="100%"
             borderRadius="full"
           />
-          <Text color="white" textAlign="center" mt={2}>
-            CO2 Nivå: {co2Level}%
+          <Text color="gray.300" textAlign="center">
+            Dina val visar att du är {score > 0 ? "mer" : "mindre"} miljömedveten än genomsnittet.
+            {score < 20 && " Fundera på hur du kan göra fler miljövänliga val i vardagen!"}
           </Text>
-        </Box>
-        <SimpleGrid columns={{base: 2, md: 3}} spacing={4} w="100%">
-          {choices.map((choice) => (
-            <Button
-              key={choice.id}
-              onClick={() => handleChoice(choice.impact)}
-              leftIcon={<Icon as={choice.icon} />}
-              colorScheme={choice.impact > 0 ? "red" : "green"}
-              variant="outline"
-              size="lg"
-            >
-              {choice.text}
-            </Button>
-          ))}
-        </SimpleGrid>
+        </VStack>
+      </Box>
+    );
+  }
+
+  return (
+    <Box bg="#1a1a1a" p={8} borderRadius="xl" w="100%">
+      <VStack spacing={6}>
+        <Text color="white" fontSize="2xl" fontWeight="bold">
+          Miljöval ({currentQuestion + 1}/{scenarios.length})
+        </Text>
+        <Text color="white" fontSize="xl" textAlign="center">
+          {scenarios[currentQuestion].question}
+        </Text>
+        <Center w="100%" mt={4}>
+          <HStack spacing={4}>
+            {scenarios[currentQuestion].choices.map((choice, index) => (
+              <Button
+                key={index}
+                onClick={() => handleChoice(choice.impact)}
+                size="lg"
+                variant="outline"
+                colorScheme="blue"
+                w="200px"
+              >
+                {choice.text}
+              </Button>
+            ))}
+          </HStack>
+        </Center>
       </VStack>
     </Box>
   );
