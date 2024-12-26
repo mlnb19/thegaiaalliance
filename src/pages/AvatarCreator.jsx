@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Box, VStack, HStack, Button, Text, Image } from '@chakra-ui/react';
 import { createAvatar } from '@dicebear/core';
-import { avataaars } from '@dicebear/avataaars';
+import * as avataaars from '@dicebear/avataaars';
 
 function AvatarCreator({ onSave }) {
   const [options, setOptions] = useState({
