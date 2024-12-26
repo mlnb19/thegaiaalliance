@@ -1,0 +1,65 @@
+chunk-GJ5PGLZ3.js?v=aabb2545:16691 Uncaught TypeError: avatar.toDataUriSync is not a function
+    at AvatarCreator.jsx:35:25
+
+chunk-GJ5PGLZ3.js?v=aabb2545:16691 Uncaught TypeError: avatar.toDataUriSync is not a function
+    at AvatarCreator.jsx:35:25
+2
+hook.js:608 The above error occurred in the <AvatarCreator> component:
+
+    at AvatarCreator (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/src/pages/AvatarCreator.jsx:22:26)
+    at section
+    at MotionComponent (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/chunk-EC6ASD3H.js?v=aabb2545:278:40)
+    at https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/chunk-CCCJQCOE.js?v=aabb2545:2163:45
+    at ChakraComponent (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/@chakra-ui_react.js?v=aabb2545:8878:35)
+    at https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/@chakra-ui_react.js?v=aabb2545:20894:13
+    at div
+    at https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/chunk-CCCJQCOE.js?v=aabb2545:2163:45
+    at ChakraComponent (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/@chakra-ui_react.js?v=aabb2545:8878:35)
+    at https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/@chakra-ui_react.js?v=aabb2545:21260:21
+    at div
+    at FocusLockUI (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/@chakra-ui_react.js?v=aabb2545:14080:47)
+    at FocusLockUICombination
+    at FocusLock2 (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/@chakra-ui_react.js?v=aabb2545:15578:5)
+    at ModalFocusScope (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/@chakra-ui_react.js?v=aabb2545:21762:7)
+    at https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/@chakra-ui_react.js?v=aabb2545:21799:7
+    at DefaultPortal (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/@chakra-ui_react.js?v=aabb2545:1355:11)
+    at Portal
+    at PresenceChild (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/chunk-EC6ASD3H.js?v=aabb2545:7103:24)
+    at AnimatePresence (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/chunk-EC6ASD3H.js?v=aabb2545:7169:26)
+    at Modal (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/@chakra-ui_react.js?v=aabb2545:21218:19)
+    at div
+    at https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/chunk-CCCJQCOE.js?v=aabb2545:2163:45
+    at ChakraComponent (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/@chakra-ui_react.js?v=aabb2545:8878:35)
+    at Container22 (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/@chakra-ui_react.js?v=aabb2545:17395:19)
+    at div
+    at https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/chunk-CCCJQCOE.js?v=aabb2545:2163:45
+    at ChakraComponent (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/@chakra-ui_react.js?v=aabb2545:8878:35)
+    at Profile (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/src/pages/Profile.jsx:24:53)
+    at RenderedRoute (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/react-router-dom.js?v=aabb2545:5369:26)
+    at Routes (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/react-router-dom.js?v=aabb2545:6100:3)
+    at Router (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/react-router-dom.js?v=aabb2545:6043:13)
+    at BrowserRouter (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/react-router-dom.js?v=aabb2545:8096:3)
+    at EnvironmentProvider (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/@chakra-ui_react.js?v=aabb2545:9015:11)
+    at ColorModeProvider (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/@chakra-ui_react.js?v=aabb2545:1586:5)
+    at ThemeProvider2 (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/chunk-CCCJQCOE.js?v=aabb2545:2190:22)
+    at ThemeProvider2 (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/@chakra-ui_react.js?v=aabb2545:8955:11)
+    at ChakraProvider (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/@chakra-ui_react.js?v=aabb2545:9043:5)
+    at ChakraProvider22 (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/@chakra-ui_react.js?v=aabb2545:9967:5)
+    at App (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/src/App.jsx:31:43)
+    at EnvironmentProvider (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/@chakra-ui_react.js?v=aabb2545:9015:11)
+    at ColorModeProvider (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/@chakra-ui_react.js?v=aabb2545:1586:5)
+    at ThemeProvider2 (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/chunk-CCCJQCOE.js?v=aabb2545:2190:22)
+    at ThemeProvider2 (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/@chakra-ui_react.js?v=aabb2545:8955:11)
+    at ChakraProvider (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/@chakra-ui_react.js?v=aabb2545:9043:5)
+    at ChakraProvider22 (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/@chakra-ui_react.js?v=aabb2545:9967:5)
+    at DefaultPropsProvider (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/@mui_material_styles.js?v=aabb2545:2985:3)
+    at RtlProvider (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/@mui_material_styles.js?v=aabb2545:2965:3)
+    at ThemeProvider (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/@mui_material_styles.js?v=aabb2545:2921:5)
+    at ThemeProvider2 (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/@mui_material_styles.js?v=aabb2545:3037:5)
+    at ThemeProviderNoVars (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/@mui_material_styles.js?v=aabb2545:6476:10)
+    at ThemeProvider3 (https://c18a8197-8958-47f3-a91f-30f72a79cc5c-00-3l02qy6mxk2ey.riker.replit.dev/node_modules/.vite/deps/@mui_material_styles.js?v=aabb2545:6558:3)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+chunk-GJ5PGLZ3.js?v=aabb2545:9145 Uncaught TypeError: avatar.toDataUriSync is not a function
+    at AvatarCreator.jsx:35:25
