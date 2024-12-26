@@ -1,7 +1,9 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ChakraProvider } from '@chakra-ui/react';
+
+// Page imports
 import SeaLevels from './pages/SeaLevels';
 import Faq from './pages/Faq';
 import Temperature from './pages/Temperature';
@@ -12,7 +14,7 @@ import Profile from './pages/Profile';
 import Logout from './pages/Logout';
 
 function App() {
-  const [isFaqOpen, setIsFaqOpen] = useState(false);
+  const [isFaqOpen, setIsFaqOpen] = React.useState(false);
   
   return (
     <ChakraProvider>
