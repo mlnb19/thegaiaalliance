@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Box, Container, Text, SimpleGrid, Flex, Center, Modal, ModalOverlay, ModalContent, ModalCloseButton, ModalHeader, ModalBody, Progress, Button, VStack, Stat, StatLabel, StatNumber, StatHelpText } from '@chakra-ui/react';
+import { Box, Container, Text, SimpleGrid, Flex, Center, Modal, ModalOverlay, ModalContent, ModalCloseButton, ModalHeader, ModalBody, Progress, Button, VStack, Stat, StatLabel, StatNumber, StatHelpText, Grid, GridItem } from '@chakra-ui/react';
 import Navbar from './Navbar';
 import { Liquid } from '@ant-design/plots';
 import { FaIndustry, FaCar, FaLeaf, FaRecycle } from "react-icons/fa";
@@ -40,93 +40,84 @@ function Co2() {
         opacity="0.5"
         borderRadius="full"
       />
-      <Container maxW="container.xl" h="calc(100vh - 80px)" pt={4} position="relative" zIndex={1} overflowY="auto">
-        <SimpleGrid columns={{base: 1, md: 2}} spacing={4}>
-          <Box bg="#111" borderRadius="xl" p={8} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
-            <Text color="#FFB4B4" fontSize="sm">CO2 Utsläpp</Text>
-            <Text color="white" fontSize="4xl" fontWeight="bold" mt={2}>
-              Koldioxid Nivåer
-            </Text>
-            <SimpleGrid columns={2} spacing={4} mt={8}>
-              {sectorData.map((sector, index) => (
-                <Box key={index} bg="#1a1a1a" p={4} borderRadius="lg">
-                  <Flex align="center" mb={2}>
-                    <Box as={sector.icon} color={sector.color} fontSize="24px" mr={3}/>
-                    <Text color="white">{sector.name}</Text>
-                  </Flex>
-                  <Progress value={sector.percentage} colorScheme="orange" borderRadius="full"/>
-                  <Text color="gray.400" fontSize="sm" mt={1}>{sector.percentage}%</Text>
-                </Box>
-              ))}
-            </SimpleGrid>
-          </Box>
-          
-          <Box 
-            bg="#111" 
-            borderRadius="xl" 
-            p={8} 
-            cursor="pointer"
-            onClick={() => setIsModalOpen(true)}
-            transition="transform 0.2s"
-            _hover={{ transform: 'scale(1.02)' }}
-            boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)"
-          >
-            <Text color="white" fontSize="2xl" fontWeight="bold">
-              CO2 nivåer har ökat med 45% sedan 1990
-            </Text>
-            <Text color="gray.500" mt="4">Klicka för att lära dig mer</Text>
-            <Center height="300px" mt={6}>
-              <Liquid 
-                percent={0.45}
-                outline={{
-                  border: 2,
-                  distance: 4,
-                }}
-                wave={{
-                  length: 128,
-                }}
-                color="#FFB4B4"
-              />
-            </Center>
-          </Box>
-        </SimpleGrid>
+      
+      <Container maxW="container.xl" position="relative" zIndex={1}>
+        <Grid templateColumns="repeat(12, 1fr)" gap={6} h="600px">
+          {/* Left Column */}
+          <GridItem colSpan={5}>
+            <Box bg="#111" borderRadius="xl" p={8} h="100%" boxShadow="3px 2px 7px rgba(61, 61, 61)" border="0.5px">
+              <Text color="#FFB4B4" fontSize="sm">CO2 Utsläpp</Text>
+              <Text color="white" fontSize="4xl" fontWeight="bold" mt={2} mb={4}>
+                Koldioxid Nivåer
+              </Text>
+              <Text color="gray.300" mb={8}>
+                Koldioxidutsläpp är en av de största orsakerna till klimatförändringarna. 
+                Genom att minska våra utsläpp kan vi hjälpa till att bromsa den globala uppvärmningen.
+              </Text>
+              <SimpleGrid columns={2} spacing={4}>
+                {sectorData.map((sector, index) => (
+                  <Box key={index} bg="#1a1a1a" p={4} borderRadius="lg">
+                    <Flex align="center" mb={2}>
+                      <Box as={sector.icon} color={sector.color} fontSize="24px" mr={3}/>
+                      <Text color="white">{sector.name}</Text>
+                    </Flex>
+                    <Progress value={sector.percentage} colorScheme="orange" borderRadius="full"/>
+                    <Text color="gray.400" fontSize="sm" mt={1}>{sector.percentage}%</Text>
+                  </Box>
+                ))}
+              </SimpleGrid>
+            </Box>
+          </GridItem>
 
-        <SimpleGrid columns={{base: 1, md: 2}} spacing={4} mt={4}>
-          <Box 
-            bg="#111" 
-            borderRadius="xl" 
-            p={8} 
-            boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)"
-            onClick={() => setShowTips(true)}
-            cursor="pointer"
-            _hover={{ bg: "#161616" }}
-          >
-            <Flex align="center" mb={4}>
-              <Box as={FaLeaf} color="green.400" fontSize="24px" mr={3}/>
-              <Text color="white" fontSize="xl">Minska ditt CO2-avtryck</Text>
+          {/* Middle Column */}
+          <GridItem colSpan={4}>
+            <Flex direction="column" gap={6} h="100%">
+              <Box bg="#111" borderRadius="xl" p={8} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)" cursor="pointer" onClick={() => setIsModalOpen(true)} transition="transform 0.2s" _hover={{ transform: 'scale(1.02)' }}>
+                <Text color="white" fontSize="2xl" fontWeight="bold">Ditt CO2 Avtryck</Text>
+                <Center height="200px" mt={6}>
+                  <Liquid 
+                    percent={0.45}
+                    outline={{ border: 2, distance: 4 }}
+                    wave={{ length: 128 }}
+                    color="#FFB4B4"
+                  />
+                </Center>
+              </Box>
+              
+              <Box bg="#111" borderRadius="xl" p={6} flex={1}>
+                <CO2Game />
+              </Box>
             </Flex>
-            <Text color="gray.400">Klicka här för tips om hur du kan hjälpa miljön</Text>
-          </Box>
+          </GridItem>
 
-          <Box bg="#111" borderRadius="xl" p={8} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
-            <Flex align="center" mb={4}>
-              <Box as={FaRecycle} color="green.400" fontSize="24px" mr={3}/>
-              <Text color="white" fontSize="xl">Ditt Miljöengagemang</Text>
+          {/* Right Column */}
+          <GridItem colSpan={3}>
+            <Flex direction="column" gap={6} h="100%">
+              <Box bg="#111" borderRadius="xl" p={8} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)" onClick={() => setShowTips(true)} cursor="pointer" _hover={{ bg: "#1a1a1a" }}>
+                <Flex align="center" mb={4}>
+                  <Box as={FaLeaf} color="green.400" fontSize="24px" mr={3}/>
+                  <Text color="white" fontSize="xl">Minska ditt CO2-avtryck</Text>
+                </Flex>
+                <Text color="gray.400">Klicka här för tips om hur du kan hjälpa miljön</Text>
+              </Box>
+
+              <Box bg="#111" borderRadius="xl" p={8} flex={1} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
+                <Text color="white" fontSize="2xl" fontWeight="bold">
+                  Visste du detta om CO2? 🌍
+                </Text>
+                <Text color="gray.500" mt="4">
+                  • CO2-nivåerna är högre nu än någonsin under de senaste 800,000 åren
+                  <br/>
+                  • Havets pH-värde har sjunkit med 30% på grund av CO2
+                  <br/>
+                  • Varje år släpper vi ut över 36 miljarder ton CO2
+                  <br/>
+                  • Träd kan absorbera upp till 22 kg CO2 per år
+                </Text>
+              </Box>
             </Flex>
-            <Stat mt={4}>
-              <StatLabel color="gray.400">Din Miljöpoäng</StatLabel>
-              <StatNumber color="white" fontSize="3xl">{personalScore}/100</StatNumber>
-              <StatHelpText color="green.400">
-                +5 poäng denna månad
-              </StatHelpText>
-            </Stat>
-            <Progress value={personalScore} colorScheme="green" size="lg" borderRadius="full" mt={4}/>
-          </Box>
-        </SimpleGrid>
-
-        <Box mt={4}>
-          <CO2Game />
-        </Box>
+          </GridItem>
+        </Grid>
       </Container>
 
       <Modal isOpen={showTips} onClose={() => setShowTips(false)} size="xl">
@@ -137,13 +128,7 @@ function Co2() {
           <ModalBody>
             <VStack spacing={4} align="stretch">
               {tips.map((tip, index) => (
-                <Flex 
-                  key={index}
-                  bg="#1a1a1a"
-                  p={4}
-                  borderRadius="xl"
-                  align="center"
-                >
+                <Flex key={index} bg="#1a1a1a" p={4} borderRadius="xl" align="center">
                   <Box as={FaLeaf} color="green.400" fontSize="20px" mr={3}/>
                   <Text color="white">{tip}</Text>
                 </Flex>
