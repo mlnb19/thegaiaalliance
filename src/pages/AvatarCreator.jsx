@@ -24,7 +24,8 @@ function AvatarCreator({ onSave }) {
   const [avatarSvg, setAvatarSvg] = useState('');
 
   useEffect(() => {
-    const avatar = createAvatar(avataaars, {
+    const avatar = createAvatar(avataaars.style, {
+      seed: 'custom-seed',
       hair: selected.hair,
       hairColor: selected.hairColor,
       skinColor: selected.skinColor,
@@ -32,7 +33,7 @@ function AvatarCreator({ onSave }) {
       facialHair: selected.facialHair
     });
     
-    setAvatarSvg(avatar.toDataUriSync());
+    setAvatarSvg(avatar.toString());
   }, [selected]);
 
   return (
