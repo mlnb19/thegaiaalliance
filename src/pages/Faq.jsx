@@ -79,18 +79,7 @@ function Faq({ isOpen, onClose }) {
               </AccordionPanel>
             </AccordionItem>
           </Accordion>
-          <Box mt={8} w="100%">
-            <Text color="white" fontSize="xl" fontWeight="bold" mb={4}>Chatta med EcoEdith</Text>
-            <Box h="400px">
-              <ChatBot />
-            </Box>
-          </Box>
-          <VStack mt={8} spacing={4} align="start">
-            <Text color="white" fontSize="xl" fontWeight="bold">Kontakta Oss</Text>
-            <Text color="gray.400">Email: klimat@exempel.se</Text>
-            <Text color="gray.400">Telefon: 08-123 45 67</Text>
-            <Text color="gray.400">Adress: Klimatgatan 1, 123 45 Stockholm</Text>
-          </VStack>
+
           <VStack spacing={4} mt={8} align="stretch">
             {[
               { title: "1. Släck och stäng av", text: "Släck lampor när du lämnar ett rum.\nStäng av elektroniska prylar istället för att låta dem stå i standby-läge.", icon: FaLightbulb },
@@ -126,9 +115,9 @@ function Faq({ isOpen, onClose }) {
               <TabPanel>
                 <VStack spacing={4} align="start">
                   <Text color="white" fontSize="xl" fontWeight="bold">Kontakta Oss</Text>
-                  <Text color="gray.400">Email: klimat@exempel.se</Text>
+                  <Text color="gray.400">Email: thegaiaallaiance@earth.se</Text>
                   <Text color="gray.400">Telefon: 08-123 45 67</Text>
-                  <Text color="gray.400">Adress: Klimatgatan 1, 123 45 Stockholm</Text>
+                  <Text color="gray.400">Adress: Gaia Galaxy 1, 123 45 Stockholm</Text>
                 </VStack>
               </TabPanel>
               <TabPanel>

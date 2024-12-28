@@ -36,7 +36,7 @@ const getRelevantMockResponse = (input) => {
 
 const ChatBot = () => {
   const [messages, setMessages] = useState([
-    { text: "Hej! Jag är EcoEdith, din klimat-assistent. Fråga mig om havsnivåer, glaciärer eller andra klimatrelaterade ämnen!", isBot: true }
+    { text: "Hej! Jag är EcoEdith, din klimatassistent. Fråga mig om havsnivåer, glaciärer eller andra klimatrelaterade ämnen!", isBot: true }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);

@@ -153,6 +153,9 @@ const Navbar = () => {
             title="Profil"
             _hover={{ bg: 'whiteAlpha.200' }}
           />
+          <Text color="white" fontSize="sm" fontWeight="bold" marginTop="-20px" marginRight="2px">
+            Alice
+          </Text>
           <IconButton 
             icon={<Box as={RiLogoutCircleRLine} size={24} />} 
             onClick={() => navigate('/logout')} 
