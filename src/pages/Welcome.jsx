@@ -145,13 +145,6 @@ const Welcome = ({ setIsFaqOpen }) => {
       />
       <Container maxW="container.xl" position="relative" zIndex={1} mt="50px">
         <Flex align="center" gap={4}>
-          <Image 
-            src="/images/profile.png" 
-            alt="Logo" 
-            boxSize={{ base: "100px", md: "150px" }}
-            borderRadius="full"
-            objectFit="cover"
-          />
           <IconButton
             display={{ base: 'flex', md: 'none' }}
             icon={<FiMenu />}
@@ -161,6 +154,13 @@ const Welcome = ({ setIsFaqOpen }) => {
             size="lg"
             aria-label="Open menu"
             _hover={{ bg: 'whiteAlpha.200' }}
+          />
+          <Image 
+            src="/images/profile.png" 
+            alt="Logo" 
+            boxSize={{ base: "100px", md: "150px" }}
+            borderRadius="full"
+            objectFit="cover"
           />
         </Flex>
         <Heading color="white" fontSize={{ base: "6xl", md: "9xl" }} fontWeight="bold" mb={8} fontFamily="bungee" marginTop={{ base: "50px", md: "75px" }}>
