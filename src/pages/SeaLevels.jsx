@@ -341,10 +341,10 @@ function Startpage({ setIsFaqOpen }) {
                   _hover={{ bg: "#1a1a1a" }}
                 >
                   <Center as="span" color="white" fontSize="2xl" mb={4}>
-                    🤖
+                    🌊
                   </Center>
                   <Center color="gray.400" fontSize="l" mt={4} fontFamily={'monospace'}>
-                    Chatta med EcoEdith
+                    Havsfakta
                   </Center>
                 </Box>
 
