@@ -140,22 +140,23 @@ const Navbar = () => {
       <VStack position="fixed" top={4} right={4} spacing={4} align="flex-end">
         <Text color="white">Inloggad</Text>
         <IconButton 
-          icon={<Image src="profile.png" alt="profile" boxSize="30px" objectFit="cover" borderRadius="full" />} 
+          icon={<Image src="profile.png" alt="profile" boxSize="24px" objectFit="cover" borderRadius="full" />} 
           onClick={() => navigate('/profile')} 
           variant="ghost" 
           color="white"
           aria-label="Profile"
         />
         <IconButton 
-          icon={<RiLogoutCircleRLine />} 
+          icon={<Box as={RiLogoutCircleRLine} size={24} />} 
           onClick={() => navigate('/logout')} 
           variant="ghost" 
           color="white"
           aria-label="Logout"
+          cursor="pointer"
         />
       </VStack>
       <IconButton 
-        icon={<BsQuestionSquare />} 
+        icon={<Box as={BsQuestionSquare} size={24} />} 
         onClick={() => setIsFaqOpen(true)} 
         variant="ghost" 
         color="white"
@@ -163,7 +164,9 @@ const Navbar = () => {
         bottom={4}
         right={4}
         aria-label="FAQ"
+        cursor="pointer"
       />
+      <Faq isOpen={isFaqOpen} onClose={() => setIsFaqOpen(false)} />
     </>
   );
 };
