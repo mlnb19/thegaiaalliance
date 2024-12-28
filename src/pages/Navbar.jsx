@@ -12,13 +12,13 @@ import { BsQuestionSquare } from "react-icons/bs";
 import Faq from './Faq';
 
 const NAV_ITEMS = [
-  { icon: PiWaves, label: "Havsnivåer", path: '/sealevels', color: 'blue.300' },
-  { icon: GiMountainCave, label: "Glaciärer", path: '/glaciers', color: 'cyan.300' },
-  { icon: GiSmokeBomb, label: "Fossila Bränslen", path: '/co2', color: 'orange.300' },
-  { icon: TbTemperatureCelsius, label: "Temperatur", path: '/temperature', color: 'red.300' },
-  { icon: FiUser, label: "Profil", path: '/profile', color: 'green.300' },
-  { icon: BsQuestionSquare, label: "FAQ", special: 'faq', color: 'green.300' },
-  { icon: RiLogoutCircleRLine, label: "Logga ut", path: '/logout', color: 'green.300' }
+  { icon: PiWaves, label: "Sea Levels", path: '/sealevels', color: 'blue.300', title: 'Havsnivåer' },
+  { icon: GiMountainCave, label: "Glacier", path: '/glaciers', color: 'cyan.300', title: 'Glaciärer' },
+  { icon: GiSmokeBomb, label: "Co2", path: '/co2', color: 'orange.300', title: 'Fossila bränslen' },
+  { icon: TbTemperatureCelsius, label: "Temperature", path: '/temperature', color: 'red.300', title: 'Temperaturer' },
+  { icon: FiUser, label: "Profile", path: '/profile', color: 'green.300', title: 'Profil' },
+  { icon: BsQuestionSquare, label: "FAQ", special: 'faq', color: 'green.300', title: 'Frågor och kontakt' },
+  { icon: RiLogoutCircleRLine, label: "Logout", path: '/logout', color: 'green.300', title: 'Logga ut' }
 ];
 
 const Navbar = () => {
@@ -64,36 +64,15 @@ const Navbar = () => {
       >
         <VStack spacing={6} mt={8}>
           {NAV_ITEMS.map((item, index) => (
-            <Box
+            <IconButton
               key={index}
-              cursor="pointer"
+              icon={<Box as={item.icon} size={20} />}
+              aria-label={item.label}
+              variant="ghost"
+              color="white"
               onClick={() => handleNavigation(item)}
-              role="group"
-              _hover={{ bg: item.color }}
-              borderRadius="md"
-              p={2}
-              width="50px"
-            >
-              <IconButton
-                icon={<Box as={item.icon} size={20} />}
-                aria-label={item.label}
-                variant="ghost"
-                color="white"
-                _groupHover={{ bg: 'transparent', color: 'black' }}
-              />
-              <Text 
-                position="absolute"
-                left="60px"
-                color="white" 
-                fontSize="sm"
-                opacity={window.location.pathname === item.path ? 1 : 0}
-                _groupHover={{ opacity: 1, color: 'black' }}
-                transition="opacity 0.2s"
-                whiteSpace="nowrap"
-              >
-                {item.label}
-              </Text>
-            </Box>
+              _hover={{ bg: item.color, color: 'black' }}
+            />
           ))}
         </VStack>
       </Box>
