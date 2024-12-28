@@ -39,14 +39,15 @@ function Co2() {
 
   return (
     <Box
-      w="100vw"
+      w="100vw" 
       h="100vh"
       bg="#0d0d0d"
       display="flex"
-      alignItems="center"
+      alignItems="flex-start"
       justifyContent="center"
       position="relative"
-      overflow="hidden">
+      overflowY="auto"
+      overflowX="hidden">
 
       <Navbar />
 
@@ -65,7 +66,8 @@ function Co2() {
             maxW="container.xl"
             position="relative"
             zIndex={1}
-            pl="100px">
+            pl={{ base: "2", md: "100px" }}
+            py={4}>
         <Grid templateColumns="repeat(2, 1fr)" gap={6} maxH="90vh" overflowY="auto">
           {/* Left Column */}
           <GridItem>
