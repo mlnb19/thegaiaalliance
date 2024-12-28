@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Box, VStack, IconButton, useDisclosure, Drawer, DrawerOverlay, 
-         DrawerContent, DrawerCloseButton, DrawerBody, Flex, Text } from '@chakra-ui/react';
+         DrawerContent, DrawerCloseButton, DrawerBody, Flex, Text, Stack, Image } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 import { PiWaves } from "react-icons/pi";
 import { GiMountainCave, GiSmokeBomb } from "react-icons/gi";
@@ -14,12 +13,9 @@ import Faq from './Faq';
 
 const NAV_ITEMS = [
   { icon: PiWaves, label: "Havsnivåer", path: '/sealevels', color: 'blue.300', title: 'Havsnivåer' },
-  { icon: GiMountainCave, label: "Glaciäer", path: '/glaciers', color: 'cyan.300', title: 'Glaciärer' },
+  { icon: GiMountainCave, label: "Glaciärer", path: '/glaciers', color: 'cyan.300', title: 'Glaciärer' },
   { icon: GiSmokeBomb, label: "Fossila bränslen", path: '/co2', color: 'orange.300', title: 'Fossila bränslen' },
-  { icon: TbTemperatureCelsius, label: "Temperatur", path: '/temperature', color: 'red.300', title: 'Temperaturer' },
-  { icon: FiUser, label: "Profil", path: '/profile', color: 'green.300', title: 'Profil' },
-  { icon: BsQuestionSquare, label: "FAQ och kontakt", special: 'faq', color: 'green.300', title: 'Frågor och kontakt' },
-  { icon: RiLogoutCircleRLine, label: "Logga ut", path: '/logout', color: 'green.300', title: 'Logga ut' }
+  { icon: TbTemperatureCelsius, label: "Temperatur", path: '/temperature', color: 'red.300', title: 'Temperaturer' }
 ];
 
 const Navbar = () => {
@@ -141,6 +137,12 @@ const Navbar = () => {
         </DrawerContent>
       </Drawer>
       <Faq isOpen={isFaqOpen} onClose={() => setIsFaqOpen(false)} />
+      <Stack direction="row" position="absolute" top={4} right={4}>
+        <Text color="white">Inloggad</Text>
+        <IconButton icon={<Image src="profile.png" alt="profile" boxSize="30px" objectFit="cover" borderRadius="full" />} onClick={() => navigate('/profile')} variant="ghost" color="white" />
+        <IconButton icon={<BsQuestionSquare />} onClick={() => setIsFaqOpen(true)} variant="ghost" color="white" />
+        <IconButton icon={<RiLogoutCircleRLine />} onClick={() => navigate('/logout')} variant="ghost" color="white" />
+      </Stack>
     </>
   );
 };
