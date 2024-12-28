@@ -79,6 +79,7 @@ const Navbar = () => {
               key={index}
               alignItems="center"
               position="relative"
+              role="group"
             >
               <IconButton
                 icon={<Box as={item.icon} size={24} />}
@@ -88,17 +89,18 @@ const Navbar = () => {
                 onClick={() => handleNavigation(item)}
                 _hover={{ bg: item.color, color: 'black' }}
               />
-              {window.location.pathname === item.path && (
-                <Text
-                  ml={2}
-                  position="absolute"
-                  left="100%"
-                  whiteSpace="nowrap"
-                  color={item.color}
-                >
-                  {item.title}
-                </Text>
-              )}
+              <Text
+                ml={2}
+                position="absolute"
+                left="100%"
+                whiteSpace="nowrap"
+                color={item.color}
+                opacity="0"
+                _groupHover={{ opacity: 1 }}
+                transition="opacity 0.2s"
+              >
+                {item.title}
+              </Text>
             </Flex>
           ))}
         </VStack>
