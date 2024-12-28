@@ -12,6 +12,8 @@ function Co2() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showTips, setShowTips] = useState(false);
   const [isGameOpen, setIsGameOpen] = useState(false);
+  const [isChattOpen, setIsChattOpen] = useState(false);
+  const [isDiscussionOpen, setIsDiscussionOpen] = useState(false);
   const [personalScore, setPersonalScore] = useState(65);
   const [fossilFuelData, setFossilFuelData] = useState([]);
 
@@ -87,8 +89,100 @@ function Co2() {
                   </Box>
                 ))}
               </SimpleGrid>
+              <SimpleGrid columns={2} spacing={4} mt={6}>
+                <Box
+                  bg="#1a1a1a"
+                  borderRadius="xl"
+                  p={6}
+                  boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)"
+                  cursor="pointer"
+                  onClick={() => setIsChattOpen(true)}
+                  _hover={{ bg: "#222" }}
+                >
+                  <Center as="span" color="white" fontSize="2xl" mb={4}>
+                    🤖
+                  </Center>
+                  <Center color="gray.400" fontSize="sm" mt={4}>
+                    Chatta med EcoEdith
+                  </Center>
+                </Box>
+
+                <Box
+                  bg="#1a1a1a"
+                  borderRadius="xl"
+                  p={6}
+                  boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)"
+                  cursor="pointer"
+                  onClick={() => setIsDiscussionOpen(true)}
+                  _hover={{ bg: "#222" }}
+                >
+                  <Center as="span" color="white" fontSize="2xl" mb={4}>
+                    💭
+                  </Center>
+                  <Center color="gray.400" fontSize="sm" mt={4}>
+                    Diskussionsfrågor
+                  </Center>
+                </Box>
+              </SimpleGrid>
             </Box>
           </GridItem>
+
+          <Modal isOpen={isChattOpen} onClose={() => setIsChattOpen(false)} size="lg">
+            <ModalOverlay backdropFilter="blur(10px)" />
+            <ModalContent bg="gray.900" h="600px">
+              <ModalCloseButton color="white" />
+              <ChatBot />
+            </ModalContent>
+          </Modal>
+
+          <Modal isOpen={isDiscussionOpen} onClose={() => setIsDiscussionOpen(false)} size="xl">
+            <ModalOverlay backdropFilter="blur(10px)" />
+            <ModalContent bg="gray.900" p={6}>
+              <ModalHeader color="red.200">🏭 Diskussionsfrågor om CO2</ModalHeader>
+              <ModalCloseButton color="white" />
+              <ModalBody>
+                <VStack spacing={4} align="stretch">
+                  {[
+                    {
+                      question: "Hur påverkar dina dagliga val CO2-utsläppen?",
+                      followUp: "Tänk på transport, mat och energianvändning."
+                    },
+                    {
+                      question: "Vilka är de största utmaningarna med att minska CO2-utsläpp?",
+                      followUp: "Diskutera både personliga och samhälleliga utmaningar."
+                    },
+                    {
+                      question: "Hur kan vi motivera fler att bry sig om CO2-utsläpp?",
+                      followUp: "Fundera på olika sätt att sprida kunskap och engagemang."
+                    },
+                    {
+                      question: "Vad tror du är det viktigaste vi kan göra för att minska utsläppen?",
+                      followUp: "Tänk både kort- och långsiktigt."
+                    },
+                    {
+                      question: "Hur kan teknik hjälpa oss att minska CO2-utsläpp?",
+                      followUp: "Diskutera både befintlig och framtida teknologi."
+                    }
+                  ].map((item, index) => (
+                    <Box 
+                      key={index}
+                      p={4} 
+                      bg="whiteAlpha.100" 
+                      borderRadius="xl"
+                      _hover={{ bg: 'whiteAlpha.200' }}
+                    >
+                      <Text color="white" fontSize="lg" fontWeight="bold" mb={2}>
+                        {index + 1}. {item.question}
+                      </Text>
+                      <Text color="gray.400" fontSize="md">
+                        {item.followUp}
+                      </Text>
+                    </Box>
+                  ))}
+                </VStack>
+              </ModalBody>
+            </ModalContent>
+          </Modal>
 
           {/* Middle Column */}
           <GridItem colSpan={4}>
