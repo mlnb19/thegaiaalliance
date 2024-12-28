@@ -139,15 +139,19 @@ const Navbar = () => {
       <Faq isOpen={isFaqOpen} onClose={() => setIsFaqOpen(false)} />
       <Box position="fixed" right={4} top={4} p={{ base: 2, md: 4 }}>
         <Flex alignItems="center" gap={4}>
-          <VStack spacing={1}>
-            <IconButton 
-              icon={<Image src="/images/profile.png" alt="profile" boxSize="36px" objectFit="cover" borderRadius="full" />} 
-              onClick={() => navigate('/profile')} 
-              variant="ghost" 
-              color="white"
-              aria-label="Profile"
-              title="Profil"
-              _hover={{ bg: 'whiteAlpha.200' }}
+          <VStack 
+            spacing={1} 
+            as="button"
+            onClick={() => navigate('/profile')}
+            cursor="pointer"
+            _hover={{ opacity: 0.8 }}
+          >
+            <Image 
+              src="/images/profile.png" 
+              alt="profile" 
+              boxSize="36px" 
+              objectFit="cover" 
+              borderRadius="full"
             />
             <Text color="white" fontSize="sm" fontWeight="bold">
               Alice
