@@ -1,0 +1,61 @@
+[plugin:vite:react-babel] /home/runner/React-Javascript/src/pages/Co2.jsx: Expected corresponding JSX closing tag for <Box>. (413:10)
+  416 |
+/home/runner/React-Javascript/src/pages/Co2.jsx:413:10
+411|                </Box>
+412|              </Flex>
+413|            </GridItem>
+   |            ^
+414|          </Grid>
+415|        </Container>
+    at constructor (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:356:19)
+    at JSXParserMixin.raise (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:3223:19)
+    at JSXParserMixin.jsxParseElementAt (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:6890:16)
+    at JSXParserMixin.jsxParseElementAt (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:6858:32)
+    at JSXParserMixin.jsxParseElementAt (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:6858:32)
+    at JSXParserMixin.jsxParseElementAt (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:6858:32)
+    at JSXParserMixin.jsxParseElement (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:6915:17)
+    at JSXParserMixin.parseExprAtom (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:6927:19)
+    at JSXParserMixin.parseExprSubscripts (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:10857:23)
+    at JSXParserMixin.parseUpdate (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:10840:21)
+    at JSXParserMixin.parseMaybeUnary (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:10816:23)
+    at JSXParserMixin.parseMaybeUnaryOrPrivate (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:10654:61)
+    at JSXParserMixin.parseExprOps (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:10659:23)
+    at JSXParserMixin.parseMaybeConditional (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:10636:23)
+    at JSXParserMixin.parseMaybeAssign (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:10597:21)
+    at /home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:10567:39
+    at JSXParserMixin.allowInAnd (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:12284:12)
+    at JSXParserMixin.parseMaybeAssignAllowIn (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:10567:17)
+    at JSXParserMixin.parseParenAndDistinguishExpression (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:11499:28)
+    at JSXParserMixin.parseExprAtom (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:11137:23)
+    at JSXParserMixin.parseExprAtom (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:6932:20)
+    at JSXParserMixin.parseExprSubscripts (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:10857:23)
+    at JSXParserMixin.parseUpdate (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:10840:21)
+    at JSXParserMixin.parseMaybeUnary (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:10816:23)
+    at JSXParserMixin.parseMaybeUnaryOrPrivate (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:10654:61)
+    at JSXParserMixin.parseExprOps (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:10659:23)
+    at JSXParserMixin.parseMaybeConditional (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:10636:23)
+    at JSXParserMixin.parseMaybeAssign (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:10597:21)
+    at JSXParserMixin.parseExpressionBase (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:10551:23)
+    at /home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:10547:39
+    at JSXParserMixin.allowInAnd (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:12279:16)
+    at JSXParserMixin.parseExpression (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:10547:17)
+    at JSXParserMixin.parseReturnStatement (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:13003:28)
+    at JSXParserMixin.parseStatementContent (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:12621:21)
+    at JSXParserMixin.parseStatementLike (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:12588:17)
+    at JSXParserMixin.parseStatementListItem (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:12568:17)
+    at JSXParserMixin.parseBlockOrModuleBlockBody (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:13189:61)
+    at JSXParserMixin.parseBlockBody (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:13182:10)
+    at JSXParserMixin.parseBlock (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:13170:10)
+    at JSXParserMixin.parseFunctionBody (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:11935:24)
+    at JSXParserMixin.parseFunctionBodyAndFinish (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:11921:10)
+    at /home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:13318:12
+    at JSXParserMixin.withSmartMixTopicForbiddingContext (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:12261:14)
+    at JSXParserMixin.parseFunction (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:13317:10)
+    at JSXParserMixin.parseFunctionStatement (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:12984:17)
+    at JSXParserMixin.parseStatementContent (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:12614:21)
+    at JSXParserMixin.parseStatementLike (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:12588:17)
+    at JSXParserMixin.parseModuleItem (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:12565:17)
+    at JSXParserMixin.parseBlockOrModuleBlockBody (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:13189:36)
+    at JSXParserMixin.parseBlockBody (/home/runner/React-Javascript/node_modules/@babel/parser/lib/index.js:13182:10
+Click outside, press Esc key, or fix the code to dismiss.
+You can also disable this overlay by setting server.hmr.overlay to false in vite.config.js.
