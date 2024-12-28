@@ -53,12 +53,12 @@ const Welcome = ({ setIsFaqOpen }) => {
           <VStack 
             spacing={6} 
             bg="blackAlpha.600" 
-            p={8} 
+            p={{ base: 4, md: 8 }}
             borderRadius="xl" 
             backdropFilter="blur(10px)"
             border="1px solid"
             borderColor="whiteAlpha.200"
-            maxW="400px"
+            maxW={{ base: "90%", md: "400px" }}
             w="100%"
           >
             <Box 
@@ -145,15 +145,15 @@ const Welcome = ({ setIsFaqOpen }) => {
         <Image 
           src="/images/profile.png" 
           alt="Logo" 
-          boxSize="150px"
+          boxSize={{ base: "100px", md: "150px" }}
           borderRadius="full"
           objectFit="cover"
         />
-        <Heading color="white" fontSize="9xl" fontWeight="bold" mb={8} fontFamily="bungee" marginTop="75px">
+        <Heading color="white" fontSize={{ base: "6xl", md: "9xl" }} fontWeight="bold" mb={8} fontFamily="bungee" marginTop={{ base: "50px", md: "75px" }}>
           VÄLKOMMEN,<br />ALICE
         </Heading>
-        <Flex justify="flex-end" gap={8}>
-          <Stack direction="row" spacing={8} align="center">
+        <Flex justify="flex-end" gap={{ base: 4, md: 8 }}>
+          <Stack direction={{ base: "column", md: "row" }} spacing={{ base: 4, md: 8 }} align="center">
             <Link href="/sealevels" color="white" _hover={{ color: 'blue.300' }} display="flex" alignItems="center" gap={2}>
               <PiWaves /> HAVSNIVÅER
             </Link>
