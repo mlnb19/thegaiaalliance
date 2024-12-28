@@ -95,7 +95,7 @@ const Navbar = () => {
                 left="100%"
                 whiteSpace="nowrap"
                 color={item.color}
-                opacity="0"
+                opacity={window.location.pathname === item.path ? 1 : 0}
                 _groupHover={{ opacity: 1 }}
                 transition="opacity 0.2s"
               >
