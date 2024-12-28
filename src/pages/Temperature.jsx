@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Box, Container, Text, Grid, GridItem, Flex, SimpleGrid, Stat, StatLabel, StatNumber, StatArrow, Modal, ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalCloseButton, VStack, UnorderedList, ListItem, Center } from '@chakra-ui/react';
+import TemperatureGame from './TemperatureGame';
 import { ResponsiveLine } from '@nivo/line';
 import Navbar from './Navbar';
 import ChatBot from './ChatBot';
@@ -12,6 +13,7 @@ function Temperature() {
   const [isStatModalOpen, setIsStatModalOpen] = useState(false);
   const [isChattOpen, setIsChattOpen] = useState(false);
   const [isDiscussionOpen, setIsDiscussionOpen] = useState(false);
+  const [isGameOpen, setIsGameOpen] = useState(false);
 
   useEffect(() => {
     fetch('/data/Temperature.json')
@@ -243,18 +245,29 @@ function Temperature() {
                 </ModalContent>
               </Modal>
 
-              <Box bg="#111" borderRadius="xl" p={6} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
-                <Text color="white" fontSize="xl" mb={4}>Konsekvenser</Text>
+              <Box 
+                bg="#111" 
+                borderRadius="xl" 
+                p={6} 
+                boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)"
+                cursor="pointer"
+                onClick={() => setIsGameOpen(true)}
+                _hover={{ transform: 'scale(1.02)' }}
+                transition="transform 0.2s"
+              >
+                <Text color="white" fontSize="xl" mb={4}>Spela Temperaturspelet! 🎮</Text>
                 <Text color="gray.400">
-                  • Stigande havsnivåer
-                  <br/>
-                  • Extrema väderhändelser
-                  <br/>
-                  • Förändrade ekosystem
-                  <br/>
-                  • Smältande glaciärer
+                  Testa dina kunskaper om klimatförändringar
                 </Text>
               </Box>
+
+              <Modal isOpen={isGameOpen} onClose={() => setIsGameOpen(false)} size="xl">
+                <ModalOverlay backdropFilter="blur(10px)" />
+                <ModalContent bg="gray.900" p={4}>
+                  <ModalCloseButton color="white" />
+                  <TemperatureGame />
+                </ModalContent>
+              </Modal>
             </Flex>
           </GridItem>
 
