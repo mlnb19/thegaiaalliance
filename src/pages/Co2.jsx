@@ -140,18 +140,52 @@ function Co2() {
                         margin={{ top: 20, right: 20, bottom: 50, left: 60 }}
                         xScale={{ type: 'point' }}
                         yScale={{ type: 'linear', min: 0, max: 'auto' }}
-                        curve="monotoneX"
+                        enableGridX={false}
+                        enableArea={true}
+                        areaBaselineValue={0}
+                        areaOpacity={0.15}
                         axisBottom={{
                           tickRotation: -45,
+                          tickValues: fossilFuelData.filter((_, i) => i % 5 === 0).map(d => d.Year),
                           legend: 'År',
                           legendOffset: 40
                         }}
                         axisLeft={{
                           legend: 'CO2 Utsläpp (Miljoner Ton)',
-                          legendOffset: -50
+                          legendOffset: -50,
+                          tickSize: 5,
+                          tickPadding: 5,
+                          tickRotation: 0
                         }}
-                        enablePoints={false}
+                        pointSize={8}
+                        pointColor="#FFB4B4"
+                        pointBorderWidth={2}
+                        pointBorderColor={{ from: 'serieColor' }}
+                        enableSlices="x"
                         colors={["#FFB4B4"]}
+                        useMesh={true}
+                        theme={{
+                          grid: {
+                            line: {
+                              stroke: "#444",
+                              strokeDasharray: "2 2"
+                            }
+                          },
+                          axis: {
+                            ticks: {
+                              text: {
+                                fill: "#fff",
+                                fontSize: 12
+                              }
+                            },
+                            legend: {
+                              text: {
+                                fill: "#fff",
+                                fontSize: 14
+                              }
+                            }
+                          }
+                        }}
                       />
                     </Box>
                   </ModalBody>
