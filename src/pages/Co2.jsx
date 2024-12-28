@@ -144,9 +144,20 @@ function Co2() {
                         enableArea={true}
                         areaBaselineValue={0}
                         areaOpacity={0.15}
+                        data={[
+                          {
+                            id: "Total CO2",
+                            data: fossilFuelData
+                              .filter(d => d.Year >= 1900 && d.Year % 10 === 0)
+                              .map(d => ({
+                                x: d.Year,
+                                y: d.Total
+                              }))
+                          }
+                        ]}
                         axisBottom={{
                           tickRotation: -45,
-                          tickValues: fossilFuelData.filter((_, i) => i % 5 === 0).map(d => d.Year),
+                          tickSize: 10,
                           legend: 'År',
                           legendOffset: 40
                         }}
