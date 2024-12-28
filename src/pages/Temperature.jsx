@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Box, Container, Text, Grid, GridItem, Flex, SimpleGrid, Stat, StatLabel, StatNumber, StatArrow, Modal, ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalCloseButton, VStack, UnorderedList, ListItem, Center } from '@chakra-ui/react';
 import { ResponsiveLine } from '@nivo/line';
 import Navbar from './Navbar';
+import ChatBot from './ChatBot';
 import { FaTemperatureHigh, FaTemperatureLow } from "react-icons/fa";
 import { WiDaySunny, WiThermometer } from "react-icons/wi";
 
