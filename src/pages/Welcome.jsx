@@ -144,28 +144,39 @@ const Welcome = ({ setIsFaqOpen }) => {
         borderRadius="full"
       />
       <Container maxW="container.xl" position="relative" zIndex={1} mt="50px">
-        <Flex align="center" gap={4}>
-          <IconButton
-            display={{ base: 'flex', md: 'none' }}
-            icon={<FiMenu />}
-            onClick={onOpen}
-            variant="ghost"
-            color="white"
-            size="lg"
-            aria-label="Open menu"
-            _hover={{ bg: 'whiteAlpha.200' }}
-          />
-          <Image 
-            src="/images/profile.png" 
-            alt="Logo" 
-            boxSize={{ base: "100px", md: "150px" }}
-            borderRadius="full"
-            objectFit="cover"
-          />
-        </Flex>
-        <Heading color="white" fontSize={{ base: "6xl", md: "9xl" }} fontWeight="bold" mb={8} fontFamily="bungee" marginTop={{ base: "50px", md: "75px" }}>
-          VÄLKOMMEN,<br />ALICE
-        </Heading>
+        <Flex direction="column" align="center" textAlign="center">
+          <Flex justify="center" align="center" w="full" position="relative">
+            <IconButton
+              position="absolute"
+              left="0"
+              display={{ base: 'flex', md: 'none' }}
+              icon={<FiMenu />}
+              onClick={onOpen}
+              variant="ghost"
+              color="white"
+              size="lg"
+              aria-label="Open menu"
+              _hover={{ bg: 'whiteAlpha.200' }}
+            />
+            <Image 
+              src="/images/profile.png" 
+              alt="Logo" 
+              boxSize={{ base: "100px", md: "150px" }}
+              borderRadius="full"
+              objectFit="cover"
+            />
+          </Flex>
+          <Heading 
+            color="white" 
+            fontSize={{ base: "4xl", sm: "5xl", md: "7xl", lg: "9xl" }} 
+            fontWeight="bold" 
+            mb={8} 
+            fontFamily="bungee" 
+            marginTop={{ base: "30px", md: "50px" }}
+            textAlign="center"
+          >
+            VÄLKOMMEN,<br />ALICE
+          </Heading>
         
         <Stack 
           display={{ base: 'none', md: 'flex' }} 
