@@ -69,7 +69,7 @@ const Welcome = ({ setIsFaqOpen }) => {
               alignItems="center"
               gap={3}
             >
-              <FaGlobeAmericas size={30} color="#48BB78"/>
+              <Image src="/images/Logga1.svg" alt="Logo" boxSize="36px" objectFit="cover"></Image>
               <Heading color="white" fontSize="3xl">The Gaia Alliance</Heading>
               <FaLeaf size={20} color="#48BB78"/>
             </Box>
