@@ -162,7 +162,7 @@ const Navbar = () => {
             cursor="pointer"
             _hover={{ bg: 'whiteAlpha.200' }}
           />
-        </VStack>
+        </Flex>
       </Box>
       <IconButton 
         icon={<Box as={BsQuestionSquare} size={24} />} 
