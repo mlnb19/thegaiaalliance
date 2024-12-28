@@ -66,7 +66,7 @@ const Welcome = ({ setIsFaqOpen }) => {
               <FaLeaf size={30} color="#48BB78"/>
             </Box>
             
-            <Text color="gray.300" textAlign="center">
+            <Text color="gray.300" textAlign="center" fontSize="xs">
               Utforska klimatet och lär dig göra skillnad!
             </Text>
             
@@ -113,7 +113,7 @@ const Welcome = ({ setIsFaqOpen }) => {
               </ScaleFade>
             )}
             
-            <Text color="gray.400" fontSize="sm" mt={4} textAlign="center">
+            <Text color="gray.400" fontSize="xs" mt={4} textAlign="center">
               Tillsammans kan vi göra skillnad för klimatet
             </Text>
           </VStack>
