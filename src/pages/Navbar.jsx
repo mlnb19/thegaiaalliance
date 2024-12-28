@@ -63,13 +63,13 @@ const Navbar = () => {
         backdropFilter="blur(10px)" 
         zIndex={10}
       >
-        <Flex align="left" mb={6} gap={0}>
+        <Flex pl={2} mb={6} gap={2}>
           <FaGlobeAmericas size={24} color="#4CAF50"/>
           <Text color="white" fontSize="sm" fontWeight="bold">
             The Gaia Alliance
           </Text>
         </Flex>
-        <VStack spacing={6} mt={8}>
+        <VStack spacing={6} mt={8} alignItems="flex-start" pl={2}>
           {NAV_ITEMS.map((item, index) => (
             <Flex
               key={index}
