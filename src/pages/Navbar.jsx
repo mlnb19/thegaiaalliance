@@ -38,7 +38,7 @@ const Navbar = () => {
 
   return (
     <>
-      <Box display={{ base: 'block', md: 'none' }} position="fixed" top={4} left={4} zIndex={20}>
+      <Box display={{ base: 'block', md: 'none' }} position="fixed" top={4} left={0} zIndex={20}>
         <IconButton
           icon={<FiMenu />}
           onClick={onOpen}
@@ -63,7 +63,7 @@ const Navbar = () => {
         backdropFilter="blur(10px)" 
         zIndex={10}
       >
-        <Flex align="center" mb={6} gap={2}>
+        <Flex align="left" mb={6} gap={0}>
           <FaGlobeAmericas size={24} color="#4CAF50"/>
           <Text color="white" fontSize="sm" fontWeight="bold">
             The Gaia Alliance
@@ -109,7 +109,7 @@ const Navbar = () => {
               {NAV_ITEMS.map((item, index) => (
                 <Flex 
                   key={index}
-                  align="center" 
+                  align="left" 
                   w="full"
                   onClick={() => handleNavigation(item)}
                   cursor="pointer"
