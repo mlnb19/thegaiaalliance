@@ -51,14 +51,14 @@ function Startpage({ setIsFaqOpen }) {
         maxW="container.xl"
         position="relative"
         zIndex={1}
-        pl="100px">
+        pl={{ base: 4, md: "100px" }}>
 
       <Grid
-        templateColumns="repeat(12, 1fr)"
-        gap={6} h="600px">
+        templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(12, 1fr)" }}
+        gap={6} minH={{ base: "auto", md: "600px" }}>
 
       {/* Left Column - Major Feature */}
-        <GridItem colSpan={5} >
+        <GridItem colSpan={{ base: 1, md: 5 }} >
           <Box
             bg="#111"
             borderRadius="xl"
@@ -113,7 +113,7 @@ function Startpage({ setIsFaqOpen }) {
 
       {/* Middle Column */}
         <GridItem
-          colSpan={4}>
+          colSpan={{ base: 1, md: 4 }}>
 
           <Flex
             direction="column"
@@ -260,10 +260,10 @@ function Startpage({ setIsFaqOpen }) {
         </GridItem>
 
           {/* Right Column */}
-          <GridItem colSpan={3}>
+          <GridItem colSpan={{ base: 1, md: 3 }}>
             <Flex direction="column" gap={6} h="100%">
               {/* Top Features */}
-              <SimpleGrid columns={2} gap={6}>
+              <SimpleGrid columns={{ base: 1, md: 2 }} gap={6}>
                 <Box 
                   bg="#111" 
                   borderRadius="xl" 

@@ -58,7 +58,7 @@ const Navbar = () => {
         left="0" 
         top="0" 
         h="100vh" 
-        p={4} 
+        p={{ base: 2, md: 4 }}
         zIndex={10}
       >
         <Flex alignItems="center" mb={6}>

@@ -61,10 +61,10 @@ function Co2() {
           opacity="0.5"
           borderRadius="full"/>
 
-      <Container maxW="container.xl" position="relative" zIndex={1} pl="100px">
-        <Grid templateColumns="repeat(12, 1fr)" gap={6} h="600px">
+      <Container maxW="container.xl" position="relative" zIndex={1} pl={{ base: 4, md: "100px" }}>
+        <Grid templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(12, 1fr)" }} gap={6} minH={{ base: "auto", md: "600px" }}>
           {/* Left Column */}
-          <GridItem colSpan={4}>
+          <GridItem colSpan={{ base: 1, md: 4 }}>
             <Box bg="#111" borderRadius="xl" p={8} h="600px" boxShadow="3px 2px 7px rgba(61, 61, 61)" border="0.5px">
               <Text color="#FFB4B4" fontSize="sm">CO2 Utsläpp</Text>
               <Text color="white" fontSize="4xl" fontWeight="bold" mt={2} mb={4}>

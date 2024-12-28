@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Box, Container, Text, Grid, GridItem, Flex, SimpleGrid, Stat, StatLabel, StatNumber, StatArrow, Modal, ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalCloseButton, VStack, UnorderedList, ListItem, Center } from '@chakra-ui/react';
 import { ResponsiveLine } from '@nivo/line';
@@ -43,11 +42,9 @@ function Temperature() {
             opacity="0.5"
             borderRadius="full"/>
       
-      <Container maxW="container.xl" position="relative" zIndex={1} pl="100px">
-        <Grid
-          templateColumns="repeat(12, 1fr)"
-          gap={6} h="600px">
-          <GridItem colSpan={5}>
+      <Container maxW="container.xl" position="relative" zIndex={1} pl={{ base: 4, md: "100px" }}>
+        <Grid templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(12, 1fr)" }} gap={6} minH={{ base: "auto", md: "600px" }}>
+          <GridItem colSpan={{ base: 12, md: 5 }}>
             <Box bg="#111" borderRadius="xl" p={8} h="100%" boxShadow="3px 2px 7px rgba(61, 61, 61)" border="0.5px">
               <Text color="#FFD4B4" fontSize="sm">Global Uppvärmning</Text>
               <Text color="white" fontSize="4xl" fontWeight="bold" mt={2} mb={4}>
@@ -119,7 +116,7 @@ function Temperature() {
             </Box>
           </GridItem>
 
-          <GridItem colSpan={4}>
+          <GridItem colSpan={{ base: 12, md: 4 }}>
             <Flex direction="column" gap={6} h="100%">
               <Box 
                 bg="#111" 
@@ -273,7 +270,7 @@ function Temperature() {
             </Flex>
           </GridItem>
 
-          <GridItem colSpan={3}>
+          <GridItem colSpan={{ base: 12, md: 3 }}>
             <Flex direction="column" gap={6} h="100%">
               <Box 
                 bg="#111" 
@@ -293,7 +290,7 @@ function Temperature() {
                 </Text>
               </Box>
 
-              <SimpleGrid columns={2} spacing={4}>
+              <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4}>
                 <Box
                   bg="#111"
                   borderRadius="xl"
