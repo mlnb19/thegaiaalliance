@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
-import { Box, Flex, IconButton, Text, VStack, useNavigate } from '@chakra-ui/react';
+import { Box, Flex, IconButton, Text, VStack } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
 import { BsQuestionSquare } from 'react-icons/bs';
 import { RiLogoutCircleRLine } from 'react-icons/ri';
 import { Image } from '@chakra-ui/react';
