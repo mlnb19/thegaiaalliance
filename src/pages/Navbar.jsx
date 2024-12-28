@@ -64,15 +64,15 @@ const Navbar = () => {
       >
         <VStack spacing={6} mt={8}>
           {NAV_ITEMS.map((item, index) => (
-            <Flex
+            <Box
               key={index}
-              align="center"
               cursor="pointer"
               onClick={() => handleNavigation(item)}
               role="group"
               _hover={{ bg: item.color }}
               borderRadius="md"
               p={2}
+              width="50px"
             >
               <IconButton
                 icon={<Box as={item.icon} size={20} />}
@@ -82,16 +82,18 @@ const Navbar = () => {
                 _groupHover={{ bg: 'transparent', color: 'black' }}
               />
               <Text 
+                position="absolute"
+                left="60px"
                 color="white" 
-                ml={2} 
                 fontSize="sm"
                 opacity={window.location.pathname === item.path ? 1 : 0}
                 _groupHover={{ opacity: 1, color: 'black' }}
                 transition="opacity 0.2s"
+                whiteSpace="nowrap"
               >
                 {item.label}
               </Text>
-            </Flex>
+            </Box>
           ))}
         </VStack>
       </Box>
