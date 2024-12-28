@@ -36,28 +36,28 @@ function Co2() {
   ];
 
   return (
-        <Box
-          w="100vw"
-          h="100vh"
-          bg="#0d0d0d"
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          position="relative"
-          overflow="hidden">
+    <Box
+      w="100vw"
+      h="100vh"
+      bg="#0d0d0d"
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      position="relative"
+      overflow="hidden">
 
-          <Navbar />
+      <Navbar />
 
-          <Box
-            pos="absolute"
-            top="0"
-            right="0"
-            w="50%"
-            h="50%"
-            bgGradient="linear(to-bl, blue.600, cyan.500, blue.700)"
-            filter="blur(100px)"
-            opacity="0.5"
-            borderRadius="full"/>
+      <Box
+        pos="absolute"
+        top="0"
+        right="0"
+        w="50%"
+        h="50%"
+        bgGradient="linear(to-bl, red.600, orange.500, yellow.700)"
+        filter="blur(100px)"
+        opacity="0.5"
+        borderRadius="full"/>
 
           <Container
             maxW="container.xl"
@@ -233,17 +233,15 @@ function Co2() {
                 boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)"
               >
                 <Text color="white" fontSize="xl" fontWeight="bold" mb={4}>
-                  Varför är CO2-utsläpp farliga?
+                  Höga CO2-nivåer leder till:
                 </Text>
                 <Text color="gray.300">
-                  Koldioxidutsläpp är en av de största orsakerna till klimatförändringarna. 
-                  Höga CO2-nivåer leder till:<br />
-                  • Ökad global uppvärmning som smälter glaciärer och höjer havsnivåer<br />
-                  • Försurning av haven som skadar marina ekosystem<br />
-                  • Extremare väder med fler naturkatastrofer<br />
-                  • Förändringar i ekosystem som hotar både djur och växter<br />
-                  <br />
-                  Genom att minska våra utsläpp kan vi hjälpa till att bromsa dessa negativa effekter.
+                  <ul>
+                  <li>Ökad global uppvärmning som smälter glaciärer och höjer havsnivåer</li>
+                  <li>Försurning av haven som skadar marina ekosystem</li>
+                  <li>Extremare väder med fler naturkatastrofer</li>
+                  <li>Förändringar i ekosystem som hotar både djur och växter</li>
+                  </ul>
                 </Text>
               </Box>
               
