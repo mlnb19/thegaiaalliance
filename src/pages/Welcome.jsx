@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Box, Container, Heading, Stack, Link, Flex, Image, Input, Button, Text, VStack, keyframes, ScaleFade } from '@chakra-ui/react';
+import { Box, Container, Heading, Stack, Link, Flex, Image, Input, Button, Text, VStack, keyframes, ScaleFade, IconButton } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 import { FaLeaf, FaGlobeAmericas, FaTree } from 'react-icons/fa';
 import { PiWaves } from "react-icons/pi";
