@@ -75,14 +75,34 @@ function Co2() {
             <Flex direction="column" gap={6} h="100%">
               <Box bg="#111" borderRadius="xl" p={8} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)" cursor="pointer" onClick={() => setIsModalOpen(true)} transition="transform 0.2s" _hover={{ transform: 'scale(1.02)' }}>
                 <Text color="white" fontSize="2xl" fontWeight="bold">Ditt CO2 Avtryck</Text>
-                <Center height="200px" mt={6}>
-                  <Liquid 
-                    percent={0.45}
-                    outline={{ border: 2, distance: 4 }}
-                    wave={{ length: 128 }}
-                    color="#FFB4B4"
-                  />
-                </Center>
+                <Box height="300px" mt={6}>
+                <ResponsiveLine
+                  data={[
+                    {
+                      id: "Total CO2",
+                      data: fossilFuelData.map(d => ({
+                        x: d.Year,
+                        y: d.Total
+                      }))
+                    }
+                  ]}
+                  margin={{ top: 20, right: 20, bottom: 50, left: 60 }}
+                  xScale={{ type: 'point' }}
+                  yScale={{ type: 'linear', min: 0, max: 'auto' }}
+                  curve="monotoneX"
+                  axisBottom={{
+                    tickRotation: -45,
+                    legend: 'Year',
+                    legendOffset: 40
+                  }}
+                  axisLeft={{
+                    legend: 'CO2 Emissions (Million Metric Tons)',
+                    legendOffset: -50
+                  }}
+                  enablePoints={false}
+                  colors={["#FFB4B4"]}
+                />
+              </Box>
               </Box>
               
               <Box 
