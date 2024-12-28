@@ -63,9 +63,9 @@ const Navbar = () => {
         backdropFilter="blur(10px)" 
         zIndex={10}
       >
-        <Flex direction="column" align="center" mb={6}>
+        <Flex align="center" mb={6} gap={2}>
           <FaGlobeAmericas size={24} color="#4CAF50"/>
-          <Text color="white" fontSize="sm" fontWeight="bold" mt={2}>
+          <Text color="white" fontSize="sm" fontWeight="bold">
             The Gaia Alliance
           </Text>
         </Flex>
