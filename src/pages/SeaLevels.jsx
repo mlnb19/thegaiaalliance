@@ -128,15 +128,19 @@ function Startpage({ setIsFaqOpen }) {
             gap={6} h="100%">
 
           <Box
-            bg="#0d0d0d"
+            bg="#111"
             borderRadius="xl"
             p={8} 
-            boxShadow="0px 2px 7px rgba(61, 61, 61)" 
+            boxShadow="0px 4px 15px rgba(0, 120, 255, 0.1)"
             border="0.5px"
             cursor="pointer"
             onClick={() => setIsChartModalOpen(true)}
-            transition="transform 0.2s"
-            _hover={{ transform: 'scale(1.02)' }}
+            transition="all 0.2s ease-in-out"
+            _hover={{
+              transform: 'scale(1.02)',
+              bg: '#1a1a1a',
+              boxShadow: '0px 4px 20px rgba(0, 120, 255, 0.2)'
+            }}
           >
             <Text 
               color="white"
