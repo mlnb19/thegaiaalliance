@@ -68,7 +68,7 @@ function Co2() {
             zIndex={1}
             pl={{ base: "2", md: "100px" }}
             py={4}>
-        <Grid templateColumns="repeat(2, 1fr)" gap={6} maxH="90vh" overflowY="auto">
+        <Grid templateColumns="repeat(3, 1fr)" gap={6} maxH="90vh" overflowY="auto">
           {/* Left Column */}
           <GridItem>
             <Box bg="#111" borderRadius="xl" p={8} h="100%" boxShadow="3px 2px 7px rgba(61, 61, 61)" border="0.5px">
@@ -217,112 +217,6 @@ function Co2() {
                 </SimpleGrid>
               </Box>
 
-              <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} size="4xl">
-                <ModalOverlay backdropFilter="blur(10px)" />
-                <ModalContent bg="gray.900" p={6}>
-                  <ModalHeader color="white">Historisk CO2 Utveckling</ModalHeader>
-                  <ModalCloseButton color="white" />
-                  <ModalBody>
-                    <Flex gap={6}>
-                      <Box height="400px" flex="2">
-                        <ResponsiveLine
-                        data={[
-                          {
-                            id: "Total CO2",
-                            data: fossilFuelData.map(d => ({
-                              x: d.Year,
-                              y: d.Total
-                            }))
-                          }
-                        ]}
-                        margin={{ top: 20, right: 20, bottom: 50, left: 60 }}
-                        xScale={{ type: 'point' }}
-                        yScale={{ type: 'linear', min: 0, max: 'auto' }}
-                        enableGridX={false}
-                        enableArea={true}
-                        areaBaselineValue={0}
-                        areaOpacity={0.15}
-                        data={[
-                          {
-                            id: "Total CO2",
-                            data: fossilFuelData
-                              .filter(d => d.Year >= 1900 && d.Year % 10 === 0)
-                              .map(d => ({
-                                x: d.Year,
-                                y: d.Total
-                              }))
-                          }
-                        ]}
-                        axisBottom={{
-                          tickRotation: -45,
-                          tickSize: 10,
-                          legend: 'År',
-                          legendOffset: 40
-                        }}
-                        axisLeft={{
-                          legend: 'CO2 Utsläpp (Miljoner Ton)',
-                          legendOffset: -50,
-                          tickSize: 5,
-                          tickPadding: 5,
-                          tickRotation: 0
-                        }}
-                        pointSize={8}
-                        pointColor="#FFB4B4"
-                        pointBorderWidth={2}
-                        pointBorderColor={{ from: 'serieColor' }}
-                        enableSlices="x"
-                        colors={["#FFB4B4"]}
-                        useMesh={true}
-                        theme={{
-                          grid: {
-                            line: {
-                              stroke: "#444",
-                              strokeDasharray: "2 2"
-                            }
-                          },
-                          axis: {
-                            ticks: {
-                              text: {
-                                fill: "#fff",
-                                fontSize: 12
-                              }
-                            },
-                            legend: {
-                              text: {
-                                fill: "#fff",
-                                fontSize: 14
-                              }
-                            }
-                          }
-                        }}
-                      />
-                      </Box>
-                      <Box flex="1" bg="#1a1a1a" p={4} borderRadius="xl">
-                        <VStack spacing={4} align="start">
-                          <Text color="white" fontSize="lg" fontWeight="bold">
-                            Om Statistiken
-                          </Text>
-                          <Text color="gray.300" fontSize="sm">
-                            Denna graf visar den historiska utvecklingen av CO2-utsläpp sedan 1900.
-                          </Text>
-                          <Text color="gray.300" fontSize="sm">
-                            Viktiga observationer:
-                          </Text>
-                          <UnorderedList color="gray.300" fontSize="sm" spacing={2}>
-                            <ListItem>Kraftig ökning efter 1950</ListItem>
-                            <ListItem>Industrialiseringen har bidragit mest</ListItem>
-                            <ListItem>Fortsatt uppåtgående trend</ListItem>
-                          </UnorderedList>
-                          <Text color="gray.300" fontSize="sm" mt={2}>
-                            Värdena mäts i miljoner ton CO2 och visar den totala mängden utsläpp från fossila bränslen.
-                          </Text>
-                        </VStack>
-                      </Box>
-                    </Flex>
-                  </ModalBody>
-                </ModalContent>
-              </Modal>
-
               <Box 
                 bg="#111" 
                 borderRadius="xl" 
@@ -345,74 +239,6 @@ function Co2() {
                   Klicka för att läsa mer...
                 </Text>
               </Box>
-
-              <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} size="xl">
-                <ModalOverlay backdropFilter="blur(10px)"/>
-                <ModalContent bg="gray.900" p={6}>
-                  <ModalHeader color="orange.300">Höga CO2-nivåer leder till:</ModalHeader>
-                  <ModalCloseButton color="white"/>
-                  <ModalBody>
-                    <VStack spacing={6} align="stretch">
-                      <Box>
-                        <Text color="orange.300" fontSize="lg" fontWeight="bold">
-                          Ökad global uppvärmning
-                        </Text>
-                        <UnorderedList color="gray.300" mt={2} spacing={2}>
-                          <ListItem>Smältande glaciärer och isar</ListItem>
-                          <ListItem>Stigande havsnivåer</ListItem>
-                          <ListItem>Varmare hav och lufttemperaturer</ListItem>
-                        </UnorderedList>
-                      </Box>
-                      
-                      <Box>
-                        <Text color="orange.300" fontSize="lg" fontWeight="bold">
-                          Havsförsurning
-                        </Text>
-                        <UnorderedList color="gray.300" mt={2} spacing={2}>
-                          <ListItem>Korallrev dör ut</ListItem>
-                          <ListItem>Marina ekosystem skadas</ListItem>
-                          <ListItem>Påverkar fiskbestånden</ListItem>
-                        </UnorderedList>
-                      </Box>
-
-                      <Box>
-                        <Text color="orange.300" fontSize="lg" fontWeight="bold">
-                          Extremväder
-                        </Text>
-                        <UnorderedList color="gray.300" mt={2} spacing={2}>
-                          <ListItem>Kraftigare stormar</ListItem>
-                          <ListItem>Längre torrperioder</ListItem>
-                          <ListItem>Intensivare översvämningar</ListItem>
-                        </UnorderedList>
-                      </Box>
-
-                      <Box>
-                        <Text color="orange.300" fontSize="lg" fontWeight="bold">
-                          Ekosystemförändringar
-                        </Text>
-                        <UnorderedList color="gray.300" mt={2} spacing={2}>
-                          <ListItem>Artutrotning</ListItem>
-                          <ListItem>Förändrade växtsäsonger</ListItem>
-                          <ListItem>Rubbade livsmiljöer</ListItem>
-                        </UnorderedList>
-                      </Box>
-                    </VStack>
-                  </ModalBody>
-                </ModalContent>
-              </Modal>
-              
-              <Box 
-                bg="#111" 
-                borderRadius="xl" 
-                p={6} 
-                flex={1} 
-                cursor="pointer" 
-                onClick={() => setIsGameOpen(true)}
-                _hover={{ bg: "#1a1a1a" }}
-              >
-                <Text color="white" fontSize="2xl" fontWeight="bold">Spela CO2 Spelet! 🎮</Text>
-                <Text color="gray.400" mt={2}>Klicka här för att testa dina miljöval</Text>
-              </Box>
             </Flex>
           </GridItem>
 
@@ -430,42 +256,6 @@ function Co2() {
                 <Text color="white" fontSize="2xl" fontWeight="bold">Spela CO2 Spelet! 🎮</Text>
                 <Text color="gray.400" mt={2}>Klicka här för att testa dina miljöval</Text>
               </Box>
-
-              <SimpleGrid columns={2} spacing={4}>
-                <Box
-                  bg="#111"
-                  borderRadius="xl"
-                  p={6}
-                  boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)"
-                  cursor="pointer"
-                  onClick={() => setIsChattOpen(true)}
-                  _hover={{ bg: "#222" }}
-                >
-                  <Center as="span" color="white" fontSize="2xl" mb={4}>
-                    🤖
-                  </Center>
-                  <Center color="gray.400" fontSize="sm" mt={4}>
-                    Chatta med EcoEdith
-                  </Center>
-                </Box>
-
-                <Box
-                  bg="#111"
-                  borderRadius="xl"
-                  p={6}
-                  boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)"
-                  cursor="pointer"
-                  onClick={() => setIsDiscussionOpen(true)}
-                  _hover={{ bg: "#222" }}
-                >
-                  <Center as="span" color="white" fontSize="2xl" mb={4}>
-                    💭
-                  </Center>
-                  <Center color="gray.400" fontSize="sm" mt={4}>
-                    Diskussionsfrågor
-                  </Center>
-                </Box>
-              </SimpleGrid>
 
               <Box bg="#111" borderRadius="xl" p={8} flex={1} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
                 <Text color="white" fontSize="2xl" fontWeight="bold">
