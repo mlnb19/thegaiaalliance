@@ -67,9 +67,9 @@ function Co2() {
             position="relative"
             zIndex={1}
             pl="100px">
-        <Grid templateColumns="repeat(12, 1fr)" gap={6} h="600px">
+        <Grid templateColumns="repeat(2, 1fr)" gap={6} maxH="90vh" overflowY="auto">
           {/* Left Column */}
-          <GridItem colSpan={5}>
+          <GridItem>
             <Box bg="#111" borderRadius="xl" p={8} h="100%" boxShadow="3px 2px 7px rgba(61, 61, 61)" border="0.5px">
               <Text color="#FFB4B4" fontSize="sm">CO2 Utsläpp</Text>
               <Text color="white" fontSize="4xl" fontWeight="bold" mt={2} mb={4}>
@@ -187,7 +187,7 @@ function Co2() {
           </Modal>
 
           {/* Middle Column */}
-          <GridItem colSpan={4}>
+          <GridItem>
             <Flex direction="column" gap={6} h="100%">
               <Box 
                 bg="#111" 
@@ -384,8 +384,8 @@ function Co2() {
             </Flex>
           </GridItem>
 
-          {/* Right Column */}
-          <GridItem colSpan={3}>
+          {/* Moved to Left Column */}
+          <Box mt={6}>
             <Flex direction="column" gap={6} h="100%">
               <Box bg="#111" borderRadius="xl" p={8} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)" onClick={() => setShowTips(true)} cursor="pointer" _hover={{ bg: "#1a1a1a" }}>
                 <Flex align="center" mb={4}>
