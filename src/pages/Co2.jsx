@@ -93,37 +93,70 @@ function Co2() {
           {/* Middle Column */}
           <GridItem colSpan={4}>
             <Flex direction="column" gap={6} h="100%">
-              <Box bg="#111" borderRadius="xl" p={8} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)" cursor="pointer" onClick={() => setIsModalOpen(true)} transition="transform 0.2s" _hover={{ transform: 'scale(1.02)' }}>
-                <Text color="white" fontSize="2xl" fontWeight="bold">Ditt CO2 Avtryck</Text>
-                <Box height="300px" mt={6}>
-                <ResponsiveLine
-                  data={[
-                    {
-                      id: "Total CO2",
-                      data: fossilFuelData.map(d => ({
-                        x: d.Year,
-                        y: d.Total
-                      }))
-                    }
-                  ]}
-                  margin={{ top: 20, right: 20, bottom: 50, left: 60 }}
-                  xScale={{ type: 'point' }}
-                  yScale={{ type: 'linear', min: 0, max: 'auto' }}
-                  curve="monotoneX"
-                  axisBottom={{
-                    tickRotation: -45,
-                    legend: 'Year',
-                    legendOffset: 40
-                  }}
-                  axisLeft={{
-                    legend: 'CO2 Emissions (Million Metric Tons)',
-                    legendOffset: -50
-                  }}
-                  enablePoints={false}
-                  colors={["#FFB4B4"]}
-                />
+              <Box 
+                bg="#111" 
+                borderRadius="xl" 
+                p={8} 
+                boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)" 
+                cursor="pointer" 
+                onClick={() => setIsModalOpen(true)} 
+                transition="transform 0.2s" 
+                _hover={{ transform: 'scale(1.02)' }}
+              >
+                <Text color="white" fontSize="2xl" fontWeight="bold">CO2 Utsläpp Statistik</Text>
+                <SimpleGrid columns={2} spacing={4} mt={4}>
+                  <Stat>
+                    <StatLabel color="gray.400">Total Ökning</StatLabel>
+                    <StatNumber color="red.400">
+                      {fossilFuelData.length > 0 && `${(fossilFuelData[fossilFuelData.length-1].Total - fossilFuelData[0].Total).toFixed(1)}Mt`}
+                    </StatNumber>
+                  </Stat>
+                  <Stat>
+                    <StatLabel color="gray.400">Senaste Mätning</StatLabel>
+                    <StatNumber color="orange.400">
+                      {fossilFuelData.length > 0 && `${fossilFuelData[fossilFuelData.length-1].Total}Mt`}
+                    </StatNumber>
+                  </Stat>
+                </SimpleGrid>
               </Box>
-              </Box>
+
+              <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} size="4xl">
+                <ModalOverlay backdropFilter="blur(10px)" />
+                <ModalContent bg="gray.900" p={6}>
+                  <ModalHeader color="white">Historisk CO2 Utveckling</ModalHeader>
+                  <ModalCloseButton color="white" />
+                  <ModalBody>
+                    <Box height="400px">
+                      <ResponsiveLine
+                        data={[
+                          {
+                            id: "Total CO2",
+                            data: fossilFuelData.map(d => ({
+                              x: d.Year,
+                              y: d.Total
+                            }))
+                          }
+                        ]}
+                        margin={{ top: 20, right: 20, bottom: 50, left: 60 }}
+                        xScale={{ type: 'point' }}
+                        yScale={{ type: 'linear', min: 0, max: 'auto' }}
+                        curve="monotoneX"
+                        axisBottom={{
+                          tickRotation: -45,
+                          legend: 'År',
+                          legendOffset: 40
+                        }}
+                        axisLeft={{
+                          legend: 'CO2 Utsläpp (Miljoner Ton)',
+                          legendOffset: -50
+                        }}
+                        enablePoints={false}
+                        colors={["#FFB4B4"]}
+                      />
+                    </Box>
+                  </ModalBody>
+                </ModalContent>
+              </Modal>
               
               <Box 
                 bg="#111" 
