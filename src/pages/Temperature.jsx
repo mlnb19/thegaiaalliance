@@ -43,7 +43,7 @@ function Temperature() {
         opacity="0.5"
         borderRadius="full"/>
       
-      <Container maxW="container.xl" position="relative" zIndex={1}>
+      <Container maxW="container.xl" position="relative" zIndex={1} pl="100px">
         <Grid templateColumns="repeat(12, 1fr)" gap={6} h="600px">
           <GridItem colSpan={5}>
             <Box bg="#111" borderRadius="xl" p={8} h="100%" boxShadow="3px 2px 7px rgba(61, 61, 61)" border="0.5px">

@@ -50,7 +50,8 @@ function Startpage({ setIsFaqOpen }) {
       <Container
         maxW="container.xl"
         position="relative"
-        zIndex={1}>
+        zIndex={1}
+        pl="100px">
 
       <Grid
         templateColumns="repeat(12, 1fr)"

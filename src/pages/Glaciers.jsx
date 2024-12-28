@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Box, Container, Text, VStack, HStack, Flex, Modal, ModalOverlay, ModalContent, ModalCloseButton, ModalHeader, ModalBody, Center, SimpleGrid } from '@chakra-ui/react';
 import ChatBot from './ChatBot';
@@ -27,7 +26,7 @@ function Glaciers() {
         opacity="0.5"
         borderRadius="full"
       />
-      <Container maxW="container.xl" pt={{base: 4, md: "80px"}} position="relative" zIndex={1}>
+      <Container maxW="container.xl" pt={{base: 4, md: "80px"}} position="relative" zIndex={1} pl="100px">
         <Flex 
           direction={{base: "column", md: "row"}} 
           gap={6} 

@@ -65,7 +65,8 @@ function Co2() {
           <Container
             maxW="container.xl"
             position="relative"
-            zIndex={1}>
+            zIndex={1}
+            pl="100px">
         <Grid templateColumns="repeat(12, 1fr)" gap={6} h="600px">
           {/* Left Column */}
           <GridItem colSpan={5}>
