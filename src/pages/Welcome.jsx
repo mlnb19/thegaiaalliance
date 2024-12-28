@@ -2,14 +2,14 @@
 import React, { useState } from 'react';
 import { Box, Container, Heading, Stack, Link, Flex, Image, Input, Button, Text, VStack, keyframes, ScaleFade } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
-import Navbar from './Navbar';
 import { FaLeaf, FaGlobeAmericas, FaTree } from 'react-icons/fa';
 import { PiWaves } from "react-icons/pi";
 import { GiMountainCave, GiSmokeBomb } from "react-icons/gi";
 import { TbTemperatureCelsius } from "react-icons/tb";
-import { FiUser } from "react-icons/fi";
+import { FiUser, FiMenu } from "react-icons/fi";
 import { RiLogoutCircleRLine } from "react-icons/ri";
 import { BsQuestionSquare } from "react-icons/bs";
+import { useDisclosure, Drawer, DrawerBody, DrawerOverlay, DrawerContent, DrawerCloseButton } from "@chakra-ui/react";
 
 const float = keyframes`
   0% { transform: translateY(0px); }
@@ -129,6 +129,8 @@ const Welcome = ({ setIsFaqOpen }) => {
     );
   }
 
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  
   return (
     <Box bg="#0d0d0d" minH="100vh" position="relative" w="100vw" overflow="hidden" m="0" p="0">
       <Box
@@ -142,7 +144,6 @@ const Welcome = ({ setIsFaqOpen }) => {
         opacity="0.5"
         borderRadius="full"
       />
-      <Navbar />
       <Container maxW="container.xl" position="relative" zIndex={1} mt="50px">
         <Flex align="center" gap={4}>
           <Image 
@@ -152,36 +153,83 @@ const Welcome = ({ setIsFaqOpen }) => {
             borderRadius="full"
             objectFit="cover"
           />
+          <IconButton
+            display={{ base: 'flex', md: 'none' }}
+            icon={<FiMenu />}
+            onClick={onOpen}
+            variant="ghost"
+            color="white"
+            size="lg"
+            aria-label="Open menu"
+            _hover={{ bg: 'whiteAlpha.200' }}
+          />
         </Flex>
         <Heading color="white" fontSize={{ base: "6xl", md: "9xl" }} fontWeight="bold" mb={8} fontFamily="bungee" marginTop={{ base: "50px", md: "75px" }}>
           VÄLKOMMEN,<br />ALICE
         </Heading>
-        <Flex justify="flex-end" gap={{ base: 4, md: 8 }}>
-          <Stack direction={{ base: "column", md: "row" }} spacing={{ base: 4, md: 8 }} align="center">
-            <Link href="/sealevels" color="white" _hover={{ color: 'blue.300' }} display="flex" alignItems="center" gap={2}>
-              <PiWaves /> HAVSNIVÅER
-            </Link>
-            <Link href="/glaciers" color="white" _hover={{ color: 'cyan.300' }} display="flex" alignItems="center" gap={2}>
-              <GiMountainCave /> GLACIÄRER
-            </Link>
-            <Link href="/co2" color="white" _hover={{ color: 'orange.300' }} display="flex" alignItems="center" gap={2}>
-              <GiSmokeBomb /> FOSSILA BRÄNSLEN
-            </Link>
-            <Link href="/temperature" color="white" _hover={{ color: 'red.300' }} display="flex" alignItems="center" gap={2}>
-              <TbTemperatureCelsius /> TEMPERATUR
-            </Link>
-            <Link href="/profile" color="white" _hover={{ color: 'green.300' }} display="flex" alignItems="center" gap={2}>
-              <FiUser /> PROFIL
-            </Link>
-            <Box as="button" onClick={() => setIsFaqOpen(true)} color="white" _hover={{ color: 'green.300' }} display="flex" alignItems="center" gap={2}>
-              <BsQuestionSquare /> FRÅGOR OCH KONTAKT
-            </Box>
-            <Link href="/logout" color="white" _hover={{ color: 'green.300' }} display="flex" alignItems="center" gap={2}>
-              <RiLogoutCircleRLine /> LOGGA UT
-            </Link>
-          </Stack>
-        </Flex>
+        
+        <Stack 
+          display={{ base: 'none', md: 'flex' }} 
+          direction="row" 
+          spacing={8} 
+          align="center" 
+          justify="flex-end"
+        >
+          <Link href="/sealevels" color="white" _hover={{ color: 'blue.300' }} display="flex" alignItems="center" gap={2}>
+            <PiWaves /> HAVSNIVÅER
+          </Link>
+          <Link href="/glaciers" color="white" _hover={{ color: 'cyan.300' }} display="flex" alignItems="center" gap={2}>
+            <GiMountainCave /> GLACIÄRER
+          </Link>
+          <Link href="/co2" color="white" _hover={{ color: 'orange.300' }} display="flex" alignItems="center" gap={2}>
+            <GiSmokeBomb /> FOSSILA BRÄNSLEN
+          </Link>
+          <Link href="/temperature" color="white" _hover={{ color: 'red.300' }} display="flex" alignItems="center" gap={2}>
+            <TbTemperatureCelsius /> TEMPERATUR
+          </Link>
+          <Link href="/profile" color="white" _hover={{ color: 'green.300' }} display="flex" alignItems="center" gap={2}>
+            <FiUser /> PROFIL
+          </Link>
+          <Box as="button" onClick={() => setIsFaqOpen(true)} color="white" _hover={{ color: 'green.300' }} display="flex" alignItems="center" gap={2}>
+            <BsQuestionSquare /> FRÅGOR OCH KONTAKT
+          </Box>
+          <Link href="/logout" color="white" _hover={{ color: 'green.300' }} display="flex" alignItems="center" gap={2}>
+            <RiLogoutCircleRLine /> LOGGA UT
+          </Link>
+        </Stack>
       </Container>
+
+      <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
+        <DrawerOverlay />
+        <DrawerContent bg="blackAlpha.900" backdropFilter="blur(10px)">
+          <DrawerCloseButton color="white" />
+          <DrawerBody>
+            <VStack spacing={6} mt={8}>
+              <Link href="/sealevels" w="full" color="white" _hover={{ color: 'blue.300' }} display="flex" alignItems="center" gap={2}>
+                <PiWaves /> HAVSNIVÅER
+              </Link>
+              <Link href="/glaciers" w="full" color="white" _hover={{ color: 'cyan.300' }} display="flex" alignItems="center" gap={2}>
+                <GiMountainCave /> GLACIÄRER
+              </Link>
+              <Link href="/co2" w="full" color="white" _hover={{ color: 'orange.300' }} display="flex" alignItems="center" gap={2}>
+                <GiSmokeBomb /> FOSSILA BRÄNSLEN
+              </Link>
+              <Link href="/temperature" w="full" color="white" _hover={{ color: 'red.300' }} display="flex" alignItems="center" gap={2}>
+                <TbTemperatureCelsius /> TEMPERATUR
+              </Link>
+              <Link href="/profile" w="full" color="white" _hover={{ color: 'green.300' }} display="flex" alignItems="center" gap={2}>
+                <FiUser /> PROFIL
+              </Link>
+              <Box as="button" w="full" onClick={() => { setIsFaqOpen(true); onClose(); }} color="white" _hover={{ color: 'green.300' }} display="flex" alignItems="center" gap={2}>
+                <BsQuestionSquare /> FRÅGOR OCH KONTAKT
+              </Box>
+              <Link href="/logout" w="full" color="white" _hover={{ color: 'green.300' }} display="flex" alignItems="center" gap={2}>
+                <RiLogoutCircleRLine /> LOGGA UT
+              </Link>
+            </VStack>
+          </DrawerBody>
+        </DrawerContent>
+      </Drawer>
     </Box>
   );
 };
