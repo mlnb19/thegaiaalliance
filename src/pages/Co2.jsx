@@ -63,10 +63,9 @@ function Co2() {
         borderRadius="full"/>
 
       <Container maxW="container.xl" position="relative" zIndex={1} pl="100px">
-        <Grid templateColumns="repeat(3, 1fr)" gap={6} maxH="100vh" overflowY="auto">
-          <Grid templateColumns="repeat(12, 1fr)" gap={6} h="600px">
+        <Grid templateColumns="repeat(12, 1fr)" gap={6} h="600px">
           {/* Left Column */}
-          <GridItem>
+          <GridItem colSpan={4}>
             <Box bg="#111" borderRadius="xl" p={8} h="100%" boxShadow="3px 2px 7px rgba(61, 61, 61)" border="0.5px">
               <Text color="#FFB4B4" fontSize="sm">CO2 Utsläpp</Text>
               <Text color="white" fontSize="4xl" fontWeight="bold" mt={2} mb={4}>
@@ -184,7 +183,7 @@ function Co2() {
           </Modal>
 
           {/* Middle Column */}
-          <GridItem>
+          <GridItem colSpan={4}>
             <Flex direction="column" gap={6} h="100%">
               <Box 
                 bg="#111" 
@@ -239,7 +238,7 @@ function Co2() {
           </GridItem>
 
           {/* Right Column */}
-          <GridItem>
+          <GridItem colSpan={4}>
             <Flex direction="column" gap={6} h="100%">
               <Box 
                 bg="#111" 
