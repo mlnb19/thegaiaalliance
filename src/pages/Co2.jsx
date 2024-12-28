@@ -328,47 +328,78 @@ function Co2() {
                 borderRadius="xl" 
                 p={6}
                 boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)"
+                cursor="pointer"
+                onClick={() => setIsModalOpen(true)}
+                _hover={{ bg: "#1a1a1a" }}
               >
                 <Text color="white" fontSize="xl" fontWeight="bold" mb={4}>
                   Höga CO2-nivåer leder till:
                 </Text>
-                <Box>
-                  <UnorderedList spacing={3} color="gray.300">
-                    <ListItem>
-                      <Text fontWeight="bold" color="orange.300">Ökad global uppvärmning</Text>
-                      <UnorderedList>
-                        <ListItem>Smältande glaciärer och isar</ListItem>
-                        <ListItem>Stigande havsnivåer</ListItem>
-                        <ListItem>Varmare hav och lufttemperaturer</ListItem>
-                      </UnorderedList>
-                    </ListItem>
-                    <ListItem>
-                      <Text fontWeight="bold" color="orange.300">Havsförsurning</Text>
-                      <UnorderedList>
-                        <ListItem>Korallrev dör ut</ListItem>
-                        <ListItem>Marina ekosystem skadas</ListItem>
-                        <ListItem>Påverkar fiskbestånden</ListItem>
-                      </UnorderedList>
-                    </ListItem>
-                    <ListItem>
-                      <Text fontWeight="bold" color="orange.300">Extremväder</Text>
-                      <UnorderedList>
-                        <ListItem>Kraftigare stormar</ListItem>
-                        <ListItem>Längre torrperioder</ListItem>
-                        <ListItem>Intensivare översvämningar</ListItem>
-                      </UnorderedList>
-                    </ListItem>
-                    <ListItem>
-                      <Text fontWeight="bold" color="orange.300">Ekosystemförändringar</Text>
-                      <UnorderedList>
-                        <ListItem>Artutrotning</ListItem>
-                        <ListItem>Förändrade växtsäsonger</ListItem>
-                        <ListItem>Rubbade livsmiljöer</ListItem>
-                      </UnorderedList>
-                    </ListItem>
-                  </UnorderedList>
-                </Box>
+                <Text color="gray.300" mb={2}>
+                  • Ökad global uppvärmning
+                </Text>
+                <Text color="gray.300" mb={2}>
+                  • Havsförsurning
+                </Text>
+                <Text color="blue.300" mt={4}>
+                  Klicka för att läsa mer...
+                </Text>
               </Box>
+
+              <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} size="xl">
+                <ModalOverlay backdropFilter="blur(10px)"/>
+                <ModalContent bg="gray.900" p={6}>
+                  <ModalHeader color="orange.300">Höga CO2-nivåer leder till:</ModalHeader>
+                  <ModalCloseButton color="white"/>
+                  <ModalBody>
+                    <VStack spacing={6} align="stretch">
+                      <Box>
+                        <Text color="orange.300" fontSize="lg" fontWeight="bold">
+                          Ökad global uppvärmning
+                        </Text>
+                        <UnorderedList color="gray.300" mt={2} spacing={2}>
+                          <ListItem>Smältande glaciärer och isar</ListItem>
+                          <ListItem>Stigande havsnivåer</ListItem>
+                          <ListItem>Varmare hav och lufttemperaturer</ListItem>
+                        </UnorderedList>
+                      </Box>
+                      
+                      <Box>
+                        <Text color="orange.300" fontSize="lg" fontWeight="bold">
+                          Havsförsurning
+                        </Text>
+                        <UnorderedList color="gray.300" mt={2} spacing={2}>
+                          <ListItem>Korallrev dör ut</ListItem>
+                          <ListItem>Marina ekosystem skadas</ListItem>
+                          <ListItem>Påverkar fiskbestånden</ListItem>
+                        </UnorderedList>
+                      </Box>
+
+                      <Box>
+                        <Text color="orange.300" fontSize="lg" fontWeight="bold">
+                          Extremväder
+                        </Text>
+                        <UnorderedList color="gray.300" mt={2} spacing={2}>
+                          <ListItem>Kraftigare stormar</ListItem>
+                          <ListItem>Längre torrperioder</ListItem>
+                          <ListItem>Intensivare översvämningar</ListItem>
+                        </UnorderedList>
+                      </Box>
+
+                      <Box>
+                        <Text color="orange.300" fontSize="lg" fontWeight="bold">
+                          Ekosystemförändringar
+                        </Text>
+                        <UnorderedList color="gray.300" mt={2} spacing={2}>
+                          <ListItem>Artutrotning</ListItem>
+                          <ListItem>Förändrade växtsäsonger</ListItem>
+                          <ListItem>Rubbade livsmiljöer</ListItem>
+                        </UnorderedList>
+                      </Box>
+                    </VStack>
+                  </ModalBody>
+                </ModalContent>
+              </Modal>
               
               <Box 
                 bg="#111" 
