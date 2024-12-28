@@ -137,25 +137,22 @@ const Navbar = () => {
         </DrawerContent>
       </Drawer>
       <Faq isOpen={isFaqOpen} onClose={() => setIsFaqOpen(false)} />
-      <Box position="fixed" right={4} top={0} h="100vh" p={{ base: 2, md: 4 }}>
-        <Flex alignItems="center" mb={6}>
-          <Text color="white" fontSize="sm" fontWeight="bold">
-            Inloggad
-          </Text>
-        </Flex>
-        <VStack spacing={6} mt={8} alignItems="flex-end">
-          <IconButton 
-            icon={<Image src="/images/profile.png" alt="profile" boxSize="36px" objectFit="cover" borderRadius="full" />} 
-            onClick={() => navigate('/profile')} 
-            variant="ghost" 
-            color="white"
-            aria-label="Profile"
-            title="Profil"
-            _hover={{ bg: 'whiteAlpha.200' }}
-          />
-          <Text color="white" fontSize="sm" fontWeight="bold" marginTop="-20px" marginRight="2px">
-            Alice
-          </Text>
+      <Box position="fixed" right={4} top={4} p={{ base: 2, md: 4 }}>
+        <Flex alignItems="center" gap={4}>
+          <VStack spacing={1}>
+            <IconButton 
+              icon={<Image src="/images/profile.png" alt="profile" boxSize="36px" objectFit="cover" borderRadius="full" />} 
+              onClick={() => navigate('/profile')} 
+              variant="ghost" 
+              color="white"
+              aria-label="Profile"
+              title="Profil"
+              _hover={{ bg: 'whiteAlpha.200' }}
+            />
+            <Text color="white" fontSize="sm" fontWeight="bold">
+              Alice
+            </Text>
+          </VStack>
           <IconButton 
             icon={<Box as={RiLogoutCircleRLine} size={24} />} 
             onClick={() => navigate('/logout')} 
