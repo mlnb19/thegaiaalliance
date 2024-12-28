@@ -81,7 +81,7 @@ const Navbar = () => {
               position="relative"
             >
               <IconButton
-                icon={<Box as={item.icon} size={20} />}
+                icon={<Box as={item.icon} size={24} />}
                 aria-label={item.label}
                 variant="ghost"
                 color="white"

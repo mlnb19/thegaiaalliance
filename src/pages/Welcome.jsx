@@ -170,7 +170,7 @@ const Welcome = ({ setIsFaqOpen }) => {
           </Flex>
           <Heading 
             color="white" 
-            fontSize={{ base: "4xl", sm: "5xl", md: "7xl", lg: "9xl" }} 
+            fontSize={{ base: "4xl", sm: "5xl", md: "7xl", lg: "8xl" }} 
             fontWeight="bold" 
             mb={8} 
             fontFamily="bungee" 
@@ -190,25 +190,25 @@ const Welcome = ({ setIsFaqOpen }) => {
           justify="flex-end"
         >
           <Link href="/sealevels" color="white" _hover={{ color: 'blue.300' }} display="flex" alignItems="center" gap={2}>
-            <PiWaves /> HAVSNIVÅER
+            <PiWaves fontSize="24px"/> HAVSNIVÅER
           </Link>
           <Link href="/glaciers" color="white" _hover={{ color: 'cyan.300' }} display="flex" alignItems="center" gap={2}>
-            <GiMountainCave /> GLACIÄRER
+            <GiMountainCave fontSize="24px"/> GLACIÄRER
           </Link>
           <Link href="/co2" color="white" _hover={{ color: 'orange.300' }} display="flex" alignItems="center" gap={2}>
-            <GiSmokeBomb /> FOSSILA BRÄNSLEN
+            <GiSmokeBomb fontSize="24px"/> FOSSILA BRÄNSLEN
           </Link>
           <Link href="/temperature" color="white" _hover={{ color: 'red.300' }} display="flex" alignItems="center" gap={2}>
-            <TbTemperatureCelsius /> TEMPERATUR
+            <TbTemperatureCelsius fontSize="16px"/> TEMPERATUR
           </Link>
           <Link href="/profile" color="white" _hover={{ color: 'green.300' }} display="flex" alignItems="center" gap={2}>
-            <FiUser /> PROFIL
+            <FiUser fontSize="24px"/> PROFIL
           </Link>
           <Box as="button" onClick={() => setIsFaqOpen(true)} color="white" _hover={{ color: 'green.300' }} display="flex" alignItems="center" gap={2}>
-            <BsQuestionSquare /> FRÅGOR OCH KONTAKT
+            <BsQuestionSquare fontSize="16px"/> FRÅGOR OCH KONTAKT
           </Box>
           <Link href="/logout" color="white" _hover={{ color: 'green.300' }} display="flex" alignItems="center" gap={2}>
-            <RiLogoutCircleRLine /> LOGGA UT
+            <RiLogoutCircleRLine fontSize="24px"/> LOGGA UT
           </Link>
         </Stack>
       </Container>
