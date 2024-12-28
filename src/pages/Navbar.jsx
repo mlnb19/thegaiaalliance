@@ -137,7 +137,7 @@ const Navbar = () => {
         </DrawerContent>
       </Drawer>
       <Faq isOpen={isFaqOpen} onClose={() => setIsFaqOpen(false)} />
-      <Box position="fixed" right={4} top={4} p={{ base: 2, md: 4 }}>
+      <Box position="fixed" right={4} top={4} zIndex={1000}>
         <Flex alignItems="center" gap={4}>
           <VStack 
             spacing={1} 
@@ -156,7 +156,6 @@ const Navbar = () => {
             <Text color="white" fontSize="sm" fontWeight="bold">
               Alice
             </Text>
-          </VStack>
           <IconButton 
             icon={<Box as={RiLogoutCircleRLine} size={24} />} 
             onClick={() => navigate('/logout')} 
@@ -164,9 +163,15 @@ const Navbar = () => {
             color="white"
             aria-label="Logout"
             cursor="pointer"
+            marginTop="-25px"
             _hover={{ bg: 'whiteAlpha.200' }}
           />
+            <Text color="white" fontSize="sm" fontWeight="bold">
+              Logga ut
+            </Text>
+        </VStack>
         </Flex>
+      </Box>
       </Box>
       <IconButton 
         icon={<Box as={BsQuestionSquare} size={24} />} 
