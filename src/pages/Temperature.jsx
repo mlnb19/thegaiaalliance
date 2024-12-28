@@ -157,15 +157,17 @@ function Temperature() {
                           data={[
                             {
                               id: "Global Temperature",
-                              data: tempData.map(d => ({
-                                x: d.Year,
-                                y: d.Temperature
-                              }))
+                              data: tempData
+                                .filter(d => d.Year >= 1900 && d.Year % 10 === 0)
+                                .map(d => ({
+                                  x: d.Year,
+                                  y: d.Mean
+                                }))
                             }
                           ]}
                           margin={{ top: 20, right: 20, bottom: 50, left: 60 }}
                           xScale={{ type: 'point' }}
-                          yScale={{ type: 'linear', min: 'auto', max: 'auto' }}
+                          yScale={{ type: 'linear', min: -0.5, max: 1 }}
                           curve="monotoneX"
                           axisBottom={{
                             tickRotation: -45,
