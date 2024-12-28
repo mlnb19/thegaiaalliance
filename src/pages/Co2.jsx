@@ -225,6 +225,27 @@ function Co2() {
                   </ModalBody>
                 </ModalContent>
               </Modal>
+
+              <Box 
+                bg="#111" 
+                borderRadius="xl" 
+                p={6}
+                boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)"
+              >
+                <Text color="white" fontSize="xl" fontWeight="bold" mb={4}>
+                  Varför är CO2-utsläpp farliga?
+                </Text>
+                <Text color="gray.300">
+                  Koldioxidutsläpp är en av de största orsakerna till klimatförändringarna. 
+                  Höga CO2-nivåer leder till:<br />
+                  • Ökad global uppvärmning som smälter glaciärer och höjer havsnivåer<br />
+                  • Försurning av haven som skadar marina ekosystem<br />
+                  • Extremare väder med fler naturkatastrofer<br />
+                  • Förändringar i ekosystem som hotar både djur och växter<br />
+                  <br />
+                  Genom att minska våra utsläpp kan vi hjälpa till att bromsa dessa negativa effekter.
+                </Text>
+              </Box>
               
               <Box 
                 bg="#111" 
