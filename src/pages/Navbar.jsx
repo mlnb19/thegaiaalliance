@@ -59,8 +59,6 @@ const Navbar = () => {
         top="0" 
         h="100vh" 
         p={4} 
-        bg="blackAlpha.400" 
-        backdropFilter="blur(10px)" 
         zIndex={10}
       >
         <Flex alignItems="center" mb={6}>
