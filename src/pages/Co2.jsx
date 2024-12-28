@@ -330,14 +330,12 @@ function Co2() {
                 <Text color="white" fontSize="xl" fontWeight="bold" mb={4}>
                   Höga CO2-nivåer leder till:
                 </Text>
-                <Text color="gray.300">
-                  <ul>
-                  <li>Ökad global uppvärmning som smälter glaciärer och höjer havsnivåer</li>
-                  <li>Försurning av haven som skadar marina ekosystem</li>
-                  <li>Extremare väder med fler naturkatastrofer</li>
-                  <li>Förändringar i ekosystem som hotar både djur och växter</li>
-                  </ul>
-                </Text>
+                <VStack align="left" spacing={2} color="gray.300">
+                  • Ökad global uppvärmning som smälter glaciärer och höjer havsnivåer
+                  • Försurning av haven som skadar marina ekosystem
+                  • Extremare väder med fler naturkatastrofer
+                  • Förändringar i ekosystem som hotar både djur och växter
+                </VStack>
               </Box>
               
               <Box 
