@@ -1,6 +1,7 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, Container, Text, SimpleGrid, Flex, Center, Modal, ModalOverlay, ModalContent, ModalCloseButton, ModalHeader, ModalBody, Progress, Button, VStack, Stat, StatLabel, StatNumber, StatHelpText, Grid, GridItem } from '@chakra-ui/react';
+import { ResponsiveLine } from '@nivo/line';
 import Navbar from './Navbar';
 import { Liquid } from '@ant-design/plots';
 import { FaIndustry, FaCar, FaLeaf, FaRecycle } from "react-icons/fa";
@@ -12,6 +13,13 @@ function Co2() {
   const [showTips, setShowTips] = useState(false);
   const [isGameOpen, setIsGameOpen] = useState(false);
   const [personalScore, setPersonalScore] = useState(65);
+  const [fossilFuelData, setFossilFuelData] = useState([]);
+
+  useEffect(() => {
+    fetch('/data/FossilFuels.json')
+      .then(response => response.json())
+      .then(data => setFossilFuelData(data));
+  }, []);
 
   const tips = [
     "Använd kollektivtrafik istället för bil när det är möjligt",
@@ -28,21 +36,33 @@ function Co2() {
   ];
 
   return (
-    <Box w="100vw" h="100vh" bg="#0d0d0d" position="relative" overflow="hidden">
-      <Navbar />
-      <Box
-        pos="absolute"
-        top="0"
-        right="0"
-        w="50%"
-        h="50%"
-        bgGradient="linear(to-bl, orange.400, red.300, orange.500)"
-        filter="blur(100px)"
-        opacity="0.5"
-        borderRadius="full"
-      />
-      
-      <Container maxW="container.xl" position="relative" zIndex={1}>
+        <Box
+          w="100vw"
+          h="100vh"
+          bg="#0d0d0d"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          position="relative"
+          overflow="hidden">
+
+          <Navbar />
+
+          <Box
+            pos="absolute"
+            top="0"
+            right="0"
+            w="50%"
+            h="50%"
+            bgGradient="linear(to-bl, blue.600, cyan.500, blue.700)"
+            filter="blur(100px)"
+            opacity="0.5"
+            borderRadius="full"/>
+
+          <Container
+            maxW="container.xl"
+            position="relative"
+            zIndex={1}>
         <Grid templateColumns="repeat(12, 1fr)" gap={6} h="600px">
           {/* Left Column */}
           <GridItem colSpan={5}>
