@@ -243,11 +243,9 @@ function Temperature() {
                 </ModalContent>
               </Modal>
 
-              <Box bg="#111" borderRadius="xl" p={6} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
-                <Text color="white" fontSize="xl" mb={4}>Konsekvenser & Åtgärder</Text>
-                <Text color="gray.400" mb={4}>
-                  Konsekvenser:
-                  <br/>
+              <Box bg="#111" borderRadius="xl" p={6} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)" mb={4}>
+                <Text color="white" fontSize="xl" mb={4}>Konsekvenser</Text>
+                <Text color="gray.400">
                   • Stigande havsnivåer
                   <br/>
                   • Extrema väderhändelser
@@ -256,9 +254,11 @@ function Temperature() {
                   <br/>
                   • Smältande glaciärer
                 </Text>
+              </Box>
+
+              <Box bg="#111" borderRadius="xl" p={6} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
+                <Text color="white" fontSize="xl" mb={4}>Åtgärder</Text>
                 <Text color="gray.400">
-                  Åtgärder:
-                  <br/>
                   • Minska fossila bränslen
                   <br/>
                   • Öka förnybar energi
