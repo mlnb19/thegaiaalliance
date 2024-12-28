@@ -23,6 +23,7 @@ const Welcome = ({ setIsFaqOpen }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [error, setError] = useState('');
   const [showWelcome, setShowWelcome] = useState(false);
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const navigate = useNavigate();
 
   const handleLogin = () => {
@@ -129,8 +130,6 @@ const Welcome = ({ setIsFaqOpen }) => {
     );
   }
 
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  
   return (
     <Box bg="#0d0d0d" minH="100vh" position="relative" w="100vw" overflow="hidden" m="0" p="0">
       <Box
