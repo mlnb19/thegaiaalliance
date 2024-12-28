@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Box, Container, Heading, Stack, Link, Flex, Image, Input, Button, Text, VStack, keyframes, ScaleFade, IconButton } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
@@ -144,12 +145,10 @@ const Welcome = ({ setIsFaqOpen }) => {
       />
       <Container maxW="container.xl" position="relative" zIndex={1} mt="50px">
         <Flex direction="column" align={{ base: "center", md: "flex-start" }} textAlign={{ base: "center", md: "left" }}>
-          <Box position="relative" w="full">
+          <Flex justify={{ base: "center", md: "flex-start" }} align="center" w="full" position="relative">
             <IconButton
               position="absolute"
               left="0"
-              top="50%"
-              transform="translateY(-50%)"
               display={{ base: 'flex', md: 'none' }}
               icon={<FiMenu />}
               onClick={onOpen}
@@ -158,19 +157,16 @@ const Welcome = ({ setIsFaqOpen }) => {
               size="lg"
               aria-label="Open menu"
               _hover={{ bg: 'whiteAlpha.200' }}
-              zIndex="2"
             />
-            <Flex justify="center" w="full">
-              <Image 
-                src="/images/profile.png" 
-                alt="Logo" 
-                boxSize={{ base: "100px", md: "150px" }}
-                borderRadius="full"
-                objectFit="cover"
-                ml={{ md: "8" }}
-              />
-            </Flex>
-          </Box>
+            <Image 
+              src="/images/profile.png" 
+              alt="Logo" 
+              boxSize={{ base: "100px", md: "150px" }}
+              borderRadius="full"
+              objectFit="cover"
+              ml={{ md: "8" }}
+            />
+          </Flex>
           <Heading 
             color="white" 
             fontSize={{ base: "4xl", sm: "5xl", md: "7xl", lg: "9xl" }} 
