@@ -73,13 +73,7 @@ function Co2() {
               </Text>
               <Text color="gray.300" mb={8}>
                 Koldioxidutsläpp är en av de största orsakerna till klimatförändringarna. 
-                Höga CO2-nivåer leder till:
-                • Ökad global uppvärmning som smälter glaciärer och höjer havsnivåer
-                • Försurning av haven som skadar marina ekosystem
-                • Extremare väder med fler naturkatastrofer
-                • Förändringar i ekosystem som hotar både djur och växter
-                
-                Genom att minska våra utsläpp kan vi hjälpa till att bromsa dessa negativa effekter.
+                Genom att minska våra utsläpp kan vi hjälpa till att bromsa den globala uppvärmningen.
               </Text>
               <SimpleGrid columns={2} spacing={4}>
                 {sectorData.map((sector, index) => (
