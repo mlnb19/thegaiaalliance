@@ -7,6 +7,7 @@ import { Liquid } from '@ant-design/plots';
 import { FaIndustry, FaCar, FaLeaf, FaRecycle } from "react-icons/fa";
 import { GiForestCamp, GiFactory, GiWindmill, GiSolarPower } from "react-icons/gi";
 import CO2Game from './CO2Game';
+import ChatBot from './ChatBot';
 
 function Co2() {
   const [isModalOpen, setIsModalOpen] = useState(false);
