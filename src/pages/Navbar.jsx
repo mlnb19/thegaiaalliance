@@ -84,9 +84,10 @@ const Navbar = () => {
               <Text 
                 color="white" 
                 ml={2} 
-                fontSize="sm" 
-                display={{ base: 'none', lg: 'block' }}
-                _groupHover={{ color: 'black' }}
+                fontSize="sm"
+                opacity={window.location.pathname === item.path ? 1 : 0}
+                _groupHover={{ opacity: 1, color: 'black' }}
+                transition="opacity 0.2s"
               >
                 {item.label}
               </Text>
