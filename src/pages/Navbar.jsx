@@ -38,7 +38,7 @@ const Navbar = () => {
 
   return (
     <>
-      <Box display={{ base: 'block', md: 'none' }} position="fixed" top={4} left={0} zIndex={20}>
+      <Box display={{ base: 'block', md: 'none' }} position="fixed" left={4} top="50%" transform="translateY(-50%)" zIndex={20}>
         <IconButton
           icon={<FiMenu />}
           onClick={onOpen}

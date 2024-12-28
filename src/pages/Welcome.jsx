@@ -141,14 +141,17 @@ const Welcome = ({ setIsFaqOpen }) => {
         opacity="0.5"
         borderRadius="full"
       />
+      <Navbar />
       <Container maxW="container.xl" position="relative" zIndex={1} mt="50px">
-        <Image 
-          src="/images/profile.png" 
-          alt="Logo" 
-          boxSize={{ base: "100px", md: "150px" }}
-          borderRadius="full"
-          objectFit="cover"
-        />
+        <Flex align="center" gap={4}>
+          <Image 
+            src="/images/profile.png" 
+            alt="Logo" 
+            boxSize={{ base: "100px", md: "150px" }}
+            borderRadius="full"
+            objectFit="cover"
+          />
+        </Flex>
         <Heading color="white" fontSize={{ base: "6xl", md: "9xl" }} fontWeight="bold" mb={8} fontFamily="bungee" marginTop={{ base: "50px", md: "75px" }}>
           VÄLKOMMEN,<br />ALICE
         </Heading>
