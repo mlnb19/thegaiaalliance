@@ -171,9 +171,10 @@ const Navbar = () => {
         color="white"
         position="fixed"
         bottom={4}
-        right={4}
+        right={20}
         aria-label="FAQ"
         cursor="pointer"
+        zIndex={5}
       />
       <Faq isOpen={isFaqOpen} onClose={() => setIsFaqOpen(false)} />
     </>
