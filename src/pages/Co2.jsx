@@ -331,12 +331,42 @@ function Co2() {
                 <Text color="white" fontSize="xl" fontWeight="bold" mb={4}>
                   Höga CO2-nivåer leder till:
                 </Text>
-                <VStack align="left" spacing={2} color="gray.300">
-                  • Ökad global uppvärmning som smälter glaciärer och höjer havsnivåer
-                  • Försurning av haven som skadar marina ekosystem
-                  • Extremare väder med fler naturkatastrofer
-                  • Förändringar i ekosystem som hotar både djur och växter
-                </VStack>
+                <Box>
+                  <UnorderedList spacing={3} color="gray.300">
+                    <ListItem>
+                      <Text fontWeight="bold" color="orange.300">Ökad global uppvärmning</Text>
+                      <UnorderedList>
+                        <ListItem>Smältande glaciärer och isar</ListItem>
+                        <ListItem>Stigande havsnivåer</ListItem>
+                        <ListItem>Varmare hav och lufttemperaturer</ListItem>
+                      </UnorderedList>
+                    </ListItem>
+                    <ListItem>
+                      <Text fontWeight="bold" color="orange.300">Havsförsurning</Text>
+                      <UnorderedList>
+                        <ListItem>Korallrev dör ut</ListItem>
+                        <ListItem>Marina ekosystem skadas</ListItem>
+                        <ListItem>Påverkar fiskbestånden</ListItem>
+                      </UnorderedList>
+                    </ListItem>
+                    <ListItem>
+                      <Text fontWeight="bold" color="orange.300">Extremväder</Text>
+                      <UnorderedList>
+                        <ListItem>Kraftigare stormar</ListItem>
+                        <ListItem>Längre torrperioder</ListItem>
+                        <ListItem>Intensivare översvämningar</ListItem>
+                      </UnorderedList>
+                    </ListItem>
+                    <ListItem>
+                      <Text fontWeight="bold" color="orange.300">Ekosystemförändringar</Text>
+                      <UnorderedList>
+                        <ListItem>Artutrotning</ListItem>
+                        <ListItem>Förändrade växtsäsonger</ListItem>
+                        <ListItem>Rubbade livsmiljöer</ListItem>
+                      </UnorderedList>
+                    </ListItem>
+                  </UnorderedList>
+                </Box>
               </Box>
               
               <Box 
