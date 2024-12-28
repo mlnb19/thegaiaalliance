@@ -75,20 +75,26 @@ const Navbar = () => {
               key={index}
               alignItems="center"
               position="relative"
-              p={2}
-              borderRadius="md"
-              _hover={{ bg: item.color }}
-              onClick={() => handleNavigation(item)}
-              cursor="pointer"
             >
-              <Box as={item.icon} size={20} color="white" />
-              <Text
+              <IconButton
+                icon={<Box as={item.icon} size={20} />}
+                aria-label={item.label}
+                variant="ghost"
                 color="white"
-                ml={3}
-                fontSize="sm"
-              >
-                {item.title}
-              </Text>
+                onClick={() => handleNavigation(item)}
+                _hover={{ bg: item.color, color: 'black' }}
+              />
+              {window.location.pathname === item.path && (
+                <Text
+                  color="white"
+                  ml={2}
+                  position="absolute"
+                  left="100%"
+                  whiteSpace="nowrap"
+                >
+                  {item.title}
+                </Text>
+              )}
             </Flex>
           ))}
         </VStack>
