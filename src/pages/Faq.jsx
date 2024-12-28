@@ -65,6 +65,12 @@ function Faq({ isOpen, onClose }) {
               </AccordionPanel>
             </AccordionItem>
           </Accordion>
+          <Box mt={8} w="100%">
+            <Text color="white" fontSize="xl" fontWeight="bold" mb={4}>Chatta med EcoEdith</Text>
+            <Box h="400px">
+              <ChatBot />
+            </Box>
+          </Box>
           <VStack mt={8} spacing={4} align="start">
             <Text color="white" fontSize="xl" fontWeight="bold">Kontakta Oss</Text>
             <Text color="gray.400">Email: klimat@exempel.se</Text>

@@ -146,18 +146,26 @@ const Navbar = () => {
         <VStack spacing={6} mt={8} alignItems="flex-start">
           <IconButton 
             icon={<Image src="profile.png" alt="profile" boxSize="24px" objectFit="cover" borderRadius="full" />} 
-            onClick={() => navigate('/profile')} 
+            onClick={() => {
+              navigate('/profile');
+              onClose && onClose();
+            }} 
             variant="ghost" 
             color="white"
             aria-label="Profile"
+            _hover={{ bg: 'whiteAlpha.200' }}
           />
           <IconButton 
             icon={<Box as={RiLogoutCircleRLine} size={24} />} 
-            onClick={() => navigate('/logout')} 
+            onClick={() => {
+              navigate('/logout');
+              onClose && onClose();
+            }} 
             variant="ghost" 
             color="white"
             aria-label="Logout"
             cursor="pointer"
+            _hover={{ bg: 'whiteAlpha.200' }}
           />
         </VStack>
       </Box>
