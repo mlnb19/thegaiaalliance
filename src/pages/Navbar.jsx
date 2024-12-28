@@ -9,6 +9,7 @@ import { TbTemperatureCelsius } from "react-icons/tb";
 import { FiUser, FiMenu } from "react-icons/fi";
 import { RiLogoutCircleRLine } from "react-icons/ri";
 import { BsQuestionSquare } from "react-icons/bs";
+import { FaGlobeAmericas } from "react-icons/fa";
 import Faq from './Faq';
 
 const NAV_ITEMS = [
