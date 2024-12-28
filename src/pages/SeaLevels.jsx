@@ -350,9 +350,50 @@ function Startpage({ setIsFaqOpen }) {
 
                 <Modal isOpen={isChattOpen} onClose={() => setIsChattOpen(false)} size="lg">
                   <ModalOverlay backdropFilter="blur(10px)" />
-                  <ModalContent bg="gray.900" h="600px">
+                  <ModalContent bg="gray.900" p={6}>
+                    <ModalHeader color="cyan.200">🌊 Spännande havsfakta</ModalHeader>
                     <ModalCloseButton color="white" />
-                    <ChatBot />
+                    <ModalBody>
+                      <VStack spacing={4} align="stretch">
+                        {[
+                          {
+                            title: "Visste du att...",
+                            fact: "90% av den globala uppvärmningen absorberas av haven?"
+                          },
+                          {
+                            title: "Haven och klimatet",
+                            fact: "Haven fungerar som jordens luftkonditionering och reglerar temperaturen på vår planet."
+                          },
+                          {
+                            title: "Korallrev",
+                            fact: "Stigande havsnivåer hotar många korallrev som är hem för tusentals olika djurarter."
+                          },
+                          {
+                            title: "Framtiden",
+                            fact: "Om alla glaciärer skulle smälta skulle havsnivån stiga med cirka 70 meter!"
+                          },
+                          {
+                            title: "Kustlinjer",
+                            fact: "Många öar och kuststäder kommer behöva bygga vallar för att skydda sig mot stigande hav."
+                          }
+                        ].map((item, index) => (
+                          <Box 
+                            key={index}
+                            p={4} 
+                            bg="whiteAlpha.100" 
+                            borderRadius="xl"
+                            _hover={{ bg: 'whiteAlpha.200' }}
+                          >
+                            <Text color="cyan.200" fontSize="lg" fontWeight="bold" mb={2}>
+                              {item.title}
+                            </Text>
+                            <Text color="gray.300" fontSize="md">
+                              {item.fact}
+                            </Text>
+                          </Box>
+                        ))}
+                      </VStack>
+                    </ModalBody>
                   </ModalContent>
                 </Modal>
               </SimpleGrid>
