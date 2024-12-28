@@ -64,15 +64,31 @@ const Navbar = () => {
       >
         <VStack spacing={6} mt={8}>
           {NAV_ITEMS.map((item, index) => (
-            <IconButton
+            <Flex
               key={index}
-              icon={<Box as={item.icon} size={20} />}
-              aria-label={item.label}
-              variant="ghost"
-              color="white"
-              onClick={() => handleNavigation(item)}
-              _hover={{ bg: item.color, color: 'black' }}
-            />
+              alignItems="center"
+              position="relative"
+            >
+              <IconButton
+                icon={<Box as={item.icon} size={20} />}
+                aria-label={item.label}
+                variant="ghost"
+                color="white"
+                onClick={() => handleNavigation(item)}
+                _hover={{ bg: item.color, color: 'black' }}
+              />
+              {window.location.pathname === item.path && (
+                <Text
+                  color="white"
+                  ml={2}
+                  position="absolute"
+                  left="100%"
+                  whiteSpace="nowrap"
+                >
+                  {item.title}
+                </Text>
+              )}
+            </Flex>
           ))}
         </VStack>
       </Box>
