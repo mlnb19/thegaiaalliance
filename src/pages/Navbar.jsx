@@ -13,13 +13,13 @@ import { FaGlobeAmericas } from "react-icons/fa";
 import Faq from './Faq';
 
 const NAV_ITEMS = [
-  { icon: PiWaves, label: "Sea Levels", path: '/sealevels', color: 'blue.300', title: 'Havsnivåer' },
-  { icon: GiMountainCave, label: "Glacier", path: '/glaciers', color: 'cyan.300', title: 'Glaciärer' },
-  { icon: GiSmokeBomb, label: "Co2", path: '/co2', color: 'orange.300', title: 'Fossila bränslen' },
-  { icon: TbTemperatureCelsius, label: "Temperature", path: '/temperature', color: 'red.300', title: 'Temperaturer' },
-  { icon: FiUser, label: "Profile", path: '/profile', color: 'green.300', title: 'Profil' },
-  { icon: BsQuestionSquare, label: "FAQ", special: 'faq', color: 'green.300', title: 'Frågor och kontakt' },
-  { icon: RiLogoutCircleRLine, label: "Logout", path: '/logout', color: 'green.300', title: 'Logga ut' }
+  { icon: PiWaves, label: "Havsnivåer", path: '/sealevels', color: 'blue.300', title: 'Havsnivåer' },
+  { icon: GiMountainCave, label: "Glaciäer", path: '/glaciers', color: 'cyan.300', title: 'Glaciärer' },
+  { icon: GiSmokeBomb, label: "Fossila bränslen", path: '/co2', color: 'orange.300', title: 'Fossila bränslen' },
+  { icon: TbTemperatureCelsius, label: "Temperatur", path: '/temperature', color: 'red.300', title: 'Temperaturer' },
+  { icon: FiUser, label: "Profil", path: '/profile', color: 'green.300', title: 'Profil' },
+  { icon: BsQuestionSquare, label: "FAQ och kontakt", special: 'faq', color: 'green.300', title: 'Frågor och kontakt' },
+  { icon: RiLogoutCircleRLine, label: "Logga ut", path: '/logout', color: 'green.300', title: 'Logga ut' }
 ];
 
 const Navbar = () => {
