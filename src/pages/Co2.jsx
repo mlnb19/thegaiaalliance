@@ -195,8 +195,14 @@ function Co2() {
                 <Text color="gray.300" mb={2}>
                   • Havsförsurning
                 </Text>
+                <Text color="gray.300" mb={2}>
+                  • Extremväder
+                </Text>
+                <Text color="gray.300" mb={2}>
+                  • Matproduktion
+                </Text>
                 <Text color="blue.300" mt={4}>
-                  Klicka för att läsa mer...
+                  Klicka för att läsa mer ingående...
                 </Text>
               </Box>
 
