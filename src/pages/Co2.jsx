@@ -200,6 +200,57 @@ function Co2() {
                 </Text>
               </Box>
 
+              <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} size="xl">
+                <ModalOverlay backdropFilter="blur(10px)" />
+                <ModalContent bg="gray.900" p={6}>
+                  <ModalHeader color="orange.300">Effekter av Höga CO2-nivåer</ModalHeader>
+                  <ModalCloseButton color="white" />
+                  <ModalBody>
+                    <VStack spacing={4} align="stretch">
+                      <Box>
+                        <Text color="white" fontSize="lg" fontWeight="bold">
+                          Global Uppvärmning
+                        </Text>
+                        <Text color="gray.300">
+                          CO2 fångar värme i atmosfären vilket leder till stigande temperaturer globalt. 
+                          Detta påverkar klimatmönster och ekosystem världen över.
+                        </Text>
+                      </Box>
+                      
+                      <Box>
+                        <Text color="white" fontSize="lg" fontWeight="bold">
+                          Havsförsurning
+                        </Text>
+                        <Text color="gray.300">
+                          När CO2 absorberas av haven blir vattnet mer surt. Detta hotar marina ekosystem 
+                          och särskilt organismer som bygger skal av kalk.
+                        </Text>
+                      </Box>
+                      
+                      <Box>
+                        <Text color="white" fontSize="lg" fontWeight="bold">
+                          Extremväder
+                        </Text>
+                        <Text color="gray.300">
+                          Högre CO2-nivåer bidrar till mer extrema väderhändelser som översvämningar, 
+                          torka och kraftigare stormar.
+                        </Text>
+                      </Box>
+                      
+                      <Box>
+                        <Text color="white" fontSize="lg" fontWeight="bold">
+                          Matproduktion
+                        </Text>
+                        <Text color="gray.300">
+                          Förändrade väderförhållanden påverkar jordbruket och kan leda till minskade 
+                          skördar och matbrist i vissa regioner.
+                        </Text>
+                      </Box>
+                    </VStack>
+                  </ModalBody>
+                </ModalContent>
+              </Modal>
+
               <SimpleGrid columns={2} spacing={4}>
                 <Box
                   bg="#1a1a1a"
