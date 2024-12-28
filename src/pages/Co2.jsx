@@ -57,18 +57,14 @@ function Co2() {
         right="0"
         w="50%"
         h="50%"
-        bgGradient="linear(to-bl, red.600, orange.500, yellow.700)"
+        bgGradient="linear(to-bl, orange.600, orange.500, yellow.700)"
         filter="blur(100px)"
         opacity="0.5"
         borderRadius="full"/>
 
-          <Container
-            maxW="container.xl"
-            position="relative"
-            zIndex={1}
-            pl={{ base: "2", md: "100px" }}
-            py={4}>
-        <Grid templateColumns="repeat(3, 1fr)" gap={6} maxH="90vh" overflowY="auto">
+      <Container maxW="container.xl" position="relative" zIndex={1} pl="100px">
+        <Grid templateColumns="repeat(3, 1fr)" gap={6} maxH="100vh" overflowY="auto">
+          <Grid templateColumns="repeat(12, 1fr)" gap={6} h="600px">
           {/* Left Column */}
           <GridItem>
             <Box bg="#111" borderRadius="xl" p={8} h="100%" boxShadow="3px 2px 7px rgba(61, 61, 61)" border="0.5px">
