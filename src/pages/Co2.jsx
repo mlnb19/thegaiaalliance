@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Box, Container, Text, SimpleGrid, Flex, Center, Modal, ModalOverlay, ModalContent, ModalCloseButton, ModalHeader, ModalBody, Progress, Button, VStack, Stat, StatLabel, StatNumber, StatHelpText, Grid, GridItem } from '@chakra-ui/react';
+import { Box, Container, Text, SimpleGrid, Flex, Center, Modal, ModalOverlay, ModalContent, ModalCloseButton, ModalHeader, ModalBody, Progress, Button, VStack, Stat, StatLabel, StatNumber, StatHelpText, Grid, GridItem, UnorderedList, ListItem } from '@chakra-ui/react';
 import { ResponsiveLine } from '@nivo/line';
 import Navbar from './Navbar';
 import { Liquid } from '@ant-design/plots';
@@ -126,8 +126,9 @@ function Co2() {
                   <ModalHeader color="white">Historisk CO2 Utveckling</ModalHeader>
                   <ModalCloseButton color="white" />
                   <ModalBody>
-                    <Box height="400px">
-                      <ResponsiveLine
+                    <Flex gap={6}>
+                      <Box height="400px" flex="2">
+                        <ResponsiveLine
                         data={[
                           {
                             id: "Total CO2",
@@ -198,7 +199,29 @@ function Co2() {
                           }
                         }}
                       />
-                    </Box>
+                      </Box>
+                      <Box flex="1" bg="#1a1a1a" p={4} borderRadius="xl">
+                        <VStack spacing={4} align="start">
+                          <Text color="white" fontSize="lg" fontWeight="bold">
+                            Om Statistiken
+                          </Text>
+                          <Text color="gray.300" fontSize="sm">
+                            Denna graf visar den historiska utvecklingen av CO2-utsläpp sedan 1900.
+                          </Text>
+                          <Text color="gray.300" fontSize="sm">
+                            Viktiga observationer:
+                          </Text>
+                          <UnorderedList color="gray.300" fontSize="sm" spacing={2}>
+                            <ListItem>Kraftig ökning efter 1950</ListItem>
+                            <ListItem>Industrialiseringen har bidragit mest</ListItem>
+                            <ListItem>Fortsatt uppåtgående trend</ListItem>
+                          </UnorderedList>
+                          <Text color="gray.300" fontSize="sm" mt={2}>
+                            Värdena mäts i miljoner ton CO2 och visar den totala mängden utsläpp från fossila bränslen.
+                          </Text>
+                        </VStack>
+                      </Box>
+                    </Flex>
                   </ModalBody>
                 </ModalContent>
               </Modal>
