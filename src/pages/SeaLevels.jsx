@@ -170,7 +170,8 @@ function Startpage({ setIsFaqOpen }) {
 
               <Box 
                 as="span" 
-                color="yellow.400">
+                color="yellow.400"
+                fontSize={'2xl'}>
                 <GiNotebook />
               </Box>
 
@@ -198,15 +199,16 @@ function Startpage({ setIsFaqOpen }) {
         <Box 
           borderRadius="xl" 
           p={6}
-          bgGradient="linear(to-l, blue, #91BAD6)"
+          
           boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
 
           <Text 
-            color="white" 
             fontSize="2xl" 
             fontWeight="bold"
+            bgGradient='linear(to-l, blue, #91BAD6 )'
+            bgClip='text'
             cursor="pointer"
-            onClick={() => setIsRecyclingModalOpen(true)}>
+            onClick={() => setIsMemoryModalOpen(true)}>
               ♻️ Spel: Återvinning
           </Text>
 
@@ -233,7 +235,7 @@ function Startpage({ setIsFaqOpen }) {
             <Box
               as="span"
               color="yellow.400"
-              fontSize="xl">
+              fontSize="2xl">
                 <GiBrain />
             </Box>
 

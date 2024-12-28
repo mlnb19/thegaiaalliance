@@ -144,7 +144,7 @@ const Welcome = ({ setIsFaqOpen }) => {
       />
       <Container maxW="container.xl" position="relative" zIndex={1} mt="50px">
         <Flex direction="column" align={{ base: "center", md: "flex-start" }} textAlign={{ base: "center", md: "left" }}>
-          <Flex justify={{ base: "center", md: "flex-start" }} align="center" w="full" position="relative">
+          <Flex justify={{ base: "center", md: "flex-start" }} align="center" w="full" position="relative" marginBottom="50px">
             <IconButton
               position="absolute"
               left="0"
@@ -158,12 +158,7 @@ const Welcome = ({ setIsFaqOpen }) => {
               _hover={{ bg: 'whiteAlpha.200' }}
             />
             <Flex align="center" gap={4}>
-              <Image 
-                src="/images/LogoRound.svg" 
-                alt="Logo" 
-                boxSize={{ base: "80px", md: "120px" }}
-                objectFit="contain"
-              />
+             
               <Image 
                 src="/images/profile.png" 
                 alt="Profile" 
@@ -171,16 +166,15 @@ const Welcome = ({ setIsFaqOpen }) => {
                 borderRadius="full"
                 objectFit="cover"
               />
+              <Image 
+                src="/images/LogoText.svg" 
+                alt="Logo" 
+                height="auto"
+                objectFit="contain"
+                
+              />
             </Flex>
           </Flex>
-          <VStack align={{ base: "center", md: "flex-start" }} ml={{ md: "8" }} spacing={2}>
-            <Text 
-              color="green.400" 
-              fontSize={{ base: "xl", md: "2xl" }}
-              fontFamily="bungee"
-            >
-              THE GAIA ALLIANCE
-            </Text>
             <Heading 
               color="white" 
               fontSize={{ base: "4xl", sm: "5xl", md: "7xl", lg: "8xl" }} 
@@ -192,7 +186,6 @@ const Welcome = ({ setIsFaqOpen }) => {
             >
               VÄLKOMMEN,<br />ALICE
             </Heading>
-          </VStack>
         </Flex>
         
         <Stack 

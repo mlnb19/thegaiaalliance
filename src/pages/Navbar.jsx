@@ -59,9 +59,9 @@ const Navbar = () => {
       >
         <Flex alignItems="center" mb={6}>
           <Image
-            src="/images/LogoRound.svg"
+            src="/images/Logo.svg"
             alt="Logo"
-            height="40px"
+            height="75px"
             objectFit="contain"
           />
         </Flex>

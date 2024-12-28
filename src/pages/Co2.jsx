@@ -61,7 +61,7 @@ function Co2() {
           opacity="0.5"
           borderRadius="full"/>
 
-      <Container maxW="container.xl" position="relative" zIndex={1} pl={{ base: 4, md: "75px" }}>
+      <Container maxW="container.xl" position="relative" zIndex={1} pl={{ base: 4, md: "75gpx" }}>
         <Grid templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(12, 1fr)" }} gap={6} minH={{ base: "auto", md: "600px" }}>
           {/* Left Column */}
           <GridItem colSpan={{ base: 1, md: 4 }}>
