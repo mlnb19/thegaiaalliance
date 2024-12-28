@@ -416,16 +416,56 @@ function Co2() {
             </Flex>
           </GridItem>
 
-          {/* Moved to Left Column */}
+          {/* Right Column */}
           <GridItem>
             <Flex direction="column" gap={6} h="100%">
-              <Box bg="#111" borderRadius="xl" p={8} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)" onClick={() => setShowTips(true)} cursor="pointer" _hover={{ bg: "#1a1a1a" }}>
-                <Flex align="center" mb={4}>
-                  <Box as={FaLeaf} color="green.400" fontSize="24px" mr={3}/>
-                  <Text color="white" fontSize="xl">Minska ditt CO2-avtryck</Text>
-                </Flex>
-                <Text color="gray.400">Klicka här för tips om hur du kan hjälpa miljön</Text>
+              <Box 
+                bg="#111" 
+                borderRadius="xl" 
+                p={6} 
+                cursor="pointer" 
+                onClick={() => setIsGameOpen(true)}
+                _hover={{ bg: "#1a1a1a" }}
+              >
+                <Text color="white" fontSize="2xl" fontWeight="bold">Spela CO2 Spelet! 🎮</Text>
+                <Text color="gray.400" mt={2}>Klicka här för att testa dina miljöval</Text>
               </Box>
+
+              <SimpleGrid columns={2} spacing={4}>
+                <Box
+                  bg="#111"
+                  borderRadius="xl"
+                  p={6}
+                  boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)"
+                  cursor="pointer"
+                  onClick={() => setIsChattOpen(true)}
+                  _hover={{ bg: "#222" }}
+                >
+                  <Center as="span" color="white" fontSize="2xl" mb={4}>
+                    🤖
+                  </Center>
+                  <Center color="gray.400" fontSize="sm" mt={4}>
+                    Chatta med EcoEdith
+                  </Center>
+                </Box>
+
+                <Box
+                  bg="#111"
+                  borderRadius="xl"
+                  p={6}
+                  boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)"
+                  cursor="pointer"
+                  onClick={() => setIsDiscussionOpen(true)}
+                  _hover={{ bg: "#222" }}
+                >
+                  <Center as="span" color="white" fontSize="2xl" mb={4}>
+                    💭
+                  </Center>
+                  <Center color="gray.400" fontSize="sm" mt={4}>
+                    Diskussionsfrågor
+                  </Center>
+                </Box>
+              </SimpleGrid>
 
               <Box bg="#111" borderRadius="xl" p={8} flex={1} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
                 <Text color="white" fontSize="2xl" fontWeight="bold">
