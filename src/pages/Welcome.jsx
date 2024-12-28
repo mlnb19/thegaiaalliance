@@ -69,7 +69,7 @@ const Welcome = ({ setIsFaqOpen }) => {
               alignItems="center"
               justifyContent="center"
             >
-              <Image src="/images/Logga1.svg" alt="Logo" height="60px" objectFit="contain" />
+              <Image src="/images/Logo.svg" alt="Logo" height="auto" objectFit="contain" />
             </Box>
             
             <Text color="gray.300" textAlign="center" fontSize="xs">
