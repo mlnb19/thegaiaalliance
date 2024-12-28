@@ -188,27 +188,28 @@ const Welcome = ({ setIsFaqOpen }) => {
           spacing={8} 
           align="center" 
           justify="flex-end"
+          marginTop={24}
         >
           <Link href="/sealevels" color="white" _hover={{ color: 'blue.300' }} display="flex" alignItems="center" gap={2}>
-            <PiWaves fontSize="24px"/> HAVSNIVÅER
+            <PiWaves fontSize="24px" color="blue"/> HAVSNIVÅER
           </Link>
           <Link href="/glaciers" color="white" _hover={{ color: 'cyan.300' }} display="flex" alignItems="center" gap={2}>
-            <GiMountainCave fontSize="24px"/> GLACIÄRER
+            <GiMountainCave fontSize="24px" color="cyan"/> GLACIÄRER
           </Link>
           <Link href="/co2" color="white" _hover={{ color: 'orange.300' }} display="flex" alignItems="center" gap={2}>
-            <GiSmokeBomb fontSize="24px"/> FOSSILA BRÄNSLEN
+            <GiSmokeBomb fontSize="24px" color="orange"/> FOSSILA BRÄNSLEN
           </Link>
           <Link href="/temperature" color="white" _hover={{ color: 'red.300' }} display="flex" alignItems="center" gap={2}>
-            <TbTemperatureCelsius fontSize="16px"/> TEMPERATUR
+            <TbTemperatureCelsius fontSize="26px" color="red"/> TEMPERATUR
           </Link>
           <Link href="/profile" color="white" _hover={{ color: 'green.300' }} display="flex" alignItems="center" gap={2}>
-            <FiUser fontSize="24px"/> PROFIL
+            <FiUser fontSize="24px" color="green"/> PROFIL
           </Link>
           <Box as="button" onClick={() => setIsFaqOpen(true)} color="white" _hover={{ color: 'green.300' }} display="flex" alignItems="center" gap={2}>
-            <BsQuestionSquare fontSize="16px"/> FRÅGOR OCH KONTAKT
+            <BsQuestionSquare fontSize="18px" color="green"/> FRÅGOR OCH KONTAKT
           </Box>
           <Link href="/logout" color="white" _hover={{ color: 'green.300' }} display="flex" alignItems="center" gap={2}>
-            <RiLogoutCircleRLine fontSize="24px"/> LOGGA UT
+            <RiLogoutCircleRLine fontSize="24px" color="green"/> LOGGA UT
           </Link>
         </Stack>
       </Container>

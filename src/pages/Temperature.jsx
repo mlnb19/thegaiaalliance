@@ -42,7 +42,7 @@ function Temperature() {
             opacity="0.5"
             borderRadius="full"/>
       
-      <Container maxW="container.xl" position="relative" zIndex={1} pl={{ base: 4, md: "100px" }}>
+      <Container maxW="container.xl" position="relative" zIndex={1} pl={{ base: 4, md: "75px" }}>
         <Grid templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(12, 1fr)" }} gap={6} minH={{ base: "auto", md: "600px" }}>
           <GridItem colSpan={{ base: 12, md: 5 }}>
             <Box bg="#111" borderRadius="xl" p={8} h="100%" boxShadow="3px 2px 7px rgba(61, 61, 61)" border="0.5px">

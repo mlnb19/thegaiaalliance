@@ -26,7 +26,7 @@ function Glaciers() {
         opacity="0.5"
         borderRadius="full"
       />
-      <Container maxW="container.xl" pt={{base: 4, md: "80px"}} position="relative" zIndex={1} pl="100px">
+      <Container maxW="container.xl" pt={{base: 4, md: "80px"}} position="relative" zIndex={1} pl="75px">
         <Flex 
           direction={{base: "column", md: "row"}} 
           gap={6} 

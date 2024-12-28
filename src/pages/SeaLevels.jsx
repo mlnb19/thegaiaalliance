@@ -51,7 +51,7 @@ function Startpage({ setIsFaqOpen }) {
         maxW="container.xl"
         position="relative"
         zIndex={1}
-        pl={{ base: 4, md: "100px" }}>
+        pl={{ base: 4, md: "75px" }}>
 
       <Grid
         templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(12, 1fr)" }}
