@@ -177,6 +177,7 @@ const Welcome = ({ setIsFaqOpen }) => {
           >
             VÄLKOMMEN,<br />ALICE
           </Heading>
+        </Flex>
         
         <Stack 
           display={{ base: 'none', md: 'flex' }} 
