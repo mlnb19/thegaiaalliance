@@ -244,8 +244,10 @@ function Temperature() {
               </Modal>
 
               <Box bg="#111" borderRadius="xl" p={6} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
-                <Text color="white" fontSize="xl" mb={4}>Konsekvenser</Text>
-                <Text color="gray.400">
+                <Text color="white" fontSize="xl" mb={4}>Konsekvenser & Åtgärder</Text>
+                <Text color="gray.400" mb={4}>
+                  Konsekvenser:
+                  <br/>
                   • Stigande havsnivåer
                   <br/>
                   • Extrema väderhändelser
@@ -254,15 +256,9 @@ function Temperature() {
                   <br/>
                   • Smältande glaciärer
                 </Text>
-              </Box>
-            </Flex>
-          </GridItem>
-
-          <GridItem colSpan={3}>
-            <Flex direction="column" gap={6} h="100%">
-              <Box bg="#111" borderRadius="xl" p={6} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
-                <Text color="white" fontSize="xl" mb={4}>Åtgärder</Text>
                 <Text color="gray.400">
+                  Åtgärder:
+                  <br/>
                   • Minska fossila bränslen
                   <br/>
                   • Öka förnybar energi
@@ -270,6 +266,28 @@ function Temperature() {
                   • Energieffektivisering
                   <br/>
                   • Hållbar transport
+                </Text>
+              </Box>
+            </Flex>
+          </GridItem>
+
+          <GridItem colSpan={3}>
+            <Flex direction="column" gap={6} h="100%">
+              <Box 
+                bg="#111" 
+                borderRadius="xl" 
+                p={6} 
+                boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)"
+                cursor="pointer"
+                onClick={() => setIsGameOpen(true)}
+                _hover={{ transform: 'scale(1.02)' }}
+                transition="transform 0.2s"
+              >
+                <Text color="white" fontSize="xl" fontWeight="bold" mb={4}>
+                  Spela Temperaturspelet! 🎮
+                </Text>
+                <Text color="gray.400">
+                  Testa dina kunskaper om klimatförändringar och gör klimatsmarta val!
                 </Text>
               </Box>
 
