@@ -64,8 +64,16 @@ function Startpage({ setIsFaqOpen }) {
             borderRadius="xl"
             p={8}
             h="100%"
-            boxShadow="3px 2px 7px rgba(61, 61, 61)"
-            border="0.5px">
+            boxShadow="0px 4px 15px rgba(0, 120, 255, 0.1)"
+            border="0.5px"
+            cursor="pointer"
+            onClick={() => setIsTipsModalOpen(true)}
+            transition="all 0.2s ease-in-out"
+            _hover={{
+              transform: 'scale(1.02)',
+              bg: '#1a1a1a',
+              boxShadow: '0px 4px 20px rgba(0, 120, 255, 0.2)'
+            }}>
 
             <Text
               color="#ff6b6b"
@@ -162,7 +170,14 @@ function Startpage({ setIsFaqOpen }) {
             bg="#111" 
             borderRadius="xl" 
             p={6} 
-            boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
+            boxShadow="0px 4px 15px rgba(0, 120, 255, 0.1)"
+            cursor="pointer"
+            transition="all 0.2s ease-in-out"
+            _hover={{
+              transform: 'scale(1.02)',
+              bg: '#1a1a1a',
+              boxShadow: '0px 4px 20px rgba(0, 120, 255, 0.2)'
+            }}>
 
             <Flex
               align="center"
@@ -199,8 +214,15 @@ function Startpage({ setIsFaqOpen }) {
         <Box 
           borderRadius="xl" 
           p={6}
-          
-          boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
+          bg="#111"
+          boxShadow="0px 4px 15px rgba(0, 120, 255, 0.1)"
+          cursor="pointer"
+          transition="all 0.2s ease-in-out"
+          _hover={{
+            transform: 'scale(1.02)',
+            bg: '#1a1a1a',
+            boxShadow: '0px 4px 20px rgba(0, 120, 255, 0.2)'
+          }}>
 
           <Text 
             fontSize="2xl" 
@@ -226,7 +248,14 @@ function Startpage({ setIsFaqOpen }) {
           bg="#111"
           borderRadius="xl"
           p={6} 
-          boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)">
+          boxShadow="0px 4px 15px rgba(0, 120, 255, 0.1)"
+          cursor="pointer"
+          transition="all 0.2s ease-in-out"
+          _hover={{
+            transform: 'scale(1.02)',
+            bg: '#1a1a1a',
+            boxShadow: '0px 4px 20px rgba(0, 120, 255, 0.2)'
+          }}>
 
           <Flex 
             align="center"
