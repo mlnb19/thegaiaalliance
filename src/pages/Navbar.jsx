@@ -137,24 +137,30 @@ const Navbar = () => {
         </DrawerContent>
       </Drawer>
       <Faq isOpen={isFaqOpen} onClose={() => setIsFaqOpen(false)} />
-      <VStack position="fixed" top={4} right={4} spacing={4} align="flex-end">
-        <Text color="white">Inloggad</Text>
-        <IconButton 
-          icon={<Image src="profile.png" alt="profile" boxSize="24px" objectFit="cover" borderRadius="full" />} 
-          onClick={() => navigate('/profile')} 
-          variant="ghost" 
-          color="white"
-          aria-label="Profile"
-        />
-        <IconButton 
-          icon={<Box as={RiLogoutCircleRLine} size={24} />} 
-          onClick={() => navigate('/logout')} 
-          variant="ghost" 
-          color="white"
-          aria-label="Logout"
-          cursor="pointer"
-        />
-      </VStack>
+      <Box position="fixed" right={4} top={0} h="100vh" p={{ base: 2, md: 4 }}>
+        <Flex alignItems="center" mb={6}>
+          <Text color="white" fontSize="sm" fontWeight="bold">
+            Inloggad
+          </Text>
+        </Flex>
+        <VStack spacing={6} mt={8} alignItems="flex-start">
+          <IconButton 
+            icon={<Image src="profile.png" alt="profile" boxSize="24px" objectFit="cover" borderRadius="full" />} 
+            onClick={() => navigate('/profile')} 
+            variant="ghost" 
+            color="white"
+            aria-label="Profile"
+          />
+          <IconButton 
+            icon={<Box as={RiLogoutCircleRLine} size={24} />} 
+            onClick={() => navigate('/logout')} 
+            variant="ghost" 
+            color="white"
+            aria-label="Logout"
+            cursor="pointer"
+          />
+        </VStack>
+      </Box>
       <IconButton 
         icon={<Box as={BsQuestionSquare} size={24} />} 
         onClick={() => setIsFaqOpen(true)} 
