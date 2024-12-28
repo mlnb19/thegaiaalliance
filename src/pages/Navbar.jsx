@@ -143,29 +143,22 @@ const Navbar = () => {
             Inloggad
           </Text>
         </Flex>
-        <VStack spacing={6} mt={8} alignItems="flex-start">
+        <VStack spacing={6} mt={8} alignItems="flex-end">
           <IconButton 
-            icon={<Image src="profile.png" alt="profile" boxSize="24px" objectFit="cover" borderRadius="full" />} 
-            onClick={() => {
-              navigate('/profile');
-              onClose && onClose();
-            }} 
+            icon={<Image src="/images/profile.png" alt="profile" boxSize="36px" objectFit="cover" borderRadius="full" />} 
+            onClick={() => navigate('/pages/profile')} 
             variant="ghost" 
             color="white"
             aria-label="Profile"
-            _hover={{ bg: 'whiteAlpha.200' }}
+            title="Profil"
           />
           <IconButton 
             icon={<Box as={RiLogoutCircleRLine} size={24} />} 
-            onClick={() => {
-              navigate('/logout');
-              onClose && onClose();
-            }} 
+            onClick={() => navigate('/logout')} 
             variant="ghost" 
             color="white"
             aria-label="Logout"
             cursor="pointer"
-            _hover={{ bg: 'whiteAlpha.200' }}
           />
         </VStack>
       </Box>
