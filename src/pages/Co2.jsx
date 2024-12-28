@@ -38,35 +38,34 @@ function Co2() {
   ];
 
   return (
-    <Box
-      w="100vw" 
-      h="100vh"
-      bg="#0d0d0d"
-      display="flex"
-      alignItems="flex-start"
-      justifyContent="center"
-      position="relative"
-      overflowY="auto"
-      overflowX="hidden">
-
-      <Navbar />
-
       <Box
-        pos="absolute"
-        top="0"
-        right="0"
-        w="50%"
-        h="50%"
-        bgGradient="linear(to-bl, orange.600, orange.500, yellow.700)"
-        filter="blur(100px)"
-        opacity="0.5"
-        borderRadius="full"/>
+        w="100vw"
+        h="100vh"
+        bg="#0d0d0d"
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        position="relative"
+        overflow="hidden">
+
+        <Navbar />
+
+        <Box
+          pos="absolute"
+          top="0"
+          right="0"
+          w="50%"
+          h="50%"
+          bgGradient="linear(to-bl, red.600, red.500, orange.700)"
+          filter="blur(100px)"
+          opacity="0.5"
+          borderRadius="full"/>
 
       <Container maxW="container.xl" position="relative" zIndex={1} pl="100px">
         <Grid templateColumns="repeat(12, 1fr)" gap={6} h="600px">
           {/* Left Column */}
           <GridItem colSpan={4}>
-            <Box bg="#111" borderRadius="xl" p={8} h="100%" boxShadow="3px 2px 7px rgba(61, 61, 61)" border="0.5px">
+            <Box bg="#111" borderRadius="xl" p={8} h="600px" boxShadow="3px 2px 7px rgba(61, 61, 61)" border="0.5px">
               <Text color="#FFB4B4" fontSize="sm">CO2 Utsläpp</Text>
               <Text color="white" fontSize="4xl" fontWeight="bold" mt={2} mb={4}>
                 Koldioxid Nivåer

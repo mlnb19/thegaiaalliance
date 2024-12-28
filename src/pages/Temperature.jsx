@@ -20,28 +20,28 @@ function Temperature() {
   }, []);
 
   return (
-      <Box
-        w="100vw"
-        h="100vh"
-        bg="#0d0d0d"
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-        position="relative"
-        overflow="hidden">
-
-        <Navbar />
-
         <Box
-          pos="absolute"
-          top="0"
-          right="0"
-          w="50%"
-          h="50%"
-          bgGradient="linear(to-bl, red.600, red.500, orange.700)"
-          filter="blur(100px)"
-          opacity="0.5"
-          borderRadius="full"/>
+          w="100vw"
+          h="100vh"
+          bg="#0d0d0d"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          position="relative"
+          overflow="hidden">
+
+          <Navbar />
+
+          <Box
+            pos="absolute"
+            top="0"
+            right="0"
+            w="50%"
+            h="50%"
+            bgGradient="linear(to-bl, red.600, red.500, orange.700)"
+            filter="blur(100px)"
+            opacity="0.5"
+            borderRadius="full"/>
       
       <Container maxW="container.xl" position="relative" zIndex={1} pl="100px">
         <Grid
