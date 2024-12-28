@@ -80,25 +80,35 @@ const Navbar = () => {
               alignItems="center"
               position="relative"
             >
-              <IconButton
-                icon={<Box as={item.icon} size={24} />}
-                aria-label={item.label}
-                variant="ghost"
-                color="white"
-                onClick={() => handleNavigation(item)}
-                _hover={{ bg: item.color, color: 'black' }}
-              />
-              {window.location.pathname === item.path && (
+              <Box position="relative" group>
+                <IconButton
+                  icon={<Box as={item.icon} size={24} />}
+                  aria-label={item.label}
+                  variant="ghost"
+                  color="white"
+                  onClick={() => handleNavigation(item)}
+                  _hover={{ bg: item.color, color: 'black' }}
+                />
                 <Text
                   ml={2}
                   position="absolute"
                   left="100%"
                   whiteSpace="nowrap"
                   color={item.color}
+                  opacity={window.location.pathname === item.path ? 1 : 0}
+                  _groupHover={{ opacity: 1 }}
+                  transition="opacity 0.2s"
+                  fontSize="sm"
+                  fontWeight="medium"
+                  bg="blackAlpha.700"
+                  px={2}
+                  py={1}
+                  borderRadius="md"
+                  transform="translateX(8px)"
                 >
                   {item.title}
                 </Text>
-              )}
+              </Box>
             </Flex>
           ))}
         </VStack>
