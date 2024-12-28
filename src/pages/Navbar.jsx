@@ -63,13 +63,19 @@ const Navbar = () => {
         backdropFilter="blur(10px)" 
         zIndex={10}
       >
-        <Flex pl={2} mb={6} gap={2}>
-          <FaGlobeAmericas size={24} color="#4CAF50"/>
+        <Flex alignItems="center" mb={6}>
+          <IconButton
+            icon={<FaGlobeAmericas size={24} />}
+            aria-label="Logo"
+            variant="ghost"
+            color="#4CAF50"
+            _hover={{ bg: 'transparent' }}
+          />
           <Text color="white" fontSize="sm" fontWeight="bold">
             The Gaia Alliance
           </Text>
         </Flex>
-        <VStack spacing={6} mt={8} alignItems="flex-start" pl={2}>
+        <VStack spacing={6} mt={8} alignItems="flex-start">
           {NAV_ITEMS.map((item, index) => (
             <Flex
               key={index}
@@ -86,11 +92,11 @@ const Navbar = () => {
               />
               {window.location.pathname === item.path && (
                 <Text
-                  color="white"
                   ml={2}
                   position="absolute"
                   left="100%"
                   whiteSpace="nowrap"
+                  color={item.color}
                 >
                   {item.title}
                 </Text>
