@@ -168,18 +168,26 @@ const Welcome = ({ setIsFaqOpen }) => {
               ml={{ md: "8" }}
             />
           </Flex>
-          <Heading 
-            color="white" 
-            fontSize={{ base: "4xl", sm: "5xl", md: "7xl", lg: "8xl" }} 
-            fontWeight="bold" 
-            mb={8} 
-            fontFamily="bungee" 
-            marginTop={{ base: "30px", md: "50px" }}
-            textAlign={{ base: "center", md: "left" }}
-            ml={{ md: "8" }}
-          >
-            VÄLKOMMEN,<br />ALICE
-          </Heading>
+          <VStack align={{ base: "center", md: "flex-start" }} ml={{ md: "8" }} spacing={2}>
+            <Text 
+              color="green.400" 
+              fontSize={{ base: "xl", md: "2xl" }}
+              fontFamily="bungee"
+            >
+              THE GAIA ALLIANCE
+            </Text>
+            <Heading 
+              color="white" 
+              fontSize={{ base: "4xl", sm: "5xl", md: "7xl", lg: "8xl" }} 
+              fontWeight="bold" 
+              mb={8} 
+              fontFamily="bungee" 
+              marginTop={{ base: "10px", md: "20px" }}
+              textAlign={{ base: "center", md: "left" }}
+            >
+              VÄLKOMMEN,<br />ALICE
+            </Heading>
+          </VStack>
         </Flex>
         
         <Stack 
