@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Box, Container, Text, SimpleGrid, Flex, Center, Modal, ModalOverlay, ModalContent, ModalCloseButton, ModalHeader, ModalBody, Progress, Button, VStack, Stat, StatLabel, StatNumber, StatHelpText, Grid, GridItem, UnorderedList, ListItem } from '@chakra-ui/react';
 import { ResponsiveLine } from '@nivo/line';
@@ -385,7 +384,7 @@ function Co2() {
           </GridItem>
 
           {/* Moved to Left Column */}
-          <Box mt={6}>
+          <GridItem>
             <Flex direction="column" gap={6} h="100%">
               <Box bg="#111" borderRadius="xl" p={8} boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)" onClick={() => setShowTips(true)} cursor="pointer" _hover={{ bg: "#1a1a1a" }}>
                 <Flex align="center" mb={4}>
