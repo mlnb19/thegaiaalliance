@@ -114,7 +114,7 @@ const Welcome = ({ setIsFaqOpen }) => {
             {showWelcome && (
               <ScaleFade in={showWelcome}>
                 <Text color="green.400" fontSize="xl" textAlign="center">
-                  Välkommen tillbaka till The Gaia Alliance! 🌍
+                  Alliance for a Greener Tomorrow! 🌍
                 </Text>
               </ScaleFade>
             )}

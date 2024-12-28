@@ -56,7 +56,7 @@ function Co2() {
           right="0"
           w="50%"
           h="50%"
-          bgGradient="linear(to-bl, red.600, red.500, orange.700)"
+          bgGradient="linear(to-bl, yellow.600, orange.500, orange.700)"
           filter="blur(100px)"
           opacity="0.5"
           borderRadius="full"/>
