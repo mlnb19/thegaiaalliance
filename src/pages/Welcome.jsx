@@ -94,6 +94,7 @@ const Welcome = ({ setIsFaqOpen }) => {
               placeholder="Lösenord"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              onKeyDown={(e) => e.key === 'Enter' && handleLogin()}
               color="white"
               type="password"
               bg="blackAlpha.300"
