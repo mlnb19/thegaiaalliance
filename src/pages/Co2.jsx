@@ -86,41 +86,7 @@ function Co2() {
                   </Box>
                 ))}
               </SimpleGrid>
-              <SimpleGrid columns={2} spacing={4} mt={6}>
-                <Box
-                  bg="#1a1a1a"
-                  borderRadius="xl"
-                  p={6}
-                  boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)"
-                  cursor="pointer"
-                  onClick={() => setIsChattOpen(true)}
-                  _hover={{ bg: "#222" }}
-                >
-                  <Center as="span" color="white" fontSize="2xl" mb={4}>
-                    🤖
-                  </Center>
-                  <Center color="gray.400" fontSize="sm" mt={4}>
-                    Chatta med EcoEdith
-                  </Center>
-                </Box>
-
-                <Box
-                  bg="#1a1a1a"
-                  borderRadius="xl"
-                  p={6}
-                  boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)"
-                  cursor="pointer"
-                  onClick={() => setIsDiscussionOpen(true)}
-                  _hover={{ bg: "#222" }}
-                >
-                  <Center as="span" color="white" fontSize="2xl" mb={4}>
-                    💭
-                  </Center>
-                  <Center color="gray.400" fontSize="sm" mt={4}>
-                    Diskussionsfrågor
-                  </Center>
-                </Box>
-              </SimpleGrid>
+              
             </Box>
           </GridItem>
 
@@ -233,6 +199,42 @@ function Co2() {
                   Klicka för att läsa mer...
                 </Text>
               </Box>
+
+              <SimpleGrid columns={2} spacing={4}>
+                <Box
+                  bg="#1a1a1a"
+                  borderRadius="xl"
+                  p={6}
+                  boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)"
+                  cursor="pointer"
+                  onClick={() => setIsChattOpen(true)}
+                  _hover={{ bg: "#222" }}
+                >
+                  <Center as="span" color="white" fontSize="2xl" mb={4}>
+                    🤖
+                  </Center>
+                  <Center color="gray.400" fontSize="sm" mt={4}>
+                    Chatta med EcoEdith
+                  </Center>
+                </Box>
+
+                <Box
+                  bg="#1a1a1a"
+                  borderRadius="xl"
+                  p={6}
+                  boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)"
+                  cursor="pointer"
+                  onClick={() => setIsDiscussionOpen(true)}
+                  _hover={{ bg: "#222" }}
+                >
+                  <Center as="span" color="white" fontSize="2xl" mb={4}>
+                    💭
+                  </Center>
+                  <Center color="gray.400" fontSize="sm" mt={4}>
+                    Diskussionsfrågor
+                  </Center>
+                </Box>
+              </SimpleGrid>
             </Flex>
           </GridItem>
 
