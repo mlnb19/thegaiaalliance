@@ -157,14 +157,21 @@ const Welcome = ({ setIsFaqOpen }) => {
               aria-label="Open menu"
               _hover={{ bg: 'whiteAlpha.200' }}
             />
-            <Image 
-              src="/images/profile.png" 
-              alt="Logo" 
-              boxSize={{ base: "100px", md: "150px" }}
-              borderRadius="full"
-              objectFit="cover"
-              ml={{ md: "8" }}
-            />
+            <Flex align="center" gap={4}>
+              <Image 
+                src="/images/LogoRound.svg" 
+                alt="Logo" 
+                boxSize={{ base: "80px", md: "120px" }}
+                objectFit="contain"
+              />
+              <Image 
+                src="/images/profile.png" 
+                alt="Profile" 
+                boxSize={{ base: "100px", md: "150px" }}
+                borderRadius="full"
+                objectFit="cover"
+              />
+            </Flex>
           </Flex>
           <VStack align={{ base: "center", md: "flex-start" }} ml={{ md: "8" }} spacing={2}>
             <Text 

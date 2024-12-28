@@ -58,16 +58,12 @@ const Navbar = () => {
         zIndex={10}
       >
         <Flex alignItems="center" mb={6}>
-          <IconButton
-            icon={<FaGlobeAmericas size={24} />}
-            aria-label="Logo"
-            variant="ghost"
-            color="#4CAF50"
-            _hover={{ bg: 'transparent' }}
+          <Image
+            src="/images/LogoRound.svg"
+            alt="Logo"
+            height="40px"
+            objectFit="contain"
           />
-          <Text color="white" fontSize="sm" fontWeight="bold">
-            The Gaia Alliance
-          </Text>
         </Flex>
         <VStack spacing={6} mt={8} alignItems="flex-start">
           {NAV_ITEMS.map((item, index) => (
