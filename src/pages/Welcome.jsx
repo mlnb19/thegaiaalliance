@@ -3,6 +3,12 @@ import React, { useState } from 'react';
 import { Box, Container, Heading, Stack, Link, Flex, Image, Input, Button, Text, VStack, keyframes, ScaleFade } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 import { FaLeaf, FaGlobeAmericas, FaTree } from 'react-icons/fa';
+import { PiWaves } from "react-icons/pi";
+import { GiMountainCave, GiSmokeBomb } from "react-icons/gi";
+import { TbTemperatureCelsius } from "react-icons/tb";
+import { FiUser } from "react-icons/fi";
+import { RiLogoutCircleRLine } from "react-icons/ri";
+import { BsQuestionSquare } from "react-icons/bs";
 
 const float = keyframes`
   0% { transform: translateY(0px); }
@@ -147,14 +153,28 @@ const Welcome = ({ setIsFaqOpen }) => {
           VÄLKOMMEN,<br />ALICE
         </Heading>
         <Flex justify="flex-end" gap={8}>
-          <Stack direction="row" spacing={8}>
-            <Link href="/sealevels" color="white" _hover={{ color: 'blue.300' }}>HAVSNIVÅER</Link>
-            <Link href="/glaciers" color="white" _hover={{ color: 'cyan.300' }}>GLACIÄRER</Link>
-            <Link href="/co2" color="white" _hover={{ color: 'orange.300' }}>FOSSILA BRÄNSLEN</Link>
-            <Link href="/temperature" color="white" _hover={{ color: 'red.300' }}>TEMPERATUR</Link>
-            <Link href="/profile" color="white" _hover={{ color: 'green.300' }}>PROFIL</Link>
-            <Box as="button" onClick={() => setIsFaqOpen(true)} color="white" _hover={{ color: 'green.300' }}>FRÅGOR OCH KONTAKT</Box>
-            <Link href="/logout" color="white" _hover={{ color: 'green.300' }}>LOGGA UT</Link>
+          <Stack direction="row" spacing={8} align="center">
+            <Link href="/sealevels" color="white" _hover={{ color: 'blue.300' }} display="flex" alignItems="center" gap={2}>
+              <PiWaves /> HAVSNIVÅER
+            </Link>
+            <Link href="/glaciers" color="white" _hover={{ color: 'cyan.300' }} display="flex" alignItems="center" gap={2}>
+              <GiMountainCave /> GLACIÄRER
+            </Link>
+            <Link href="/co2" color="white" _hover={{ color: 'orange.300' }} display="flex" alignItems="center" gap={2}>
+              <GiSmokeBomb /> FOSSILA BRÄNSLEN
+            </Link>
+            <Link href="/temperature" color="white" _hover={{ color: 'red.300' }} display="flex" alignItems="center" gap={2}>
+              <TbTemperatureCelsius /> TEMPERATUR
+            </Link>
+            <Link href="/profile" color="white" _hover={{ color: 'green.300' }} display="flex" alignItems="center" gap={2}>
+              <FiUser /> PROFIL
+            </Link>
+            <Box as="button" onClick={() => setIsFaqOpen(true)} color="white" _hover={{ color: 'green.300' }} display="flex" alignItems="center" gap={2}>
+              <BsQuestionSquare /> FRÅGOR OCH KONTAKT
+            </Box>
+            <Link href="/logout" color="white" _hover={{ color: 'green.300' }} display="flex" alignItems="center" gap={2}>
+              <RiLogoutCircleRLine /> LOGGA UT
+            </Link>
           </Stack>
         </Flex>
       </Container>
