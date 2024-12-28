@@ -73,13 +73,13 @@ const Welcome = ({ setIsFaqOpen }) => {
         </Heading>
         <Flex justify="flex-end" gap={8}>
           <Stack direction="row" spacing={8}>
-            <Link href="/sealevels" color="white" _hover={{ color: 'blue.300' }}>HAVSNIVÅER</Link>
-            <Link href="/glaciers" color="white" _hover={{ color: 'cyan.300' }}>GLACIÄRER</Link>
-            <Link href="/co2" color="white" _hover={{ color: 'orange.300' }}>CO2</Link>
-            <Link href="/temperature" color="white" _hover={{ color: 'red.300' }}>TEMPERATUR</Link>
-            <Link href="/profile" color="white" _hover={{ color: 'green.300' }}>PROFIL</Link>
-            <Box as="button" onClick={() => setIsFaqOpen(true)} color="white" _hover={{ color: 'green.300' }}>FRÅGOR OCH KONTAKT</Box>
-            <Link href="/logout" color="white" _hover={{ color: 'green.300' }}>LOGGA UT</Link>
+            <Link href="/sealevels" color="white" title="Havsnivåer" _hover={{ color: 'blue.300' }}>HAVSNIVÅER</Link>
+            <Link href="/glaciers" color="white" title="Glaciärer" _hover={{ color: 'cyan.300' }}>GLACIÄRER</Link>
+            <Link href="/co2" color="white" title="Fossila bränslen" _hover={{ color: 'orange.300' }}>FOSSILA BRÄNSLEN</Link>
+            <Link href="/temperature" color="white" title="Temperatur" _hover={{ color: 'red.300' }}>TEMPERATUR</Link>
+            <Link href="/profile" color="white" title="Profil" _hover={{ color: 'green.300' }}>PROFIL</Link>
+            <Box as="button" onClick={() => setIsFaqOpen(true)} color="white" title="Frågor, svar och kontaktinformation" _hover={{ color: 'green.300' }}>FRÅGOR OCH KONTAKT</Box>
+            <Link href="/logout" color="white" title="Logga ut" _hover={{ color: 'green.300' }}>LOGGA UT</Link>
           </Stack>
         </Flex>
       </Container>
