@@ -144,8 +144,8 @@ const Welcome = ({ setIsFaqOpen }) => {
         borderRadius="full"
       />
       <Container maxW="container.xl" position="relative" zIndex={1} mt="50px">
-        <Flex direction="column" align="center" textAlign="center">
-          <Flex justify="center" align="center" w="full" position="relative">
+        <Flex direction="column" align={{ base: "center", md: "flex-start" }} textAlign={{ base: "center", md: "left" }}>
+          <Flex justify={{ base: "center", md: "flex-start" }} align="center" w="full" position="relative">
             <IconButton
               position="absolute"
               left="0"
@@ -164,6 +164,7 @@ const Welcome = ({ setIsFaqOpen }) => {
               boxSize={{ base: "100px", md: "150px" }}
               borderRadius="full"
               objectFit="cover"
+              ml={{ md: "8" }}
             />
           </Flex>
           <Heading 
@@ -173,7 +174,8 @@ const Welcome = ({ setIsFaqOpen }) => {
             mb={8} 
             fontFamily="bungee" 
             marginTop={{ base: "30px", md: "50px" }}
-            textAlign="center"
+            textAlign={{ base: "center", md: "left" }}
+            ml={{ md: "8" }}
           >
             VÄLKOMMEN,<br />ALICE
           </Heading>
