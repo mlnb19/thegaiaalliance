@@ -2,6 +2,11 @@
 import React from 'react';
 import ChatBot from './ChatBot';
 import {
+  Tabs,
+  TabList,
+  TabPanels,
+  Tab,
+  TabPanel,
   Modal,
   ModalOverlay,
   ModalContent,
@@ -26,9 +31,17 @@ function Faq({ isOpen, onClose }) {
     <Modal isOpen={isOpen} onClose={onClose} size="4xl">
       <ModalOverlay backdropFilter="blur(10px)" />
       <ModalContent bg="gray.900" p={6} maxH="80vh" overflowY="auto">
-        <ModalHeader color="cyan.200">🌍 FAQ och kontaktinformation 🌱</ModalHeader>
+        <ModalHeader color="cyan.200">🌍 Information och Support 🌱</ModalHeader>
         <ModalCloseButton color="white" />
         <ModalBody>
+          <Tabs variant="soft-rounded" colorScheme="green" mb={4}>
+            <TabList mb={4}>
+              <Tab color="white" _selected={{ bg: 'green.500' }}>FAQ</Tab>
+              <Tab color="white" _selected={{ bg: 'blue.500' }}>Kontakt</Tab>
+              <Tab color="white" _selected={{ bg: 'purple.500' }}>Chatta med EcoEdith</Tab>
+            </TabList>
+            <TabPanels>
+              <TabPanel>
           <Accordion allowToggle mb={8}>
             <AccordionItem border="none" mb={4}>
               <AccordionButton bg="#111" color="white" _hover={{ bg: '#222' }} borderRadius="xl">
@@ -109,6 +122,22 @@ function Faq({ isOpen, onClose }) {
               </Box>
             ))}
           </VStack>
+              </TabPanel>
+              <TabPanel>
+                <VStack spacing={4} align="start">
+                  <Text color="white" fontSize="xl" fontWeight="bold">Kontakta Oss</Text>
+                  <Text color="gray.400">Email: klimat@exempel.se</Text>
+                  <Text color="gray.400">Telefon: 08-123 45 67</Text>
+                  <Text color="gray.400">Adress: Klimatgatan 1, 123 45 Stockholm</Text>
+                </VStack>
+              </TabPanel>
+              <TabPanel>
+                <Box h="400px">
+                  <ChatBot />
+                </Box>
+              </TabPanel>
+            </TabPanels>
+          </Tabs>
         </ModalBody>
       </ModalContent>
     </Modal>
