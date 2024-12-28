@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Box, Container, Heading, Stack, Link, Flex, Image, Input, Button, Text, VStack, keyframes, ScaleFade, IconButton } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
@@ -171,7 +170,7 @@ const Welcome = ({ setIsFaqOpen }) => {
                 ml={{ md: "8" }}
               />
             </Flex>
-          </Flex>
+          </Box>
           <Heading 
             color="white" 
             fontSize={{ base: "4xl", sm: "5xl", md: "7xl", lg: "9xl" }} 
