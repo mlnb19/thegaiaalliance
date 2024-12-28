@@ -53,7 +53,7 @@ const Welcome = ({ setIsFaqOpen }) => {
             border="1px solid"
             borderColor="whiteAlpha.200"
             maxW="400px"
-            w="90%"
+            w="100%"
           >
             <Box 
               animation={`${float} 3s ease-in-out infinite`}
@@ -61,9 +61,9 @@ const Welcome = ({ setIsFaqOpen }) => {
               alignItems="center"
               gap={3}
             >
-              <FaGlobeAmericas size={40} color="#48BB78"/>
-              <Heading color="white" fontSize="4xl">KlimatKoll</Heading>
-              <FaLeaf size={30} color="#48BB78"/>
+              <FaGlobeAmericas size={30} color="#48BB78"/>
+              <Heading color="white" fontSize="3xl">The Gaia Alliance</Heading>
+              <FaLeaf size={20} color="#48BB78"/>
             </Box>
             
             <Text color="gray.300" textAlign="center" fontSize="xs">
@@ -108,7 +108,7 @@ const Welcome = ({ setIsFaqOpen }) => {
             {showWelcome && (
               <ScaleFade in={showWelcome}>
                 <Text color="green.400" fontSize="xl" textAlign="center">
-                  Välkommen tillbaka till KlimatKoll! 🌍
+                  Välkommen tillbaka till The Gaia Alliance! 🌍
                 </Text>
               </ScaleFade>
             )}
