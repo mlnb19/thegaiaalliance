@@ -270,10 +270,15 @@ function Startpage({ setIsFaqOpen }) {
                   bg="#111" 
                   borderRadius="xl" 
                   p={6} 
-                  boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)"
+                  boxShadow="0px 4px 15px rgba(0, 120, 255, 0.1)"
                   cursor="pointer"
                   onClick={() => setIsDiscussionOpen(true)}
-                  _hover={{ bg: "#1a1a1a" }}
+                  _hover={{ 
+                    transform: 'scale(1.02)',
+                    bg: '#1a1a1a',
+                    boxShadow: '0px 4px 20px rgba(0, 120, 255, 0.2)'
+                  }}
+                  transition="all 0.2s ease-in-out"
                 >
                   <Center as="span" color="white" fontSize="2xl" mb={4}>
                     🌊
@@ -335,10 +340,15 @@ function Startpage({ setIsFaqOpen }) {
                   bg="#111"
                   borderRadius="xl"
                   p={6}
-                  boxShadow="0px 4px 10px rgba(0, 0, 0, 0.5)"
+                  boxShadow="0px 4px 15px rgba(0, 120, 255, 0.1)"
                   cursor="pointer"
                   onClick={() => setIsChattOpen(true)}
-                  _hover={{ bg: "#1a1a1a" }}
+                  _hover={{ 
+                    transform: 'scale(1.02)',
+                    bg: '#1a1a1a',
+                    boxShadow: '0px 4px 20px rgba(0, 120, 255, 0.2)'
+                  }}
+                  transition="all 0.2s ease-in-out"
                 >
                   <Center as="span" color="white" fontSize="2xl" mb={4}>
                     🌊
