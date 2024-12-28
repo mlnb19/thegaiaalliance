@@ -54,20 +54,28 @@ function Temperature() {
               <Text color="gray.500" mb={8}>
                 Den globala medeltemperaturen har ökat markant sedan industrialiseringen började.
               </Text>
-              <Box height="300px">
+              <Box 
+                height="300px" 
+                cursor="pointer" 
+                onClick={() => setIsStatModalOpen(true)}
+                _hover={{ transform: 'scale(1.02)' }}
+                transition="transform 0.2s"
+              >
                 <ResponsiveLine
                   data={[
                     {
                       id: "Global Temperature",
-                      data: tempData.map(d => ({
-                        x: d.Year,
-                        y: d.Temperature
-                      }))
+                      data: tempData
+                        .filter(d => d.Year >= 1900 && d.Year % 10 === 0)
+                        .map(d => ({
+                          x: d.Year,
+                          y: d.Mean
+                        }))
                     }
                   ]}
                   margin={{ top: 20, right: 20, bottom: 50, left: 60 }}
                   xScale={{ type: 'point' }}
-                  yScale={{ type: 'linear', min: 'auto', max: 'auto' }}
+                  yScale={{ type: 'linear', min: -0.5, max: 1 }}
                   curve="monotoneX"
                   axisBottom={{
                     tickRotation: -45,
@@ -78,8 +86,32 @@ function Temperature() {
                     legend: 'Temperaturförändring (°C)',
                     legendOffset: -50
                   }}
-                  enablePoints={false}
+                  enablePoints={true}
+                  pointSize={8}
+                  pointColor="#FFD4B4"
                   colors={["#FFD4B4"]}
+                  theme={{
+                    grid: {
+                      line: {
+                        stroke: "#444",
+                        strokeDasharray: "2 2"
+                      }
+                    },
+                    axis: {
+                      ticks: {
+                        text: {
+                          fill: "#fff",
+                          fontSize: 12
+                        }
+                      },
+                      legend: {
+                        text: {
+                          fill: "#fff",
+                          fontSize: 14
+                        }
+                      }
+                    }
+                  }}
                 />
               </Box>
             </Box>
@@ -160,22 +192,48 @@ function Temperature() {
                           }}
                         />
                       </Box>
-                      <Box flex="1" bg="#1a1a1a" p={4} borderRadius="xl">
-                        <VStack spacing={4} align="start">
-                          <Text color="white" fontSize="lg" fontWeight="bold">
-                            Om Temperaturdatan
-                          </Text>
-                          <Text color="gray.300" fontSize="sm">
-                            Grafen visar den globala temperaturökningen sedan början av 1900-talet.
-                          </Text>
-                          <Text color="gray.300" fontSize="sm">
-                            Viktiga observationer:
-                          </Text>
-                          <UnorderedList color="gray.300" fontSize="sm" spacing={2}>
-                            <ListItem>Snabb ökning efter 1980</ListItem>
-                            <ListItem>Industri och fossila bränslen är huvudorsaker</ListItem>
-                            <ListItem>Fortsatt uppåtgående trend</ListItem>
-                          </UnorderedList>
+                      <Box flex="1" bg="#1a1a1a" p={6} borderRadius="xl">
+                        <VStack spacing={6} align="start">
+                          <Box>
+                            <Text color="white" fontSize="xl" fontWeight="bold" mb={2}>
+                              Om Temperaturdatan
+                            </Text>
+                            <Text color="gray.300" fontSize="sm">
+                              Grafen visar den globala temperaturökningen sedan år 1900, med mätpunkter var tionde år.
+                            </Text>
+                          </Box>
+                          
+                          <Box>
+                            <Text color="white" fontSize="md" fontWeight="bold" mb={2}>
+                              Viktiga milstolpar:
+                            </Text>
+                            <VStack color="gray.300" fontSize="sm" spacing={3} align="start">
+                              <Box>
+                                <Text color="orange.300" fontWeight="bold">1900-1950:</Text>
+                                <Text>Långsam ökning på grund av tidig industrialisering</Text>
+                              </Box>
+                              <Box>
+                                <Text color="orange.300" fontWeight="bold">1950-1980:</Text>
+                                <Text>Accelererande uppvärmning med ökad industrialisering</Text>
+                              </Box>
+                              <Box>
+                                <Text color="orange.300" fontWeight="bold">1980-2020:</Text>
+                                <Text>Dramatisk ökning med över 0.8°C genomsnittlig temperaturhöjning</Text>
+                              </Box>
+                            </VStack>
+                          </Box>
+                          
+                          <Box>
+                            <Text color="white" fontSize="md" fontWeight="bold" mb={2}>
+                              Konsekvenser:
+                            </Text>
+                            <UnorderedList color="gray.300" fontSize="sm" spacing={2}>
+                              <ListItem>Ökad frekvens av extremväder</ListItem>
+                              <ListItem>Hotade ekosystem och artutrotning</ListItem>
+                              <ListItem>Stigande havsnivåer</ListItem>
+                              <ListItem>Påverkan på jordbruk och matproduktion</ListItem>
+                            </UnorderedList>
+                          </Box>
                         </VStack>
                       </Box>
                     </Flex>
