@@ -67,11 +67,9 @@ const Welcome = ({ setIsFaqOpen }) => {
               animation={`${float} 3s ease-in-out infinite`}
               display="flex"
               alignItems="center"
-              gap={3}
+              justifyContent="center"
             >
-              <Image src="/images/Logga1.svg" alt="Logo" boxSize="36px" objectFit="cover"></Image>
-              <Heading color="white" fontSize="3xl">The Gaia Alliance</Heading>
-              <FaLeaf size={20} color="#48BB78"/>
+              <Image src="/images/Logga1.svg" alt="Logo" height="60px" objectFit="contain" />
             </Box>
             
             <Text color="gray.300" textAlign="center" fontSize="xs">
