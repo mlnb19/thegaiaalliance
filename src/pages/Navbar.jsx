@@ -137,12 +137,33 @@ const Navbar = () => {
         </DrawerContent>
       </Drawer>
       <Faq isOpen={isFaqOpen} onClose={() => setIsFaqOpen(false)} />
-      <Stack direction="row" position="absolute" top={4} right={4}>
+      <VStack position="fixed" top={4} right={4} spacing={4} align="flex-end">
         <Text color="white">Inloggad</Text>
-        <IconButton icon={<Image src="profile.png" alt="profile" boxSize="30px" objectFit="cover" borderRadius="full" />} onClick={() => navigate('/profile')} variant="ghost" color="white" />
-        <IconButton icon={<BsQuestionSquare />} onClick={() => setIsFaqOpen(true)} variant="ghost" color="white" />
-        <IconButton icon={<RiLogoutCircleRLine />} onClick={() => navigate('/logout')} variant="ghost" color="white" />
-      </Stack>
+        <IconButton 
+          icon={<Image src="profile.png" alt="profile" boxSize="30px" objectFit="cover" borderRadius="full" />} 
+          onClick={() => navigate('/profile')} 
+          variant="ghost" 
+          color="white"
+          aria-label="Profile"
+        />
+        <IconButton 
+          icon={<RiLogoutCircleRLine />} 
+          onClick={() => navigate('/logout')} 
+          variant="ghost" 
+          color="white"
+          aria-label="Logout"
+        />
+      </VStack>
+      <IconButton 
+        icon={<BsQuestionSquare />} 
+        onClick={() => setIsFaqOpen(true)} 
+        variant="ghost" 
+        color="white"
+        position="fixed"
+        bottom={4}
+        right={4}
+        aria-label="FAQ"
+      />
     </>
   );
 };
