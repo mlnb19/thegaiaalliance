@@ -453,14 +453,13 @@ function Startpage({ setIsFaqOpen }) {
       <Text color="white" fontSize="2xl" fontWeight="bold">
         Visste du detta om havsnivån? 🌊
       </Text>
-      <Text color="gray.500" mt="4">
-        • En höjning på bara 1 meter kan översvämma områden där 1 miljard människor bor! 😮
-        <br/><br/>
-        • Glaciärerna smälter snabbare nu än någonsin tidigare i historien ❄️
-        <br/><br/>
-        • Havsnivån stiger med 3,3 mm per år
-        <br/><br/>
-        • År 2100 kan havsnivån vara 1 meter högre
+      <Text color="white" mt="4">
+        <ul>
+          <li>En höjning på bara 1 meter kan översvämma områden där 1 miljard människor bor! 😮</li>
+          <li>Glaciärerna smälter snabbare nu än någonsin tidigare i historien ❄️</li>
+          <li>Havsnivån stiger med 3,3 mm per år</li>
+          <li>År 2100 kan havsnivån vara 1 meter högre</li>
+        </ul>
       </Text>
     </Box>
 
