@@ -443,7 +443,7 @@ function Startpage({ setIsFaqOpen }) {
 
     {/* Percentage Display */}
     <Box 
-      boxShadow="-1px 0px 7px rgba(61, 61, 61)"
+      boxShadow="0px 4px 20px rgba(0, 120, 255, 0.2)"
       border="0.5px"
       bg="#111" 
       borderRadius="xl" 
@@ -455,11 +455,11 @@ function Startpage({ setIsFaqOpen }) {
       </Text>
       <Text color="gray.500" mt="4">
         • En höjning på bara 1 meter kan översvämma områden där 1 miljard människor bor! 😮
-        <br/>
+        <br/><br/>
         • Glaciärerna smälter snabbare nu än någonsin tidigare i historien ❄️
-        <br/>
-        • Visste du att havsnivån stiger med 3,3 mm per år?
-        <br/>
+        <br/><br/>
+        • Havsnivån stiger med 3,3 mm per år
+        <br/><br/>
         • År 2100 kan havsnivån vara 1 meter högre
       </Text>
     </Box>
